@@ -1,0 +1,12 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch02-spiking-foundations/chapter.tex",
+  "source_label": "fig:snn:encoding",
+  "source_line": 82,
+  "source_sha256": "3ade2ea708003a6d7bb3c32301e9f703a799502d33ae022c2c9bf991b26ef753",
+  "image_sha256": {
+    "ch02/encoding_function.png": "a670473efc6254a9be29618fb6edcd71e3103912d26c5fa34562119afefdb788",
+    "ch02/encoding_spike_raster.png": "c776a458d07396239c2bb7fc7c031155546b49d31edaf12cb436c1fd62a11f1d"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

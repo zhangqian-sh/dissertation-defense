@@ -1,0 +1,17 @@
+\begin{table}[t]
+  \centering
+  \caption{Spiking DeepONet one-dimensional Poisson regression: relative discrete $L_2$ error versus trunk encoding ($N_r=100$, $K=50$ unless noted). Statistics are computed over the $200$ held-out samples after Savitzky--Golay smoothing.}
+  \label{tab:ch02:deeponet-encoding}
+  \small
+  \begin{tabular}{@{}lccc@{}}
+    \toprule
+    Encoding & Mean & Median & Std. dev. \\
+    \midrule
+    Rate & $0.229$ & $0.182$ & $0.174$ \\
+    Floating point & $0.692$ & $0.659$ & $0.451$ \\
+    Lower triangular & $0.047$ & $0.043$ & $0.032$ \\
+    Lower triangular ($K=500$) & $\mathbf{0.005}$ & $\mathbf{0.004}$ & $\mathbf{0.003}$ \\
+    Direct & $0.135$ & $0.121$ & $0.067$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}

@@ -1,0 +1,16 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch02-spiking-foundations/chapter.tex",
+  "source_label": "fig:snn:pde-wave",
+  "source_line": 407,
+  "source_sha256": "3ade2ea708003a6d7bb3c32301e9f703a799502d33ae022c2c9bf991b26ef753",
+  "image_sha256": {
+    "ch02/pde_wave_snapshot.png": "3ffeec865de3f9a7a2b4c3c9bdeadaf1d1c2efba93ca5808a95f394bd95ba092",
+    "ch02/pde_wave_error.png": "0aeceb8393f3eb4395cf1b414d0a51ec4042798ec20f50c69c82ed22cd1d714a",
+    "ch02/pde_wave_snapshot_rate.png": "7483b4d7e4c87037a624e5f527e82ee7358e918f4df80060959e3c96648d0c9c",
+    "ch02/pde_wave_error_rate.png": "5aff041070c6c5144d41d74a8b7e761f3e7eca3b39852ede564de3c046fa683e",
+    "ch02/pde_wave_snapshot_float32.png": "882453db76ba9592aa56a6936c3c4c0e8533606625e77212c96f181f0afddb21",
+    "ch02/pde_wave_error_float32.png": "de5c8fd1f9e6209468872c03abd1a473bb71a4f26c9fe2799546d756cfe3cde3"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

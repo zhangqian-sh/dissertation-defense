@@ -1,0 +1,14 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch02-spiking-foundations/chapter.tex",
+  "source_label": "fig:snn:deeponet-poisson",
+  "source_line": 237,
+  "source_sha256": "3ade2ea708003a6d7bb3c32301e9f703a799502d33ae022c2c9bf991b26ef753",
+  "image_sha256": {
+    "ch02/deeponet_poisson_rate.png": "2d90813a57b5d295065c30fe1da628af5c92fb8d29e3b9e0f4f6ebccd7de2a04",
+    "ch02/deeponet_poisson_triangular.png": "c01d2a1e75eb105f9523f22f36b0e75bb815375da01d115479dbbd44b35db40b",
+    "ch02/deeponet_poisson_triangular_long.png": "159afef872d27f8af72dac4586dbbb0b7ab27ef2b590213b064308260d0562b6",
+    "ch02/deeponet_poisson_direct.png": "fda29e83b5e0e49b54d03c8e31e63e3ace508628db97c8bb7558c0b323a51f82"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

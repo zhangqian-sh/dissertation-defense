@@ -1,0 +1,11 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch02-spiking-foundations/chapter.tex",
+  "source_label": "fig:snn:mlp-membrane",
+  "source_line": 159,
+  "source_sha256": "3ade2ea708003a6d7bb3c32301e9f703a799502d33ae022c2c9bf991b26ef753",
+  "image_sha256": {
+    "ch02/mlp_membrane.png": "885ea3260a92a79e59e8e40bf559d84e100f3c83c7b3ca32d806f26ae2e0b336"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

@@ -1,0 +1,16 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch02-spiking-foundations/chapter.tex",
+  "source_label": "fig:snn:ode-lorenz",
+  "source_line": 347,
+  "source_sha256": "3ade2ea708003a6d7bb3c32301e9f703a799502d33ae022c2c9bf991b26ef753",
+  "image_sha256": {
+    "ch02/ode_lorenz_trajectory.png": "ed2da53110375c637e68f8265db22e7bb5e506cf48ab9c7097581c7a87d39357",
+    "ch02/ode_lorenz_error.png": "246f5c3a78192fe1d43c99d9fb0b666a922a04b5e0a4eecb75119640bccf4ce6",
+    "ch02/ode_lorenz_trajectory_rate.png": "fbef22ca37fa6d476c8b12a93843992dbbcd4e6edce30c31b920659d7d5752db",
+    "ch02/ode_lorenz_error_rate.png": "caa6c9a8cdc4e6f6d47713bd740b8fbb52bbb521b5ec41ecd7a4d95ad80814f6",
+    "ch02/ode_lorenz_trajectory_float32.png": "2a8a926a5db8ae603d9ad644837c1566d50b66599138373af710a6e2269a8aff",
+    "ch02/ode_lorenz_error_float32.png": "27af52ea0ff44a8c952043a2ba7a1da8241330dac0207774f486f24dad343112"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

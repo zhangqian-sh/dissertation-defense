@@ -1,0 +1,12 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch02-spiking-foundations/chapter.tex",
+  "source_label": "fig:snn:pde-heat",
+  "source_line": 471,
+  "source_sha256": "3ade2ea708003a6d7bb3c32301e9f703a799502d33ae022c2c9bf991b26ef753",
+  "image_sha256": {
+    "ch02/pde_heat_snapshot.png": "3426b56e41bfd994c105b5d259b103892579c3e764f9662dbf9a670f9dcd32d6",
+    "ch02/pde_heat_error.png": "445d298ebf8c00c19dd442417e87f748efca60a925e45f8048e608d646be333b"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

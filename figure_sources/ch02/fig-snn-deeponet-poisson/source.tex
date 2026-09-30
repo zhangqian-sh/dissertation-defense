@@ -1,0 +1,29 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{\textwidth}
+    \centering
+    \includegraphics[width=0.92\textwidth]{ch02/deeponet_poisson_rate.png}
+    \caption{Rate encoding.}
+  \end{subfigure}
+  \\[0.4em]
+  \begin{subfigure}[b]{\textwidth}
+    \centering
+    \includegraphics[width=0.92\textwidth]{ch02/deeponet_poisson_triangular.png}
+    \caption{Lower-triangular encoding ($K=50$).}
+  \end{subfigure}
+  \\[0.4em]
+  \begin{subfigure}[b]{\textwidth}
+    \centering
+    \includegraphics[width=0.92\textwidth]{ch02/deeponet_poisson_triangular_long.png}
+    \caption{Lower-triangular encoding ($K=500$).}
+  \end{subfigure}
+  \\[0.4em]
+  \begin{subfigure}[b]{\textwidth}
+    \centering
+    \includegraphics[width=0.92\textwidth]{ch02/deeponet_poisson_direct.png}
+    \caption{Direct encoding.}
+  \end{subfigure}
+  \caption{Spiking DeepONet Poisson regression with alternative trunk encoders ($N_r=100$).
+  Lower-triangular encoding yields the best accuracy; increasing $K$ reduces prefix-quantization staircasing at higher simulation cost.}
+  \label{fig:snn:deeponet-poisson}
+\end{figure}

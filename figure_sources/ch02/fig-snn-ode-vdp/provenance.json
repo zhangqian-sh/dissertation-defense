@@ -1,0 +1,12 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch02-spiking-foundations/chapter.tex",
+  "source_label": "fig:snn:ode-vdp",
+  "source_line": 317,
+  "source_sha256": "3ade2ea708003a6d7bb3c32301e9f703a799502d33ae022c2c9bf991b26ef753",
+  "image_sha256": {
+    "ch02/ode_vdp_trajectory.png": "e6bc1483bb31cbc1473fbe04b1913b3b92c40286dbcf9ce2a95d98574966c50b",
+    "ch02/ode_vdp_error.png": "1bb2ac7b3de5ddb8909c5578d602f604aad321bb0f378e3935564fbd96f32552"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

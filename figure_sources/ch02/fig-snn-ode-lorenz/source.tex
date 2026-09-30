@@ -1,0 +1,41 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,height=0.19\textheight,keepaspectratio]{ch02/ode_lorenz_trajectory.png}
+    \caption{Lower triangular.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,height=0.19\textheight,keepaspectratio]{ch02/ode_lorenz_error.png}
+    \caption{Lower-triangular error.}
+  \end{subfigure}
+  \\[0.5em]
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,height=0.19\textheight,keepaspectratio]{ch02/ode_lorenz_trajectory_rate.png}
+    \caption{Rate encoding.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,height=0.19\textheight,keepaspectratio]{ch02/ode_lorenz_error_rate.png}
+    \caption{Rate-encoding error.}
+  \end{subfigure}
+  \\[0.5em]
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,height=0.19\textheight,keepaspectratio]{ch02/ode_lorenz_trajectory_float32.png}
+    \caption{Float32 encoding.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,height=0.19\textheight,keepaspectratio]{ch02/ode_lorenz_error_float32.png}
+    \caption{Float32 error.}
+  \end{subfigure}
+  \caption{SMS on the Lorenz system under three encoders ($K=1000$ for lower triangular, $K=100$ otherwise).
+  Lower-triangular encoding balances one-step and cascade accuracy on this chaotic benchmark.}
+  \label{fig:snn:ode-lorenz}
+\end{figure}

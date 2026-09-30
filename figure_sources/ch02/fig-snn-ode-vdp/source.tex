@@ -1,0 +1,17 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/ode_vdp_trajectory.png}
+    \caption{Phase-space trajectory.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/ode_vdp_error.png}
+    \caption{Cascade error over time.}
+  \end{subfigure}
+  \caption{SMS on the Van der Pol oscillator ($\mu=2$, lower-triangular encoding, $K=100$).
+  Shaded region marks the training interval; extrapolation beyond $t=8$ remains stable.}
+  \label{fig:snn:ode-vdp}
+\end{figure}

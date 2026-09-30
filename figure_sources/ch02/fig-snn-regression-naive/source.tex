@@ -1,0 +1,42 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/regression_discontinuity.png}
+    \caption{Discontinuity.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/regression_square.png}
+    \caption{$u(r)=r^2$.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/regression_sine.png}
+    \caption{$u(r)=\omega^2\sin(\omega r)$.}
+  \end{subfigure}
+  \\[0.5em]
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/regression_discontinuity_noisy.png}
+    \caption{Noisy discontinuity.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/regression_square_noisy.png}
+    \caption{Noisy square.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/regression_sine_noisy.png}
+    \caption{Noisy sine.}
+  \end{subfigure}
+  \caption{Naive spike-encoded function regression on three representative targets ($N_r=100$, $K=50$, latency encoding).
+  Solid curves are reference values; markers are network predictions.
+  Top row: clean data; bottom row: additive Gaussian noise ($\sigma=0.1$).}
+  \label{fig:snn:regression-naive}
+\end{figure}

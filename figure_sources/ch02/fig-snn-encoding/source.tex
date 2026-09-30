@@ -1,0 +1,17 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/encoding_function.png}
+    \caption{Sample field $f(x)$.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/encoding_spike_raster.png}
+    \caption{Lower-triangular spike raster ($K=30$).}
+  \end{subfigure}
+  \caption{Lower-triangular encoding of a continuous field.
+  Each spatial index receives a prefix of ones followed by zeros along the SNN simulation axis; magnitude is encoded separately when values are normalized to $[z_{\min},z_{\max}]$.}
+  \label{fig:snn:encoding}
+\end{figure}

@@ -1,0 +1,16 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch02-spiking-foundations/chapter.tex",
+  "source_label": "fig:snn:regression-naive",
+  "source_line": 114,
+  "source_sha256": "3ade2ea708003a6d7bb3c32301e9f703a799502d33ae022c2c9bf991b26ef753",
+  "image_sha256": {
+    "ch02/regression_discontinuity.png": "51b802aad9f97b47acb37591b3e613c87d34f9e1c377ef1b72d4e2f49a8dfe3d",
+    "ch02/regression_square.png": "94f6b7f0bd391b58bfed0c05a18883afd87b8f3adb33b352cc0dd4047788a711",
+    "ch02/regression_sine.png": "0c7d9fa7e849463e2d5836339b428f6b8133e0b230ec697e0861bd2f0722b056",
+    "ch02/regression_discontinuity_noisy.png": "4621069b894bb34c8a79826aacfdec9154756fe557fcc8fc1c318352f076cb7a",
+    "ch02/regression_square_noisy.png": "64a0308cf8b058c367cd1d601740b894e9476d525c5afc4b69f9f7a5eb94c9d3",
+    "ch02/regression_sine_noisy.png": "b0148d8b41ba99f306908e005f10b90f2c44d97263f611ff1708fae6d1ca92ee"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

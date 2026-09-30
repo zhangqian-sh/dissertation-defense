@@ -1,0 +1,41 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/pde_wave_snapshot.png}
+    \caption{Lower triangular snapshot.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/pde_wave_error.png}
+    \caption{Lower-triangular error.}
+  \end{subfigure}
+  \\[0.5em]
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/pde_wave_snapshot_rate.png}
+    \caption{Rate-encoding snapshot.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/pde_wave_error_rate.png}
+    \caption{Rate-encoding error.}
+  \end{subfigure}
+  \\[0.5em]
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/pde_wave_snapshot_float32.png}
+    \caption{Float32 snapshot.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ch02/pde_wave_error_float32.png}
+    \caption{Float32 error.}
+  \end{subfigure}
+  \caption{SMS on the one-dimensional wave equation (extrapolation snapshot at step~980).
+  Lower-triangular and float32 encoders succeed; rate encoding accumulates large cascade error.}
+  \label{fig:snn:pde-wave}
+\end{figure}
