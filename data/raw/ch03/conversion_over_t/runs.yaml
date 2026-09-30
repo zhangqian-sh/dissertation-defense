@@ -1,0 +1,1 @@
+{"runs":[{"case_id":"helmholtz_l1_k15","run_id":"saved_T064_prefix","source":"SpikingNN/UNO/examples/conversion_deeponet/helmholtz_2d/final/runs/reverse_conv_v2_calibration_l1_k15_seed2024_T64","T":64,"thesis_refs":["ch:conversion-hardware"],"protocol":"POD DeepONet; frozen ANN; channel-wise threshold search plus advanced calibration; floating point; configured T=64"}]}
