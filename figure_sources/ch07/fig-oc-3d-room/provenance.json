@@ -1,0 +1,14 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch07-ocformer/chapter.tex",
+  "source_label": "fig:oc:3d-room",
+  "source_line": 659,
+  "source_sha256": "2dd1f10e59e8cf9ce80039d6902b7ae21f16d1fd9bb688c6997bb0f5ce3b83a8",
+  "image_sha256": {
+    "ch07/room3d_t0.pdf": "2a8e35d03d99b87a03d3594f704dbdfaa99d04209cef468dba740b0e25fee079",
+    "ch07/room3d_t1.pdf": "e90f2d2115e3db511dbca769909b5591e70eefcff2addf9873d7e6197a59b891",
+    "ch07/room3d_t2.pdf": "72ebbb57121859ba4cd8d85cbd3caebc0bed7e9fdb2b8b055376020da53dc3fd",
+    "ch07/room3d_t3.pdf": "8966af8789ada6e13af467da2659ba5b8dc36ad6a0bf904aebe7d0211f844172"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

@@ -1,0 +1,14 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch07-ocformer/chapter.tex",
+  "source_label": "fig:oc:ball-3d",
+  "source_line": 689,
+  "source_sha256": "2dd1f10e59e8cf9ce80039d6902b7ae21f16d1fd9bb688c6997bb0f5ce3b83a8",
+  "image_sha256": {
+    "ch07/ball3d_t0.pdf": "eeda53816526b65ba0540718a549b0c4d51f790809e10a273008eec2a971eeeb",
+    "ch07/ball3d_t1.pdf": "1db5f6de45d56a477bf3d632e60c2428a7a89556c563b087244983b45f5084f1",
+    "ch07/ball3d_t2.pdf": "df146963ecc47396f9adee0b2f1360c63e15c958c0505ae6a8a8178abf57b03d",
+    "ch07/ball3d_t3.pdf": "a03618f02dd5198ff47d6297417967a18d55ee6a7a0b3c3e585639278275aa32"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

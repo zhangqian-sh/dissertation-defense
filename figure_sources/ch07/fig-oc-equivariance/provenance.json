@@ -1,0 +1,14 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch07-ocformer/chapter.tex",
+  "source_label": "fig:oc:equivariance",
+  "source_line": 244,
+  "source_sha256": "2dd1f10e59e8cf9ce80039d6902b7ae21f16d1fd9bb688c6997bb0f5ce3b83a8",
+  "image_sha256": {
+    "ch07/equivariance-symmetric-m8-t0.pdf": "c2938fbe9220f31008c893a3b9668c8d6f8fc1378f28fbc36dfdd920dbbffa0e",
+    "ch07/equivariance-symmetric-m8-t1.pdf": "e1684f2680e7393494e3999c6f2dbee7dc2783a2012bc2348bff403c440c22e1",
+    "ch07/equivariance-symmetric-m8-t2.pdf": "d362f8d36a7256a0f8f1685749bfe215d4101c925e66133f4191daa259838f13",
+    "ch07/equivariance-symmetric-m8-t3.pdf": "996b9148790ded0a895d6e8881d725086d8300a7f776bad537fe154b098a0171"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

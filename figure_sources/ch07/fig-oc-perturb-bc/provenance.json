@@ -1,0 +1,11 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch07-ocformer/chapter.tex",
+  "source_label": "fig:oc:perturb-bc",
+  "source_line": 528,
+  "source_sha256": "2dd1f10e59e8cf9ce80039d6902b7ae21f16d1fd9bb688c6997bb0f5ce3b83a8",
+  "image_sha256": {
+    "ch07/perturb_m32_bc.pdf": "cbbdf78fc95c975494093c38129d3d61e0c86174bcbb1bbbd99b8ef2694298a8"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

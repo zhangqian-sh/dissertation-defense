@@ -1,0 +1,11 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch07-ocformer/chapter.tex",
+  "source_label": "fig:oc:training",
+  "source_line": 378,
+  "source_sha256": "2dd1f10e59e8cf9ce80039d6902b7ae21f16d1fd9bb688c6997bb0f5ce3b83a8",
+  "image_sha256": {
+    "ch07/training-flowchart.pdf": "6c2348fb29ab14fb2f586576f83d278439160dd2fe7e0198c75b6407de3728e7"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

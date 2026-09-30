@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+  \centering
+  \caption{Three OCFormer inference regimes. Per-instance training fits one boundary pair; transfer learning adapts a frozen backbone to perturbed conditions; amortized inference evaluates unseen in-distribution pairs in a single forward pass.}
+  \label{tab:oc:regimes}
+  \small
+  \begin{tabular}{@{}
+    >{\raggedright\arraybackslash}p{0.16\textwidth}
+    >{\raggedright\arraybackslash}p{0.27\textwidth}
+    >{\raggedright\arraybackslash}p{0.19\textwidth}
+    >{\raggedright\arraybackslash}p{0.26\textwidth}@{}}
+    \toprule
+    Regime & Offline cost & Online latency & Generalization \\
+    \midrule
+    Per-instance & ${\sim}20$\,min (100k Adam + L-BFGS) & Same as offline & Fixed $(x^0,x^T)$ only \\
+    Transfer & ${\sim}$seconds (L-BFGS on wrappers) & Same as offline & Structured or small perturbations \\
+    Amortized & One distributional training run & ${\sim}220$\,ms forward pass & Zero-shot in-distribution \\
+    \bottomrule
+  \end{tabular}
+\end{table}

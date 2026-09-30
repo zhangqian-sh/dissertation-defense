@@ -1,0 +1,6 @@
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{ch07/ocformer-architecture.pdf}
+  \caption{OCFormer architecture. Latent state and costate inputs $(\by,\bq)$ are reshaped into agent tokens, embedded tokenwise, processed by alternating $\mathcal{T}_{\mathrm{up}}$ and $\mathcal{T}_{\mathrm{low}}$ transformer blocks, deembedded, and added to the input through a residual connection. Self-attention mixes information across agents without a fixed processing order. The schematic retains $r$ as the lower-stream label from the source architecture; the formal update~\eqref{eq:oc:leapfrog-blocks} denotes that stream by $\mathbf{w}$ to avoid conflict with the spatial coordinate $r$.}
+  \label{fig:oc:architecture}
+\end{figure}

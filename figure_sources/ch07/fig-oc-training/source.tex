@@ -1,0 +1,6 @@
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\textwidth]{ch07/training-flowchart.pdf}
+  \caption{OCFormer training schematic. For prescribed initial and terminal configurations, boundary data are encoded into latent variables $(\by,\bq)$ and mapped by the inverse coordinate map $\tp^\theta$ to physical trajectories $(\bx,\bp)$. Automatic differentiation supplies time derivatives for the Hamiltonian residual loss and boundary matching term; parameters are optimized by Adam followed by L-BFGS without labeled trajectory data.}
+  \label{fig:oc:training}
+\end{figure}

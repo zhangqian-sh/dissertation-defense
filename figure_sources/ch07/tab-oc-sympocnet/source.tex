@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+  \centering
+  \caption{Per-instance OCFormer versus SympOCNet on the 2D antipodal-circle benchmark with identical training budget.}
+  \label{tab:oc:sympocnet}
+  \begin{tabular}{@{}ccccc@{}}
+    \toprule
+    $M$ & OCFormer cost & SympOCNet cost & SympOCNet feasible? \\
+    \midrule
+    4   & 0.2003 & 0.2001 & Yes \\
+    8   & 0.4036 & 0.4046 & Yes \\
+    16  & 0.8307 & 0.8345 & Yes \\
+    32  & 1.2531 & 1.4413 & Yes \\
+    128 & 5.1424 & --- & No \\
+    \bottomrule
+  \end{tabular}
+\end{table}

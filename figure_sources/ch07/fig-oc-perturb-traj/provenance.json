@@ -1,0 +1,14 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch07-ocformer/chapter.tex",
+  "source_label": "fig:oc:perturb-traj",
+  "source_line": 534,
+  "source_sha256": "2dd1f10e59e8cf9ce80039d6902b7ae21f16d1fd9bb688c6997bb0f5ce3b83a8",
+  "image_sha256": {
+    "ch07/perturb_m32_t0.pdf": "7e8a62c8053048e25a832d7ec7f0a579cced7beb6608ac575823df5975eb6aeb",
+    "ch07/perturb_m32_t1.pdf": "be807d234dbbba50b929742f6919aa5ae10f16b46643b4bb42e33b43bd0fde44",
+    "ch07/perturb_m32_t2.pdf": "226a3e7284bb423ff633a737737fed85707946882f3b4d4be08312547b1bdc81",
+    "ch07/perturb_m32_t3.pdf": "03c7add28083c73cf2792d71c776f54468e5174fb6541b9f9e808cdf41982b21"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

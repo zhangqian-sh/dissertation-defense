@@ -1,0 +1,14 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch07-ocformer/chapter.tex",
+  "source_label": "fig:oc:rigidbody",
+  "source_line": 494,
+  "source_sha256": "2dd1f10e59e8cf9ce80039d6902b7ae21f16d1fd9bb688c6997bb0f5ce3b83a8",
+  "image_sha256": {
+    "ch07/rigidbody_ref_t0.pdf": "52a6544dcddd9113f420bcd8e3810561c76206630deeb12747974156642b41d6",
+    "ch07/rigidbody_trans_t0.pdf": "f7363eccbe4d4f57d1f54de0a9c9d618722cd2f3025e4b153e445ea700ed68fc",
+    "ch07/rigidbody_ref_t3.pdf": "6cce3eb637113efae566c804b688c0615a59451daab815751d69d01c090c44f2",
+    "ch07/rigidbody_trans_t3.pdf": "90e032f8128328e86dae61f1ab1af36239a57f81b37f79d11725ead487b9ce77"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

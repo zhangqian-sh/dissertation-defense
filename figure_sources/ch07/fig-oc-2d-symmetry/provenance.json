@@ -1,0 +1,22 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch07-ocformer/chapter.tex",
+  "source_label": "fig:oc:2d-symmetry",
+  "source_line": 611,
+  "source_sha256": "2dd1f10e59e8cf9ce80039d6902b7ae21f16d1fd9bb688c6997bb0f5ce3b83a8",
+  "image_sha256": {
+    "ch07/symmetry_m8_t0.pdf": "c2938fbe9220f31008c893a3b9668c8d6f8fc1378f28fbc36dfdd920dbbffa0e",
+    "ch07/symmetry_m8_t1.pdf": "e1684f2680e7393494e3999c6f2dbee7dc2783a2012bc2348bff403c440c22e1",
+    "ch07/symmetry_m8_t2.pdf": "d362f8d36a7256a0f8f1685749bfe215d4101c925e66133f4191daa259838f13",
+    "ch07/symmetry_m8_t3.pdf": "996b9148790ded0a895d6e8881d725086d8300a7f776bad537fe154b098a0171",
+    "ch07/symmetry_m32_t0.pdf": "8acf23ae1139a5df1df33051e729b0eec28fe808b79be32b7037f38f39a1e21c",
+    "ch07/symmetry_m32_t1.pdf": "44664e600cfe023ef0b9104deaec89029048d84b8a53d291afc6ee6d758255cc",
+    "ch07/symmetry_m32_t2.pdf": "7abd794e0bee84f2019f15941618fb580b27d4bc3b1bdcfb35e4390202512bfb",
+    "ch07/symmetry_m32_t3.pdf": "e2f98277f56d66c7a0e753e9086f670faa3cacc9c917c1ecb590e673fb62d32a",
+    "ch07/symmetry_m128_t0.pdf": "f5e7255351d114502f089df32ecd0b0bb2e521640f82bd1b5b4312b7957f0737",
+    "ch07/symmetry_m128_t1.pdf": "095b0c8df23c51bb69c389f8f6a76af7d5876a1a2d6a3dc7133e57dbad0a2ec6",
+    "ch07/symmetry_m128_t2.pdf": "fe011b9c57602720506dd20c939a8160a72991e21fac0b808e6ed9f0e5a79ac2",
+    "ch07/symmetry_m128_t3.pdf": "271da0a659c7d95e3799b7aa3b87d74ce81d678441953d05aee2a38d70638c81"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

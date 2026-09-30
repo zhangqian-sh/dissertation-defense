@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+  \centering
+  \caption{Per-instance OCFormer on the symmetric 2D antipodal-circle benchmark. Gap is $(\text{Cost}-J_{\text{LB}})/J_{\text{LB}}$. Constraint is $\min_{i\neq j,t}\|\bx_i-\bx_j\|-2r_{\mathrm{agent}}$; positive values indicate feasibility.}
+  \label{tab:oc:2d-scaling}
+  \begin{tabular}{@{}ccrrrrr@{}}
+    \toprule
+    $M$ & Layout & $r_{\mathrm{agent}}$ & $J_{\text{LB}}$ & Cost & Gap & Min.\ constraint \\
+    \midrule
+    4   & $1\times 4$  & 0.02 & 0.200 & 0.200 & 0.2\% & $1.3\times 10^{-4}$ \\
+    8   & $1\times 8$  & 0.02 & 0.400 & 0.404 & 0.9\% & $1.5\times 10^{-4}$ \\
+    16  & $1\times 16$ & 0.02 & 0.800 & 0.831 & 3.8\% & $1.5\times 10^{-4}$ \\
+    32  & $2\times 16$ & 0.02 & 1.156 & 1.253 & 8.4\% & $1.5\times 10^{-4}$ \\
+    64  & $2\times 32$ & 0.01 & 2.297 & 2.448 & 6.6\% & $1.4\times 10^{-4}$ \\
+    128 & $4\times 32$ & 0.01 & 4.704 & 5.142 & 9.3\% & $1.2\times 10^{-4}$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
