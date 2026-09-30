@@ -1,0 +1,156 @@
+{
+  "schema_version": 2,
+  "case_id": "burgers_seed0_fresh_prefix",
+  "run_id": "20260910T173037-prefix-6195542",
+  "source_repository": "/users/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT",
+  "source_commit": "7cb5164dbf0bc3da48ad812fe9a7aa324c11bb68",
+  "source_dirty_state": "",
+  "configuration_sha256": "a38196dd3acd8fc7d9188e319ea225fd5416497c4e67c1bcbfa2d19c3f74d740",
+  "checkpoint_sha256": "6cd79dd80ae4e8d120efac63484f9951aa4240551f038e5de4fd57ee63a191d5",
+  "converted_checkpoint_sha256": "72343c2dcc814f86ce41d11ce8cdc4b563f73f394c8123795f3c48ad83c27819",
+  "environment": {
+    "torch": "2.4.1+cu121",
+    "numpy": "1.26.4",
+    "gpu": "NVIDIA L40S"
+  },
+  "slurm": {
+    "SLURM_TRES_PER_TASK": "cpu=4",
+    "SLURM_JOB_USER": "qzhang64",
+    "SLURM_TASKS_PER_NODE": "1",
+    "SLURM_JOB_UID": "140308453",
+    "SLURM_TASK_PID": "3092263",
+    "SLURM_JOB_GPUS": "4",
+    "SLURM_LOCALID": "0",
+    "SLURM_SUBMIT_DIR": "/oscar/data/gk/qzhang64/Projects/Thesis/presentation",
+    "SLURM_JOB_START_TIME": "1789061434",
+    "SLURM_CLUSTER_NAME": "slurmctld",
+    "SLURM_JOB_END_TIME": "1789063234",
+    "SLURM_CPUS_ON_NODE": "4",
+    "SLURM_JOB_CPUS_PER_NODE": "4",
+    "SLURM_GPUS_ON_NODE": "1",
+    "SLURM_GTIDS": "0",
+    "SLURM_JOB_PARTITION": "gpu",
+    "SLURM_OOM_KILL_STEP": "0",
+    "SLURM_JOB_NUM_NODES": "1",
+    "SLURM_JOBID": "6195542",
+    "SLURM_JOB_QOS": "norm-gpu",
+    "SLURM_PROCID": "0",
+    "SLURM_CPUS_PER_TASK": "4",
+    "SLURM_NTASKS": "1",
+    "SLURM_TOPOLOGY_ADDR": "ac46_sw1.gpu2709",
+    "SLURM_TOPOLOGY_ADDR_PATTERN": "switch.node",
+    "SLURM_SCRIPT_CONTEXT": "prolog_task",
+    "SLURM_MEM_PER_NODE": "16384",
+    "SLURM_NODELIST": "gpu2709",
+    "SLURM_JOB_ACCOUNT": "default",
+    "SLURM_PRIO_PROCESS": "0",
+    "SLURM_NPROCS": "1",
+    "SLURM_NNODES": "1",
+    "SLURM_SUBMIT_HOST": "login010",
+    "SLURM_JOB_ID": "6195542",
+    "SLURM_NODEID": "0",
+    "SLURM_CONF": "/var/spool/slurmd/conf-cache/slurm.conf",
+    "SLURM_JOB_NAME": "burgers-prefix",
+    "SLURM_JOB_GID": "6670",
+    "SLURM_JOB_NODELIST": "gpu2709",
+    "SLURM_MPI_TYPE": "pmix",
+    "SLURM_UMASK": "0022",
+    "SLURM_DISTRIBUTION": "cyclic",
+    "SLURM_STEP_ID": "0",
+    "SLURM_STEPID": "0",
+    "SLURM_STEP_NODELIST": "gpu2709",
+    "SLURM_STEP_NUM_NODES": "1",
+    "SLURM_STEP_NUM_TASKS": "1",
+    "SLURM_STEP_TASKS_PER_NODE": "1",
+    "SLURM_STEP_LAUNCHER_PORT": "36265",
+    "SLURM_SRUN_COMM_PORT": "36265",
+    "SLURM_PMIXP_ABORT_AGENT_PORT": "36929",
+    "SLURM_PMIX_MAPPING_SERV": "(vector,(0,1,1))",
+    "SLURM_SRUN_COMM_HOST": "172.20.223.9",
+    "SLURM_STEP_GPUS": "4",
+    "SLURM_LAUNCH_NODE_IPADDR": "172.20.223.9"
+  },
+  "sample_ids": [
+    "entire 201x300 grid"
+  ],
+  "split": "original PINN residual grid; no held-out generalization claim",
+  "normalization": "none; restored time-major reference layout",
+  "units": {
+    "field": "u, benchmark units",
+    "space": "x in [0,2\u03c0]",
+    "time": "physical t in [0,4]",
+    "T": "cumulative emitted-output prefix length; calibration horizon fixed at 128"
+  },
+  "shapes": {
+    "T": [
+      128
+    ],
+    "frames": [
+      128,
+      201,
+      300
+    ],
+    "reference": [
+      201,
+      300
+    ],
+    "relative_error": [
+      128
+    ],
+    "time": [
+      201
+    ],
+    "space": [
+      300
+    ],
+    "ann_output": [
+      201,
+      300
+    ],
+    "step_spikes": [
+      128,
+      201,
+      300
+    ],
+    "calibration_indices": [
+      8192
+    ]
+  },
+  "command": "python data/raw/ch03/burgers_over_t/replay.py",
+  "payload_sha256": "19b25b86d3766c5f20d60edd49596bad7506703d00ff047b2519b533c41b8073",
+  "input_files": [
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/saved_model/burgers.h5",
+      "sha256": "6cd79dd80ae4e8d120efac63484f9951aa4240551f038e5de4fd57ee63a191d5"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0128/Tanh/advanced_caa/ann_x.csv",
+      "sha256": "18bc517e78a4cb6e13b5f25f3729b25ec492d2253a00f2f99b85111b65aafd56"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0128/Tanh/advanced_caa/ann_y.csv",
+      "sha256": "be9a60e88f65181ef9e2030fdbce42965d2fc2872dbd2c42b93ee4aa639803cf"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0128/Tanh/advanced_caa/ann_y_true.csv",
+      "sha256": "0ed65d50c6b407c8107222aad3883dce24b66acb63f6d35be771a30a250b4bda"
+    },
+    {
+      "path": "/users/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/src/conversion/models/spiking_layer.py",
+      "sha256": "8f045eec6fa9c09b9f0f9023eba49e5a000a451bb3cc35e95484938b6556e484"
+    },
+    {
+      "path": "/users/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/src/conversion/models/calibration.py",
+      "sha256": "49f7eb7987bc433ed66e03d03da8fce9961ce513e418ac2289ffebfe891391ee"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/Thesis/presentation/data/raw/ch03/burgers_over_t/replay.py",
+      "sha256": "a38196dd3acd8fc7d9188e319ea225fd5416497c4e67c1bcbfa2d19c3f74d740"
+    }
+  ],
+  "protocol": "Fresh source-code advanced CAA calibration at fixed horizon 128; 8192 seeded calibration nodes, minibatch 1024, 5000 weight iterations per layer. All 128 frames are measured cumulative means of actual emitted outputs; no temporal interpolation and no per-prefix recalibration.",
+  "archived_calibration_reproduced": false,
+  "ann_archived_relative_discrepancy": 0.0,
+  "calibration_T": 128,
+  "relative_error_at_128": 0.0737408802657945
+}

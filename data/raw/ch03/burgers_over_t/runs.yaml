@@ -1,0 +1,14 @@
+case_id: burgers_seed0
+run_id: 20260910T173037-prefix-6195542
+T: {start: 1, stop: 128, step: 1}
+calibration_T: 128
+archived_calibration_reproduced: false
+calibration: advanced_caa
+activation: Tanh
+source: SpikingNN/Conversion/SNN-CAACT/saved_model/burgers.h5
+native_grid: [201, 300]
+axis_order: [physical_time, space]
+reference_alignment: restored_native_time_major_layout
+same_ann_predictions: exact
+collection_script: data/raw/ch03/burgers_over_t/replay.py
+historical_pair_run: 20260910T171508-6195332

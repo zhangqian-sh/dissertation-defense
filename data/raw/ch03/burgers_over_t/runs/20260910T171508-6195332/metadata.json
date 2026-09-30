@@ -1,0 +1,165 @@
+{
+  "schema_version": 2,
+  "case_id": "burgers_seed0",
+  "run_id": "20260910T171508-6195332",
+  "source_repository": "/users/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT",
+  "source_commit": "7cb5164dbf0bc3da48ad812fe9a7aa324c11bb68",
+  "source_dirty_state": "",
+  "configuration_sha256": "41b4da6d671658c943e15ed4e35393952162ce604be075a3c4b11bca285da41d",
+  "checkpoint_sha256": null,
+  "environment": {
+    "numpy": "2.2.5"
+  },
+  "slurm": {
+    "SLURM_TRES_PER_TASK": "cpu=1",
+    "SLURM_JOB_USER": "qzhang64",
+    "SLURM_TASKS_PER_NODE": "1",
+    "SLURM_JOB_UID": "140308453",
+    "SLURM_TASK_PID": "520919",
+    "SLURM_LOCALID": "0",
+    "SLURM_SUBMIT_DIR": "/oscar/data/gk/qzhang64/Projects/Thesis/presentation",
+    "SLURM_JOB_START_TIME": "1789060504",
+    "SLURM_CLUSTER_NAME": "slurmctld",
+    "SLURM_JOB_END_TIME": "1789060804",
+    "SLURM_CPUS_ON_NODE": "1",
+    "SLURM_JOB_CPUS_PER_NODE": "1",
+    "SLURM_GTIDS": "0",
+    "SLURM_JOB_PARTITION": "batch",
+    "SLURM_OOM_KILL_STEP": "0",
+    "SLURM_JOB_NUM_NODES": "1",
+    "SLURM_JOBID": "6195332",
+    "SLURM_JOB_QOS": "normal",
+    "SLURM_PROCID": "0",
+    "SLURM_CPUS_PER_TASK": "1",
+    "SLURM_NTASKS": "1",
+    "SLURM_TOPOLOGY_ADDR": "ag39_sw2.node2333",
+    "SLURM_TOPOLOGY_ADDR_PATTERN": "switch.node",
+    "SLURM_SCRIPT_CONTEXT": "prolog_task",
+    "SLURM_MEM_PER_NODE": "3072",
+    "SLURM_NODELIST": "node2333",
+    "SLURM_JOB_ACCOUNT": "default",
+    "SLURM_PRIO_PROCESS": "0",
+    "SLURM_NPROCS": "1",
+    "SLURM_NNODES": "1",
+    "SLURM_SUBMIT_HOST": "login010",
+    "SLURM_JOB_ID": "6195332",
+    "SLURM_NODEID": "0",
+    "SLURM_CONF": "/var/spool/slurmd/conf-cache/slurm.conf",
+    "SLURM_JOB_NAME": "burgers-plots",
+    "SLURM_JOB_GID": "6670",
+    "SLURM_JOB_NODELIST": "node2333",
+    "SLURM_MPI_TYPE": "pmix",
+    "SLURM_UMASK": "0022",
+    "SLURM_DISTRIBUTION": "cyclic",
+    "SLURM_STEP_ID": "0",
+    "SLURM_STEPID": "0",
+    "SLURM_STEP_NODELIST": "node2333",
+    "SLURM_STEP_NUM_NODES": "1",
+    "SLURM_STEP_NUM_TASKS": "1",
+    "SLURM_STEP_TASKS_PER_NODE": "1",
+    "SLURM_STEP_LAUNCHER_PORT": "40131",
+    "SLURM_SRUN_COMM_PORT": "40131",
+    "SLURM_PMIXP_ABORT_AGENT_PORT": "38011",
+    "SLURM_PMIX_MAPPING_SERV": "(vector,(0,1,1))",
+    "SLURM_SRUN_COMM_HOST": "172.20.219.33",
+    "SLURM_LAUNCH_NODE_IPADDR": "172.20.219.33"
+  },
+  "sample_ids": [
+    "entire saved 201x300 grid"
+  ],
+  "split": "saved PINN evaluation on training residual grid; not a held-out generalization claim",
+  "normalization": "none",
+  "units": {
+    "field": "u, benchmark units",
+    "space": "x in [0,2\u03c0]",
+    "time": "physical t in [0,4]",
+    "T": "SNN simulation length"
+  },
+  "shapes": {
+    "T": [
+      2
+    ],
+    "reference": [
+      201,
+      300
+    ],
+    "frames": [
+      2,
+      201,
+      300
+    ],
+    "difference": [
+      2,
+      201,
+      300
+    ],
+    "relative_error": [
+      2
+    ],
+    "time": [
+      201
+    ],
+    "space": [
+      300
+    ],
+    "ann_output": [
+      201,
+      300
+    ]
+  },
+  "command": "python data/raw/ch03/burgers_over_t/collect.py",
+  "payload_sha256": "ad5786c42a7825487826e6c641269c62a7397a132ebef92c9117673ae982f6a1",
+  "input_files": [
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0064/Tanh/advanced_caa/snn_x.csv",
+      "sha256": "18bc517e78a4cb6e13b5f25f3729b25ec492d2253a00f2f99b85111b65aafd56"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0064/Tanh/advanced_caa/snn_y.csv",
+      "sha256": "727fd78f9cc1c20245dfc0d278310fd98b5f25cbcec32bff1358517e9b786dc5"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0064/Tanh/advanced_caa/snn_y_true.csv",
+      "sha256": "0ed65d50c6b407c8107222aad3883dce24b66acb63f6d35be771a30a250b4bda"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0064/Tanh/advanced_caa/ann_x.csv",
+      "sha256": "18bc517e78a4cb6e13b5f25f3729b25ec492d2253a00f2f99b85111b65aafd56"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0064/Tanh/advanced_caa/ann_y.csv",
+      "sha256": "be9a60e88f65181ef9e2030fdbce42965d2fc2872dbd2c42b93ee4aa639803cf"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0064/Tanh/advanced_caa/ann_y_true.csv",
+      "sha256": "0ed65d50c6b407c8107222aad3883dce24b66acb63f6d35be771a30a250b4bda"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0128/Tanh/advanced_caa/snn_x.csv",
+      "sha256": "18bc517e78a4cb6e13b5f25f3729b25ec492d2253a00f2f99b85111b65aafd56"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0128/Tanh/advanced_caa/snn_y.csv",
+      "sha256": "52efbf24272b9498f523ed0f2b5ad7fce78d700ad2dc2a547c3789cfc3d27bd3"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0128/Tanh/advanced_caa/snn_y_true.csv",
+      "sha256": "0ed65d50c6b407c8107222aad3883dce24b66acb63f6d35be771a30a250b4bda"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0128/Tanh/advanced_caa/ann_x.csv",
+      "sha256": "18bc517e78a4cb6e13b5f25f3729b25ec492d2253a00f2f99b85111b65aafd56"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0128/Tanh/advanced_caa/ann_y.csv",
+      "sha256": "be9a60e88f65181ef9e2030fdbce42965d2fc2872dbd2c42b93ee4aa639803cf"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Conversion/SNN-CAACT/bak/result/burgers-seed0/T=0128/Tanh/advanced_caa/ann_y_true.csv",
+      "sha256": "0ed65d50c6b407c8107222aad3883dce24b66acb63f6d35be771a30a250b4bda"
+    }
+  ],
+  "protocol": "Two independently calibrated saved advanced-CAA Tanh runs, same seed0 ANN predictions verified exactly. T is not an internal prefix of one fixed calibration.",
+  "reference_alignment": "Source generate_burgers_data flattens solution [201,300] in time-major order while coordinates are space-major. Corrected reference layout from native dimensions; initial sin(x) and zero boundaries checked.",
+  "generator_sha256": "ac95d12af2cf33930f0e2de418459c235856e37cf85777b2c41443fd9c9940ff"
+}
