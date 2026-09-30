@@ -1,0 +1,17 @@
+\begin{table}[t]
+  \centering
+  \caption{Floating-point converted SNN accuracy after calibration on representative PDE surrogates. Errors compare the time-averaged SNN output to the trained ANN/PINN field on evaluation grids.}
+  \label{tab:conversion:accuracy}
+  \begin{tabular}{lcc}
+    \toprule
+    Problem & Relative $L_2$ error & Spike rate \\
+    \midrule
+    Poisson & $4.71\times 10^{-2}$ & 0.373 \\
+    Diffusion--reaction & $6.33\times 10^{-2}$ & 0.288 \\
+    Wave & $6.53\times 10^{-2}$ & 0.572 \\
+    Burgers & $6.98\times 10^{-2}$ & 0.725 \\
+    Burgers (SPINN) & $1.16\times 10^{-1}$ & 0.283 \\
+    Navier--Stokes Beltrami (SPINN) & $4.33\times 10^{-2}$ & 0.175 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

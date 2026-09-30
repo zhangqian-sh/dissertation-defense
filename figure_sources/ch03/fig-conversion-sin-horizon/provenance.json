@@ -1,0 +1,13 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch03-conversion-hardware/chapter.tex",
+  "source_label": "fig:conversion:sin-horizon",
+  "source_line": 138,
+  "source_sha256": "ffd1bd885c081a0228eab405ef5c1f419ce6bf1526a8e1c933fef25d8a506fe4",
+  "image_sha256": {
+    "ch03/sin_diff_T8.pdf": "728e964394494dd44cb4c2b47ce544268da863f458cf8e75cf1ef31a8958ce84",
+    "ch03/sin_diff_T32.pdf": "41cd5787c5b37cc68f024af6363f1632a5dc40519088184bdc6ac27e812860ef",
+    "ch03/sin_diff_T128.pdf": "c926d146502b64ed59c26dfe4068540d75f6ee5edad6ae0c2cc5e22b78fe87ed"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

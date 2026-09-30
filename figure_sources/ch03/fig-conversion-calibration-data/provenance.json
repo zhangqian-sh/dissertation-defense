@@ -1,0 +1,11 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch03-conversion-hardware/chapter.tex",
+  "source_label": "fig:conversion:calibration-data",
+  "source_line": 84,
+  "source_sha256": "ffd1bd885c081a0228eab405ef5c1f419ce6bf1526a8e1c933fef25d8a506fe4",
+  "image_sha256": {
+    "ch03/calibration_data_size.pdf": "93677b320f38be2932484cfbbcfac9b2e9a5ec7b5b2e3bb2fd5e0b8edf07340f"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

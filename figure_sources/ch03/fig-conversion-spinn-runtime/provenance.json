@@ -1,0 +1,12 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch03-conversion-hardware/chapter.tex",
+  "source_label": "fig:conversion:spinn-runtime",
+  "source_line": 338,
+  "source_sha256": "ffd1bd885c081a0228eab405ef5c1f419ce6bf1526a8e1c933fef25d8a506fe4",
+  "image_sha256": {
+    "ch03/runtime_2d_burgers.pdf": "95dc3c80e9e8c29306ba46f2708db34d8cf6c00647084f3ffc9bc81635340592",
+    "ch03/runtime_3d_beltrami.pdf": "320a21617ba7b5588f531b62b4cba59f9a339692846d1a7ef27544321716dd79"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

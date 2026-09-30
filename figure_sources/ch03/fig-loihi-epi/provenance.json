@@ -1,0 +1,11 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch03-conversion-hardware/chapter.tex",
+  "source_label": "fig:loihi:epi",
+  "source_line": 490,
+  "source_sha256": "ffd1bd885c081a0228eab405ef5c1f419ce6bf1526a8e1c933fef25d8a506fe4",
+  "image_sha256": {
+    "ch03/loihi_epi.pdf": "24a3c48cb6d942661446062fdd239ba4560fb58ce2be132341e698d1c286f998"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

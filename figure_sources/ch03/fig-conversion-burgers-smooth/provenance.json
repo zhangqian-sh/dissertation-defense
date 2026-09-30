@@ -1,0 +1,12 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch03-conversion-hardware/chapter.tex",
+  "source_label": "fig:conversion:burgers-smooth",
+  "source_line": 321,
+  "source_sha256": "ffd1bd885c081a0228eab405ef5c1f419ce6bf1526a8e1c933fef25d8a506fe4",
+  "image_sha256": {
+    "ch03/burgers_snn_calibrated.pdf": "c9b99d1d7a29677d3a5cb23e207e882cabe89d3f73e968dd914e4ffd72290cb2",
+    "ch03/burgers_snn_smooth.pdf": "0b371cdda16c034b542cc8bc8a64874a42e9e571b9dd9cce9f51c9e67ddd858e"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

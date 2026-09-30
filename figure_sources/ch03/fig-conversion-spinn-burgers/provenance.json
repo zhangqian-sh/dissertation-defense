@@ -1,0 +1,14 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch03-conversion-hardware/chapter.tex",
+  "source_label": "fig:conversion:spinn-burgers",
+  "source_line": 352,
+  "source_sha256": "ffd1bd885c081a0228eab405ef5c1f419ce6bf1526a8e1c933fef25d8a506fe4",
+  "image_sha256": {
+    "ch03/burgers_true.pdf": "649b813b6092a54e5a27c0458f29091df15d4561a4cc4e5aa9442b2d83a41fd3",
+    "ch03/spinn_burgers_ann.pdf": "e214ca052bb617113b6009d7e3677e91adcf3d258d94c1517d8d4f1e7f5a1434",
+    "ch03/spinn_burgers_snn_none.pdf": "f18cd113ae46b9c8305ab2ce4e184ccf7094eb82169c2de122b75158abf2d221",
+    "ch03/spinn_burgers_snn_calibrated.pdf": "4b8d0ea642e49b797e9f898f065d26d44dfd436e274625eabdc1e602ef1b5b1d"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

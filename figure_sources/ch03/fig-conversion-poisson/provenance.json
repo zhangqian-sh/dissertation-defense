@@ -1,0 +1,14 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch03-conversion-hardware/chapter.tex",
+  "source_label": "fig:conversion:poisson",
+  "source_line": 227,
+  "source_sha256": "ffd1bd885c081a0228eab405ef5c1f419ce6bf1526a8e1c933fef25d8a506fe4",
+  "image_sha256": {
+    "ch03/poisson_true.pdf": "987008f8d289e078d9199b8748f821b15f5ac21709de94bbe3f69eb2d1a89411",
+    "ch03/poisson_ann.pdf": "802855d80e7f18de3098922ec31a9e4aa068845f3f34cf54332c94c9602c0257",
+    "ch03/poisson_snn_none.pdf": "f74274dc7ca68fed88b71e77799f775abd024273ac3e6ae4aa5d87e44f673273",
+    "ch03/poisson_snn_calibrated.pdf": "d76552c9e25ab69752810701325357e16cc07181452261c781b09fa6063baf27"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

@@ -1,0 +1,17 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.32\linewidth}
+    \includegraphics[width=\linewidth]{ch03/sin_diff_T8.pdf}
+    \caption{$T=8$}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.32\linewidth}
+    \includegraphics[width=\linewidth]{ch03/sin_diff_T32.pdf}
+    \caption{$T=32$}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.32\linewidth}
+    \includegraphics[width=\linewidth]{ch03/sin_diff_T128.pdf}
+    \caption{$T=128$}
+  \end{subfigure}
+  \caption{Converted SNN output for $\sin(x)$ at three inference horizons. Larger $T$ reduces quantization ripple in the time-averaged rate estimate.}
+  \label{fig:conversion:sin-horizon}
+\end{figure}

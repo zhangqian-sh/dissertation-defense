@@ -1,0 +1,13 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch03-conversion-hardware/chapter.tex",
+  "source_label": "fig:conversion:error-bound",
+  "source_line": 174,
+  "source_sha256": "ffd1bd885c081a0228eab405ef5c1f419ce6bf1526a8e1c933fef25d8a506fe4",
+  "image_sha256": {
+    "ch03/error_bound_L2.pdf": "c70ce765ab272d9b62a645d2118e2ce3b8e2db43fd6bce0c909c12180b2c0721",
+    "ch03/error_bound_L3.pdf": "365aaf2e58d3455fe8cbed5315f5705a1353495e6a82550b03ac0757a7e4456e",
+    "ch03/error_bound_L4.pdf": "5f80d1fba8cbb7c2f9254b724f20636cc9d0144a51781d91189204d4045fa8ca"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

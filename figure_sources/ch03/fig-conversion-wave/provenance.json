@@ -1,0 +1,14 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch03-conversion-hardware/chapter.tex",
+  "source_label": "fig:conversion:wave",
+  "source_line": 274,
+  "source_sha256": "ffd1bd885c081a0228eab405ef5c1f419ce6bf1526a8e1c933fef25d8a506fe4",
+  "image_sha256": {
+    "ch03/wave_true.pdf": "e87a1782627fbc895af0cc86c5810a34b6334c6f1c4053611a483cb53f0f9671",
+    "ch03/wave_ann.pdf": "eb37cc046aa59bac26b6f85fe46026ca94b9a29691c3bf6aa2a2a5cc4b688968",
+    "ch03/wave_snn_none.pdf": "d7767be96a44e6dd76ea196baa05c3647de8e59d9f8bac2d7a751d04bd75dcbb",
+    "ch03/wave_snn_calibrated.pdf": "3eba57a557d01e30e164912d015ba40ba5238b289f9481433ab08905b4560b9f"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

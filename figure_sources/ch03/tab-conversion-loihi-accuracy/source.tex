@@ -1,0 +1,14 @@
+\begin{table}[t]
+  \centering
+  \caption{RMS field error for the Poisson spiking PINN under three execution modes. Floating-point spiking results are measured in software; 8-bit and 16-bit results are measured on Loihi~2 after fixed-point mapping.}
+  \label{tab:conversion:loihi-accuracy}
+  \begin{tabular}{lc}
+    \toprule
+    Execution mode & RMS error \\
+    \midrule
+    Floating-point spiking (CPU) & 0.0131 \\
+    Loihi~2, 8-bit weights & 0.0215 \\
+    Loihi~2, 16-bit effective weights & 0.0160 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

@@ -1,0 +1,13 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch03-conversion-hardware/chapter.tex",
+  "source_label": "fig:conversion:error-horizon",
+  "source_line": 156,
+  "source_sha256": "ffd1bd885c081a0228eab405ef5c1f419ce6bf1526a8e1c933fef25d8a506fe4",
+  "image_sha256": {
+    "ch03/error_vs_T_L2.pdf": "95f3cf97369627dfdad7e52c5ca1aa3080b67d9e44ca30216ffce9e7aac0b407",
+    "ch03/error_vs_T_L3.pdf": "255d963a229475b8817d887b0fe76834a6c61e5c5a32ca0f46ccb782cd9cdca0",
+    "ch03/error_vs_T_L4.pdf": "b26c211b6790e18cd68c00173e424e001c1fcb9501898bc75c37155cc4eb8806"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

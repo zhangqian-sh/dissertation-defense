@@ -1,0 +1,21 @@
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.24\linewidth}
+    \includegraphics[width=\linewidth]{ch03/diffusion_true.pdf}
+    \caption{Reference}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.24\linewidth}
+    \includegraphics[width=\linewidth]{ch03/diffusion_ann.pdf}
+    \caption{PINN}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.24\linewidth}
+    \includegraphics[width=\linewidth]{ch03/diffusion_snn_none.pdf}
+    \caption{Uncalibrated}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.24\linewidth}
+    \includegraphics[width=\linewidth]{ch03/diffusion_snn_calibrated.pdf}
+    \caption{Calibrated}
+  \end{subfigure}
+  \caption{Nonlinear diffusion--reaction equation: reference, PINN, and converted SNN outputs.}
+  \label{fig:conversion:diffusion-reaction}
+\end{figure}

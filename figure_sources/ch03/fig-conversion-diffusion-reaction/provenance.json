@@ -1,0 +1,14 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch03-conversion-hardware/chapter.tex",
+  "source_label": "fig:conversion:diffusion-reaction",
+  "source_line": 252,
+  "source_sha256": "ffd1bd885c081a0228eab405ef5c1f419ce6bf1526a8e1c933fef25d8a506fe4",
+  "image_sha256": {
+    "ch03/diffusion_true.pdf": "dd095494daa141bde7f808d099f4c41babe7e9b4d397bfec75d4029cb32a263d",
+    "ch03/diffusion_ann.pdf": "1691a3bb0c166f3e7808254594b84704a6e307b8680f5b16c1d2fbf6ddd4a9ec",
+    "ch03/diffusion_snn_none.pdf": "8bec4114e4f1bd3ba77951d0dc99769308abfbab25445a6cf6384c720e778f14",
+    "ch03/diffusion_snn_calibrated.pdf": "e90038d2c021886800415961671f393003f82d5b3e94125c6bb33b9ec75893fc"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}
