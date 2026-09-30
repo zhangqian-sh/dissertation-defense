@@ -1,0 +1,98 @@
+@import '@fontsource/inter/latin-400.css';
+@import '@fontsource/inter/latin-500.css';
+@import '@fontsource/inter/latin-600.css';
+@font-face { font-family: 'Latin Modern'; src: url('/fonts/lmroman10-regular.otf') format('opentype'); font-display: swap; }
+/* Brown Visual Identity guide, pp. 19–20: official digital palette.
+   Use red at full tint; light surfaces are screens of brown or gray. */
+:root { --ink:#232727; --muted:#596361; --brown:#4E3629; --red:#ED1C24; --gold:#FFC72C; --gray:#98A4AE; --line:#dce1df; --paper:#fff; --brown-wash:#f6f5f4; }
+html,body,#app { font-family:Inter,Arial,sans-serif; color:var(--ink); }
+.slidev-layout.academic { width:100%; height:100%; padding:42px 56px 48px; background:var(--paper); position:relative; font-size:21px; line-height:1.48; }
+.academic .topline { display:flex; align-items:center; justify-content:space-between; height:20px; margin-bottom:21px; color:var(--brown); font-size:11px; font-weight:600; letter-spacing:.15em; text-transform:uppercase; }
+.academic .topline .institution { color:var(--muted); font-size:10px; letter-spacing:.12em; }
+.academic h1 { font-family:'Latin Modern',Georgia,serif; font-weight:400; font-size:38px; line-height:1.13; letter-spacing:-.025em; margin:0 0 17px; max-width:1040px; color:var(--brown); }
+.academic h2 { font-family:Inter,sans-serif; font-size:20px; line-height:1.3; font-weight:600; margin:0 0 12px; }
+.academic h3 { font-size:16px; line-height:1.35; font-weight:600; margin:0 0 10px; }
+.academic p { margin:0 0 15px; opacity:1; }
+.academic strong { font-weight:600; }
+.academic .subtitle { color:var(--muted); font-size:17px; margin-top:-5px; margin-bottom:22px; }
+.academic .slide-body { height:488px; position:relative; }
+.academic .footer { position:absolute; left:56px; right:56px; bottom:20px; border-top:1px solid var(--line); padding-top:10px; display:flex; gap:20px; align-items:flex-start; font-size:9px; line-height:1.35; color:var(--muted); }
+.academic .footer .source { flex:1; max-width:960px; }
+.academic .footer .page { margin-left:auto; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.academic .cols { display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:start; }
+.academic .cols.wide-left { grid-template-columns:1.4fr 1fr; }
+.academic .cols.wide-right { grid-template-columns:1fr 1.55fr; }
+.academic .three { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:26px; }
+.academic .four { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; }
+.academic .rule { border-top:3px solid var(--brown); padding-top:19px; }
+.academic .teal { border-color:var(--red); }
+.academic .small { font-size:16px; line-height:1.5; }
+.academic .micro { font-size:12px; line-height:1.5; color:var(--muted); }
+.academic .lead { font-size:24px; line-height:1.5; max-width:940px; }
+.academic .takeaway { border-left:3px solid var(--red); padding:10px 16px; margin-top:20px; background:var(--brown-wash); font-size:17px; line-height:1.45; }
+.academic .figure { display:flex; flex-direction:column; min-width:0; margin:0; }
+.academic .figure img { display:block; width:100%; object-fit:contain; height:290px; }
+.academic .figure.tall img { height:340px; }
+.academic .figure.short img { height:225px; }
+.academic .figure figcaption { font-size:12px; line-height:1.45; color:var(--muted); margin-top:8px; }
+.academic .number { font-family:'Latin Modern',Georgia,serif; font-size:46px; line-height:1.15; color:var(--brown); }
+.academic .eyebrow { font-size:11px; letter-spacing:.13em; color:var(--brown); text-transform:uppercase; font-weight:600; margin-bottom:12px; }
+.academic .flow { display:flex; align-items:stretch; gap:12px; margin:24px 0; }
+.academic .flow > div { flex:1; border-top:2px solid var(--red); padding:15px 10px 8px 0; font-size:17px; }
+.academic .flow .arrow { flex:0; border:0; color:var(--muted); padding-top:18px; }
+.academic table { width:100%; font-size:17px; line-height:1.4; border-collapse:collapse; margin:10px 0; }
+.academic th { text-align:left; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.055em; font-weight:600; border-bottom:1.5px solid var(--ink); padding:10px 12px; }
+.academic td { padding:11px 12px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; }
+.academic tr.highlight td { background:var(--brown-wash); color:var(--brown); }
+.academic ul { margin:12px 0; padding-left:23px; }
+.academic li { margin:12px 0; padding-left:4px; }
+.academic .equation { padding:16px 20px; background:#f6f8f7; margin:20px 0; text-align:center; }
+.academic .katex { font-size:1.05em; }
+.academic.cover h1 { font-size:44px; max-width:900px; line-height:1.13; margin:45px 0 28px; }
+.academic.cover .cover-rule { width:65px; height:4px; background:var(--red); margin:24px 0; }
+.academic.cover .author { font-size:24px; margin-bottom:7px; }
+.academic.cover .affiliation { font-size:16px; color:var(--muted); }
+.academic .chapter-pair { border-top:1px solid var(--line); padding:13px 0; display:flex; justify-content:space-between; gap:20px; font-size:18px; }
+.academic .chapter-pair span { color:var(--muted); font-size:13px; padding-top:4px; }
+.academic .progress { display:flex; gap:5px; position:absolute; right:56px; top:19px; }
+.academic .progress i { width:20px; height:3px; background:#e5e7e5; }
+.academic .progress i.done { background:var(--red); }
+.interactive-figure { width:100%; height:398px; position:relative; }
+.figure-fallback { width:100%; height:355px; object-fit:contain; }
+.interaction-note { font-size:11px; line-height:1.4; color:var(--muted); margin-top:5px; }
+.plot-controls { height:42px; display:flex; align-items:center; gap:12px; font-size:12px; border-top:1px solid var(--line); padding-top:9px; }
+.plot-controls button, .plot-controls select { background:white; border:1px solid #c9cfcd; border-radius:3px; padding:5px 10px; color:var(--ink); font:inherit; cursor:pointer; }
+.plot-controls button:hover { border-color:var(--brown); color:var(--brown); }
+.plot-controls button:focus-visible,.plot-controls input:focus-visible,.plot-controls select:focus-visible { outline:2px solid var(--red); outline-offset:2px; }
+.plot-controls input { accent-color:var(--brown); min-width:100px; flex:1; }
+.plot-controls output { font-variant-numeric:tabular-nums; min-width:90px; }
+.chart-label { font-size:12px; font-weight:500; }
+.legend { display:flex; flex-wrap:wrap; gap:14px; font-size:10px; color:var(--muted); margin:3px 0 7px; }
+.legend span::before { content:''; display:inline-block; width:15px; height:2px; background:var(--series); margin:0 5px 3px 0; }
+.status-note { font-size:13px; color:var(--muted); }
+.chart-grid { display:grid; grid-template-columns:1fr 1fr; gap:25px; }
+.trace-svg { width:100%; display:block; }
+.trace-svg text { font-family:Inter,sans-serif; fill:#596361; font-size:10px; }
+.conversion-fields { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.field-panel canvas { width:100%; height:185px; object-fit:contain; }
+.conversion-fields.error-fields { grid-template-columns:repeat(2,1fr); }
+.error-fields .field-panel canvas { height:225px; }
+.field-panel .field-label { font-size:12px; text-align:center; margin-bottom:4px; }
+.field-scale { display:flex; align-items:center; justify-content:center; gap:8px; font-size:9px; color:var(--muted); }
+.field-scale i { display:inline-block; width:110px; height:5px; background:linear-gradient(90deg,#23446b,#f7f6ed,#a42e38); }
+.energy-fields { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:12px; }
+.burgers-fields { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px; }
+.burgers-fields .grid-field canvas { height:260px; }
+.burgers-axis { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center;font-size:10px;color:var(--muted);margin-top:6px; }
+.burgers-readout { display:flex;justify-content:space-between;margin:18px 0 14px;font-size:13px; }
+.plot-controls button[aria-pressed=true] { color:var(--brown);border-color:var(--brown); }
+.grid-field canvas { width:100%;height:207px;object-fit:contain;display:block;margin:8px 0;image-rendering:pixelated; }
+.grid-field .field-label { font-size:12px;text-align:center; }
+.energy-traces { display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-top:12px; }
+.plot-controls label { display:flex;align-items:center;gap:6px;white-space:nowrap; }
+.plot-controls input[type=checkbox] { min-width:unset;flex:none; }
+.swarm-layout { display:grid; grid-template-columns:1.1fr 1fr; gap:24px; }
+.swarm-canvas { width:100%; height:290px; background:#fafbf9; }
+.swarm-canvas canvas { display:block; width:100%; height:100%; }
+.event-readout { font-size:12px; padding:8px 12px; background:var(--brown-wash); line-height:1.5; margin-top:5px; }
+@media print { .plot-controls { display:none!important; } .academic { print-color-adjust:exact; } }
