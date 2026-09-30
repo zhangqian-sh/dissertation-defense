@@ -1,0 +1,11 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch05-energy-reconstruction/chapter.tex",
+  "source_label": "fig:et:3djet-errors",
+  "source_line": 313,
+  "source_sha256": "6264405fc893c937dc67679ed38231067ef6b329593785d219707ebf4f251ae2",
+  "image_sha256": {
+    "ch05/et-3djet-errors.pdf": "46114b2ab104b10c40442e290ba5aee92ed74243e31d7bf6e649460ab35fb9d8"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

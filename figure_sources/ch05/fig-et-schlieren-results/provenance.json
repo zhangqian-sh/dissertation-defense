@@ -1,0 +1,11 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch05-energy-reconstruction/chapter.tex",
+  "source_label": "fig:et:schlieren-results",
+  "source_line": 270,
+  "source_sha256": "6264405fc893c937dc67679ed38231067ef6b329593785d219707ebf4f251ae2",
+  "image_sha256": {
+    "ch05/et-schlieren-results.pdf": "92238bd78bb29f1f8daee31116cea40218cf0317a6a80aa98a43e53b9ab387a6"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

@@ -1,0 +1,13 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch05-energy-reconstruction/chapter.tex",
+  "source_label": "fig:et:ablation-spectrum",
+  "source_line": 431,
+  "source_sha256": "6264405fc893c937dc67679ed38231067ef6b329593785d219707ebf4f251ae2",
+  "image_sha256": {
+    "ch05/et-ablation-spectrum-mha.pdf": "2c85d0608dc098b996acad76470428249074b1f0ca6b348c95a0da4767464b9f",
+    "ch05/et-ablation-spectrum-hopfield.pdf": "74801a2a011ca1cdfd8be01d4303c491e9fe35ce0973272118d26c5e66a47e2b",
+    "ch05/et-ablation-spectrum-full.pdf": "f196f6a569b9d5f266093cc118e039e90abde0e4ba8d390b8cf46f5dbaaa050b"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

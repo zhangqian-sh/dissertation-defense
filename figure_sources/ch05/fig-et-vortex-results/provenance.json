@@ -1,0 +1,14 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch05-energy-reconstruction/chapter.tex",
+  "source_label": "fig:et:vortex-results",
+  "source_line": 219,
+  "source_sha256": "6264405fc893c937dc67679ed38231067ef6b329593785d219707ebf4f251ae2",
+  "image_sha256": {
+    "ch05/et-vortex-results-u.pdf": "11cc2424b47ad8a382ba62f33391f4cfe0dc7dc9e2d69305a0cc0d0d243d5ae0",
+    "ch05/et-vortex-results-v.pdf": "56f1e60ab0c6aeaef5534d165d63f8fbe840444f231db830b9ba05d924038f0d",
+    "ch05/et-vortex-results-p.pdf": "56c4dc1828e2708793c232514743e313aa5a4255631bd0852d90a7ab5751b442",
+    "ch05/et-vortex-results-t.pdf": "b7d28a6768281cd46d79170a7085d1b7032aa7376734c57a6a9ba39fd3caf7ed"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

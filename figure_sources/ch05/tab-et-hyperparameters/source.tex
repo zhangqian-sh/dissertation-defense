@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+  \centering
+  \caption{Shared ET hyperparameters for all fluid reconstruction experiments.}
+  \label{tab:et:hyperparameters}
+  \begin{tabular}{llc}
+    \toprule
+    Component & Hyperparameter & Value \\
+    \midrule
+    \multirow{4}{*}{Patch and tokenize} & Patch size & $8 \times 8$ (2D) or $8 \times 8 \times 8$ (3D) \\
+    & Token dimension $D$ & 256 \\
+    & Tokenizer hidden width & 256 \\
+    & Detokenizer hidden width & 256 \\
+    \midrule
+    \multirow{3}{*}{Energy Transformer} & Energy-attention heads & 8 \\
+    & Hopfield activation & Softmax \\
+    & Hopfield hidden units $K$ & 2048 \\
+    \midrule
+    \multirow{2}{*}{Inference dynamics} & Iterations $T$ & 12 \\
+    & Step size $\alpha$ & 0.1 \\
+    \midrule
+    \multirow{2}{*}{Training} & Optimizer & Adam \\
+    & Batch size & 16 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

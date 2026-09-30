@@ -1,0 +1,14 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch05-energy-reconstruction/chapter.tex",
+  "source_label": "fig:et:3djet-results",
+  "source_line": 287,
+  "source_sha256": "6264405fc893c937dc67679ed38231067ef6b329593785d219707ebf4f251ae2",
+  "image_sha256": {
+    "ch05/et-3djet-results-u.pdf": "f9cd32635d1aa3754412e7088ee414cb407489ed2548fe99b35300b761c89529",
+    "ch05/et-3djet-results-v.pdf": "b35339fba424a13d7be38d628cd1a789889e70c0d06655300f0e815beeb1797c",
+    "ch05/et-3djet-results-w.pdf": "8bbcb94698d0762ac51166db0df973810f5bdfefa066e5de2fbec0b000f36aab",
+    "ch05/et-3djet-results-p.pdf": "bd8f51060a39a108be6f7297e6b33655c7e9970e5fd5b9f1e295c6db6041b64e"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

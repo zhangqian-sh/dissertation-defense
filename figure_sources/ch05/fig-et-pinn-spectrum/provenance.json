@@ -1,0 +1,12 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch05-energy-reconstruction/chapter.tex",
+  "source_label": "fig:et:pinn-spectrum",
+  "source_line": 387,
+  "source_sha256": "6264405fc893c937dc67679ed38231067ef6b329593785d219707ebf4f251ae2",
+  "image_sha256": {
+    "ch05/et-pinn-spectrum.pdf": "1f10ad416cda0d471bd778dcd125be6c64c1cb999a4b728a70e8857370a03bd7",
+    "ch05/et-spectrum.pdf": "f196f6a569b9d5f266093cc118e039e90abde0e4ba8d390b8cf46f5dbaaa050b"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

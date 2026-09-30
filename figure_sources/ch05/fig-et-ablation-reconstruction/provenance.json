@@ -1,0 +1,13 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch05-energy-reconstruction/chapter.tex",
+  "source_label": "fig:et:ablation-reconstruction",
+  "source_line": 410,
+  "source_sha256": "6264405fc893c937dc67679ed38231067ef6b329593785d219707ebf4f251ae2",
+  "image_sha256": {
+    "ch05/et-ablation-v-mha.pdf": "463451959191b7f094ff29cc7aa8d24053128ffac5d2ffe8a57c965e04ef0ec7",
+    "ch05/et-ablation-v-hopfield.pdf": "dfb81b254d1c7a7aa70983f2ae47bd7f4e5286621498666a8bedd9015ce9fd97",
+    "ch05/et-ablation-v-full.pdf": "3f721929ff87da7662d1ade9be92253d358e05040b20533ae54289f5cbfea682"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}
