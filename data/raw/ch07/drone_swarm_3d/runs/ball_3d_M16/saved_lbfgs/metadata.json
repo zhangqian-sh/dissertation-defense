@@ -1,0 +1,191 @@
+{
+  "schema_version": 2,
+  "case_id": "ball_3d_M16",
+  "run_id": "saved_lbfgs",
+  "generated_at": "2026-09-09T21:05:04.104650+00:00",
+  "source_repository": "/oscar/home/qzhang64/Projects/OptimalControl/OCFormer",
+  "source_commit": "76df57f14da09c84af8b84020e8386b5c1b3edc7",
+  "source_dirty_state": "M src/run_room_2d.py",
+  "historical_training_commit": null,
+  "provenance_note": "Current source identity records the audited reader/definitions, not a recovered training commit.",
+  "input_files": [
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/OptimalControl/OCFormer/results/ball_3d/OCFormer_-1_48_l=2e-5/best_pred_lbfgs.h5",
+      "sha256": "679f1b47bb79c7bd491d135bfa568bc2aabbc7158d34e3b66579c4fb527a80fd"
+    },
+    {
+      "path": "/oscar/home/qzhang64/Projects/OptimalControl/OCFormer/configs/ball_3d/n=16.yaml",
+      "sha256": "a5533bd40f618b4b5c8a810d8ff2e21bddcc9dc2c81da5391fa02337d2506bb6"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/OptimalControl/OCFormer/data/ball_3d/n=16/boundary.h5",
+      "sha256": "9b6e63ecd525cf45978a12a9ec46bcc0da9e156dab62998bfa74d4ac0ff1f3e3"
+    },
+    {
+      "path": "/oscar/home/qzhang64/Projects/OptimalControl/OCFormer/src/problems.py",
+      "sha256": "ed9a438eff8fd4e9a1c49587274196a141e525da3665fe53379fadf543208ad6"
+    },
+    {
+      "path": "/oscar/home/qzhang64/Projects/OptimalControl/OCFormer/src/run_ball_3d.py",
+      "sha256": "260b31442f18291262f0fc17667aa9628d0f62ab45dedcb034a1f0b3307e00cf"
+    },
+    {
+      "path": "/oscar/home/qzhang64/Projects/OptimalControl/OCFormer/src/trainer.py",
+      "sha256": "9c2512e7e2a0c6eb2b13cb5e18a9ba9356a3841e08ab4d9cebd958a6415a94d1"
+    }
+  ],
+  "configuration": {
+    "case_id": "ball_3d_M16",
+    "run_id": "saved_lbfgs",
+    "source": "OptimalControl/OCFormer/results/ball_3d/OCFormer_-1_48_l=2e-5",
+    "config": "OptimalControl/OCFormer/configs/ball_3d/n=16.yaml",
+    "thesis_refs": [
+      "fig:oc:ball-3d"
+    ]
+  },
+  "configuration_sha256": "d4319a8616b6e79ebfebcdca585d768a8a6bb9e176a57483ebb3d5d8fe44695b",
+  "checkpoint_sha256": null,
+  "checkpoint_note": "Saved outputs reused; no checkpoint loaded or inference executed.",
+  "environment": {
+    "interpreter": "/users/qzhang64/Projects/OptimalControl/OCFormer/.venv/bin/python",
+    "python": "3.11.11",
+    "numpy": "2.2.5"
+  },
+  "slurm": {
+    "SLURM_TRES_PER_TASK": "cpu=1",
+    "SLURM_JOB_USER": "qzhang64",
+    "SLURM_TASKS_PER_NODE": "1",
+    "SLURM_JOB_UID": "140308453",
+    "SLURM_TASK_PID": "3899700",
+    "SLURM_LOCALID": "0",
+    "SLURM_SUBMIT_DIR": "/oscar/data/gk/qzhang64/Projects/Thesis/presentation",
+    "SLURM_JOB_START_TIME": "1788987902",
+    "SLURM_CLUSTER_NAME": "slurmctld",
+    "SLURM_JOB_END_TIME": "1788988502",
+    "SLURM_CPUS_ON_NODE": "1",
+    "SLURM_JOB_CPUS_PER_NODE": "1",
+    "SLURM_GTIDS": "0",
+    "SLURM_JOB_PARTITION": "batch",
+    "SLURM_OOM_KILL_STEP": "0",
+    "SLURM_JOB_NUM_NODES": "1",
+    "SLURM_JOBID": "6126821",
+    "SLURM_JOB_QOS": "normal",
+    "SLURM_PROCID": "0",
+    "SLURM_CPUS_PER_TASK": "1",
+    "SLURM_NTASKS": "1",
+    "SLURM_TOPOLOGY_ADDR": "ag39_sw2.node2350",
+    "SLURM_TOPOLOGY_ADDR_PATTERN": "switch.node",
+    "SLURM_SCRIPT_CONTEXT": "prolog_task",
+    "SLURM_MEM_PER_NODE": "2048",
+    "SLURM_NODELIST": "node2350",
+    "SLURM_JOB_ACCOUNT": "default",
+    "SLURM_PRIO_PROCESS": "0",
+    "SLURM_NPROCS": "1",
+    "SLURM_NNODES": "1",
+    "SLURM_SUBMIT_HOST": "login010",
+    "SLURM_JOB_ID": "6126821",
+    "SLURM_NODEID": "0",
+    "SLURM_CONF": "/var/spool/slurmd/conf-cache/slurm.conf",
+    "SLURM_JOB_NAME": "collect-ch07",
+    "SLURM_JOB_GID": "6670",
+    "SLURM_JOB_NODELIST": "node2350",
+    "SLURM_MPI_TYPE": "pmix",
+    "SLURM_UMASK": "0022",
+    "SLURM_DISTRIBUTION": "cyclic",
+    "SLURM_STEP_ID": "0",
+    "SLURM_STEPID": "0",
+    "SLURM_STEP_NODELIST": "node2350",
+    "SLURM_STEP_NUM_NODES": "1",
+    "SLURM_STEP_NUM_TASKS": "1",
+    "SLURM_STEP_TASKS_PER_NODE": "1",
+    "SLURM_STEP_LAUNCHER_PORT": "43409",
+    "SLURM_SRUN_COMM_PORT": "43409",
+    "SLURM_PMIXP_ABORT_AGENT_PORT": "41281",
+    "SLURM_PMIX_MAPPING_SERV": "(vector,(0,1,1))",
+    "SLURM_SRUN_COMM_HOST": "172.20.219.50",
+    "SLURM_LAUNCH_NODE_IPADDR": "172.20.219.50"
+  },
+  "command": [
+    "data/raw/ch07/drone_swarm_3d/collect.py",
+    "--case-id",
+    "ball_3d_M16",
+    "--run-id",
+    "saved_lbfgs"
+  ],
+  "shapes": {
+    "positions": [
+      200,
+      16,
+      3
+    ],
+    "momentum": [
+      200,
+      16,
+      3
+    ],
+    "boundary": [
+      2,
+      16,
+      3
+    ],
+    "time": [
+      200
+    ],
+    "agent_ids": [
+      16
+    ]
+  },
+  "thesis_refs": [
+    "fig:oc:ball-3d"
+  ],
+  "evidence_status": "tested",
+  "sample_ids": [
+    "ball_3d_M16"
+  ],
+  "split": "per-instance optimized trajectory; not amortized held-out evaluation",
+  "seed": -1,
+  "normalization": "Native source coordinates; no rescaling",
+  "units": {
+    "time": "s",
+    "positions": "benchmark length unit"
+  },
+  "benchmark": "sphere obstacle",
+  "regime": "per-instance Adam plus L-BFGS",
+  "dimension": 3,
+  "original_config": {
+    "root_dir": "/users/qzhang64/data/qzhang64/Projects/OptimalControl/OCFormer/results/ball_3d/",
+    "boundary_path": "/users/qzhang64/data/qzhang64/Projects/OptimalControl/OCFormer/data/ball_3d/n=16/boundary.h5",
+    "net_type": "OCFormer",
+    "seed": -1,
+    "suffix": "_l=2e-5",
+    "transfer_dim": null,
+    "transfer_dir": null,
+    "evaluate": false,
+    "evaluate_dir": null,
+    "layers": 8,
+    "emb_dim": 32,
+    "steps": 100000,
+    "lr": 0.0001,
+    "lbfgs_maxiter": 5000,
+    "print_every": 1000,
+    "phy_dim": 3,
+    "num_t": 200,
+    "t_terminal": 10.0,
+    "halfroomsz": 0.5,
+    "eps": 1e-05,
+    "l": 2e-05,
+    "lam": 100000.0,
+    "v_max": 0.1
+  },
+  "agent_radius": 0.02,
+  "obstacle_radius": 0.1,
+  "radius_convention": "Pairwise distance threshold 2*agent_radius. Sphere is a center exclusion zone; do not add agent radius to sphere radius.",
+  "constraint_definitions": {
+    "pairwise": "sqrt(sum((qi-qj)^2)+1e-10)-2*dr",
+    "sphere": "sum(qi^2)-R^2+1e-10"
+  },
+  "time_provenance": "trainer.save_trajectories linspace(0,t_terminal,num_t); HDF5 stores q,p without explicit time. Export uses nominal grid in float64.",
+  "observation_protocol": "All 200 saved evaluation frames preserved; sampled position feasibility only. Speed and continuous-time safety are not certified.",
+  "smoothing": "none",
+  "payload_sha256": "2ad7cff8c465ca37d0c18255f690f796df8c150f883f57f179c50a258a9c234d"
+}

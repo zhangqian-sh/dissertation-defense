@@ -1,0 +1,1 @@
+{"runs":[{"case_id":"ball_3d_M16","run_id":"saved_lbfgs","source":"OptimalControl/OCFormer/results/ball_3d/OCFormer_-1_48_l=2e-5","config":"OptimalControl/OCFormer/configs/ball_3d/n=16.yaml","thesis_refs":["fig:oc:ball-3d"]}]}
