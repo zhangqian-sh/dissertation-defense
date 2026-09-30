@@ -1,0 +1,22 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+const props=withDefaults(defineProps<{x:ArrayLike<number>;series:Array<{name:string;color:string;y:ArrayLike<number>}>;width?:number;height?:number;cursor?:number;boundary?:number;xLabel?:string;yLabel?:string;minY?:number;maxY?:number}>(),{width:350,height:235})
+const emit=defineEmits<{seek:[index:number]}>()
+const left=44,right=12,top=20,bottom=35
+const low=computed(()=>props.minY??Math.min(0,...props.series.flatMap(s=>Array.from(s.y))))
+const high=computed(()=>props.maxY??Math.max(1e-8,...props.series.flatMap(s=>Array.from(s.y)))*1.06)
+const sx=(v:number)=>left+(v-props.x[0])/(props.x[props.x.length-1]-props.x[0]||1)*(props.width-left-right)
+const sy=(v:number)=>top+(high.value-v)/(high.value-low.value||1)*(props.height-top-bottom)
+const path=(y:ArrayLike<number>)=>Array.from(y,(v,i)=>(i?'L':'M')+sx(props.x[i]).toFixed(2)+','+sy(v).toFixed(2)).join(' ')
+const tick=(v:number)=>(Math.abs(v)<.001 && v!==0)||Math.abs(v)>=1e4?v.toExponential(1):Number(v.toPrecision(3)).toString()
+function seek(event:MouseEvent){const bounds=(event.currentTarget as SVGElement).getBoundingClientRect();const px=(event.clientX-bounds.left)/bounds.width*props.width;const v=props.x[0]+(px-left)/(props.width-left-right)*(props.x[props.x.length-1]-props.x[0]);let best=0;for(let i=1;i<props.x.length;i++)if(Math.abs(props.x[i]-v)<Math.abs(props.x[best]-v))best=i;emit('seek',best)}
+</script>
+<template>
+  <svg class="trace-svg" :viewBox="`0 0 ${width} ${height}`" role="img" :aria-label="`${yLabel} versus ${xLabel}`" @click="seek">
+    <g v-for="f in [0,.5,1]" :key="f"><line :x1="left" :x2="width-right" :y1="sy(low+f*(high-low))" :y2="sy(low+f*(high-low))" stroke="#e1e5e3"/><text :x="left-6" :y="sy(low+f*(high-low))+3" text-anchor="end">{{ tick(low+f*(high-low)) }}</text><text :x="sx(x[0]+f*(x[x.length-1]-x[0]))" :y="height-bottom+16" :text-anchor="f===0?'start':f===1?'end':'middle'">{{ tick(x[0]+f*(x[x.length-1]-x[0])) }}</text></g>
+    <path v-for="s in series" :key="s.name" :d="path(s.y)" fill="none" :stroke="s.color" stroke-width="1.8"/>
+    <template v-if="boundary!==undefined"><line :x1="sx(boundary)" :x2="sx(boundary)" :y1="top" :y2="height-bottom" stroke="#596361" stroke-dasharray="3 3"/><text :x="sx(boundary)-4" :y="top-6" text-anchor="end">training end</text></template>
+    <line v-if="cursor!==undefined" :x1="sx(x[cursor])" :x2="sx(x[cursor])" :y1="top" :y2="height-bottom" stroke="var(--red)" stroke-width="1.2" stroke-dasharray="3 2"/>
+    <text :x="(width+left-right)/2" :y="height-3" text-anchor="middle">{{xLabel}}</text><text x="3" y="10">{{yLabel}}</text>
+  </svg>
+</template>
