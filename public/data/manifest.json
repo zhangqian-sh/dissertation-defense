@@ -1,0 +1,57 @@
+{
+  "schema_version": 2,
+  "presentation_id": "thesis-defense",
+  "generated_at": "2026-09-10T17:15:11.291173+00:00",
+  "generator_commit": "7d302159054210386608eebd57a0089393183746",
+  "generator_dirty_state": "M thesis/metadata.tex\n?? presentation/",
+  "generator_files": {
+    "scripts/export_defense_assets.py": "1b19132500d2261b742ebf4b9532f64a174f2579432ad96a8551474a98db9bf7",
+    "scripts/validate_defense_assets.py": "8b54ba501814c8aa1acb7e35cfe4c16529e3f9ac5e123cd8db833c90a506ae6b"
+  },
+  "assets": [
+    {
+      "asset_id": "ch02/sms_longtime_rollout",
+      "chapter": "ch02",
+      "component": "SMSRollout",
+      "path": "releases/20260909T211105-6127459/ch02/sms_longtime_rollout.json",
+      "default_state": "heat_triangular--saved_K100",
+      "fallback_path": "/data/releases/20260909T211105-6127459/ch02/sms_longtime_rollout.png",
+      "sha256": "5ce982c7079b9b0628d06d7dca1dbc532f8b6d2f2b5edd4b913c466dff765e83",
+      "fallback_sha256": "60023f3e4f337af86af2e7252cae607e2999b882a127bbe31340f6726830a9a9",
+      "status": "required"
+    },
+    {
+      "asset_id": "ch07/ocformer_swarm_3d",
+      "chapter": "ch07",
+      "component": "DroneSwarm3D",
+      "path": "releases/20260909T211105-6127459/ch07/ocformer_swarm_3d.json",
+      "default_state": "ball_3d_M16--saved_lbfgs",
+      "fallback_path": "/data/releases/20260909T211105-6127459/ch07/ocformer_swarm_3d.png",
+      "sha256": "a98ef8dea156d76e63df119aade69fbed86eda34d4bcc3f862da7d74d5efb003",
+      "fallback_sha256": "597efe562efd1c48cad7187eb1836ce73a0b0df3b8e81126cb24f951013a57e7",
+      "status": "required"
+    },
+    {
+      "asset_id": "ch05/energy_history",
+      "chapter": "ch05",
+      "component": "EnergyHistory",
+      "path": "releases/20260910T171240-6195303/ch05/energy_history.json",
+      "default_state": "vortex2d-sample0-v",
+      "fallback_path": "/data/releases/20260911T205224-contrast-6249173/ch05/energy_history.png",
+      "sha256": "af3f566e911d8b03ee34023d15212e7906323286c14477b5bed46c683f3aba2f",
+      "fallback_sha256": "ed2255208d089a31f0a672c819de3cf722d592bfee1bcce4f95f3dc2d9e5a0d7",
+      "status": "required"
+    },
+    {
+      "asset_id": "ch03/conversion_over_t",
+      "chapter": "ch03",
+      "component": "ConversionOverT",
+      "path": "releases/20260910T173037-prefix-6195542/ch03/conversion_over_t.json",
+      "default_state": "burgers-fresh-fixed128-prefix",
+      "fallback_path": "/data/releases/20260910T173037-prefix-6195542/ch03/conversion_over_t.png",
+      "sha256": "2b7629c32eebf6fee375b097b15047cdbca5746c508ea9095a6fc92a70b5a4e3",
+      "fallback_sha256": "1731a9a9ca35e2bc3459f422cd5f0096ff4ae855b703fa8b6949d074352927d0",
+      "status": "required"
+    }
+  ]
+}
