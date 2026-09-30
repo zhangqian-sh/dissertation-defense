@@ -1,0 +1,152 @@
+{
+  "case": "vortex",
+  "source": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/RFormer/reproducibility/results/case1/run-001/test.h5",
+  "source_sha256": "d1d5c8c183f074a76ff78c42b5cde9106220813f44c587a9d88308d1ee3cce38",
+  "reference_source": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/RFormer/reproducibility/results/case1/run-001/test.h5",
+  "reference_sha256": "d1d5c8c183f074a76ff78c42b5cde9106220813f44c587a9d88308d1ee3cce38",
+  "times": [
+    80.0,
+    81.0,
+    82.0,
+    83.0,
+    84.0,
+    85.0,
+    86.0,
+    87.0,
+    88.0,
+    89.0,
+    90.0,
+    91.0,
+    92.0,
+    93.0,
+    94.0,
+    95.0,
+    96.0,
+    97.0,
+    98.0,
+    99.0
+  ],
+  "source_rows": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "frames": [
+    {
+      "path": "/data/ch06/time/vortex-000.png",
+      "sha256": "64900dfeadf968ccd2d0540a4db4edf9e6447f36dc14fba992257ffb20f211d7"
+    },
+    {
+      "path": "/data/ch06/time/vortex-001.png",
+      "sha256": "633ddb36d9ee8d01aa4c7dc9ede7cbf419ef84ea513dda2f12f8295fb5456dbb"
+    },
+    {
+      "path": "/data/ch06/time/vortex-002.png",
+      "sha256": "fff13a5bc0a66c6d27f37db5e76a563e3f32188adfa3df7fa082588c5af1ab26"
+    },
+    {
+      "path": "/data/ch06/time/vortex-003.png",
+      "sha256": "72023c672bdc755c71e7ba1c6171809340bf077c4768dbd8a2bdf5e38a331ec8"
+    },
+    {
+      "path": "/data/ch06/time/vortex-004.png",
+      "sha256": "5c61e57a56969c109e2eb970fe3a649e64f9b3d31a4cf06846b31774eedf5417"
+    },
+    {
+      "path": "/data/ch06/time/vortex-005.png",
+      "sha256": "df703afd265e34d2f4b435b4b66c06b0e04b7c7e0de58bdc64917e8feb6bd510"
+    },
+    {
+      "path": "/data/ch06/time/vortex-006.png",
+      "sha256": "27f9383fcb229c5cce7cbc9c62af57c2bdb2ba0f71f6282064c91477abb26a19"
+    },
+    {
+      "path": "/data/ch06/time/vortex-007.png",
+      "sha256": "45a6604fb4eb8077ab957ef99e51fda6d21f7f14705fb60533c1b3f94384fe11"
+    },
+    {
+      "path": "/data/ch06/time/vortex-008.png",
+      "sha256": "f36c8b5288a783faaccad1fbf1f9b41ebb2354ebd0b4da501251d757023233dd"
+    },
+    {
+      "path": "/data/ch06/time/vortex-009.png",
+      "sha256": "7a1f1cf02e60b58ad9ed9c04311b091a6de11c70a8e1f5e7529082bf069a33e3"
+    },
+    {
+      "path": "/data/ch06/time/vortex-010.png",
+      "sha256": "97a4dddbaf50e4d01319f6e2e976dac13f570d648b57a6f36e513c6f2cc2fe71"
+    },
+    {
+      "path": "/data/ch06/time/vortex-011.png",
+      "sha256": "9f83ab3f65b9e974d0ae2182170bb3c0766cffee62f2846cb5d15999a60289e9"
+    },
+    {
+      "path": "/data/ch06/time/vortex-012.png",
+      "sha256": "b775b079504a75950f3a75f110e70a53d071c07514c33d1e9a32b9abf5471426"
+    },
+    {
+      "path": "/data/ch06/time/vortex-013.png",
+      "sha256": "34c0a4cf5683206aa320dde277adea78e20d43e55a54213e64359261531e050b"
+    },
+    {
+      "path": "/data/ch06/time/vortex-014.png",
+      "sha256": "14c2b5f96ca897daa47bcc57791e1e459fdea6554973ff461b01ea3ff6bdef39"
+    },
+    {
+      "path": "/data/ch06/time/vortex-015.png",
+      "sha256": "cb3ab449cea93149396981b967eb62540a034eda104ccfa6deecd5d47c5c1b00"
+    },
+    {
+      "path": "/data/ch06/time/vortex-016.png",
+      "sha256": "091aa809814812879fb9ef2cfa162bbd5ce9b7bc17f4d45bb69a779781e7a707"
+    },
+    {
+      "path": "/data/ch06/time/vortex-017.png",
+      "sha256": "570362597ae959c6f84346c2a90c21c9a0bf96812a4d8cf4033c302ab93021b8"
+    },
+    {
+      "path": "/data/ch06/time/vortex-018.png",
+      "sha256": "9fc2dec418832e12cbd71b2b49047b3056816736a0710cc8c50b10eb0db3d080"
+    },
+    {
+      "path": "/data/ch06/time/vortex-019.png",
+      "sha256": "bd430f5e6a2e185086608903fa5002760ae8028018d632d780b4c421e1e6ff35"
+    }
+  ],
+  "qualifier": "u, v, p rows; Reference, Observations, RFormer columns \u00b7 512 measured observations",
+  "columns": [
+    "Reference",
+    "Observations",
+    "RFormer"
+  ],
+  "rows": [
+    "u",
+    "v",
+    "p"
+  ],
+  "spatial_display": "Vortex: linear interpolation for full fields; observations are measured points only. Jet: native (u,v) arrows in |z|<5 slab; no spatial interpolation; same thinned locations for reference and RFormer. No temporal interpolation.",
+  "field_limits": [
+    1.3444863557815552,
+    0.6861556172370911,
+    0.6802700161933899
+  ],
+  "arrow_scale": null,
+  "slurm_job": "6195875"
+}
