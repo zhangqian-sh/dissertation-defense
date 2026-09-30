@@ -1,0 +1,69 @@
+# Raw experiment outputs (keep provenance and collection scripts)
+data/raw/**/runs/**/payload.*
+data/raw/**/runs/**/snn_checkpoint.pt
+data/raw/**/runs/**/*.pt
+data/raw/**/runs/**/*.pth
+data/raw/**/runs/**/*.ckpt
+data/raw/**/runs/**/error_dissection/
+data/raw/**/logs/
+# Temporary data and Python caches
+data/staging/
+data/tmp.md
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Dependencies and generated presentation outputs
+node_modules/
+dist/
+artifacts/
+.slidev/
+.cache/
+
+# Historical browser exports not used by the current deck
+public/data/manifest.previous-*.json
+
+# Superseded blood animation; the deck uses published static snapshots
+public/data/sequences/blood/
+public/fallback_figures/sequences/blood.png
+
+# Logs and local environment files
+*.log
+.env
+.env.*
+!.env.example
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Inactive release files (active mixed-release assets remain tracked)
+/public/data/releases/20260909T210823-6127183/ch02/sms_longtime_rollout.json
+/public/data/releases/20260909T210823-6127183/ch02/sms_longtime_rollout.png
+/public/data/releases/20260909T210823-6127183/ch03/conversion_over_t.json
+/public/data/releases/20260909T210823-6127183/ch03/conversion_over_t.png
+/public/data/releases/20260909T210823-6127183/ch07/ocformer_swarm_3d.json
+/public/data/releases/20260909T210823-6127183/ch07/ocformer_swarm_3d.png
+/public/data/releases/20260909T211105-6127459/ch03/conversion_over_t.json
+/public/data/releases/20260909T211105-6127459/ch03/conversion_over_t.png
+/public/data/releases/20260910T155902-6192856/ch05/energy_history.json
+/public/data/releases/20260910T155902-6192856/ch05/energy_history.png
+/public/data/releases/20260910T160045-6192875/ch05/energy_history.json
+/public/data/releases/20260910T160045-6192875/ch05/energy_history.png
+/public/data/releases/20260910T160152-error-6192894/ch03/conversion_over_t.png
+/public/data/releases/20260910T171240-6195303/ch05/energy_history.png
+/public/data/releases/20260910T171508-6195332/ch03/conversion_over_t.json
+/public/data/releases/20260910T171508-6195332/ch03/conversion_over_t.png
+/public/data/releases/20260910T172151-contrast-6195396/ch05/energy_history.png
+/public/data/releases/20260910T173415-contrast-6195567/ch05/energy_history.png
+/public/data/releases/20260910T174933-contrast-6195713/ch05/energy_history.png
+/public/data/releases/20260910T175121-contrast-6195723/ch05/energy_history.png
+/public/data/releases/20260910T175256-contrast-6195742/ch05/energy_history.png
+/public/data/releases/20260910T180254-contrast-6195875/ch05/energy_history.png
+/public/data/releases/20260911T193328-contrast-6244719/ch05/energy_history.png
+/public/data/releases/20260911T193707-contrast-6244908/ch05/energy_history.png
+/public/data/releases/20260911T205017-contrast-6248651/ch05/energy_history.png
