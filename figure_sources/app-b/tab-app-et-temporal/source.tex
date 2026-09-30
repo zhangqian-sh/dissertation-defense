@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+  \centering
+  \small
+  \begin{tabular}{@{}lrrrr@{}}
+    \toprule
+    Field & $100\%$ training time & $75\%$ & $50\%$ & $25\%$ \\
+    \midrule
+    Velocity $(u,v)$ & 0.0405 & 0.0494 & 0.0595 & 0.1616 \\
+    Pressure $p$ & 0.0798 & 0.1220 & 0.1526 & 0.3116 \\
+    Temperature $T$ & 0.0667 & 0.0985 & 0.1218 & 0.2493 \\
+    \bottomrule
+  \end{tabular}
+  \caption{ET temporal training-data ablation on the 2D vortex street. Values are test relative errors reported by the source study; each column changes the fraction of the temporal training sequence while keeping the architecture and masking protocol fixed.}
+  \label{tab:app-et-temporal}
+\end{table}

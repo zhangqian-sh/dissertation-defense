@@ -1,0 +1,12 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/appendices/app-b-reconstruction-details.tex",
+  "source_label": "fig:app-et-3djet-diagnostics",
+  "source_line": 137,
+  "source_sha256": "14979042ed8b92ab4cd3cd8483806283d1e9adb756da44ab5a2b269cf649a446",
+  "image_sha256": {
+    "app-b/et-3djet-signature.pdf": "9780b75d1f9d9541ee3509316d38e4809f4d3d00a21231ff929d0d9021ae053f",
+    "app-b/et-3djet-loss.pdf": "0df64af35ee678c4671231198a5a99de4c60a3426bdec1ef5757db44e6586021"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

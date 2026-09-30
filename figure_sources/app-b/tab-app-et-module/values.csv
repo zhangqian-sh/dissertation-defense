@@ -1,0 +1,4 @@
+variant,velocity_relative_error,pressure_relative_error
+Energy MHA only,0.4671,0.1784
+Hopfield only,0.4213,0.1928
+Full ET,0.4421,0.1785

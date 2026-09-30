@@ -1,0 +1,12 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/appendices/app-b-reconstruction-details.tex",
+  "source_label": "fig:app-et-vortex-diagnostics",
+  "source_line": 105,
+  "source_sha256": "14979042ed8b92ab4cd3cd8483806283d1e9adb756da44ab5a2b269cf649a446",
+  "image_sha256": {
+    "app-b/et-vortex-signature.pdf": "7d6d32e2e87f7936b88ca27defffd67787fdeb4ae5cc956700c1a9072e12e87a",
+    "app-b/et-vortex-loss.pdf": "2dd7a1ed2c75d5db2580911758857e308c673c8cb0ed835405c32808b4f0ae9b"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

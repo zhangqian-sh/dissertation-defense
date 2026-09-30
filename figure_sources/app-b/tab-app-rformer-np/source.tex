@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+  \centering
+  \small
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llclcll@{}}
+      \toprule
+      Method & Cases & Hidden dim & Layers & Heads & Optimizer / LR & Batch / epochs \\
+      \midrule
+      CNP & all & 128 & encoder 4, decoder 3 & -- & Adam / $10^{-4}$ & 64 / 10000 \\
+      TNP & vortex, weather, jet & 128 & transformer 4 & 4 & AdamW / $10^{-4}$ & 64 / 1000 \\
+      TNP & blood flow & 128 & transformer 4 & 8 & AdamW / $10^{-4}$ & 16 / 1000 \\
+      ANP & vortex, weather, jet & 128 & encoder/decoder 4 & 4 & AdamW / $10^{-4}$ & 64 / 1000 \\
+      ANP & blood flow & 128 & encoder/decoder 4 & 8 & AdamW / $10^{-4}$ & 16 / 1000 \\
+      \bottomrule
+    \end{tabular}%
+  }
+  \caption[Neural-process baseline settings.]{Neural-process baseline dimensions and optimization settings from the RFormer source study~\cite{zhang2025rformer}. CNP uses an MLP encoder with mean aggregation and an MLP decoder; TNP uses a transformer encoder with context/query role information and a two-layer prediction head; ANP uses deterministic cross-attention and a latent encoder with KL weight $1.0$. Dropout is zero for ANP and TNP.}
+  \label{tab:app-rformer-np}
+\end{table}

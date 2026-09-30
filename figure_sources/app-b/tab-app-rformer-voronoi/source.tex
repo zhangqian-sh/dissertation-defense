@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+  \centering
+  \small
+  \begin{tabular}{@{}lrrrr@{}}
+    \toprule
+    Case & Batch size & Maximum epochs & Final kernel & Coordinate axes \\
+    \midrule
+    Vortex street & 128 & 5000 & 3 & $(0,1)$ \\
+    Weather & 32 & 5000 & 7 & $(0,1)$ \\
+    Blood flow & 32 & 250 & 7 & $(0,1)$ \\
+    Turbulent jet & -- & -- & -- & -- \\
+    \bottomrule
+  \end{tabular}
+  \caption{Case-specific Voronoi CNN settings. All applicable cases use an automatically inferred grid, normalized values, seven hidden $7\times7$ convolutions with $48$ channels, and validation-based early stopping. The method is not applied to the essentially three-dimensional turbulent-jet dataset.}
+  \label{tab:app-rformer-voronoi}
+\end{table}
