@@ -1,0 +1,12 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch06-rformer/chapter.tex",
+  "source_label": "fig:rformer:weather-reconstruction",
+  "source_line": 132,
+  "source_sha256": "a1000661e0400f2ef7752d57b379b472fa6cebc4aeff1b7173769c69e373b685",
+  "image_sha256": {
+    "ch06/weather-reconstruction-winter.pdf": "61d521bac0729f634d272f88f491ece4079faa064706df5b7506b737713e317f",
+    "ch06/weather-reconstruction-summer.pdf": "7ed741dcd7b039dfc9cb51fc813545a2f08cc7f3dc6bcd881fe2e513f669f488"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

@@ -1,0 +1,12 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch06-rformer/chapter.tex",
+  "source_label": "fig:rformer:blood-reconstruction",
+  "source_line": 149,
+  "source_sha256": "a1000661e0400f2ef7752d57b379b472fa6cebc4aeff1b7173769c69e373b685",
+  "image_sha256": {
+    "ch06/blood-reconstruction-u.pdf": "05e386f513551adca91cd0dcadf38f7cf352c6018c87a0d13fda4140f0b2e14d",
+    "ch06/blood-reconstruction-v.pdf": "3801cdca499c517b7ca4673f8b5539c4c29c1eeefeb6d0891f516a04b3137a84"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

@@ -1,0 +1,11 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch06-rformer/chapter.tex",
+  "source_label": "fig:rformer:vortex-reconstruction",
+  "source_line": 115,
+  "source_sha256": "a1000661e0400f2ef7752d57b379b472fa6cebc4aeff1b7173769c69e373b685",
+  "image_sha256": {
+    "ch06/vortex-reconstruction.pdf": "378adbc47b32fa07dfb52db3d6b6fb01be6ca9139ac3cbc0860c0b94e0a90143"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

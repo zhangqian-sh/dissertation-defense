@@ -1,0 +1,11 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch06-rformer/chapter.tex",
+  "source_label": "fig:rformer:blood-baseline",
+  "source_line": 274,
+  "source_sha256": "a1000661e0400f2ef7752d57b379b472fa6cebc4aeff1b7173769c69e373b685",
+  "image_sha256": {
+    "ch06/blood-baseline-error-time.pdf": "a6cd0d3263908ad8432c65cfe795fe49b4acd195ed31f377bb46dd6b2eb1e7c2"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

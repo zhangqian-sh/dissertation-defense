@@ -1,0 +1,12 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch06-rformer/chapter.tex",
+  "source_label": "fig:rformer:vortex-ablation",
+  "source_line": 259,
+  "source_sha256": "a1000661e0400f2ef7752d57b379b472fa6cebc4aeff1b7173769c69e373b685",
+  "image_sha256": {
+    "ch06/vortex-ablation-density.pdf": "1a8b57447e829bf950e4a66450ea16bc0e006677e47827696bd90e81f141a666",
+    "ch06/vortex-ablation-noise.pdf": "9633cc5214178116f9620f9581e442a860fcfb973d544964211f24a2643c9502"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

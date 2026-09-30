@@ -1,0 +1,18 @@
+\begin{table}[t]
+  \centering
+  \caption{Turbulent-jet baseline comparison (relative RMSE). Voronoi CNN is not applicable to this fully three-dimensional point cloud.}
+  \label{tab:rformer:jet}
+  \begin{tabular}{lcccc}
+    \toprule
+    Method & $u$ & $v$ & $w$ & Total \\
+    \midrule
+    RFormer       & $0.4834 \pm 0.0308$ & $0.1514 \pm 0.0088$ & $0.5185 \pm 0.0271$ & $\mathbf{0.2540 \pm 0.0131}$ \\
+    TNP           & $0.9218 \pm 0.0071$ & $0.3197 \pm 0.0092$ & $0.9223 \pm 0.0077$ & $0.4882 \pm 0.0080$ \\
+    CNP           & $0.9321 \pm 0.0079$ & $0.3313 \pm 0.0063$ & $0.9275 \pm 0.0066$ & $0.4971 \pm 0.0066$ \\
+    ANP           & $0.9533 \pm 0.0047$ & $0.3362 \pm 0.0072$ & $0.9475 \pm 0.0035$ & $0.5068 \pm 0.0067$ \\
+    Kriging       & $1.0027 \pm 0.0208$ & $0.5231 \pm 0.0252$ & $0.9887 \pm 0.0286$ & $0.6360 \pm 0.0175$ \\
+    Interpolation & $1.0428 \pm 0.0322$ & $0.5224 \pm 0.0173$ & $1.0748 \pm 0.0428$ & $0.6539 \pm 0.0162$ \\
+    Gappy POD     & $1.1301 \pm 0.1631$ & $0.6905 \pm 0.0667$ & $1.1282 \pm 0.1598$ & $0.7894 \pm 0.0823$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}

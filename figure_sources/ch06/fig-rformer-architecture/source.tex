@@ -1,0 +1,6 @@
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.75\textwidth]{ch06/rformer-architecture.pdf}
+  \caption{RFormer architecture. Observation tokens (orange, carrying both position and value) and query tokens (green, carrying position only with zero-filled values) are interleaved to form the input sequence. A decoder-only transformer processes them through stacked self-attention blocks with the structured mask described in \cref{sec:rformer:attention}. Outputs at query-token positions (blue) define the reconstruction loss; outputs at observation positions are discarded.}
+  \label{fig:rformer:architecture}
+\end{figure}

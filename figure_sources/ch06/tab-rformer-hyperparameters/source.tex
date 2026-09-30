@@ -1,0 +1,23 @@
+\begin{table}[t]
+  \centering
+  \caption{RFormer hyperparameters (shared across all four datasets).}
+  \label{tab:rformer:hyperparameters}
+  \begin{tabular}{lll}
+    \toprule
+    Category & Parameter & Value \\
+    \midrule
+    \multirow{4}{*}{Model}
+      & Layers $L$ & 4 \\
+      & Attention heads & 8 \\
+      & Token dimension $d_{\mathrm{token}}$ & 128 \\
+      & Activation & GELU \\
+    \midrule
+    \multirow{5}{*}{Training}
+      & Loss & Relative RMSE (\cref{eq:rformer:loss}) \\
+      & Optimizer & Adam ($10^{-3}$) \\
+      & Batch size & 16 \\
+      & Max.\ sequence length & $\leq 1024$ \\
+      & Epochs & 100 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

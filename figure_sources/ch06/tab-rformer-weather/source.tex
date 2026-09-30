@@ -1,0 +1,19 @@
+\begin{table}[t]
+  \centering
+  \caption{Contiguous-U.S.\ weather baseline comparison.}
+  \label{tab:rformer:weather}
+  \begin{tabular}{lcc}
+    \toprule
+    Method & Relative RMSE & Station $R^2$ \\
+    \midrule
+    RFormer       & $\mathbf{0.1757 \pm 0.0862}$ & $\mathbf{0.9465 \pm 0.0664}$ \\
+    Gappy POD     & $0.2006 \pm 0.1098$ & $0.9311 \pm 0.0594$ \\
+    Voronoi CNN   & $0.2072 \pm 0.0920$ & $0.9246 \pm 0.1047$ \\
+    TNP           & $0.2166 \pm 0.0948$ & $0.9179 \pm 0.1164$ \\
+    CNP           & $0.3071 \pm 0.1212$ & $0.8228 \pm 0.2568$ \\
+    ANP           & $0.3085 \pm 0.1241$ & $0.8206 \pm 0.3018$ \\
+    Interpolation & $0.3916 \pm 0.1380$ & $0.6938 \pm 0.4435$ \\
+    Kriging       & $0.4156 \pm 0.1494$ & $0.6607 \pm 0.4904$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
