@@ -1,0 +1,14 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch04-forward-gradient/chapter.tex",
+  "source_label": "fig:rfg:mexican-hat",
+  "source_line": 260,
+  "source_sha256": "21d57be8906fded912963ee22414151b776808806209d25f19ac627cdcf3bb3a",
+  "image_sha256": {
+    "ch04/2d_true.png": "17eaca05b10967773040b2c35da3b185aa0d1392f9ffb2b31542500ed95e2c27",
+    "ch04/2d_global.png": "1a6045ef2e7e4a4ef5edbb0ac5c9928dcfcb74b68f8f45f4a2fbb596fae4d8fd",
+    "ch04/2d_local.png": "5a994170a8a53e491c1d7bbfc7cd283301a61b4b502d75492a800c39c50d253e",
+    "ch04/2d_bp.png": "2e3c334ca5daab52c1fb6385ea1e6adc1c20a4f89f5c41e87830bcbe46dbb216"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

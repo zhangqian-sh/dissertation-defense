@@ -1,0 +1,19 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch04-forward-gradient/chapter.tex",
+  "source_label": "fig:rfg:darcy",
+  "source_line": 423,
+  "source_sha256": "21d57be8906fded912963ee22414151b776808806209d25f19ac627cdcf3bb3a",
+  "image_sha256": {
+    "ch04/darcy_bp.png": "cd1622b1acf8d74ef2b2d037574957ccdb4d893f2bd7dd3f4f93d8503161fd40",
+    "ch04/darcy_global.png": "2124b1f698a8e35f06f12ce250b61b7da87cc8736b99dd4d4319822e866e29e9",
+    "ch04/darcy_local.png": "6d820a6aeafb6bd737f7fd90df4b3fdda72c7615b5ed9a8b7487dceb677c4941",
+    "ch04/skip_darcy_bp.png": "5bd3caa588377ad97faf71c68471ab4f5083ac7cf2588bd90698588ec051ebee",
+    "ch04/skip_darcy_global.png": "6e6a479825dbd10a9eac955b43d5abb3d701a62e6edfc2b48f6705e30b251776",
+    "ch04/skip_darcy_local.png": "b9e5189a76648d17c9d6d1d8447aed36cb8d540b536f115483c9315c758a8696",
+    "ch04/darcy_true.png": "1fee6ebf39aa32834b8bcc2f6260166db5cca3d7bbbea720280579e928cc70b8",
+    "ch04/skip_darcy_pointwise_error_global.png": "99634f8f4b634d274094617cd6e45fc2241b064a2d131cfdeed57d03dfa43882",
+    "ch04/skip_darcy_pointwise_error_local.png": "4e0bf43b9f8479ea873a21f64d947f8ca5a211a8a59cf48fb55bd889a84f4ba1"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

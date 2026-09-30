@@ -1,0 +1,51 @@
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/darcy_bp.png}
+    \caption{SG-BP (no skip)}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/darcy_global.png}
+    \caption{SG-RFG-G (no skip)}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/darcy_local.png}
+    \caption{SG-RFG-L (no skip)}
+  \end{subfigure}\\[0.5em]
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/skip_darcy_bp.png}
+    \caption{SG-BP (skip)}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/skip_darcy_global.png}
+    \caption{SG-RFG-G (skip)}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/skip_darcy_local.png}
+    \caption{SG-RFG-L (skip)}
+  \end{subfigure}\\[0.5em]
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/darcy_true.png}
+    \caption{Ground truth}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/skip_darcy_pointwise_error_global.png}
+    \caption{Point error (RFG-G)}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/skip_darcy_pointwise_error_local.png}
+    \caption{Point error (RFG-L)}
+  \end{subfigure}
+  \caption{Two-dimensional Darcy flow operator with and without membrane skip connections.
+  Skip connections every two layers are necessary for stable training of the deeper spiking SepONet; with skips, RFG predictions approach backpropagation quality.}
+  \label{fig:rfg:darcy}
+\end{figure}

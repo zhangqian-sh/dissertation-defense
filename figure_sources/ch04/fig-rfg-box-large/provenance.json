@@ -1,0 +1,11 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch04-forward-gradient/chapter.tex",
+  "source_label": "fig:rfg:box-large",
+  "source_line": 492,
+  "source_sha256": "21d57be8906fded912963ee22414151b776808806209d25f19ac627cdcf3bb3a",
+  "image_sha256": {
+    "ch04/box_plot_deeponet_large.png": "b81603448dc68b0c8090a65d1a4d9ef8934b441782f5d17d408e47cf9ee2c1f7"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

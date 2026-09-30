@@ -1,0 +1,36 @@
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/poisson_bp.png}
+    \caption{SG-BP}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/poisson_global.png}
+    \caption{SG-RFG-G}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/poisson_local.png}
+    \caption{SG-RFG-L}
+  \end{subfigure}\\[0.5em]
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/poisson_bp_stein.png}
+    \caption{WSG-BP}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/poisson_global_stein.png}
+    \caption{WSG-RFG-G}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/poisson_local_stein.png}
+    \caption{WSG-RFG-L}
+  \end{subfigure}
+  \caption{One-dimensional Poisson operator: sample predictions for standard and weak surrogate gradients under backpropagation and RFG.
+  Layerwise perturbations consistently improve RFG accuracy relative to global perturbations.}
+  \label{fig:rfg:poisson}
+\end{figure}

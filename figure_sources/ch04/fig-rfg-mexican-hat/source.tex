@@ -1,0 +1,26 @@
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[t]{0.24\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/2d_true.png}
+    \caption{Ground truth}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.24\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/2d_global.png}
+    \caption{SG-RFG-G}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.24\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/2d_local.png}
+    \caption{SG-RFG-L}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.24\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/2d_bp.png}
+    \caption{SG-BP}
+  \end{subfigure}
+  \caption{Two-dimensional Mexican-hat function regression.
+  Predictions from global RFG, layerwise RFG, and surrogate-gradient backpropagation closely match the ground truth on $[-1,1]^2$.}
+  \label{fig:rfg:mexican-hat}
+\end{figure}

@@ -1,0 +1,36 @@
+\begin{figure}[t]
+  \centering
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/dr_bp.png}
+    \caption{SG-BP}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/dr_global.png}
+    \caption{SG-RFG-G}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/dr_local.png}
+    \caption{SG-RFG-L}
+  \end{subfigure}\\[0.5em]
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/dr_true.png}
+    \caption{Ground truth}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/dr_pointwise_error_global.png}
+    \caption{Point error (RFG-G)}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{ch04/dr_pointwise_error_local.png}
+    \caption{Point error (RFG-L)}
+  \end{subfigure}
+  \caption{Two-dimensional reaction--diffusion operator on a representative test sample.
+  Layerwise RFG recovers solution fields comparable to backpropagation; pointwise errors shrink under layerwise perturbation.}
+  \label{fig:rfg:react-diff}
+\end{figure}

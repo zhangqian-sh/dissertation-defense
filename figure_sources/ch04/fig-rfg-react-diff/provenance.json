@@ -1,0 +1,16 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch04-forward-gradient/chapter.tex",
+  "source_label": "fig:rfg:react-diff",
+  "source_line": 367,
+  "source_sha256": "21d57be8906fded912963ee22414151b776808806209d25f19ac627cdcf3bb3a",
+  "image_sha256": {
+    "ch04/dr_bp.png": "2667df14f7073b2c5e9aa2e1efa8abb30085b1699b73e153b6ef67b49c1c297c",
+    "ch04/dr_global.png": "2141f635870ae044d0eec62a936b7577e3b228e4335b376d72aaaee09b602aa6",
+    "ch04/dr_local.png": "9085701cfdf43b60240ea721f01a54de285b64b508f02d2c0ae6b5beb16d6bfa",
+    "ch04/dr_true.png": "ef3fcf982ef4970fdc00c1f7849e4d6ebefcbaaa9ff461012e3c3a8b9a7ee2ae",
+    "ch04/dr_pointwise_error_global.png": "f8c194287107137f367b2d2783e7cebea92f7e5cdf48371259b6a702da32a7ee",
+    "ch04/dr_pointwise_error_local.png": "72eb384a85f5ff06cd33888af5f531c6b99f8c75fc338d7680d985a1059812d4"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

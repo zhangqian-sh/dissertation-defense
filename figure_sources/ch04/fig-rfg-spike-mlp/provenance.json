@@ -1,0 +1,11 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch04-forward-gradient/chapter.tex",
+  "source_label": "fig:rfg:spike-mlp",
+  "source_line": 81,
+  "source_sha256": "21d57be8906fded912963ee22414151b776808806209d25f19ac627cdcf3bb3a",
+  "image_sha256": {
+    "ch04/spike_mlp_w_membrane_activity.png": "db3e92cbbc41c014d6191faa7b904e1211ad27d19686cb59e27428994b5b4f55"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

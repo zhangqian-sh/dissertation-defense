@@ -1,0 +1,16 @@
+{
+  "thesis_source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/chapters/ch04-forward-gradient/chapter.tex",
+  "source_label": "fig:rfg:poisson",
+  "source_line": 300,
+  "source_sha256": "21d57be8906fded912963ee22414151b776808806209d25f19ac627cdcf3bb3a",
+  "image_sha256": {
+    "ch04/poisson_bp.png": "5f7d05c6513fc84e0840f094327336efe5a90db06a29f18ab504878b7e53169b",
+    "ch04/poisson_global.png": "e3f55e97f934ed689250ff682967760764294d94622eada8e71bcbfa5a81574c",
+    "ch04/poisson_local.png": "e28b7c9cbf95217110e4a3f8c047c9b6480d4b04c8f322efd118a08f5fc4f867",
+    "ch04/poisson_bp_stein.png": "7a623759c6cbbb1b37aa9a1200c30cd6bbee651a8e91bcf84a12191cd3593cc2",
+    "ch04/poisson_global_stein.png": "02b57a50d803bca61ac829798207786d7c9262a70da0b8a881b0d9bfca7a52ba",
+    "ch04/poisson_local_stein.png": "dfeac50f54d697ff8fb5c97ff29cb3dbe9bb4e43a19678d0e5b46e11be691dba"
+  },
+  "evidence": "published thesis artifact",
+  "review": "Caption retained verbatim; slide selection and visual review pending."
+}

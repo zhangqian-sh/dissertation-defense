@@ -1,0 +1,19 @@
+\begin{table}[t]
+  \centering
+  \caption{Training method combinations for direct spiking optimization.
+  SG and WSG denote standard and weak surrogate derivatives; BP is surrogate-gradient backpropagation; RFG is randomized forward-mode gradient estimation; G and L indicate global and layerwise perturbations.}
+  \label{tab:rfg:methods}
+  \small
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    Acronym & Surrogate & Gradient / perturbation \\
+    \midrule
+    SG-BP   & \eqref{eq:rfg:sg}  & Reverse-mode backpropagation \\
+    WSG-BP  & \eqref{eq:rfg:wsg} & Reverse-mode backpropagation \\
+    SG-RFG-G  & \eqref{eq:rfg:sg}  & RFG with global perturbation \\
+    WSG-RFG-G & \eqref{eq:rfg:wsg} & RFG with global perturbation \\
+    SG-RFG-L  & \eqref{eq:rfg:sg}  & RFG with layerwise perturbation \\
+    WSG-RFG-L & \eqref{eq:rfg:wsg} & RFG with layerwise perturbation \\
+    \bottomrule
+  \end{tabular}
+\end{table}
