@@ -1,0 +1,922 @@
+[
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/ann_snn_accuracy.pdf",
+    "source_sha256": "bc2aefdc3566837b4c66b70f78326200f794ab0a31f5aac52321511fb3df61b2",
+    "output": "public/figures/ch03/ann_snn_accuracy.png",
+    "output_sha256": "f385c16b7ccfd457a3c00781557aba32b1390a4947e73d8d798f0fb600a7fd1d",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/burgers_ann.pdf",
+    "source_sha256": "f8c6a4a1504d1c5319614c7f47a0ea3456a4973bc9e5cf5ad98cc4201eccd0ef",
+    "output": "public/figures/ch03/burgers_ann.png",
+    "output_sha256": "0cf4ed99d81096175fdd260dc6193cf29f3ac57dfd75b6f49c6e61f1fdaed663",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/burgers_snn_calibrated.pdf",
+    "source_sha256": "c9b99d1d7a29677d3a5cb23e207e882cabe89d3f73e968dd914e4ffd72290cb2",
+    "output": "public/figures/ch03/burgers_snn_calibrated.png",
+    "output_sha256": "3ea4b52638e776512e329d00e3136a628efb93edd78602efca56ee51a22280aa",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/burgers_snn_none.pdf",
+    "source_sha256": "ca55f0d909f821fa648bf00545332b8cc4a846f9e28a1d877249bf61e15ba4d2",
+    "output": "public/figures/ch03/burgers_snn_none.png",
+    "output_sha256": "1a436572f2c0b6b4967269b52724b21c1468331cc3517dd19bca7011bb9810bc",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/burgers_snn_smooth.pdf",
+    "source_sha256": "0b371cdda16c034b542cc8bc8a64874a42e9e571b9dd9cce9f51c9e67ddd858e",
+    "output": "public/figures/ch03/burgers_snn_smooth.png",
+    "output_sha256": "28a63fd28a8e929de67feac276a2dbb2c732a8e01d72d60ed659af2005cef7c2",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/burgers_true.pdf",
+    "source_sha256": "649b813b6092a54e5a27c0458f29091df15d4561a4cc4e5aa9442b2d83a41fd3",
+    "output": "public/figures/ch03/burgers_true.png",
+    "output_sha256": "2a0ccc84903699e8cc65b96e5fc9591a7512ca28da6a01a4082afa446ee0b52a",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/calibration_data_size.pdf",
+    "source_sha256": "93677b320f38be2932484cfbbcfac9b2e9a5ec7b5b2e3bb2fd5e0b8edf07340f",
+    "output": "public/figures/ch03/calibration_data_size.png",
+    "output_sha256": "8f98e8e48c8cfde30af1af3ca3984cdd49b719febb3b776b4305c21d78c24cab",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/conversion_method_relu.pdf",
+    "source_sha256": "7013aabf19a69cbdfcb39e76fcb32992dc9afdd20e97bb13b20fa3f3dac0a599",
+    "output": "public/figures/ch03/conversion_method_relu.png",
+    "output_sha256": "99be5c1781f26b882b4b601f3e3ec681e4cc16d23ec2027633d55604b636efd0",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/conversion_method_tanh.pdf",
+    "source_sha256": "8f1b8458b9fd8b4f9f2d2e84c61ee049fbc7d0cb969252d765a57f604cc5e06c",
+    "output": "public/figures/ch03/conversion_method_tanh.png",
+    "output_sha256": "d15a73d40d85f9ddb94c15477f8d63c1db8afaa16ec854823f7b3227b8da2205",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/diffusion_ann.pdf",
+    "source_sha256": "1691a3bb0c166f3e7808254594b84704a6e307b8680f5b16c1d2fbf6ddd4a9ec",
+    "output": "public/figures/ch03/diffusion_ann.png",
+    "output_sha256": "9b38c33159663a0bb50e75e1e4e308d755d577c984bda914e91ad2e7e6906042",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/diffusion_snn_calibrated.pdf",
+    "source_sha256": "e90038d2c021886800415961671f393003f82d5b3e94125c6bb33b9ec75893fc",
+    "output": "public/figures/ch03/diffusion_snn_calibrated.png",
+    "output_sha256": "cf9c12e5f57847054c69f66e931f14bcba06307ef22f9573875b23697c9a283d",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/diffusion_snn_none.pdf",
+    "source_sha256": "8bec4114e4f1bd3ba77951d0dc99769308abfbab25445a6cf6384c720e778f14",
+    "output": "public/figures/ch03/diffusion_snn_none.png",
+    "output_sha256": "e49e1b4d4629dc316a7983a9d302057378a0db327906179a61cd55c093acc13a",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/diffusion_true.pdf",
+    "source_sha256": "dd095494daa141bde7f808d099f4c41babe7e9b4d397bfec75d4029cb32a263d",
+    "output": "public/figures/ch03/diffusion_true.png",
+    "output_sha256": "d9adb15ed73bec6b4c2896277e8ed2a12697a0b930fd1c5122ba9f55ee481177",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/error_bound_L2.pdf",
+    "source_sha256": "c70ce765ab272d9b62a645d2118e2ce3b8e2db43fd6bce0c909c12180b2c0721",
+    "output": "public/figures/ch03/error_bound_L2.png",
+    "output_sha256": "0c83f8e3ef5ff7cdd3463539e2cd7e013817ae01dc2ddbb786777bd39b8da47a",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/error_bound_L3.pdf",
+    "source_sha256": "365aaf2e58d3455fe8cbed5315f5705a1353495e6a82550b03ac0757a7e4456e",
+    "output": "public/figures/ch03/error_bound_L3.png",
+    "output_sha256": "2700c747855a6de2439ad978729e0b2ac842eb6fa587a4654b30b9ea1b282cf4",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/error_bound_L4.pdf",
+    "source_sha256": "5f80d1fba8cbb7c2f9254b724f20636cc9d0144a51781d91189204d4045fa8ca",
+    "output": "public/figures/ch03/error_bound_L4.png",
+    "output_sha256": "50048b389973a867804f9fa24579f03d09bb41da656dda01f198489ff705aa45",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/error_vs_T_L2.pdf",
+    "source_sha256": "95f3cf97369627dfdad7e52c5ca1aa3080b67d9e44ca30216ffce9e7aac0b407",
+    "output": "public/figures/ch03/error_vs_T_L2.png",
+    "output_sha256": "46b1da17a03170b63d192ef112c6f6cc5daed1a2bf75b6c3245a58794d1681ce",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/error_vs_T_L3.pdf",
+    "source_sha256": "255d963a229475b8817d887b0fe76834a6c61e5c5a32ca0f46ccb782cd9cdca0",
+    "output": "public/figures/ch03/error_vs_T_L3.png",
+    "output_sha256": "db4cbad0aba33ddc3fc0ebfb753e51a09ad925bb704e53e802226df6e4d633f1",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/error_vs_T_L4.pdf",
+    "source_sha256": "b26c211b6790e18cd68c00173e424e001c1fcb9501898bc75c37155cc4eb8806",
+    "output": "public/figures/ch03/error_vs_T_L4.png",
+    "output_sha256": "97cfd3e816e2ef314cdc38c650be78ec8f63924427697eafb9130fa187e521db",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/loihi_edp.pdf",
+    "source_sha256": "951e54d746f2e5ab20b4a975cedbb0134029af7ccb4a991e41939ff3a6628e98",
+    "output": "public/figures/ch03/loihi_edp.png",
+    "output_sha256": "bdb9213e80898b96c881e17b220f11de19484c5fde8cdd2a0ca00cd607bceb1b",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/loihi_epi.pdf",
+    "source_sha256": "24a3c48cb6d942661446062fdd239ba4560fb58ce2be132341e698d1c286f998",
+    "output": "public/figures/ch03/loihi_epi.png",
+    "output_sha256": "9fc6f97c719e6ee61b30ae776a9ebd6da7a46f16ccbac38a9c3e73fa2ba1ab3c",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/loihi_throughput.pdf",
+    "source_sha256": "4cee04102cc1855d16f9267de7fb5005b4a729b186f761cddc5bae2dd06af6c1",
+    "output": "public/figures/ch03/loihi_throughput.png",
+    "output_sha256": "2fa898fa23271ef3b20ff549f855bdcf64e89162a21eb2deda36963cb4fa4150",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/poisson_ann.pdf",
+    "source_sha256": "802855d80e7f18de3098922ec31a9e4aa068845f3f34cf54332c94c9602c0257",
+    "output": "public/figures/ch03/poisson_ann.png",
+    "output_sha256": "f8b014b1475d887f502ea6c8a3cab25ec0c4fd27fb1aa8ebe5015f0d990d17e9",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/poisson_snn_calibrated.pdf",
+    "source_sha256": "d76552c9e25ab69752810701325357e16cc07181452261c781b09fa6063baf27",
+    "output": "public/figures/ch03/poisson_snn_calibrated.png",
+    "output_sha256": "7fa28dbcf96158dfdca0fb8931ceea2f63b4b3dad75743f889e7e7a7646781c5",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/poisson_snn_none.pdf",
+    "source_sha256": "f74274dc7ca68fed88b71e77799f775abd024273ac3e6ae4aa5d87e44f673273",
+    "output": "public/figures/ch03/poisson_snn_none.png",
+    "output_sha256": "581d87af5388ec41cf676e4ec3b3111d72d2b5082ada3978a66705218b7e450a",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/poisson_true.pdf",
+    "source_sha256": "987008f8d289e078d9199b8748f821b15f5ac21709de94bbe3f69eb2d1a89411",
+    "output": "public/figures/ch03/poisson_true.png",
+    "output_sha256": "a896de4bb28c996c9fc2e6e0ebabde202e989a390164d0bb5bd3a877b5559426",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/runtime_2d_burgers.pdf",
+    "source_sha256": "95dc3c80e9e8c29306ba46f2708db34d8cf6c00647084f3ffc9bc81635340592",
+    "output": "public/figures/ch03/runtime_2d_burgers.png",
+    "output_sha256": "1968bd9d2cb64d32448939bdbcb118656f85dbdbf2248e81ef28dde3ce092542",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/runtime_3d_beltrami.pdf",
+    "source_sha256": "320a21617ba7b5588f531b62b4cba59f9a339692846d1a7ef27544321716dd79",
+    "output": "public/figures/ch03/runtime_3d_beltrami.png",
+    "output_sha256": "1038aa8edf68d3e6407b57dac43d92a5ec566ae7addb187805ba3d24524a1a4c",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/sin_diff_T128.pdf",
+    "source_sha256": "c926d146502b64ed59c26dfe4068540d75f6ee5edad6ae0c2cc5e22b78fe87ed",
+    "output": "public/figures/ch03/sin_diff_T128.png",
+    "output_sha256": "a4196e6fb99e15b9870b3798371f66c7ff45b4fa71ff397602b4099377460dce",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/sin_diff_T32.pdf",
+    "source_sha256": "41cd5787c5b37cc68f024af6363f1632a5dc40519088184bdc6ac27e812860ef",
+    "output": "public/figures/ch03/sin_diff_T32.png",
+    "output_sha256": "ed1dd5ab4e434ff20847a9cf5b9d672e1ce0efa4c4bff4293fbb569a38c4f5a5",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/sin_diff_T8.pdf",
+    "source_sha256": "728e964394494dd44cb4c2b47ce544268da863f458cf8e75cf1ef31a8958ce84",
+    "output": "public/figures/ch03/sin_diff_T8.png",
+    "output_sha256": "2db117597a406c88cef8775ad899ec0166f3fdc306fd5f499323ab0f91bd5a55",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/spinn_beltrami.pdf",
+    "source_sha256": "6ff1372412beba23d33841b6d102ea4bc3c345fa488afd87ff6629330b6a0f7d",
+    "output": "public/figures/ch03/spinn_beltrami.png",
+    "output_sha256": "cfa686b670fa763d37c570948c393713c1f9e532a1b88c1f18eeb30649d712e0",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/spinn_burgers_ann.pdf",
+    "source_sha256": "e214ca052bb617113b6009d7e3677e91adcf3d258d94c1517d8d4f1e7f5a1434",
+    "output": "public/figures/ch03/spinn_burgers_ann.png",
+    "output_sha256": "237e665729bc49d5dcdc9276f761381aae62d87e986c52297fd96cc2af674e52",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/spinn_burgers_snn_calibrated.pdf",
+    "source_sha256": "4b8d0ea642e49b797e9f898f065d26d44dfd436e274625eabdc1e602ef1b5b1d",
+    "output": "public/figures/ch03/spinn_burgers_snn_calibrated.png",
+    "output_sha256": "e1b7ea207bfeaf4a51998c6f000ec8c709fe65fea0e36c63fe0bc4a6f83cf0d9",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/spinn_burgers_snn_none.pdf",
+    "source_sha256": "f18cd113ae46b9c8305ab2ce4e184ccf7094eb82169c2de122b75158abf2d221",
+    "output": "public/figures/ch03/spinn_burgers_snn_none.png",
+    "output_sha256": "e90d9417fd2a7b5be6f9e3c8b74c63d0b3585fb697b0f3b01c1a236008c279ea",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/wave_ann.pdf",
+    "source_sha256": "eb37cc046aa59bac26b6f85fe46026ca94b9a29691c3bf6aa2a2a5cc4b688968",
+    "output": "public/figures/ch03/wave_ann.png",
+    "output_sha256": "219f6e81ad9a56f7dee2564b04adbeebbeb132f267c4f99a93e18c3b4ad8c0f4",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/wave_snn_calibrated.pdf",
+    "source_sha256": "3eba57a557d01e30e164912d015ba40ba5238b289f9481433ab08905b4560b9f",
+    "output": "public/figures/ch03/wave_snn_calibrated.png",
+    "output_sha256": "28a19a38fb741b9ac4bbfd14590b6511c44a487988e8d0ec17576b6e20460ad9",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/wave_snn_none.pdf",
+    "source_sha256": "d7767be96a44e6dd76ea196baa05c3647de8e59d9f8bac2d7a751d04bd75dcbb",
+    "output": "public/figures/ch03/wave_snn_none.png",
+    "output_sha256": "f54ecbce8bc99ade216bb6fad9fb0fbab2cd3b6da822288e36a3a30a2605b5b8",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch03/wave_true.pdf",
+    "source_sha256": "e87a1782627fbc895af0cc86c5810a34b6334c6f1c4053611a483cb53f0f9671",
+    "output": "public/figures/ch03/wave_true.png",
+    "output_sha256": "3ec2cbb5f060f119685e739b8d77322496bbe5a0cae3c353ee55228b9a1ec9e5",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-3djet-errors.pdf",
+    "source_sha256": "46114b2ab104b10c40442e290ba5aee92ed74243e31d7bf6e649460ab35fb9d8",
+    "output": "public/figures/ch05/et-3djet-errors.png",
+    "output_sha256": "dc3c05d53f291ef8f92ac07f93f4691c6a8245b2bd8599cfdf395f60852d3399",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-3djet-results-p.pdf",
+    "source_sha256": "bd8f51060a39a108be6f7297e6b33655c7e9970e5fd5b9f1e295c6db6041b64e",
+    "output": "public/figures/ch05/et-3djet-results-p.png",
+    "output_sha256": "b1dbee3ccb06c2234dd45d8066e7eb987e7ffdfb157274a21d319e51be157363",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-3djet-results-u.pdf",
+    "source_sha256": "f9cd32635d1aa3754412e7088ee414cb407489ed2548fe99b35300b761c89529",
+    "output": "public/figures/ch05/et-3djet-results-u.png",
+    "output_sha256": "b935bebd3ce5f64c75862504db2f149e97622093c40a746c32279969d216a6b0",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-3djet-results-v.pdf",
+    "source_sha256": "b35339fba424a13d7be38d628cd1a789889e70c0d06655300f0e815beeb1797c",
+    "output": "public/figures/ch05/et-3djet-results-v.png",
+    "output_sha256": "f934b1998d3f1755d3e21e2fe7880f75a8a07582b3be3891473497766c22dd10",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-3djet-results-w.pdf",
+    "source_sha256": "8bbcb94698d0762ac51166db0df973810f5bdfefa066e5de2fbec0b000f36aab",
+    "output": "public/figures/ch05/et-3djet-results-w.png",
+    "output_sha256": "b78a5b4a5d56e6ab5b01c352c6657475444070bb6fc0414b862978929d42079e",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-3djet-spectrum.pdf",
+    "source_sha256": "f196f6a569b9d5f266093cc118e039e90abde0e4ba8d390b8cf46f5dbaaa050b",
+    "output": "public/figures/ch05/et-3djet-spectrum.png",
+    "output_sha256": "84fc473ccccaec50d3ab188b733c971d6cbd08891f5595e5f9a70937ec634c86",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-ablation-spectrum-full.pdf",
+    "source_sha256": "f196f6a569b9d5f266093cc118e039e90abde0e4ba8d390b8cf46f5dbaaa050b",
+    "output": "public/figures/ch05/et-ablation-spectrum-full.png",
+    "output_sha256": "84fc473ccccaec50d3ab188b733c971d6cbd08891f5595e5f9a70937ec634c86",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-ablation-spectrum-hopfield.pdf",
+    "source_sha256": "74801a2a011ca1cdfd8be01d4303c491e9fe35ce0973272118d26c5e66a47e2b",
+    "output": "public/figures/ch05/et-ablation-spectrum-hopfield.png",
+    "output_sha256": "6c24255b593478dc3190d32512110578d414ea01f08b377d1c884ece796c03ff",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-ablation-spectrum-mha.pdf",
+    "source_sha256": "2c85d0608dc098b996acad76470428249074b1f0ca6b348c95a0da4767464b9f",
+    "output": "public/figures/ch05/et-ablation-spectrum-mha.png",
+    "output_sha256": "ee513316bf1c36ce1822325639a1a17609f1940239b4144c240abce651f44549",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-ablation-v-full.pdf",
+    "source_sha256": "3f721929ff87da7662d1ade9be92253d358e05040b20533ae54289f5cbfea682",
+    "output": "public/figures/ch05/et-ablation-v-full.png",
+    "output_sha256": "f934b1998d3f1755d3e21e2fe7880f75a8a07582b3be3891473497766c22dd10",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-ablation-v-hopfield.pdf",
+    "source_sha256": "dfb81b254d1c7a7aa70983f2ae47bd7f4e5286621498666a8bedd9015ce9fd97",
+    "output": "public/figures/ch05/et-ablation-v-hopfield.png",
+    "output_sha256": "7a758ec58639be407f35ec94621eedd4cf9038fddc24728c329f9036dd00b261",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-ablation-v-mha.pdf",
+    "source_sha256": "463451959191b7f094ff29cc7aa8d24053128ffac5d2ffe8a57c965e04ef0ec7",
+    "output": "public/figures/ch05/et-ablation-v-mha.png",
+    "output_sha256": "78db1a7865cab6b78811d4da5069d51ef1ca0517632cdd08e2f728e5e3dc736b",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-block.pdf",
+    "source_sha256": "d36992a14659f80611b97e9aba4cc9d47721891b2f49cbe79ee9b3d284f17586",
+    "output": "public/figures/ch05/et-block.png",
+    "output_sha256": "aa0822271999464ef8dcd49eb2981b7111697fe8f2a32a3abcd9299293546fe3",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-energy-update.pdf",
+    "source_sha256": "a5e30e52aca02c88c60934c0de668ffbe56868a6df07dff8248418738f2fdd82",
+    "output": "public/figures/ch05/et-energy-update.png",
+    "output_sha256": "422c329a221bd4421d8c7825d044f1a12941eaeb80be77151d8b134f8b9fc121",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-pinn-rel-err.pdf",
+    "source_sha256": "c4f9d0ae2b33736d96255f65657e4fc922afc0625377f65fc2f7ac4c429852d2",
+    "output": "public/figures/ch05/et-pinn-rel-err.png",
+    "output_sha256": "1e40090f1cf2276500dc833ac31a53cf3b2a23c7e66664c58444963bc74372cb",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-pinn-spectrum.pdf",
+    "source_sha256": "1f10ad416cda0d471bd778dcd125be6c64c1cb999a4b728a70e8857370a03bd7",
+    "output": "public/figures/ch05/et-pinn-spectrum.png",
+    "output_sha256": "fe847400ccb374b6d444c34174591c76e9cbb501097d1762bb3ec6a0579959d6",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-rel-err.pdf",
+    "source_sha256": "f7501bfdf0fb1b8d7ac6d64e34ec9996cfb3611c25bbc7474cae0b32dea5c876",
+    "output": "public/figures/ch05/et-rel-err.png",
+    "output_sha256": "3b7b504b9730ec2ba2152e874a3940de060e56266cab0fa60407a533a1874a49",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-schlieren-errors.pdf",
+    "source_sha256": "e5f3e6a8c4aa9a56107999e1a20f1925d8913e59df66a2ee2498b68631c40389",
+    "output": "public/figures/ch05/et-schlieren-errors.png",
+    "output_sha256": "08911583f22b491bccc3b6dd2093909dbf0c67664e2a5e5302ae9654be749b11",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-schlieren-results.pdf",
+    "source_sha256": "92238bd78bb29f1f8daee31116cea40218cf0317a6a80aa98a43e53b9ab387a6",
+    "output": "public/figures/ch05/et-schlieren-results.png",
+    "output_sha256": "da4acdcd03d841d2f3812b530a73e9804f4af279f42471d2b3791df5e3739c89",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-spectrum.pdf",
+    "source_sha256": "f196f6a569b9d5f266093cc118e039e90abde0e4ba8d390b8cf46f5dbaaa050b",
+    "output": "public/figures/ch05/et-spectrum.png",
+    "output_sha256": "84fc473ccccaec50d3ab188b733c971d6cbd08891f5595e5f9a70937ec634c86",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-vortex-errors.pdf",
+    "source_sha256": "570072ade78dfb166b9046b07a96531f4402709c28c40261654408b444a8ac6e",
+    "output": "public/figures/ch05/et-vortex-errors.png",
+    "output_sha256": "532c90fc6a355bfe0cc61ad561ab00521b925cd4d3245ceb6cf0afb6c4ae6f63",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-vortex-results-p.pdf",
+    "source_sha256": "56c4dc1828e2708793c232514743e313aa5a4255631bd0852d90a7ab5751b442",
+    "output": "public/figures/ch05/et-vortex-results-p.png",
+    "output_sha256": "951d02085664d15fbd435f4a3ed17dc6092943055655acc0b8fedbe0eac905da",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-vortex-results-t.pdf",
+    "source_sha256": "b7d28a6768281cd46d79170a7085d1b7032aa7376734c57a6a9ba39fd3caf7ed",
+    "output": "public/figures/ch05/et-vortex-results-t.png",
+    "output_sha256": "79b192fb17bf43e2a36c4ef1f20601471373fd20f01ba63bbfdd9068778b3244",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-vortex-results-u.pdf",
+    "source_sha256": "11cc2424b47ad8a382ba62f33391f4cfe0dc7dc9e2d69305a0cc0d0d243d5ae0",
+    "output": "public/figures/ch05/et-vortex-results-u.png",
+    "output_sha256": "12ba2a68ce1223b2d734d415dabdb958837838481a15c012d277bf0b7b4fdacd",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-vortex-results-v.pdf",
+    "source_sha256": "56f1e60ab0c6aeaef5534d165d63f8fbe840444f231db830b9ba05d924038f0d",
+    "output": "public/figures/ch05/et-vortex-results-v.png",
+    "output_sha256": "555d1e780ff49fee109af846ece7d5683df706fd49859779b6939384815350d8",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch05/et-workflow.pdf",
+    "source_sha256": "dbcc5da9fdca6f51c75d007dad15e25c2ea731713098eacdae08a9c1b91ebd48",
+    "output": "public/figures/ch05/et-workflow.png",
+    "output_sha256": "462f2856db4a21d3e4212f68ce45fb60a23c7e8c12905acd689f1cec94b85c81",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch06/blood-baseline-error-time.pdf",
+    "source_sha256": "a6cd0d3263908ad8432c65cfe795fe49b4acd195ed31f377bb46dd6b2eb1e7c2",
+    "output": "public/figures/ch06/blood-baseline-error-time.png",
+    "output_sha256": "5dbe12b041cb1ee5ce18e7b57a2a0d42944868084caf7cb3b2200e123c58ee76",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch06/blood-reconstruction-u.pdf",
+    "source_sha256": "05e386f513551adca91cd0dcadf38f7cf352c6018c87a0d13fda4140f0b2e14d",
+    "output": "public/figures/ch06/blood-reconstruction-u.png",
+    "output_sha256": "50182220075a0a62257c945603eed8fa83b7bb7f2add6153444acfbb8ff13da9",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch06/blood-reconstruction-v.pdf",
+    "source_sha256": "3801cdca499c517b7ca4673f8b5539c4c29c1eeefeb6d0891f516a04b3137a84",
+    "output": "public/figures/ch06/blood-reconstruction-v.png",
+    "output_sha256": "10fe5e70efe7aae59dda402b9032a337786956b112498b02abd19d44e536e89d",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch06/jet-baseline-spectrum.pdf",
+    "source_sha256": "eb771f6f5584a4698e16018ee8347ee9c3a4d80d137164116a4d22cd4c920eeb",
+    "output": "public/figures/ch06/jet-baseline-spectrum.png",
+    "output_sha256": "7d335911437b8b139045dc259bf889bfdb8fbf1955174715e9826b0d8b5d7d26",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch06/jet-reconstruction.pdf",
+    "source_sha256": "5d33a2925a13a4e13a036c0d531514ff9c18e8890fa809806af168a6efafed14",
+    "output": "public/figures/ch06/jet-reconstruction.png",
+    "output_sha256": "a670889bf0f9e9bd2c1a6a7b65c681443fedb660016226aac341b898e7111d58",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch06/rformer-architecture.pdf",
+    "source_sha256": "3e90195e7b8b12787fc4fcdec57576b5f0f21fcdd806da7ea1ec993dc5b698dd",
+    "output": "public/figures/ch06/rformer-architecture.png",
+    "output_sha256": "0c7230037fc18024d126603e9dec55c896df20f8c8e4124615d9dd3c48a1b000",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch06/vortex-ablation-density.pdf",
+    "source_sha256": "1a8b57447e829bf950e4a66450ea16bc0e006677e47827696bd90e81f141a666",
+    "output": "public/figures/ch06/vortex-ablation-density.png",
+    "output_sha256": "0dfd0e788544b7bbfa198fe8c88e0eb575904e95bcc2ca32e755f02ecab66d56",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch06/vortex-ablation-noise.pdf",
+    "source_sha256": "9633cc5214178116f9620f9581e442a860fcfb973d544964211f24a2643c9502",
+    "output": "public/figures/ch06/vortex-ablation-noise.png",
+    "output_sha256": "513e23fff6f4c5a1bdabf180348085409b6c41252cf098a18a52114890fdd890",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch06/vortex-reconstruction.pdf",
+    "source_sha256": "378adbc47b32fa07dfb52db3d6b6fb01be6ca9139ac3cbc0860c0b94e0a90143",
+    "output": "public/figures/ch06/vortex-reconstruction.png",
+    "output_sha256": "2c647bce6bd0123fc96e16468f79481a66508f061cb86ceb71e6b802b4f7ba81",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch06/weather-reconstruction-summer.pdf",
+    "source_sha256": "7ed741dcd7b039dfc9cb51fc813545a2f08cc7f3dc6bcd881fe2e513f669f488",
+    "output": "public/figures/ch06/weather-reconstruction-summer.png",
+    "output_sha256": "df4a492f1f8ced43c6defbfac8be2aba84a0aead9d3d1e1f04f7925866067563",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch06/weather-reconstruction-winter.pdf",
+    "source_sha256": "61d521bac0729f634d272f88f491ece4079faa064706df5b7506b737713e317f",
+    "output": "public/figures/ch06/weather-reconstruction-winter.png",
+    "output_sha256": "2cb4610df8b906562b68a282ada2429880699d94d92ec88afd50b7050c456251",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch06/weather-stations.pdf",
+    "source_sha256": "90042156e81aef44caf21ebcf43f29a91fd125c40a3fedb0dd51b6cf5951e660",
+    "output": "public/figures/ch06/weather-stations.png",
+    "output_sha256": "84987043376b971b12d9811a1d773c383516fe90bee0794642007eaa1fcbdfa2",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/ball3d_t0.pdf",
+    "source_sha256": "eeda53816526b65ba0540718a549b0c4d51f790809e10a273008eec2a971eeeb",
+    "output": "public/figures/ch07/ball3d_t0.png",
+    "output_sha256": "1af8eea5194de263c1a8e4b1b223700cfdd67cb3a0d6c25c4b5a4564ae467b6b",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/ball3d_t1.pdf",
+    "source_sha256": "1db5f6de45d56a477bf3d632e60c2428a7a89556c563b087244983b45f5084f1",
+    "output": "public/figures/ch07/ball3d_t1.png",
+    "output_sha256": "9ffd1f03d840f935f512458d25e28d4da63e87efeace961b451b3d31b58129bd",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/ball3d_t2.pdf",
+    "source_sha256": "df146963ecc47396f9adee0b2f1360c63e15c958c0505ae6a8a8178abf57b03d",
+    "output": "public/figures/ch07/ball3d_t2.png",
+    "output_sha256": "2060f538eb406138bcbaa2e899b394f91fbe3ab0e6f339ac262f76cf85edf1ff",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/ball3d_t3.pdf",
+    "source_sha256": "a03618f02dd5198ff47d6297417967a18d55ee6a7a0b3c3e585639278275aa32",
+    "output": "public/figures/ch07/ball3d_t3.png",
+    "output_sha256": "d8ec334221f94ce679f6edb4230d2464fae3e5255776d9b23f20f9c9e9cc96da",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/equivariance-symmetric-m8-t0.pdf",
+    "source_sha256": "c2938fbe9220f31008c893a3b9668c8d6f8fc1378f28fbc36dfdd920dbbffa0e",
+    "output": "public/figures/ch07/equivariance-symmetric-m8-t0.png",
+    "output_sha256": "2ddec075f3c483dc0ee3478646770ab0f31bfd4c6932f567d8021457b48a7a3b",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/equivariance-symmetric-m8-t1.pdf",
+    "source_sha256": "e1684f2680e7393494e3999c6f2dbee7dc2783a2012bc2348bff403c440c22e1",
+    "output": "public/figures/ch07/equivariance-symmetric-m8-t1.png",
+    "output_sha256": "d001555b1f263c03d88b21a8ce5fb3d552b564b0d73cea6a3e11a53729e5bf37",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/equivariance-symmetric-m8-t2.pdf",
+    "source_sha256": "d362f8d36a7256a0f8f1685749bfe215d4101c925e66133f4191daa259838f13",
+    "output": "public/figures/ch07/equivariance-symmetric-m8-t2.png",
+    "output_sha256": "15f60f146b2707003ad6403ac3df721142b719e9dedcc969c357c857d48ee27c",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/equivariance-symmetric-m8-t3.pdf",
+    "source_sha256": "996b9148790ded0a895d6e8881d725086d8300a7f776bad537fe154b098a0171",
+    "output": "public/figures/ch07/equivariance-symmetric-m8-t3.png",
+    "output_sha256": "c62c556dad6e27f56d5d8cfe318e210b509a9afb38b3549e2dc8f47c4ca746e3",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/latent-physical-trajectories.pdf",
+    "source_sha256": "b2e136e420788e5ae48d5a2eafa3b89d6694b5d8155eec0d2d9972f87a4d9cac",
+    "output": "public/figures/ch07/latent-physical-trajectories.png",
+    "output_sha256": "00d7f24a3a6e7a3695c954cc546fe5deebe0e2e73ed4dcec587a8ec1afc14358",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/ocformer-architecture.pdf",
+    "source_sha256": "cc27f23857d6f76811c666a6174174ce412ed42ee51ec6af12671e4d968d2b00",
+    "output": "public/figures/ch07/ocformer-architecture.png",
+    "output_sha256": "5df51efc08e0d1c2a4ed11cc25f9bca50db76db485b40f34dd531883ad5b8cc2",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/perturb_loss_cost_constraint.pdf",
+    "source_sha256": "1c0682be92ed244f6c8f2d11ece829f676ec15be109175b23c5c7b21778a08cd",
+    "output": "public/figures/ch07/perturb_loss_cost_constraint.png",
+    "output_sha256": "b58f4d32e0b86cde6f9eb926606292b43f23568f16e1e175a8bf5101433d5bba",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/perturb_m32_bc.pdf",
+    "source_sha256": "cbbdf78fc95c975494093c38129d3d61e0c86174bcbb1bbbd99b8ef2694298a8",
+    "output": "public/figures/ch07/perturb_m32_bc.png",
+    "output_sha256": "06b18a460a4c6f57e36b3449bdf42df5289b8a73f9d6c5e5f7be09a3110288a6",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/perturb_m32_t0.pdf",
+    "source_sha256": "7e8a62c8053048e25a832d7ec7f0a579cced7beb6608ac575823df5975eb6aeb",
+    "output": "public/figures/ch07/perturb_m32_t0.png",
+    "output_sha256": "2360e01c164bc49fa8e63f3b2126b055d96095cd1cb2787e57d81de6f849c40d",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/perturb_m32_t1.pdf",
+    "source_sha256": "be807d234dbbba50b929742f6919aa5ae10f16b46643b4bb42e33b43bd0fde44",
+    "output": "public/figures/ch07/perturb_m32_t1.png",
+    "output_sha256": "ea341c00e126c918d3de0a34e279575086261823b18de95cf6d0972f483df952",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/perturb_m32_t2.pdf",
+    "source_sha256": "226a3e7284bb423ff633a737737fed85707946882f3b4d4be08312547b1bdc81",
+    "output": "public/figures/ch07/perturb_m32_t2.png",
+    "output_sha256": "d9f81abdd099cb20808a152e5bbab6a56675c37b808473640c8d6165ad82ed1d",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/perturb_m32_t3.pdf",
+    "source_sha256": "03c7add28083c73cf2792d71c776f54468e5174fb6541b9f9e808cdf41982b21",
+    "output": "public/figures/ch07/perturb_m32_t3.png",
+    "output_sha256": "50c012fe4d85b113aad74f08f316279878e1c46bfd78a5fb488664a44331ed34",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/rigidbody_ref_t0.pdf",
+    "source_sha256": "52a6544dcddd9113f420bcd8e3810561c76206630deeb12747974156642b41d6",
+    "output": "public/figures/ch07/rigidbody_ref_t0.png",
+    "output_sha256": "b45234ba4bcf0330a044174193e80c0eac21c9de831a2524aea1e82a1d4a34d6",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/rigidbody_ref_t3.pdf",
+    "source_sha256": "6cce3eb637113efae566c804b688c0615a59451daab815751d69d01c090c44f2",
+    "output": "public/figures/ch07/rigidbody_ref_t3.png",
+    "output_sha256": "844319ccb78b0bed9e0fcbd130f06a256927151ba02b58bbf81a62e4a64fb006",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/rigidbody_trans_t0.pdf",
+    "source_sha256": "f7363eccbe4d4f57d1f54de0a9c9d618722cd2f3025e4b153e445ea700ed68fc",
+    "output": "public/figures/ch07/rigidbody_trans_t0.png",
+    "output_sha256": "b97b3b9f369ef0c7fb31283e6602e941076dbd19115d96f205c1f503a00210e2",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/rigidbody_trans_t3.pdf",
+    "source_sha256": "90e032f8128328e86dae61f1ab1af36239a57f81b37f79d11725ead487b9ce77",
+    "output": "public/figures/ch07/rigidbody_trans_t3.png",
+    "output_sha256": "9664d12bf323587a5a56e3439c3c540adfef4cdf462738387a332be062672a43",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/room3d_t0.pdf",
+    "source_sha256": "2a8e35d03d99b87a03d3594f704dbdfaa99d04209cef468dba740b0e25fee079",
+    "output": "public/figures/ch07/room3d_t0.png",
+    "output_sha256": "d71e44df60b8269d3d4baf98f15f7049fe187fadd7b566bc7bbc89999c9b62a8",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/room3d_t1.pdf",
+    "source_sha256": "e90f2d2115e3db511dbca769909b5591e70eefcff2addf9873d7e6197a59b891",
+    "output": "public/figures/ch07/room3d_t1.png",
+    "output_sha256": "bc4f7e700bb3fa8f98fc0a25c7dce2d5fbec2805f71b051a6b55eea4fe311131",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/room3d_t2.pdf",
+    "source_sha256": "72ebbb57121859ba4cd8d85cbd3caebc0bed7e9fdb2b8b055376020da53dc3fd",
+    "output": "public/figures/ch07/room3d_t2.png",
+    "output_sha256": "5aa6eeb171eba00ad46d2a16faea0db0cd3a8d61ae2192c2965e1164637f0d70",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/room3d_t3.pdf",
+    "source_sha256": "8966af8789ada6e13af467da2659ba5b8dc36ad6a0bf904aebe7d0211f844172",
+    "output": "public/figures/ch07/room3d_t3.png",
+    "output_sha256": "06a3ba13a34a7be6decadea956c3d63023587803ca505f7cc88c287c41677138",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/symmetry_m128_t0.pdf",
+    "source_sha256": "f5e7255351d114502f089df32ecd0b0bb2e521640f82bd1b5b4312b7957f0737",
+    "output": "public/figures/ch07/symmetry_m128_t0.png",
+    "output_sha256": "f36190c46eb1e8aad54876192f19da88524d39ab0a9881495f684d57bef933b8",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/symmetry_m128_t1.pdf",
+    "source_sha256": "095b0c8df23c51bb69c389f8f6a76af7d5876a1a2d6a3dc7133e57dbad0a2ec6",
+    "output": "public/figures/ch07/symmetry_m128_t1.png",
+    "output_sha256": "90a5acb8286251083234622895548f9cd2a6c21c1f7d0913d22d04c788b42d2f",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/symmetry_m128_t2.pdf",
+    "source_sha256": "fe011b9c57602720506dd20c939a8160a72991e21fac0b808e6ed9f0e5a79ac2",
+    "output": "public/figures/ch07/symmetry_m128_t2.png",
+    "output_sha256": "83861f4e10bae7de437bddb91ed75e9659327b4aad18273239bda94f4f29bcbd",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/symmetry_m128_t3.pdf",
+    "source_sha256": "271da0a659c7d95e3799b7aa3b87d74ce81d678441953d05aee2a38d70638c81",
+    "output": "public/figures/ch07/symmetry_m128_t3.png",
+    "output_sha256": "5ec8adfaf7250a60caa194cdce4e91e247a64324be83b7cacf1c186545216e30",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/symmetry_m32_t0.pdf",
+    "source_sha256": "8acf23ae1139a5df1df33051e729b0eec28fe808b79be32b7037f38f39a1e21c",
+    "output": "public/figures/ch07/symmetry_m32_t0.png",
+    "output_sha256": "3d0db3672a5ac041fe9577dfa1ca8801bd89cfd73f6b573abed05096ee5b3a8b",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/symmetry_m32_t1.pdf",
+    "source_sha256": "44664e600cfe023ef0b9104deaec89029048d84b8a53d291afc6ee6d758255cc",
+    "output": "public/figures/ch07/symmetry_m32_t1.png",
+    "output_sha256": "717d233d407e04f001a8c54b5fc4c3e1a66315c60c1762fb6412084f96b62908",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/symmetry_m32_t2.pdf",
+    "source_sha256": "7abd794e0bee84f2019f15941618fb580b27d4bc3b1bdcfb35e4390202512bfb",
+    "output": "public/figures/ch07/symmetry_m32_t2.png",
+    "output_sha256": "e2318ae5bb64bc6bdb243a9c377671fe0522f291218ad39f17cac6af28d88cab",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/symmetry_m32_t3.pdf",
+    "source_sha256": "e2f98277f56d66c7a0e753e9086f670faa3cacc9c917c1ecb590e673fb62d32a",
+    "output": "public/figures/ch07/symmetry_m32_t3.png",
+    "output_sha256": "9de164fd88370bfb6900d22ef7693917d73083854d022ad003f7e22e8881a1ec",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/symmetry_m8_t0.pdf",
+    "source_sha256": "c2938fbe9220f31008c893a3b9668c8d6f8fc1378f28fbc36dfdd920dbbffa0e",
+    "output": "public/figures/ch07/symmetry_m8_t0.png",
+    "output_sha256": "2ddec075f3c483dc0ee3478646770ab0f31bfd4c6932f567d8021457b48a7a3b",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/symmetry_m8_t1.pdf",
+    "source_sha256": "e1684f2680e7393494e3999c6f2dbee7dc2783a2012bc2348bff403c440c22e1",
+    "output": "public/figures/ch07/symmetry_m8_t1.png",
+    "output_sha256": "d001555b1f263c03d88b21a8ce5fb3d552b564b0d73cea6a3e11a53729e5bf37",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/symmetry_m8_t2.pdf",
+    "source_sha256": "d362f8d36a7256a0f8f1685749bfe215d4101c925e66133f4191daa259838f13",
+    "output": "public/figures/ch07/symmetry_m8_t2.png",
+    "output_sha256": "15f60f146b2707003ad6403ac3df721142b719e9dedcc969c357c857d48ee27c",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/symmetry_m8_t3.pdf",
+    "source_sha256": "996b9148790ded0a895d6e8881d725086d8300a7f776bad537fe154b098a0171",
+    "output": "public/figures/ch07/symmetry_m8_t3.png",
+    "output_sha256": "c62c556dad6e27f56d5d8cfe318e210b509a9afb38b3549e2dc8f47c4ca746e3",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch07/training-flowchart.pdf",
+    "source_sha256": "6c2348fb29ab14fb2f586576f83d278439160dd2fe7e0198c75b6407de3728e7",
+    "output": "public/figures/ch07/training-flowchart.png",
+    "output_sha256": "bc845ebff62edce0938b720fc1ccd68b260846180bc74cbca857499487c9e11d",
+    "command": "pdftocairo -png -singlefile -scale-to 1800",
+    "review": "Source figure converted without cropping or relabeling"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/Thesis/thesis/images/ch08/spiking-rformer-reconstruction.png",
+    "source_sha256": "557d0479c004473d93109839a6fda449fe9b84d83a16288c151a1464c416c681",
+    "output": "public/figures/ch08/spiking-rformer-reconstruction.png",
+    "output_sha256": "557d0479c004473d93109839a6fda449fe9b84d83a16288c151a1464c416c681",
+    "command": "copy original PNG without modification",
+    "review": "Original manuscript figure; no cropping, smoothing or relabeling. Thesis Chapter 8, fig:summary:spiking-rformer-reconstruction."
+  }
+]

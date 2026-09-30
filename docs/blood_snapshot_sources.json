@@ -1,0 +1,14 @@
+[
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/RFormer/publication/manuscript/figures/experiments/blood_flow/blood_snapshot_u.pdf",
+    "sha256": "05e386f513551adca91cd0dcadf38f7cf352c6018c87a0d13fda4140f0b2e14d",
+    "output": "public/figures/ch06/blood-snapshot-u.png",
+    "output_sha256": "828843cd59f7278b16b74f14623dc8d0ec21d3a4f81aa61a73678892c22c8fb9"
+  },
+  {
+    "source": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/RFormer/publication/manuscript/figures/experiments/blood_flow/blood_snapshot_v.pdf",
+    "sha256": "3801cdca499c517b7ca4673f8b5539c4c29c1eeefeb6d0891f516a04b3137a84",
+    "output": "public/figures/ch06/blood-snapshot-v.png",
+    "output_sha256": "f9b41d8a362b9cbb44beee864b499e00ac5fcfae0dc73aa5bf3b7714bbb5a05d"
+  }
+]
