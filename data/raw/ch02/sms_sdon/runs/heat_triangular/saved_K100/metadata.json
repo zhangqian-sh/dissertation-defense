@@ -1,0 +1,195 @@
+{
+  "schema_version": 2,
+  "case_id": "heat_triangular",
+  "run_id": "saved_K100",
+  "generated_at": "2026-09-09T21:05:03.939580+00:00",
+  "source_repository": "/oscar/home/qzhang64/Projects/SpikingNN/spiking_marching_scheme",
+  "source_commit": "9868538021915bec47cfd7037b3b50876edf1744",
+  "source_dirty_state": "M src/config.py\n M src/data_sampler.py\n M src/dataset/data_loader.py\n M src/dataset/pde/heat_fdm.py\n M src/dataset/pde/wave_fdm.py\n M src/main.py\n M src/main_ann.py",
+  "historical_training_commit": null,
+  "provenance_note": "Current source identity records the audited reader/definitions, not a recovered training commit.",
+  "input_files": [
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Spiking-Marching-Scheme/review/output/heat/model=2*500_speed=10/output_data/test/u_true.csv",
+      "sha256": "f8bfca2fb2bd3e292aaf122935c221771db6e4d0c41ec91f476fc9f68c07fa33"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Spiking-Marching-Scheme/review/output/heat/model=2*500_speed=10/output_data/test/u_pred.csv",
+      "sha256": "ef3e058f9f34b9ee2e2608b1a2bb83b5d11e79f1b971b991a3b99eb2da63bdbb"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Spiking-Marching-Scheme/review/output/heat/model=2*500_speed=10/output_data/test/u_pred_cascade.csv",
+      "sha256": "ea90b4755ff143685ebdaa868ed4260e1528619a9e144a9dcc01b3347385ff5f"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Spiking-Marching-Scheme/review/output/heat/model=2*500_speed=10/output_data/test/u_spikes.npz",
+      "sha256": "732f8f674416121a52f59ff2a7f304cb2814c9dedbeaab142fabc43183b018d9"
+    },
+    {
+      "path": "/oscar/home/qzhang64/Projects/SpikingNN/spiking_marching_scheme/src/evaluate.py",
+      "sha256": "03b29a676a2589cf77007940c2c031b8e53fb274b5745d65c9b8893f40ef9c5f"
+    },
+    {
+      "path": "/oscar/home/qzhang64/Projects/SpikingNN/spiking_marching_scheme/src/encoder.py",
+      "sha256": "f665883a2ad40b4cdc11cc6bd02a9ba4c759ce0696ee3feab261c847e2ff1c9d"
+    },
+    {
+      "path": "/oscar/home/qzhang64/Projects/SpikingNN/spiking_marching_scheme/src/data_sampler.py",
+      "sha256": "20c0b475d4a1e6ea060757aaf40f9e2622562ae5d43ef2c7d474b3d22cbd0e6f"
+    },
+    {
+      "path": "/oscar/home/qzhang64/Projects/SpikingNN/spiking_marching_scheme/src/dataset/pde/heat_fdm.py",
+      "sha256": "6ea0eb10c1ec2d0ccf040f0c9a412676d7d072560421abb894328ffcd0d3fee5"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/SpikingNN/Spiking-Marching-Scheme/review/plot/R1C1.ipynb",
+      "sha256": "37d3c9c16bb484d95d20fa41616c82d34441667a079310f3a4b2df807041593f"
+    }
+  ],
+  "configuration": {
+    "case_id": "heat_triangular",
+    "run_id": "saved_K100",
+    "source": "SpikingNN/Spiking-Marching-Scheme/review/output/heat/model=2*500_speed=10/output_data/test",
+    "K": 100,
+    "stride": 10,
+    "reference_dt": 4e-05,
+    "training_end_time": 0.032,
+    "selected_T": [
+      8,
+      32,
+      100
+    ],
+    "thesis_refs": [
+      "fig:snn:pde-heat",
+      "eq:ch02:sms-heat"
+    ]
+  },
+  "configuration_sha256": "dfc179429d645afcb5d9379ee709ccba03de00662f889ca03a92ab05f4cf5e7b",
+  "checkpoint_sha256": null,
+  "checkpoint_note": "Saved outputs reused; no checkpoint loaded or inference executed.",
+  "environment": {
+    "interpreter": "/users/qzhang64/Projects/OptimalControl/OCFormer/.venv/bin/python",
+    "python": "3.11.11",
+    "numpy": "2.2.5"
+  },
+  "slurm": {
+    "SLURM_TRES_PER_TASK": "cpu=1",
+    "SLURM_JOB_USER": "qzhang64",
+    "SLURM_TASKS_PER_NODE": "1",
+    "SLURM_JOB_UID": "140308453",
+    "SLURM_TASK_PID": "3899699",
+    "SLURM_LOCALID": "0",
+    "SLURM_SUBMIT_DIR": "/oscar/data/gk/qzhang64/Projects/Thesis/presentation",
+    "SLURM_JOB_START_TIME": "1788987902",
+    "SLURM_CLUSTER_NAME": "slurmctld",
+    "SLURM_JOB_END_TIME": "1788988502",
+    "SLURM_CPUS_ON_NODE": "1",
+    "SLURM_JOB_CPUS_PER_NODE": "1",
+    "SLURM_GTIDS": "0",
+    "SLURM_JOB_PARTITION": "batch",
+    "SLURM_OOM_KILL_STEP": "0",
+    "SLURM_JOB_NUM_NODES": "1",
+    "SLURM_JOBID": "6126819",
+    "SLURM_JOB_QOS": "normal",
+    "SLURM_PROCID": "0",
+    "SLURM_CPUS_PER_TASK": "1",
+    "SLURM_NTASKS": "1",
+    "SLURM_TOPOLOGY_ADDR": "ag39_sw2.node2350",
+    "SLURM_TOPOLOGY_ADDR_PATTERN": "switch.node",
+    "SLURM_SCRIPT_CONTEXT": "prolog_task",
+    "SLURM_MEM_PER_NODE": "2048",
+    "SLURM_NODELIST": "node2350",
+    "SLURM_JOB_ACCOUNT": "default",
+    "SLURM_PRIO_PROCESS": "0",
+    "SLURM_NPROCS": "1",
+    "SLURM_NNODES": "1",
+    "SLURM_SUBMIT_HOST": "login010",
+    "SLURM_JOB_ID": "6126819",
+    "SLURM_NODEID": "0",
+    "SLURM_CONF": "/var/spool/slurmd/conf-cache/slurm.conf",
+    "SLURM_JOB_NAME": "collect-ch02",
+    "SLURM_JOB_GID": "6670",
+    "SLURM_JOB_NODELIST": "node2350",
+    "SLURM_MPI_TYPE": "pmix",
+    "SLURM_UMASK": "0022",
+    "SLURM_DISTRIBUTION": "cyclic",
+    "SLURM_STEP_ID": "0",
+    "SLURM_STEPID": "0",
+    "SLURM_STEP_NODELIST": "node2350",
+    "SLURM_STEP_NUM_NODES": "1",
+    "SLURM_STEP_NUM_TASKS": "1",
+    "SLURM_STEP_TASKS_PER_NODE": "1",
+    "SLURM_STEP_LAUNCHER_PORT": "43661",
+    "SLURM_SRUN_COMM_PORT": "43661",
+    "SLURM_PMIXP_ABORT_AGENT_PORT": "37833",
+    "SLURM_PMIX_MAPPING_SERV": "(vector,(0,1,1))",
+    "SLURM_SRUN_COMM_HOST": "172.20.219.50",
+    "SLURM_LAUNCH_NODE_IPADDR": "172.20.219.50"
+  },
+  "command": [
+    "data/raw/ch02/sms_sdon/collect.py",
+    "--case-id",
+    "heat_triangular",
+    "--run-id",
+    "saved_K100"
+  ],
+  "shapes": {
+    "reference_state": [
+      100,
+      101
+    ],
+    "one_step_state": [
+      100,
+      101
+    ],
+    "cascade_state": [
+      100,
+      101
+    ],
+    "time": [
+      100
+    ],
+    "coordinates": [
+      101
+    ],
+    "reference_indices": [
+      100
+    ],
+    "one_step_spikes": [
+      100,
+      100,
+      101
+    ],
+    "cascade_spikes": [
+      100,
+      100,
+      101
+    ]
+  },
+  "thesis_refs": [
+    "fig:snn:pde-heat",
+    "eq:ch02:sms-heat"
+  ],
+  "evidence_status": "tested",
+  "sample_ids": [
+    "triangular_initial_profile"
+  ],
+  "split": "same initial condition; training then temporal extrapolation",
+  "normalization": {
+    "minimum": 0.0,
+    "maximum": 1.0,
+    "decode": "min+(nonzero_count+0.5)*(max-min)/K"
+  },
+  "units": {
+    "time": "s",
+    "coordinates": "benchmark length unit",
+    "state": "benchmark temperature unit"
+  },
+  "observation_protocol": "Reference-fed two-history prediction versus recursively fed two-history prediction; first two frames initialized from encoded reference.",
+  "smoothing": "none",
+  "alignment": "reference[0:1000:10]; includes initialized frames; last displayed t=0.0396 s",
+  "training_boundary_note": "Thesis first 80 retained snapshots / 20 extrapolation; source two-history training target last index 80 at t=0.032.",
+  "source_qualification": "R1C1 notebook explicitly locates this run. Current heat solver has 1000 steps; Git HEAD has 10000. Saved 1001-row reference matches thesis horizon. Solver endpoint stencil is retained, not silently changed to clamped zero endpoints.",
+  "selected_T_note": "Independent codec evaluations of the same reference field, illustrative encoding demonstration; not retrained SMS configurations.",
+  "payload_sha256": "0a42066fd4b3523947afe28135ab24399edc46559f70d8315a2b3da7c9693cb7"
+}

@@ -1,0 +1,1 @@
+{"runs":[{"case_id":"heat_triangular","run_id":"saved_K100","source":"SpikingNN/Spiking-Marching-Scheme/review/output/heat/model=2*500_speed=10/output_data/test","K":100,"stride":10,"reference_dt":0.00004,"training_end_time":0.032,"selected_T":[8,32,100],"thesis_refs":["fig:snn:pde-heat","eq:ch02:sms-heat"]}]}
