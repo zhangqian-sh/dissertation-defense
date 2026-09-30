@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Defense immutable raw capture metadata",
+  "type": "object",
+  "required": ["schema_version", "case_id", "run_id", "source_repository", "source_commit", "source_dirty_state", "configuration_sha256", "checkpoint_sha256", "environment", "slurm", "sample_ids", "split", "normalization", "units", "shapes", "command", "payload_sha256", "input_files"],
+  "properties": {
+    "schema_version": {"const": 2},
+    "case_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+$"},
+    "run_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+$"},
+    "payload_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "configuration_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "checkpoint_sha256": {"type": ["string", "null"]},
+    "historical_training_commit": {"type": ["string", "null"]},
+    "environment": {"type": "object"},
+    "slurm": {"type": "object"},
+    "shapes": {"type": "object"},
+    "input_files": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["path", "sha256"]}}
+  }
+}
