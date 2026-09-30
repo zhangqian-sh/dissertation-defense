@@ -1,0 +1,136 @@
+{
+  "sample_index": 0,
+  "source_run": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/ETRO/jet_3d/results/random-32/random_model_key=2_lr=1e-4_e=10k_run=-1_mr=0.8_ps=8_hh=2048_a6000-seed=2024",
+  "source_code": "/users/qzhang64/Projects/OperatorLearning/ETRO/examples/jet_3d/model.py",
+  "checkpoint_sha256": "8ed1ab453714d888e15c0c5893683c9e495df0d6cb34865443efa51c0ad042e1",
+  "input_sha256": "365495c7192d1c6428bc1943510ff6d690147a0b8c88a49a129e388461ee1083",
+  "source_code_sha256": "50b514c94cab683ad94b88e9b2b7bae1df1baa814d6ce7fd9e7af5a7ed4fc646",
+  "collector_sha256": "bda99a0df0719584b7ae19af66b933fbd472965d9c15b6fbb3c8a9866fe73fd6",
+  "n_iters": 12,
+  "alpha": 0.1,
+  "patch_size": 8,
+  "nominal_mask_rate": 0.8,
+  "final_max_abs_difference_from_saved": 0.0024505257606506348,
+  "final_relative_l2_difference_from_saved": 0.0024727287236601114,
+  "archived_output_exactly_reproduced": false,
+  "job_id": "6192875",
+  "versions": {
+    "jax": "0.4.26",
+    "equinox": "0.11.3",
+    "numpy": "1.26.4"
+  },
+  "protocol": "Fresh deterministic inference replay of saved masked test sample 0; no retraining. Each frame is decoded after an actual token update. No synthetic intermediate frames.",
+  "view": "u component, native z-index 16; coordinate axes are grid indices. Errors are on this slice; energy is the full token-system energy.",
+  "schema_version": 2,
+  "case_id": "jet3d_sample0",
+  "run_id": "20260910T160045-6192875",
+  "source_repository": "/users/qzhang64/Projects/OperatorLearning/ETRO",
+  "source_commit": "52d59fa9ec827ae72fbdf9fc0b867b9c019e6455",
+  "source_dirty_state": " M ../jet_2d/model.py\n M config.yaml\n M run.py\n M step.py\n M ../jet_3d_pinn/config.yaml\n",
+  "configuration_sha256": "d3c9a1c0ef2273775c383181e7e71944705865b9848590c05a50b1592e4fb18f",
+  "environment": {
+    "jax": "0.4.26",
+    "equinox": "0.11.3",
+    "numpy": "1.26.4"
+  },
+  "slurm": {
+    "SLURM_TRES_PER_TASK": "cpu=4",
+    "SLURM_JOB_USER": "qzhang64",
+    "SLURM_TASKS_PER_NODE": "1",
+    "SLURM_JOB_UID": "140308453",
+    "SLURM_TASK_PID": "3138004",
+    "SLURM_LOCALID": "0",
+    "SLURM_SUBMIT_DIR": "/oscar/data/gk/qzhang64/Projects/Thesis/presentation",
+    "SLURM_JOB_START_TIME": "1789056009",
+    "SLURM_CLUSTER_NAME": "slurmctld",
+    "SLURM_JOB_END_TIME": "1789056909",
+    "SLURM_CPUS_ON_NODE": "4",
+    "SLURM_JOB_CPUS_PER_NODE": "4",
+    "SLURM_GTIDS": "0",
+    "SLURM_JOB_PARTITION": "batch",
+    "SLURM_OOM_KILL_STEP": "0",
+    "SLURM_JOB_NUM_NODES": "1",
+    "SLURM_JOBID": "6192875",
+    "SLURM_JOB_QOS": "normal",
+    "SLURM_PROCID": "0",
+    "SLURM_CPUS_PER_TASK": "4",
+    "SLURM_NTASKS": "1",
+    "SLURM_TOPOLOGY_ADDR": "ag39_sw2.node2334",
+    "SLURM_TOPOLOGY_ADDR_PATTERN": "switch.node",
+    "SLURM_SCRIPT_CONTEXT": "prolog_task",
+    "SLURM_MEM_PER_NODE": "8192",
+    "SLURM_NODELIST": "node2334",
+    "SLURM_JOB_ACCOUNT": "default",
+    "SLURM_PRIO_PROCESS": "0",
+    "SLURM_NPROCS": "1",
+    "SLURM_NNODES": "1",
+    "SLURM_SUBMIT_HOST": "login010",
+    "SLURM_JOB_ID": "6192875",
+    "SLURM_NODEID": "0",
+    "SLURM_CONF": "/var/spool/slurmd/conf-cache/slurm.conf",
+    "SLURM_JOB_NAME": "et-history",
+    "SLURM_JOB_GID": "6670",
+    "SLURM_JOB_NODELIST": "node2334",
+    "SLURM_MPI_TYPE": "pmix",
+    "SLURM_UMASK": "0022",
+    "SLURM_DISTRIBUTION": "cyclic",
+    "SLURM_STEP_ID": "0",
+    "SLURM_STEPID": "0",
+    "SLURM_STEP_NODELIST": "node2334",
+    "SLURM_STEP_NUM_NODES": "1",
+    "SLURM_STEP_NUM_TASKS": "1",
+    "SLURM_STEP_TASKS_PER_NODE": "1",
+    "SLURM_STEP_LAUNCHER_PORT": "33039",
+    "SLURM_SRUN_COMM_PORT": "33039",
+    "SLURM_PMIXP_ABORT_AGENT_PORT": "39673",
+    "SLURM_PMIX_MAPPING_SERV": "(vector,(0,1,1))",
+    "SLURM_SRUN_COMM_HOST": "172.20.219.34",
+    "SLURM_LAUNCH_NODE_IPADDR": "172.20.219.34"
+  },
+  "sample_ids": [
+    0
+  ],
+  "split": "saved test",
+  "normalization": "Saved normalized velocity and pressure; no new normalization",
+  "units": {
+    "field": "source normalized velocity",
+    "iteration": "token update",
+    "energy": "learned energy"
+  },
+  "shapes": {
+    "original": [
+      32,
+      48,
+      32,
+      4
+    ],
+    "masked_volume": [
+      32,
+      48,
+      32,
+      4
+    ],
+    "history": [
+      12,
+      32,
+      48,
+      32,
+      4
+    ],
+    "energy": [
+      12
+    ]
+  },
+  "command": "python3.11 data/raw/ch05/energy_history/collect.py",
+  "payload_sha256": "7dbd3b17e699c8837b80519447c2f98530f72fdfb24ab5ba3f8764bdd150de9a",
+  "input_files": [
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/ETRO/jet_3d/results/random-32/random_model_key=2_lr=1e-4_e=10k_run=-1_mr=0.8_ps=8_hh=2048_a6000-seed=2024/output/test.h5",
+      "sha256": "365495c7192d1c6428bc1943510ff6d690147a0b8c88a49a129e388461ee1083"
+    },
+    {
+      "path": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/ETRO/jet_3d/results/random-32/random_model_key=2_lr=1e-4_e=10k_run=-1_mr=0.8_ps=8_hh=2048_a6000-seed=2024/model/test.eqx",
+      "sha256": "8ed1ab453714d888e15c0c5893683c9e495df0d6cb34865443efa51c0ad042e1"
+    }
+  ]
+}

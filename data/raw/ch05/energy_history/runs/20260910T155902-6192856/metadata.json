@@ -1,0 +1,24 @@
+{
+  "sample_index": 0,
+  "source_run": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/ETRO/jet_3d/results/random-32/random_model_key=2_lr=1e-4_e=10k_run=-1_mr=0.8_ps=8_hh=2048_a6000-seed=2024",
+  "source_code": "/users/qzhang64/Projects/OperatorLearning/ETRO/examples/jet_3d/model.py",
+  "checkpoint_sha256": "8ed1ab453714d888e15c0c5893683c9e495df0d6cb34865443efa51c0ad042e1",
+  "input_sha256": "365495c7192d1c6428bc1943510ff6d690147a0b8c88a49a129e388461ee1083",
+  "source_code_sha256": "50b514c94cab683ad94b88e9b2b7bae1df1baa814d6ce7fd9e7af5a7ed4fc646",
+  "collector_sha256": "c9892a9c35369c9afdde7ee922eeeea1a3588d5e2dabb6af581994ce2eb8596e",
+  "n_iters": 12,
+  "alpha": 0.1,
+  "patch_size": 8,
+  "nominal_mask_rate": 0.8,
+  "final_max_abs_difference_from_saved": 0.0024505257606506348,
+  "final_relative_l2_difference_from_saved": 0.0024727287236601114,
+  "archived_output_exactly_reproduced": false,
+  "job_id": "6192856",
+  "versions": {
+    "jax": "0.4.26",
+    "equinox": "0.11.3",
+    "numpy": "1.26.4"
+  },
+  "protocol": "Fresh deterministic inference replay of saved masked test sample 0; no retraining. Each frame is decoded after an actual token update. No synthetic intermediate frames.",
+  "view": "u component, native z-index 16; coordinate axes are grid indices. Errors are on this slice; energy is the full token-system energy."
+}

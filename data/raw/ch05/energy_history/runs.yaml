@@ -1,0 +1,13 @@
+case_id: vortex2d_sample0
+run_id: 20260910T171240-6195303
+source_run: infer_lr=1e-4_e=10k_mr=0.9_ps=8_hh=2048
+sample_index: 0
+component: v
+native_grid: [128, 256]
+n_iters: 12
+alpha: 0.1
+checkpoint: model/test.eqx
+input: output/test.h5
+evidence_status: exploratory_checkpoint_replay
+archived_output_relative_l2_discrepancy: 0.00111350545194
+collection_script: data/raw/ch05/energy_history/collect.py
