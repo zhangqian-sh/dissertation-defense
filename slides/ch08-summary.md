@@ -25,13 +25,26 @@ source: 'Thesis Chapter 8 · fig:summary:spiking-rformer-reconstruction; tab:sum
 
 ---
 chapter: '8'
-section: Outlook · Discussion
+section: Outlook · Future directions
 source: 'Thesis Chapter 8 · Limitations and future directions'
 ---
 
 # Toward reliable, efficient scientific inference
 
 <div class="three" style="margin-top:28px"><div class="rule"><h2>Numerical reliability</h2><p class="small">Connect representation choices to error control and long-horizon behavior.</p></div><div class="rule"><h2>Deployment evidence</h2><p class="small">Measure complete hardware costs under clearly defined precision and I/O scope.</p></div><div class="rule"><h2>Generalization and constraints</h2><p class="small">Expand observation and boundary distributions while preserving physical validity.</p></div></div>
-<div style="margin-top:50px"><div class="cover-rule" style="height:3px;width:55px;background:var(--red);margin-bottom:16px"></div><p style="font-family:'Latin Modern',serif;font-size:34px;color:var(--brown)">Thank you.</p><p class="small">Qian Zhang · Brown University</p></div>
+<!-- These are future directions, not additional experimental claims. -->
 
-<!-- These are future directions, not additional experimental claims. Pause for discussion. Backups follow in chapter order. -->
+---
+chapter: '8'
+section: Discussion
+source: 'Qian Zhang · Division of Applied Mathematics · Brown University'
+cover: true
+---
+
+# Thank you.
+
+<div class="cover-rule"></div>
+<div class="author">Qian Zhang</div>
+<div class="affiliation">Division of Applied Mathematics · Brown University</div>
+
+<!-- Pause for questions and discussion. Backups follow in chapter order. -->

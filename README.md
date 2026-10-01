@@ -65,7 +65,7 @@ The browser audit blocks external requests, checks layout boundaries/missing
 images, exercises the four controls and linked trace seeking, verifies pause
 on slide exit and static fallback on data or WebGL failure, checks populated
 conversion heatmaps, and visits the presenter route. `export:pdf` audits and
-copies the build-time PDF, checking that all 47 pages are present; run the
+copies the build-time PDF, checking that all 48 pages are present; run the
 build first after editing slides. `scripts/contact_sheets.py --pdf` creates visual
 review sheets from the exported PDF (run on a compute node on Oscar).
 
