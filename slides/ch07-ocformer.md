@@ -8,7 +8,7 @@ divider: chapter
 <div class="eyebrow">Chapter 7</div>
 <div class="divider-rule" aria-hidden="true"></div>
 
-# OCFormer: constrained trajectory inference
+# OCFormer: Physics-Informed Transformers for High-Dimensional Optimal Control
 
 <p class="lead">How can learned trajectory maps balance cost, feasibility, and inference speed?</p>
 

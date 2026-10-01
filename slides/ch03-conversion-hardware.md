@@ -8,7 +8,7 @@ divider: chapter
 <div class="eyebrow">Chapter 3</div>
 <div class="divider-rule" aria-hidden="true"></div>
 
-# ANN-to-SNN conversion and hardware
+# Calibrated Conversion and Neuromorphic Deployment
 
 <p class="lead">How can scientific predictions survive conversion and hardware deployment?</p>
 

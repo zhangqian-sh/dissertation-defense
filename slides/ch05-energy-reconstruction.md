@@ -9,7 +9,7 @@ divider: part
 <p class="divider-chapter">Chapter 5</p>
 <div class="divider-rule" aria-hidden="true"></div>
 
-# Energy-based field reconstruction
+# Reconstruction from Sparse Measurements: An Energy Transformer Approach
 
 <p class="lead">How can learned energy dynamics reconstruct fields from sparse observations?</p>
 

@@ -9,7 +9,7 @@ divider: part
 <p class="divider-chapter">Chapter 2</p>
 <div class="divider-rule" aria-hidden="true"></div>
 
-# Spiking representations and marching
+# Exploratory Studies on Spiking Representations
 
 <p class="lead">How do spike representations affect numerical accuracy and recursive prediction?</p>
 

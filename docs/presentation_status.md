@@ -19,6 +19,11 @@ pages at that revision: latent map was 33 and swarm inspection was 38.
 
 ## Deliverables and verification
 
+Chapter divider titles now match the manuscript chapter names verbatim.
+Slurm job `6926578` passed the rebuild, all seven title/layout checks,
+closing-page checks, and the 55-page PDF check. Longer chapter titles
+were visually reviewed.
+
 Seven chapter dividers introduce Chapters 2–8, with part openings at Chapters
 2 and 5. The current outlook is slide 48, thank-you is slide 49, and backups
 occupy slides 50–55. Current slide numbers and sources are in `slide_inventory.csv`.

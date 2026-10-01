@@ -8,7 +8,7 @@ divider: chapter
 <div class="eyebrow">Chapter 6</div>
 <div class="divider-rule" aria-hidden="true"></div>
 
-# RFormer: observation-to-field inference
+# Reconstruction from Sparse Measurements: A Mesh-Free Approach with In-Context Learning
 
 <p class="lead">How can observation and query tokens support reconstruction across scientific domains?</p>
 

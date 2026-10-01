@@ -8,7 +8,7 @@ divider: chapter
 <div class="eyebrow">Chapter 4</div>
 <div class="divider-rule" aria-hidden="true"></div>
 
-# Randomized forward-gradient training
+# Direct SNN Training with Randomized Forward-Mode Gradients
 
 <p class="lead">What accuracy trade-offs arise when training with forward-mode derivatives?</p>
 

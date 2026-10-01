@@ -8,7 +8,7 @@ divider: chapter
 <div class="eyebrow">Chapter 8</div>
 <div class="divider-rule" aria-hidden="true"></div>
 
-# Synthesis and outlook
+# Summary
 
 <p class="lead">What do these studies establish, and what remains to be demonstrated?</p>
 
