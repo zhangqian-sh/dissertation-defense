@@ -12,7 +12,7 @@ d_{\mathbf v}=\nabla_\theta\mathcal L(\theta)^\top\mathbf v,
 $$
 
 <div class="flow"><div><strong>Sample a direction</strong><br><span class="small">Random parameter perturbation v</span></div><span class="arrow">→</span><div><strong>Carry a JVP forward</strong><br><span class="small">A directional derivative of the loss</span></div><span class="arrow">→</span><div><strong>Form an estimator</strong><br><span class="small">Use the direction and its derivative</span></div></div>
-<div class="cols"><div class="rule"><h2>Global sampling</h2><p class="small">One direction spans all trainable parameters.</p></div><div class="rule teal"><h2>Layerwise sampling</h2><p class="small">Perturbations are organized by layer to control estimator quality.</p></div></div>
+<div class="cols"><div class="rule"><h2>Global sampling</h2><p class="small">One direction spans all trainable parameters.</p></div><div class="rule"><h2>Layerwise sampling</h2><p class="small">Perturbations are organized by layer to control estimator quality.</p></div></div>
 <p class="micro" style="margin-top:20px">RFG avoids reverse mode, not derivatives. Parameter sampling and weak-surrogate threshold noise are distinct.</p>
 
 <!-- Source experiments describe Bernoulli parameter perturbations. Gaussian threshold shifts belong to the weak surrogate, not the same sampling operation. No measured training-energy savings are claimed. -->

@@ -8,7 +8,7 @@ source: 'Thesis Chapter 3 · sec:conversion:calibration; eq:conversion:general-b
 
 <p class="subtitle">Scientific regression uses smooth activations whose curvature matters in conversion.</p>
 <div class="flow"><div><strong>Train the ANN</strong><br><span class="small">Fit the scientific task with smooth activations.</span></div><span class="arrow">→</span><div><strong>Replace activations</strong><br><span class="small">Use integrate-and-fire neurons at a configured T.</span></div><span class="arrow">→</span><div><strong>Calibrate layer by layer</strong><br><span class="small">Reduce local mismatch through weights and biases.</span></div></div>
-<div class="cols" style="margin-top:30px"><div class="rule"><h2>Why calibration helps</h2><p class="small">The error bound links final-output error to local conversion mismatch, layerwise amplification, and ANN training loss.</p></div><div class="rule teal"><h2>What the result does not cover</h2><p class="small">The floating-point analysis does not remove fixed-point rounding error or guarantee hardware energy savings.</p></div></div>
+<div class="cols" style="margin-top:30px"><div class="rule"><h2>Why calibration helps</h2><p class="small">The error bound links final-output error to local conversion mismatch, layerwise amplification, and ANN training loss.</p></div><div class="rule"><h2>What the result does not cover</h2><p class="small">The floating-point analysis does not remove fixed-point rounding error or guarantee hardware energy savings.</p></div></div>
 
 <!-- The thesis extends the ReLU-specific argument to activations with approximable values/first derivatives and bounded second derivatives. Explain the bound qualitatively rather than presenting it as an exact prediction of measured error. -->
 

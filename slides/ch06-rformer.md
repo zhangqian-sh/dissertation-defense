@@ -6,7 +6,7 @@ source: 'Thesis Chapter 6 · fig:rformer:architecture; sec:rformer:attention'
 
 # Separate what is observed from what is queried
 
-<div class="cols wide-right" style="margin-top:16px"><div><div class="rule"><h2>Observation tokens</h2><p class="small">Position and measured value.</p></div><div class="rule teal" style="margin-top:25px"><h2>Query tokens</h2><p class="small">Position with zero-filled values; predictions are read at query locations.</p></div><p class="small" style="margin-top:24px">A structured attention mask encodes the token roles.</p></div><figure class="figure tall"><img src="/figures/ch06/rformer-architecture.png" alt="RFormer observation and query token architecture"><figcaption>Decoder-only transformer with a task-specific observation/query mask.</figcaption></figure></div>
+<div class="cols wide-right" style="margin-top:16px"><div><div class="rule"><h2>Observation tokens</h2><p class="small">Position and measured value.</p></div><div class="rule" style="margin-top:25px"><h2>Query tokens</h2><p class="small">Position with zero-filled values; predictions are read at query locations.</p></div><p class="small" style="margin-top:24px">A structured attention mask encodes the token roles.</p></div><figure class="figure tall"><img src="/figures/ch06/rformer-architecture.png" alt="RFormer observation and query token architecture"><figcaption>Decoder-only transformer with a task-specific observation/query mask.</figcaption></figure></div>
 
 <!-- Output at observation positions is discarded. Keep the source token roles and mask; do not substitute a generic causal language-model explanation. -->
 
@@ -18,7 +18,7 @@ source: 'Thesis Chapter 6 · sec:rformer:attention · Structured mask; source pe
 
 # Bound memory while preserving the observation set
 
-<div class="cols" style="margin-top:24px"><div class="rule"><h2>Information flow</h2><p class="small">Queries attend to all observations.</p><p class="small">Queries do not attend to other queries.</p><p class="small">Observations attend to preceding observations and themselves.</p></div><div class="rule teal"><h2>Large-field evaluation</h2><p class="small">Hold one observation subset fixed for the snapshot.</p><p class="small">Evaluate query chunks and restore original point order.</p><p class="small">Exclude padded entries from reconstructed output.</p></div></div>
+<div class="cols" style="margin-top:24px"><div class="rule"><h2>Information flow</h2><p class="small">Queries attend to all observations.</p><p class="small">Queries do not attend to other queries.</p><p class="small">Observations attend to preceding observations and themselves.</p></div><div class="rule"><h2>Large-field evaluation</h2><p class="small">Hold one observation subset fixed for the snapshot.</p><p class="small">Evaluate query chunks and restore original point order.</p><p class="small">Exclude padded entries from reconstructed output.</p></div></div>
 <div class="takeaway">The source caps each sequence at 1024 tokens; memory follows the per-pass budget rather than the full point count.</div>
 
 <!-- Chunking is a computational operation, not a new observation protocol. Query outputs do not depend on other unobserved queries under the mask. -->

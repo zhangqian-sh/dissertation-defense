@@ -15,7 +15,7 @@ source: 'Thesis Chapter 1 · fig:intro:arc · Two independent research themes'
 <div class="chapter-pair">Conversion & hardware deployment <span>Chapter 3</span></div>
 <div class="chapter-pair">Forward-mode training <span>Chapter 4</span></div>
 </div>
-<div class="rule teal">
+<div class="rule">
 <div class="eyebrow">Part II · Sequence-to-sequence models</div>
 <h2>Infer fields and coordinated trajectories</h2>
 <div class="chapter-pair">Energy-based reconstruction <span>Chapter 5</span></div>

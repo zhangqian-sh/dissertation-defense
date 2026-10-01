@@ -83,6 +83,6 @@ source: 'Thesis Chapter 5 · tab:et:timing · Single NVIDIA A6000; 12 inference 
 # Separate offline training from iterative inference
 
 <table style="margin-top:25px"><thead><tr><th>Benchmark</th><th>Total training</th><th>Inference per snapshot</th></tr></thead><tbody><tr><td>2D vortex street</td><td>≈ 90 min</td><td>≈ 2.7 ms</td></tr><tr><td>2D Schlieren jet</td><td>≈ 150 min</td><td>≈ 2.5 ms</td></tr><tr><td>3D turbulent jet</td><td>≈ 70 min</td><td>≈ 100 ms</td></tr></tbody></table>
-<div class="cols" style="margin-top:28px"><div class="rule"><h2>Repeated reconstruction</h2><p class="small">The trained energy is reused across snapshots.</p></div><div class="rule teal"><h2>A bounded operating regime</h2><p class="small">Distribution shift and observation changes can alter reconstruction quality.</p></div></div>
+<div class="cols" style="margin-top:28px"><div class="rule"><h2>Repeated reconstruction</h2><p class="small">The trained energy is reused across snapshots.</p></div><div class="rule"><h2>A bounded operating regime</h2><p class="small">Distribution shift and observation changes can alter reconstruction quality.</p></div></div>
 
 <!-- Times are source measurements with the stated hardware and iteration count. These are not performance measurements of the presentation or a matched comparison with RFormer. -->

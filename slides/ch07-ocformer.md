@@ -77,7 +77,7 @@ source: 'Thesis Chapter 7 · tab:oc:amortized · 100 rotated training pairs; JIT
 
 <p class="subtitle">Held-out rotations of 2D antipodal configurations.</p>
 <table><thead><tr><th>Agents</th><th>Test cost</th><th>Gap vs. lower bound</th><th>Feasibility</th><th>Inference</th></tr></thead><tbody><tr><td>8</td><td>0.4053</td><td>1.3%</td><td>100%</td><td>218.6 ± 1.3 ms</td></tr><tr class="highlight"><td>16</td><td>0.8399</td><td>5.0%</td><td>75%</td><td>220.9 ± 1.2 ms</td></tr></tbody></table>
-<div class="cols" style="margin-top:27px"><div class="rule"><h2>What is demonstrated</h2><p class="small">Zero-shot inference within the trained rotation distribution.</p></div><div class="rule teal"><h2>What remains open</h2><p class="small">Arbitrary boundaries, variable agent counts, and amortized 3D room navigation.</p></div></div>
+<div class="cols" style="margin-top:27px"><div class="rule"><h2>What is demonstrated</h2><p class="small">Zero-shot inference within the trained rotation distribution.</p></div><div class="rule"><h2>What remains open</h2><p class="small">Arbitrary boundaries, variable agent counts, and amortized 3D room navigation.</p></div></div>
 
 <!-- Feasibility is the fraction of held-out pairs with positive minimum inter-agent clearance. Keep the lower-bound denominator explicit. Full cost uncertainty is retained in the thesis table and backup provenance. -->
 
