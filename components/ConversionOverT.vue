@@ -4,7 +4,7 @@ import {useDefenseAsset} from '../composables/useDefenseAsset'
 import {usePlayback} from '../composables/usePlayback'
 const {payload:p,error,staticMode}=useDefenseAsset('ch03/conversion_over_t')
 const count=computed(()=>p.value?.T.values.length||128)
-const {index,playing,toggle,seek,reset}=usePlayback(count,63,100)
+const {index,playing,toggle,seek,reset}=usePlayback(count,0,100)
 const current=computed(()=>{if(!p.value)return [];const n=p.value.reference.values.length;return p.value.frames.values.subarray(index.value*n,(index.value+1)*n)})
 const difference=computed(()=>Float32Array.from(current.value,(v,i)=>v-p.value.reference.values[i]))
 const limit=computed(()=>p.value?.field_limit||1)

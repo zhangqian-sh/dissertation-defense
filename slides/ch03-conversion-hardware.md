@@ -58,7 +58,7 @@ source: 'Burgers PINN · matched original ANN checkpoint · fresh advanced CAA a
 
 <ConversionOverT />
 
-<!-- Demo: start at prefix 64, scrub to 65, 80, 96 and 128, then play from 1 to show the full buildup. Each field is a captured cumulative mean of actual emitted final-layer spikes from one SNN calibrated at fixed horizon 128. Weights, thresholds and initialization remain fixed. This is a fresh calibration of the ANN checkpoint whose grid predictions match the archive, not reproduction of the historical calibrated SNN. No interpolation or per-prefix recalibration. The reference [t,x] layout is restored and checked against initial/boundary conditions. -->
+<!-- Demo: start at prefix 1 and play to show the full buildup; scrub to 65, 80, 96 and 128 to inspect later prefixes. Each field is a captured cumulative mean of actual emitted final-layer spikes from one SNN calibrated at fixed horizon 128. Weights, thresholds and initialization remain fixed. This is a fresh calibration of the ANN checkpoint whose grid predictions match the archive, not reproduction of the historical calibrated SNN. No interpolation or per-prefix recalibration. The reference [t,x] layout is restored and checked against initial/boundary conditions. -->
 
 ---
 chapter: '3'

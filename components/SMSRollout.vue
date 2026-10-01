@@ -4,7 +4,7 @@ import { useDefenseAsset,row } from '../composables/useDefenseAsset'
 import { usePlayback } from '../composables/usePlayback'
 const {payload:p,error,staticMode}=useDefenseAsset('ch02/sms_longtime_rollout')
 const count=computed(()=>p.value?.time.shape[0]||100)
-const {index,playing,toggle,seek,reset}=usePlayback(count,40,110)
+const {index,playing,toggle,seek,reset}=usePlayback(count,0,110)
 const field=computed(()=>p.value?[{name:'Reference',color:'#232727',y:row(p.value.reference_state,index.value)},{name:'Reference-fed',color:'#287e83',y:row(p.value.one_step_state,index.value)},{name:'Cascade',color:'#8b242d',y:row(p.value.cascade_state,index.value)}]:[])
 const errors=computed(()=>p.value?[{name:'Reference-fed',color:'#287e83',y:p.value.one_step_error.values},{name:'Cascade',color:'#8b242d',y:p.value.cascade_error.values}]:[])
 </script>
