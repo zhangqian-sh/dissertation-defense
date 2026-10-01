@@ -49,7 +49,7 @@ source: 'Thesis Chapter 7 · tab:oc:sympocnet; tab:oc:2d-scaling · 2D antipodal
 
 # Scaling changes the cost of coordinated motion
 
-<div class="cols" style="margin-top:24px"><table><thead><tr><th>Agents</th><th>OCFormer cost</th><th>SympOCNet cost</th></tr></thead><tbody><tr><td>4</td><td>0.2003</td><td>0.2001</td></tr><tr><td>8</td><td>0.4036</td><td>0.4046</td></tr><tr><td>16</td><td>0.8307</td><td>0.8345</td></tr><tr class="highlight"><td>32</td><td>1.2531</td><td>1.4413</td></tr><tr><td>128</td><td>5.1424</td><td>— · infeasible</td></tr></tbody></table><div class="rule"><h2>Read cost with feasibility</h2><p class="small">Near-parity at smaller agent counts.</p><p class="small">The source reports a lower cost at M=32 and failed convergence for the SympOCNet M=128 case.</p><p class="small">These are 2D per-instance results, separate from the upcoming 3D scene.</p></div></div>
+<div class="cols" style="margin-top:24px"><table><thead><tr><th>Agents</th><th>OCFormer cost</th><th>SympOCNet cost</th></tr></thead><tbody><tr><td>4</td><td>0.2003</td><td>0.2001</td></tr><tr><td>8</td><td>0.4036</td><td>0.4046</td></tr><tr><td>16</td><td>0.8307</td><td>0.8345</td></tr><tr><td>32</td><td class="highlight">1.2531</td><td class="highlight">1.4413</td></tr><tr><td>128</td><td>5.1424</td><td>— · infeasible</td></tr></tbody></table><div class="rule"><h2>Read cost with feasibility</h2><p class="small">Near-parity at smaller agent counts.</p><p class="small">The source reports a lower cost at M=32 and failed convergence for the SympOCNet M=128 case.</p><p class="small">These are 2D per-instance results, separate from the upcoming 3D scene.</p></div></div>
 
 <!-- Values must match the source table. Cost gaps elsewhere are relative to a stated lower bound, not the unknown constrained optimum. -->
 
@@ -61,7 +61,7 @@ source: 'Thesis Chapter 7 · tab:oc:regimes · Protocol-specific timing, not a s
 
 # Three regimes answer different deployment questions
 
-<table style="margin-top:25px"><thead><tr><th>Regime</th><th>Work per new problem</th><th>Scope</th></tr></thead><tbody><tr><td>Per-instance</td><td>≈ 20 min optimization</td><td>One fixed boundary pair</td></tr><tr><td>Transfer</td><td>Seconds of adaptation</td><td>Structured or small perturbations</td></tr><tr class="highlight"><td>Amortized</td><td>≈ 220 ms forward pass</td><td>Held-out, in-distribution pairs</td></tr></tbody></table>
+<table style="margin-top:25px"><thead><tr><th>Regime</th><th>Work per new problem</th><th>Scope</th></tr></thead><tbody><tr><td>Per-instance</td><td>≈ 20 min optimization</td><td>One fixed boundary pair</td></tr><tr><td>Transfer</td><td>Seconds of adaptation</td><td>Structured or small perturbations</td></tr><tr><td>Amortized</td><td class="highlight">≈ 220 ms forward pass</td><td>Held-out, in-distribution pairs</td></tr></tbody></table>
 <div class="takeaway">The online speedup changes what must be learned offline and what boundary variation is covered.</div>
 <p class="small" style="margin-top:24px">A per-instance 3D trajectory does not inherit the amortized 2D latency claim.</p>
 
@@ -76,7 +76,7 @@ source: 'Thesis Chapter 7 · tab:oc:amortized · 100 rotated training pairs; JIT
 # Fast inference does not guarantee feasibility
 
 <p class="subtitle">Held-out rotations of 2D antipodal configurations.</p>
-<table><thead><tr><th>Agents</th><th>Test cost</th><th>Gap vs. lower bound</th><th>Feasibility</th><th>Inference</th></tr></thead><tbody><tr><td>8</td><td>0.4053</td><td>1.3%</td><td>100%</td><td>218.6 ± 1.3 ms</td></tr><tr class="highlight"><td>16</td><td>0.8399</td><td>5.0%</td><td>75%</td><td>220.9 ± 1.2 ms</td></tr></tbody></table>
+<table><thead><tr><th>Agents</th><th>Test cost</th><th>Gap vs. lower bound</th><th>Feasibility</th><th>Inference</th></tr></thead><tbody><tr><td>8</td><td>0.4053</td><td>1.3%</td><td>100%</td><td>218.6 ± 1.3 ms</td></tr><tr><td>16</td><td>0.8399</td><td>5.0%</td><td class="highlight">75%</td><td>220.9 ± 1.2 ms</td></tr></tbody></table>
 <div class="cols" style="margin-top:27px"><div class="rule"><h2>What is demonstrated</h2><p class="small">Zero-shot inference within the trained rotation distribution.</p></div><div class="rule"><h2>What remains open</h2><p class="small">Arbitrary boundaries, variable agent counts, and amortized 3D room navigation.</p></div></div>
 
 <!-- Feasibility is the fraction of held-out pairs with positive minimum inter-agent clearance. Keep the lower-bound denominator explicit. Full cost uncertainty is retained in the thesis table and backup provenance. -->

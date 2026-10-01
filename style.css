@@ -42,7 +42,7 @@ html,body,#app { font-family:Inter,Arial,sans-serif; color:var(--ink); }
 .academic table { width:100%; font-size:17px; line-height:1.4; border-collapse:collapse; margin:10px 0; }
 .academic th { text-align:left; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.055em; font-weight:600; border-bottom:1.5px solid var(--ink); padding:10px 12px; }
 .academic td { padding:11px 12px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; }
-.academic tr.highlight td { background:var(--brown-wash); color:var(--brown); }
+.academic tr.highlight td, .academic td.highlight { background:var(--brown-wash); color:var(--brown); }
 .academic ul { margin:12px 0; padding-left:23px; }
 .academic li { margin:12px 0; padding-left:4px; }
 .academic .equation { padding:16px 20px; background:#f6f8f7; margin:20px 0; text-align:center; }
