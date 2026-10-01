@@ -1,11 +1,12 @@
 import { shallowRef, ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import { useNav } from '@slidev/client'
+import { publicAssetUrl } from './publicAssetUrl.mjs'
 export interface Tensor { dtype:string; shape:number[]; order:'C'; values:Float64Array|Float32Array }
 export interface DefenseAsset { schema_version:2; asset_id:string; units:Record<string,string>; data:{states:Array<{id:string;status:string;payload:any}>} }
 const cache=new Map<string,Promise<DefenseAsset>>()
 let manifest:Promise<any>|undefined
-const local=(path:string,base=location.origin+'/data/manifest.json')=>{
-  const url=new URL(path,base)
+const local=(path:string)=>{
+  const url=new URL(path.startsWith('/')?publicAssetUrl(path):path,location.origin+publicAssetUrl('/data/manifest.json'))
   if(url.origin!==location.origin) throw new Error('Nonlocal data URL')
   return url.href
 }
@@ -32,7 +33,7 @@ async function decode(value:any):Promise<any> {
 }
 export function loadAsset(id:string){
   if(!cache.has(id)) cache.set(id,(async()=>{
-    manifest ||= fetchChecked('/data/manifest.json').then(r=>r.json())
+    manifest ||= fetchChecked(publicAssetUrl('/data/manifest.json')).then(r=>r.json())
     const m=await manifest
     if(m.schema_version!==2) throw new Error('Unsupported manifest')
     const entry=m.assets.find((a:any)=>a.asset_id===id)
