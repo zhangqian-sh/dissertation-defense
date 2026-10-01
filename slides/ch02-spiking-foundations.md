@@ -1,5 +1,22 @@
 ---
 chapter: '2'
+section: Part I · Neuromorphic algorithms
+source: 'Thesis Chapter 2 · Chapter overview'
+divider: part
+---
+
+<div class="eyebrow">Part I · Neuromorphic algorithms</div>
+<p class="divider-chapter">Chapter 2</p>
+<div class="divider-rule" aria-hidden="true"></div>
+
+# Spiking representations and marching
+
+<p class="lead">How do spike representations affect numerical accuracy and recursive prediction?</p>
+
+<!-- Begin Part I with representation: how continuous quantities become spikes, then how those representations support operator evaluation and physical-time marching. -->
+
+---
+chapter: '2'
 section: Spiking representations · Encoding
 source: 'Thesis Chapter 2 · fig:snn:encoding · Lower-triangular encoding, K=30'
 ---

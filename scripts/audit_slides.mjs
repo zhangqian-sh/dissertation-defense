@@ -35,14 +35,21 @@ try{
     if(r.bottom>f.top-8*scale||r.right>box.right-40*scale||r.left<box.left+38*scale)overflow.push({tag:child.tagName,text:child.textContent.slice(0,70),bottom:r.bottom,footer:f.top})
    }
    const missing=[...body.querySelectorAll('img')].filter(i=>!i.complete||i.naturalWidth===0).map(i=>i.src)
-   return {title:el.querySelector('h1')?.textContent,overflow,missing,bodyScroll:body.scrollHeight,bodyHeight:body.clientHeight}
+   return {title:el.querySelector('h1')?.textContent,divider:el.classList.contains('chapter-divider'),partDivider:el.classList.contains('part-divider'),chapter:Number(el.querySelector('.footer .page')?.textContent.match(/CH (\d+)/)?.[1]),overflow,missing,bodyScroll:body.scrollHeight,bodyHeight:body.clientHeight}
   })
   await slide.screenshot({path:resolve(out,'slides',`${String(n).padStart(2,'0')}.png`)})
   results.push({slide:n,...measurements});console.log(`Slide ${n}/${count}: ${measurements.title} · overflow=${measurements.overflow.length}`)
  }
+ const dividers=results.filter(r=>r.divider)
+ if(dividers.length!==7||dividers.some((r,i)=>r.chapter!==i+2||results[r.slide]?.chapter!==r.chapter||r.partDivider!==[2,5].includes(r.chapter)))throw Error('Chapter divider count, placement or part styling mismatch')
+ const slideByTitle=heading=>{
+  const matches=results.filter(r=>r.title===heading)
+  if(matches.length!==1)throw Error(`Expected one slide titled "${heading}", found ${matches.length}`)
+  return matches[0].slide
+ }
  const interactions=[]
  for(const [heading,label] of [['Recursive error beyond the training interval','SMS physical time'],['Burgers: reference, SNN and difference across T','Burgers SNN T'],['Locate the encounter that determines clearance','Swarm physical time'],['Follow reconstruction through the token updates','ET reconstruction iteration']]){
-  const n=results.find(x=>x.title===heading)?.slide;if(!n)throw new Error('Missing interactive slide '+heading)
+  const n=slideByTitle(heading)
   const loadStarted=Date.now()
   await openSlide(n)
   const slide=page.locator(`.slidev-page[data-slidev-no="${n}"]:visible .academic`).first()
@@ -101,7 +108,8 @@ try{
   if(!await slide.getByRole('button',{name:'Play',exact:true}).count())throw new Error('Playback did not pause on slide leave')
   interactions.push({slide:n,readyMs,slider:true,linkedTraceSeeking:label!=='Burgers SNN T',playback:true,navigationIsolation:true,pauseOnExit:true,...(label==='Burgers SNN T'?{populatedFieldCanvases:true,referenceInvariant:true,TChangesSNNAndDifference:true,intermediate65Verified:true}:{})})
  }
- for(const [n,kind] of [[27,'vortex'],[29,'jet']]){
+ for(const [heading,kind] of [['Sparse observations recover coherent flow structure','vortex'],['Compare both reconstructed fields and spectra','jet']]){
+  const n=slideByTitle(heading)
   await openSlide(n)
   const slide=page.locator(`.slidev-page[data-slidev-no="${n}"]:visible .academic`).first()
   const slider=slide.getByRole('slider',{name:`RFormer ${kind} physical time`})
@@ -121,7 +129,7 @@ try{
  }
  const addedViews=[['Reconstruct temperature across continental stations','Weather date'],['Learn a map from latent to physical trajectories','Latent and optimized trajectory time'],['Locate the encounter that determines clearance','128-drone physical time']]
  for(const [heading,label] of addedViews){
-  const n=results.find(r=>r.title===heading)?.slide;if(!n)throw Error('Missing new view '+heading)
+  const n=slideByTitle(heading)
   await openSlide(n)
   const slide=page.locator(`.slidev-page[data-slidev-no="${n}"]:visible .academic`).first()
   if(label==='128-drone physical time'){
@@ -144,7 +152,8 @@ try{
  await failure.route('**/data/**',route=>route.abort())
  const fp=await failure.newPage();const sms=interactions[0].slide
  await fp.goto(slideUrl(sms),{waitUntil:'networkidle'});await fp.getByText('Static view · interactive data unavailable').first().waitFor()
- for(const n of [27,29,30,33,38]){
+ for(const heading of ['Sparse observations recover coherent flow structure','Compare both reconstructed fields and spectra','Reconstruct temperature across continental stations','Learn a map from latent to physical trajectories','Locate the encounter that determines clearance']){
+  const n=slideByTitle(heading)
   await fp.goto(slideUrl(n),{waitUntil:'networkidle'})
   const failedSlide=fp.locator(`.slidev-page[data-slidev-no="${n}"]:visible .academic`).first()
   await failedSlide.getByText('Static view · interactive data unavailable').waitFor()

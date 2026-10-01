@@ -1,6 +1,6 @@
 # Presentation implementation
 
-The deck contains 48 slides: 42 main slides following Chapters 1–8 and six
+The deck contains 55 slides: 49 main slides following Chapters 1–8 and six
 chapter-ordered backups. The academic layout uses a white 16:9 canvas,
 locally bundled serif headings and sans-serif body text, restrained Brown-red
 accents, chapter progress, source footers, and speaker notes.
@@ -15,12 +15,23 @@ Additional dynamic views include the two RFormer flow sequences, paired weather
 maps, recorded optimized physical trajectories beside straight latent references,
 and a default 128-agent 2D tab beside the 3D swarm. Blood now uses two original
 static 2×2 u/v snapshot figures. Splitting the former slide 30 shifts subsequent
-pages: latent map is now 33 and swarm inspection is 38.
+pages at that revision: latent map was 33 and swarm inspection was 38.
 
 ## Deliverables and verification
 
+Seven chapter dividers introduce Chapters 2–8, with part openings at Chapters
+2 and 5. The current outlook is slide 48, thank-you is slide 49, and backups
+occupy slides 50–55. Current slide numbers and sources are in `slide_inventory.csv`.
+Slurm job `6922054` passed the 55-slide/55-page browser/PDF audit, including
+seven correctly placed chapter dividers and nine interactive views, without
+overflow, missing images, browser errors, or external requests.
+Final contrast rebuild `6922148` verified full-opacity guiding questions,
+all seven divider layouts, both closing slides, and the 55-page PDF. These
+slides were visually reviewed.
+
 The 2026-10-01 closing revision separates future directions (slide 41) from
-a minimal thank-you slide (slide 42); six backups now follow on slides 43–48.
+a minimal thank-you slide (slide 42); at that revision, six backups followed
+on slides 43–48.
 Slurm job `6920986` passed the 48-slide/48-page browser/PDF audit, including
 nine interactive figures, with no overflow or missing images. Both closing
 slides were visually reviewed.

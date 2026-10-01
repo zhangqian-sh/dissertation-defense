@@ -1,5 +1,21 @@
 ---
 chapter: '8'
+section: Chapter 8 · Transition
+source: 'Thesis Chapter 8 · Chapter overview'
+divider: chapter
+---
+
+<div class="eyebrow">Chapter 8</div>
+<div class="divider-rule" aria-hidden="true"></div>
+
+# Synthesis and outlook
+
+<p class="lead">What do these studies establish, and what remains to be demonstrated?</p>
+
+<!-- Bring the two independent themes together at the level of conclusions. Separate tested contributions from preliminary hybrid results and future directions. -->
+
+---
+chapter: '8'
 section: Synthesis · Contributions
 source: 'Thesis Chapter 8 · Synthesis of Chapters 2–7 · No experimentally integrated reconstruction-to-control pipeline'
 ---

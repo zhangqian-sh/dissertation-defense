@@ -1,5 +1,22 @@
 ---
 chapter: '5'
+section: Part II · Sequence-to-sequence modeling
+source: 'Thesis Chapter 5 · Chapter overview'
+divider: part
+---
+
+<div class="eyebrow">Part II · Sequence-to-sequence modeling</div>
+<p class="divider-chapter">Chapter 5</p>
+<div class="divider-rule" aria-hidden="true"></div>
+
+# Energy-based field reconstruction
+
+<p class="lead">How can learned energy dynamics reconstruct fields from sparse observations?</p>
+
+<!-- Begin the independent second theme: field reconstruction and trajectory inference. This Energy Transformer study does not receive outputs from the preceding spiking methods. -->
+
+---
+chapter: '5'
 section: Energy Transformer · Reconstruction
 source: 'Thesis Chapter 5 · fig:et:workflow · Reconstruction from sparse observations'
 ---

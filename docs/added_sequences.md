@@ -7,7 +7,7 @@ requests are needed. `public/data/sequences/<case>/index.json` contains frame
 checksums, source hashes, time labels and qualifications. Fallbacks are exact
 copies of first frames, outside the data directory so data failures remain usable.
 
-## Latent/optimized physical paths — slide 33 (formerly 32)
+## Latent/optimized physical paths — slide 39 (formerly 32)
 
 Eight colors, hollow initial positions, faint paths, square panels and reciprocal
 phi arrows preserve the original style. The original hand-designed detour is
@@ -19,7 +19,7 @@ endpoints, as in that notebook. The near-antipodal endpoints cross centrally
 The right paths are numerically optimized L-BFGS results, not a certified global
 optimum or proof of a diffeomorphism. Source run and plotting notebook are hashed.
 
-## 128-drone 2D example — slide 38 (formerly 37)
+## 128-drone 2D example — slide 44 (formerly 37)
 
 The 2D tab is first and selected by default; the existing 3D inspector remains available. All 200 frames
 come from `room_2d/OCFormer_0_256_M=128/best_pred_lbfgs.h5`. The collector checks
@@ -32,7 +32,7 @@ clearance is minimum distance minus 0.02, using the source radius 0.01. Its
 sampled minimum is 0.0002346057; this is not a continuous-time safety certificate
 or an amortized-inference result. No obstacle is added to this empty-room case.
 
-## Weather — slide 30
+## Weather — slide 35
 
 Static station geometry accompanies two stacked temperature maps (reference
 and reconstructed) from saved RFormer
@@ -54,7 +54,7 @@ are labeled per frame. Original values remain unchanged, their full range is
 retained in metadata, and no extra source quality control is claimed. No
 temporal frames are synthesized. Local geographic boundary input is hashed.
 
-## Blood — slide 31
+## Blood — slide 36
 
 The previous movie is replaced by the original published `blood_snapshot_u.pdf`
 and `blood_snapshot_v.pdf`, converted to PNG without changing their panels or

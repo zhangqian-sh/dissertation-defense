@@ -1,5 +1,21 @@
 ---
 chapter: '4'
+section: Chapter 4 · Transition
+source: 'Thesis Chapter 4 · Chapter overview'
+divider: chapter
+---
+
+<div class="eyebrow">Chapter 4</div>
+<div class="divider-rule" aria-hidden="true"></div>
+
+# Randomized forward-gradient training
+
+<p class="lead">What accuracy trade-offs arise when training with forward-mode derivatives?</p>
+
+<!-- Move from conversion and deployment to training. Explain directional derivatives and their accuracy trade-offs without claiming measured training-energy savings. -->
+
+---
+chapter: '4'
 section: Randomized forward gradients · Method
 source: 'Thesis Chapter 4 · sec:rfg:estimator; eq:rfg:directional; eq:rfg:global; eq:rfg:layerwise'
 ---

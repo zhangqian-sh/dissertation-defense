@@ -1,5 +1,21 @@
 ---
 chapter: '6'
+section: Chapter 6 · Transition
+source: 'Thesis Chapter 6 · Chapter overview'
+divider: chapter
+---
+
+<div class="eyebrow">Chapter 6</div>
+<div class="divider-rule" aria-hidden="true"></div>
+
+# RFormer: observation-to-field inference
+
+<p class="lead">How can observation and query tokens support reconstruction across scientific domains?</p>
+
+<!-- Move from iterative energy dynamics to observation/query sequence modeling. Compare the reconstruction mechanisms without presenting one as a stage of the other. -->
+
+---
+chapter: '6'
 section: RFormer · Representation
 source: 'Thesis Chapter 6 · fig:rformer:architecture; sec:rformer:attention'
 ---

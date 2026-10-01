@@ -1,5 +1,21 @@
 ---
 chapter: '7'
+section: Chapter 7 · Transition
+source: 'Thesis Chapter 7 · Chapter overview'
+divider: chapter
+---
+
+<div class="eyebrow">Chapter 7</div>
+<div class="divider-rule" aria-hidden="true"></div>
+
+# OCFormer: constrained trajectory inference
+
+<p class="lead">How can learned trajectory maps balance cost, feasibility, and inference speed?</p>
+
+<!-- Move from field reconstruction to a separate optimal-control study. The trajectory model does not take reconstructed fields from the preceding experiments as inputs. -->
+
+---
+chapter: '7'
 section: OCFormer · Optimal-control formulation
 source: 'Thesis Chapter 7 · Problem formulation and Hamiltonian system'
 ---

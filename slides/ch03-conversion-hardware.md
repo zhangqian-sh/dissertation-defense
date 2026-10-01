@@ -1,5 +1,21 @@
 ---
 chapter: '3'
+section: Chapter 3 · Transition
+source: 'Thesis Chapter 3 · Chapter overview'
+divider: chapter
+---
+
+<div class="eyebrow">Chapter 3</div>
+<div class="divider-rule" aria-hidden="true"></div>
+
+# ANN-to-SNN conversion and hardware
+
+<p class="lead">How can scientific predictions survive conversion and hardware deployment?</p>
+
+<!-- Move from spike representations to converting trained scientific networks. Separate floating-point calibration accuracy from hardware precision and measured deployment costs. -->
+
+---
+chapter: '3'
 section: ANN-to-SNN conversion · Calibration
 source: 'Thesis Chapter 3 · sec:conversion:calibration; eq:conversion:general-bound · Floating-point conversion analysis'
 ---

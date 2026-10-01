@@ -6,6 +6,8 @@ The deck is mostly publication-quality static slides, with purposeful dynamic fi
 
 The presentation theme follows [Brown's official Visual Identity color guide](https://policy.brown.edu/sites/default/files/policy/related/Brown_Visual_Identity_Policy_2016-07-22.pdf), printed pages 19–20. Main colors are brown `#4E3629` for headings, small text, and all horizontal bars above text sections and workflow steps; full-tint red `#ED1C24` marks takeaways, progress indicators, and title accents. Horizontal bars group content without assigning different importance to comparison columns. The primary accent tokens are gold `#FFC72C` and gray `#98A4AE`. White backgrounds and subtle screens of brown keep the deck readable; published figures, scientific field scales, and comparison-series colors retain their source meanings. Theme colors are centralized in `style.css`.
 
+Brief chapter dividers precede Chapters 2–8, with a chapter label, short title, and guiding question vertically centered on white. Chapters 2 and 5 introduce Parts I and II through larger titles and wider brown rules. The academic layout accepts `divider: chapter` or `divider: part`; headers, progress indicators, and footers remain consistent with content slides.
+
 Slides must follow the thesis order: **1 Introduction → 2 Spiking representations and SMS → 3 Conversion and Loihi 2 → 4 RFG → 5 Energy Transformer → 6 RFormer → 7 OCFormer → 8 Summary.** Implementation scheduling does not change slide order.
 
 Preserve the two independent themes: Part I neuromorphic algorithms and Part II sequence-to-sequence studies of reconstruction and optimal control. No experimentally demonstrated reconstruction-to-control pipeline is claimed.
