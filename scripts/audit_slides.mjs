@@ -5,21 +5,25 @@ import {resolve} from 'node:path'
 import {execFileSync} from 'node:child_process'
 const root=resolve(import.meta.dirname,'..'),out=resolve(root,'artifacts')
 await mkdir(resolve(out,'slides'),{recursive:true})
-const port=3137,url=`http://127.0.0.1:${port}`
-const server=spawn(process.execPath,['scripts/serve.mjs'],{cwd:root,env:{...process.env,PORT:String(port)},stdio:['ignore','pipe','pipe']})
+const port=3137,origin=`http://127.0.0.1:${port}`,base=process.env.BASE_PATH||'/',routerMode=process.env.ROUTER_MODE||'history'
+const url=origin+base.replace(/\/$/,'')
+const slideUrl=(path,query='')=>routerMode==='hash'?`${url}/${query?'?'+query:''}#/${path}`:`${url}/${path}${query?'?'+query:''}`
+const server=spawn(process.execPath,['scripts/serve.mjs'],{cwd:root,env:{...process.env,PORT:String(port),BASE_PATH:base},stdio:['ignore','pipe','pipe']})
 const delay=ms=>new Promise(r=>setTimeout(r,ms))
 let browser
 const errors=[],requests=[],results=[]
 try{
- for(let i=0;i<100;i++){try{if((await fetch(url)).ok)break}catch{}await delay(100)}
+ for(let i=0;i<100;i++){try{if((await fetch(url+'/')).ok)break}catch{}await delay(100)}
  browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']})
  const context=await browser.newContext({viewport:{width:1600,height:900},deviceScaleFactor:1})
- await context.route('**/*',route=>{const req=route.request().url();if(!req.startsWith(url)&&!req.startsWith('data:')&&!req.startsWith('blob:')){requests.push(req);return route.abort()}return route.continue()})
- const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message))
+ await context.route('**/*',route=>{const req=route.request().url();if(!req.startsWith(url+'/')&&!req.startsWith('data:')&&!req.startsWith('blob:')){requests.push(req);return route.abort()}return route.continue()})
+ const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(`HTTP ${r.status()}: ${r.url()}`)})
+ // Hash-only navigation keeps components alive; each independent check opens a fresh document.
+ const openSlide=async(path,query='')=>{if(routerMode==='hash')await page.goto('about:blank');await page.goto(slideUrl(path,query),{waitUntil:'networkidle'})}
  const files=['slides.md',...(await readdir(resolve(root,'slides'))).filter(x=>x.endsWith('.md')).map(x=>'slides/'+x)]
  let count=0;for(const file of files)count+=((await readFile(resolve(root,file),'utf8')).match(/^# /gm)||[]).length
  for(let n=1;n<=count;n++){
-  await page.goto(`${url}/${n}?static=1`,{waitUntil:'networkidle'})
+  await openSlide(n,'static=1')
   await page.evaluate(()=>document.fonts.ready)
   const slide=page.locator(`.slidev-page[data-slidev-no="${n}"]:visible .academic`).first()
   await slide.waitFor({timeout:15000})
@@ -40,7 +44,7 @@ try{
  for(const [heading,label] of [['Recursive error beyond the training interval','SMS physical time'],['Burgers: reference, SNN and difference across T','Burgers SNN T'],['Locate the encounter that determines clearance','Swarm physical time'],['Follow reconstruction through the token updates','ET reconstruction iteration']]){
   const n=results.find(x=>x.title===heading)?.slide;if(!n)throw new Error('Missing interactive slide '+heading)
   const loadStarted=Date.now()
-  await page.goto(`${url}/${n}`,{waitUntil:'networkidle'})
+  await openSlide(n)
   const slide=page.locator(`.slidev-page[data-slidev-no="${n}"]:visible .academic`).first()
   if(label==='Swarm physical time')await slide.getByRole('button',{name:'3D · 16 drones',exact:true}).click()
   const slider=slide.getByRole('slider',{name:label});await slider.waitFor({timeout:15000})
@@ -94,7 +98,7 @@ try{
   interactions.push({slide:n,readyMs,slider:true,linkedTraceSeeking:label!=='Burgers SNN T',playback:true,navigationIsolation:true,pauseOnExit:true,...(label==='Burgers SNN T'?{populatedFieldCanvases:true,referenceInvariant:true,TChangesSNNAndDifference:true,intermediate65Verified:true}:{})})
  }
  for(const [n,kind] of [[27,'vortex'],[29,'jet']]){
-  await page.goto(`${url}/${n}`,{waitUntil:'networkidle'})
+  await openSlide(n)
   const slide=page.locator(`.slidev-page[data-slidev-no="${n}"]:visible .academic`).first()
   const slider=slide.getByRole('slider',{name:`RFormer ${kind} physical time`})
   await slider.waitFor({timeout:20000})
@@ -114,7 +118,7 @@ try{
  const addedViews=[['Reconstruct temperature across continental stations','Weather date'],['Learn a map from latent to physical trajectories','Latent and optimized trajectory time'],['Locate the encounter that determines clearance','128-drone physical time']]
  for(const [heading,label] of addedViews){
   const n=results.find(r=>r.title===heading)?.slide;if(!n)throw Error('Missing new view '+heading)
-  await page.goto(`${url}/${n}`,{waitUntil:'networkidle'})
+  await openSlide(n)
   const slide=page.locator(`.slidev-page[data-slidev-no="${n}"]:visible .academic`).first()
   if(label==='128-drone physical time'){
    const tabs=slide.locator('.swarm-tabs button');if(await tabs.first().textContent()!=='2D · 128 drones'||await tabs.first().getAttribute('aria-pressed')!=='true')throw Error('128-drone case must be first and default')
@@ -135,9 +139,9 @@ try{
  const failure=await browser.newContext({viewport:{width:1600,height:900}})
  await failure.route('**/data/**',route=>route.abort())
  const fp=await failure.newPage();const sms=interactions[0].slide
- await fp.goto(`${url}/${sms}`,{waitUntil:'networkidle'});await fp.getByText('Static view · interactive data unavailable').first().waitFor()
+ await fp.goto(slideUrl(sms),{waitUntil:'networkidle'});await fp.getByText('Static view · interactive data unavailable').first().waitFor()
  for(const n of [27,29,30,33,38]){
-  await fp.goto(`${url}/${n}`,{waitUntil:'networkidle'})
+  await fp.goto(slideUrl(n),{waitUntil:'networkidle'})
   const failedSlide=fp.locator(`.slidev-page[data-slidev-no="${n}"]:visible .academic`).first()
   await failedSlide.getByText('Static view · interactive data unavailable').waitFor()
   if(!await failedSlide.locator('.figure-fallback').evaluate(i=>i.complete&&i.naturalWidth>0))throw Error('RFormer fallback missing')
@@ -145,12 +149,14 @@ try{
  await failure.close()
  const noWebGL=await browser.newContext({viewport:{width:1600,height:900}})
  await noWebGL.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){if(String(type).includes('webgl'))return null;return original.call(this,type,...args)}})
- const wp=await noWebGL.newPage();await wp.goto(`${url}/${interactions[2].slide}`,{waitUntil:'networkidle'})
+ const wp=await noWebGL.newPage();await wp.goto(slideUrl(interactions[2].slide),{waitUntil:'networkidle'})
  await wp.getByRole('button',{name:'3D · 16 drones',exact:true}).click()
  await wp.getByText('Static view · interactive data unavailable').first().waitFor();await noWebGL.close()
- await page.goto(`${url}/presenter/1`,{waitUntil:'networkidle'});const presenter=await page.locator('.academic').count();if(!presenter)throw new Error('Presenter route missing')
+ await openSlide('presenter/1');const presenter=await page.locator('.academic').count();if(!presenter)throw new Error('Presenter route missing')
+ const download=await fetch(`${url}/defense.pdf`)
+ if(!download.ok||new TextDecoder().decode(new Uint8Array(await download.arrayBuffer()).subarray(0,5))!=='%PDF-')throw Error('PDF download unavailable')
  if(process.argv.includes('--pdf')){
-  await page.goto(`${url}/print?print=true&static=1`,{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready)
+  await openSlide('print','print=true&static=1');await page.evaluate(()=>document.fonts.ready)
   await page.locator('.print-slide-container').last().waitFor()
   if(await page.locator('.print-slide-container').count()!==count)throw new Error('Incomplete print route')
   // Use Slidev's build-time export as the canonical PDF. Its export server
@@ -163,7 +169,7 @@ try{
   const normalize=s=>s.normalize('NFKD').toLowerCase().replace(/[^a-z0-9]/g,'')
   for(const [i,slide] of results.entries())if(!normalize(pdfText[i]||'').includes(normalize(slide.title)))throw new Error('PDF title/order mismatch on page '+(i+1))
  }
- const report={generatedAt:new Date().toISOString(),slides:results,interactions,pdfPages:process.argv.includes('--pdf')?count:null,presenter:!!presenter,fallbackOnDataFailure:true,fallbackOnWebGLFailure:true,externalRequests:requests,browserErrors:errors}
+ const report={basePath:base,routerMode,pdfDownload:true,generatedAt:new Date().toISOString(),slides:results,interactions,pdfPages:process.argv.includes('--pdf')?count:null,presenter:!!presenter,fallbackOnDataFailure:true,fallbackOnWebGLFailure:true,externalRequests:requests,browserErrors:errors}
  await writeFile(resolve(out,'layout-audit.json'),JSON.stringify(report,null,2))
  if(results.some(r=>r.overflow.length||r.missing.length)||errors.length||requests.length)throw new Error('Slide audit failed; see artifacts/layout-audit.json')
  console.log(`PASS: ${count} slides, ${interactions.length} interactive figures, fallback, presenter, and offline requests.`)

@@ -74,6 +74,34 @@ Outputs in `dist/`, `artifacts/`, and `data/staging/` are generated and ignored.
 `artifacts/layout-audit.json` records the checks. `docs/figure_conversions.json`
 records the original PDF and converted PNG checksums.
 
+## Publish with GitHub Pages
+
+The GitHub Actions workflow builds and audits the deck on pushes to `master`,
+then publishes `dist/` to GitHub Pages. In the `dissertation-defense` repository,
+select **Settings → Pages → Build and deployment → Source → GitHub Actions**
+before the first deployment. Commit and push the source; generated output stays
+ignored. The intended site is `https://zhangqian-sh.github.io/dissertation-defense/`
+(or the project path under an existing personal-site custom domain).
+
+The Pages build uses `/dissertation-defense/` and hash routing, so direct slide
+links such as `/dissertation-defense/#/7` and presenter links such as
+`/dissertation-defense/#/presenter/1` work without server rewrites. Public data
+paths in manifests remain unchanged; the browser adds the deployment prefix.
+The PDF download and speaker notes are included, as in the local deck.
+
+To test the hosted build locally (run builds and audits in Slurm on Oscar):
+
+```bash
+npm run build:pages
+npm run test:pages
+BASE_PATH=/dissertation-defense/ npm run preview
+```
+
+Open `http://127.0.0.1:3030/dissertation-defense/`. For a local defense at the
+server root, run `npm run build` and `./present.sh` as usual. Both deployment
+paths are supported. The Pages workflow tests the included browser bundle;
+it does not run Python tests that require ignored raw experiment captures.
+
 ## Interactive figures
 
 - SMS: linked physical-time field/error views; T=8/32/100 codec demonstration.

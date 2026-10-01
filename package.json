@@ -6,6 +6,8 @@
     "dev": "slidev slides.md --remote 127.0.0.1",
     "validate:assets": "node scripts/validate_site_assets.mjs",
     "build": "npm run validate:assets && slidev build slides.md",
+    "build:pages": "npm run build -- --base /dissertation-defense/ --router-mode hash",
+    "test:pages": "BASE_PATH=/dissertation-defense/ ROUTER_MODE=hash node scripts/audit_slides.mjs --pdf",
     "export:pdf": "node scripts/audit_slides.mjs --pdf",
     "test:slides": "node scripts/audit_slides.mjs",
     "preview": "node scripts/serve.mjs"
