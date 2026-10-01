@@ -104,7 +104,7 @@ it does not run Python tests that require ignored raw experiment captures.
 
 ## Interactive figures
 
-- SMS: linked physical-time field/error views; T=8/32/100 codec demonstration.
+- SMS: linked physical-time prediction and error views; reference-fed versus recursive cascade.
 - Burgers (slide 11): exactly three panels—reference, SNN, SNN−reference.
   Play or select every integer prefix T=1–128; only SNN and difference
   change. Fixed scales and native pixels preserve the actual solution.

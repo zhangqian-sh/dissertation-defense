@@ -58,7 +58,11 @@ try{
   if(await slider.inputValue()===traceBefore)throw new Error('Linked trace did not seek: '+label)
   }
   if(label==='Swarm physical time'){await slide.getByRole('button',{name:'Closest pair',exact:true}).click();if(!await slide.getByText('highlighted in red',{exact:false}).count())throw new Error('Closest event missing');await slide.getByRole('button',{name:'Reset camera',exact:true}).click();if(!await slide.locator('.swarm-canvas canvas').count())throw new Error('WebGL scene missing')}
-  if(label==='SMS physical time')await slide.locator('select').selectOption('0')
+  if(label==='SMS physical time'){
+   if(await slide.locator('.trace-svg').count()!==2||await slide.locator('select').count())throw Error('SMS must show only field/error panels without a codec selector')
+   const gap=await slide.evaluate(el=>Math.min(...[...el.querySelectorAll('.trace-svg')].map(svg=>el.querySelector('.plot-controls').getBoundingClientRect().top-svg.getBoundingClientRect().bottom)))
+   if(gap<8)throw Error('SMS plot labels overlap playback controls')
+  }
   if(label==='Burgers SNN T'){
    await slide.getByRole('button',{name:'Reset',exact:true}).click()
    const canvases=slide.locator('.grid-field canvas')

@@ -9,7 +9,7 @@ the plots is local to `public/`; source cluster files are not runtime inputs.
 
 | Component | State | Data |
 |---|---|---|
-| SMSRollout | `heat_triangular--saved_K100` | 100 physical frames, 101 spatial points, reference/one-step/cascade, both error traces, training boundary, codec T=8/32/100 views |
+| SMSRollout | `heat_triangular--saved_K100` | 100 physical frames, 101 spatial points, reference/one-step/cascade, both error traces, training boundary |
 | ConversionOverT | `helmholtz_l1_k15--saved_T064_prefix` | 64 internal steps, 24 emitted POD coefficients, reconstructed fields on 1600 mesh nodes, fixed POD basis/mean/scales, ANN and numerical reference, separate errors |
 | DroneSwarm3D | `ball_3d_M16--saved_lbfgs` | 200 original frames over 10 seconds, 16 agents in 3D, sphere geometry, three diagnostic traces, exact event indices/identities/positions |
 
@@ -24,11 +24,10 @@ relative error must remain visible; do not label it negligible or substitute
 the Poisson encoding table's errors. The source FDM endpoint stencil is retained
 even though the thesis writes ideal zero Dirichlet boundaries.
 
-The selected-T view evaluates the source codec on the same reference field.
-It is explicitly **illustrative**, not predictions from three separately
-trained SMS networks. The midpoint decoder and global [0,1] normalization are
-preserved. K=100 is the saved model's spike horizon. Physical-time scrubbing
-and codec-T selection are independent controls.
+The main SMS slide shows only the saved predictions and accumulated errors,
+linked by physical-time playback and scrubbing. K=100 is the saved model's
+spike horizon. Historical selected-T codec arrays remain in the archived
+payload for provenance but are not displayed or selectable in the deck.
 
 Conversion uses a documented saved Helmholtz POD evaluation, marked
 **exploratory** relative to thesis claims. `loop_step` is zero-based; show

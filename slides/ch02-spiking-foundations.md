@@ -62,4 +62,4 @@ source: 'Thesis Chapter 2 · fig:snn:pde-heat · Saved heat run, K=100; unsmooth
 
 <SMSRollout />
 
-<!-- Demo: start around t=0.016 s; play through the training marker at 0.032 s and inspect the growing relative error. Pause, then select codec T=8,32,100. The codec view is illustrative and does not compare separately trained models. Initial two frames are encoded reference histories. No stability theorem is inferred from this case. -->
+<!-- Demo: start around t=0.016 s; play through the training marker at 0.032 s and inspect the growing relative error. Initial two frames are encoded reference histories. No stability theorem is inferred from this case. -->

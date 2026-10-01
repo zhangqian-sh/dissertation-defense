@@ -54,18 +54,23 @@ def sms(a,m):
              T_approximation_axes=['selected_T','physical_time','space'],
              T_approximation_status='illustrative',
              T_approximation_note=m['selected_T_note']+' Source midpoint decoding is retained, including its upper-end overshoot; no convergence claim for learned rollouts.')
-    fig,ax=plt.subplots(1,3,figsize=(15,4),layout='constrained')
-    for i in [40,90]:
-        ax[0].plot(a['coordinates'],a['reference_state'][i],label=f'reference t={a["time"][i]:.4f}')
-        ax[0].plot(a['coordinates'],a['cascade_state'][i],'--',label=f'cascade t={a["time"][i]:.4f}')
-    ax[0].set(xlabel='x (benchmark units)',ylabel='temperature',title='Heat SMS: saved predictions'); ax[0].legend(fontsize=7)
-    ax[1].plot(a['time'],one_error,label='reference-fed'); ax[1].plot(a['time'],cascade_error,label='cascade')
-    ax[1].axvline(cfg['training_end_time'],color='k',ls=':',label='training boundary')
-    ax[1].set(xlabel='physical time (s)',ylabel='relative L2 error'); ax[1].legend(fontsize=8)
-    ax[2].plot(a['coordinates'],a['reference_state'][40],color='k',label='reference')
-    for T,v in zip(levels,approximations): ax[2].plot(a['coordinates'],v[40],label=f'codec T={T}')
-    ax[2].set(title='Illustrative codec, fixed reference',xlabel='x'); ax[2].legend(fontsize=8)
-    return p,fig
+    return p,plot_sms(a,cfg['training_end_time'],one_error,cascade_error)
+
+
+def plot_sms(a,training_end_time,one_error,cascade_error):
+    fig,ax=plt.subplots(1,2,figsize=(12,3.4),layout='constrained')
+    i=90
+    for key,label,color in [('reference_state','Reference','#232727'),('one_step_state','Reference-fed','#287e83'),('cascade_state','Cascade','#8b242d')]:
+        ax[0].plot(a['coordinates'],a[key][i],label=label,color=color)
+    ax[0].set(xlabel='x (benchmark units)',ylabel='temperature',title=f'Temperature field at t = {a["time"][i]:.4f} s')
+    ax[0].legend(fontsize=10)
+    ax[1].plot(a['time'],one_error,label='Reference-fed',color='#287e83')
+    ax[1].plot(a['time'],cascade_error,label='Cascade',color='#8b242d')
+    ax[1].axvline(training_end_time,color='#596361',ls=':',label='Training end')
+    ax[1].axvline(a['time'][i],color='#ED1C24',ls='--',lw=1,label='Shown snapshot')
+    ax[1].set(xlabel='physical time (s)',ylabel='relative L2 error',title='Accumulated prediction error')
+    ax[1].legend(fontsize=10)
+    return fig
 
 
 def conversion(a,m):

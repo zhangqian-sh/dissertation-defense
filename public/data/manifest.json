@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "presentation_id": "thesis-defense",
-  "generated_at": "2026-09-10T17:15:11.291173+00:00",
+  "generated_at": "2026-10-01T15:42:06.505177+00:00",
   "generator_commit": "7d302159054210386608eebd57a0089393183746",
   "generator_dirty_state": "M thesis/metadata.tex\n?? presentation/",
   "generator_files": {
@@ -15,9 +15,9 @@
       "component": "SMSRollout",
       "path": "releases/20260909T211105-6127459/ch02/sms_longtime_rollout.json",
       "default_state": "heat_triangular--saved_K100",
-      "fallback_path": "/data/releases/20260909T211105-6127459/ch02/sms_longtime_rollout.png",
+      "fallback_path": "/data/releases/20261001T154206-sms-6914252/ch02/sms_longtime_rollout.png",
       "sha256": "5ce982c7079b9b0628d06d7dca1dbc532f8b6d2f2b5edd4b913c466dff765e83",
-      "fallback_sha256": "60023f3e4f337af86af2e7252cae607e2999b882a127bbe31340f6726830a9a9",
+      "fallback_sha256": "e65358b3a76e86b720409819b98d79fa422ce40411db3a34a35b07f175325942",
       "status": "required"
     },
     {

@@ -16,7 +16,7 @@ Distinguish ordinary slide reveals, scripted animation, and interactive inspecti
 
 | Treatment | Content |
 |---|---|
-| Required interaction | SMS/SDON rollout and T approximation; conversion output over T; OCFormer trajectory inspection |
+| Required interaction | SMS/SDON rollout and error evolution; conversion output over T; OCFormer trajectory inspection |
 | Conditional interaction | ET iteration playback; RFormer volume/slice inspection, only after reviewing the evidence |
 | Static main slides | Encoding, calibration, hardware scaling, RFG comparisons, ET physical fidelity, RFormer architecture/results, OCFormer regimes/baselines |
 | Static backups | Extra rollout/swarm cases, ET module/temporal ablations, detailed dataset comparisons |
@@ -55,15 +55,14 @@ Each checkbox in this section represents one interactive plot. The unmarked bull
 
 Primary question: how does recursive prediction evolve and accumulate error beyond the training interval?
 
-- [x] (required) SMSRollout / SDON-SMS: interactively show the reference, one-step and recursive cascade predictions, their error evolution, and the stepwise approximation to the continuous value as T changes.
+- [x] (required) SMSRollout / SDON-SMS: interactively show the reference, one-step and recursive cascade predictions and their error evolution with linked physical-time inspection.
 
 Plot details:
 
 - Select one documented ODE/PDE case for clarity; no required scenario menu.
 - Play/pause advances a common physical-time index. Scrubbing moves markers on reference, prediction (non-cascade and cascade), and error views together.
 - Permanently mark the training/extrapolation boundary. Keep physical time distinct from internal spike horizon K.
-- Choose T values to show how the stepwise function approximates the continuous value.
-- Reset returns to the rehearsed start. The static fallback shows representative times and full error traces.
+- Reset returns to the rehearsed start. The static fallback shows a representative extrapolation snapshot and full error traces.
 - Firing histories, decoded bounds, and a documented ANN comparator are optional supporting evidence, not mandatory payload decorations.
 
 Bounded decoded values are a property of the codec, not a general stability/convergence theorem. Do not invent a PINN blow-up comparison.
