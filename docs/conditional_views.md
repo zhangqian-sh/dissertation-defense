@@ -2,7 +2,7 @@
 
 ## Energy Transformer
 
-Playback is now enabled on slide 24. The initial deck had no saved iteration
+Playback is now enabled on slide 23. The initial deck had no saved iteration
 sequence and omitted this view. Further source inspection found the original
 `reconstruction_history` method and saved checkpoints with their masked
 test inputs. The collector now replays saved sample 0 for 12 actual token
@@ -31,10 +31,10 @@ interpolation or temporal frame synthesis is used.
 
 ## RFormer
 
-Physical-time playback is explicitly requested and enabled on CH6–32 and
-CH6–34. `RFormerTime.vue` displays synchronized reference, observations and
-RFormer, with play/pause, reset and frame seeking. CH6–32 has u, v, p rows in
-a 3×3 matrix; CH6–34 has three vector-field panels. All frames use
+Physical-time playback is explicitly requested and enabled on CH6–31 and
+CH6–33. `RFormerTime.vue` displays synchronized reference, observations and
+RFormer, with play/pause, reset and frame seeking. CH6–31 has u, v, p rows in
+a 3×3 matrix; CH6–33 has three vector-field panels. All frames use
 fixed component color scales or a fixed arrow scale. Leaving a slide pauses its playback; printing uses a
 static first-frame fallback. The published baseline spectrum stays static and
 is labeled as unrelated to the currently selected frame.
@@ -69,7 +69,7 @@ Published aggregate errors remain qualified as published all-component results,
 not errors computed from the current rasterized component.
 
 Rotation and movable 3D slicing remain disabled. Weather and blood have
-separate slides (35 and 36): paired dynamic weather maps and original static
+separate slides (34 and 35): paired dynamic weather maps and original static
 u/v blood snapshots, preserving dataset-specific qualifications.
 See `added_sequences.md` for their source alignment, spatial processing and
 time labels, as well as the new OCFormer illustration and 128-agent example.

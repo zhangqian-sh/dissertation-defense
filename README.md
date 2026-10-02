@@ -2,7 +2,7 @@
 
 A locally served Slidev presentation for Qian Zhang's dissertation, with a
 white academic theme, local Inter / Latin Modern fonts, chapter citations,
-speaker notes, 49 main slides, and six chapter-ordered backup slides.
+speaker notes, 48 main slides, and six chapter-ordered backup slides.
 Seven brief chapter dividers introduce Chapters 2–8; Chapters 2 and 5 also
 mark the two main parts.
 
@@ -67,7 +67,7 @@ The browser audit blocks external requests, checks layout boundaries/missing
 images, exercises the four controls and linked trace seeking, verifies pause
 on slide exit and static fallback on data or WebGL failure, checks populated
 conversion heatmaps, and visits the presenter route. `export:pdf` audits and
-copies the build-time PDF, checking that all 55 pages are present; run the
+copies the build-time PDF, checking that all 54 pages are present; run the
 build first after editing slides. `scripts/contact_sheets.py --pdf` creates visual
 review sheets from the exported PDF (run on a compute node on Oscar).
 
@@ -107,27 +107,27 @@ it does not run Python tests that require ignored raw experiment captures.
 ## Interactive figures
 
 - SMS: linked physical-time prediction and error views; reference-fed versus recursive cascade.
-- Burgers (slide 13): exactly three panels—reference, SNN, SNN−reference.
+- Burgers (slide 12): exactly three panels—reference, SNN, SNN−reference.
   Play or select every integer prefix T=1–128; only SNN and difference
   change. Fixed scales and native pixels preserve the actual solution.
   These are actual emitted-output prefixes of a fresh SNN calibrated at
   horizon 128, not interpolated fields or independently recalibrated models.
-- Energy Transformer (slide 24): 2D vortex street, native 128×256 v field,
+- Energy Transformer (slide 23): 2D vortex street, native 128×256 v field,
   no display smoothing, 12 decoded checkpoint-replay updates, slider,
   playback, wheel stepping, error toggle, and linked error/energy traces.
   Replay differs from the archived prediction by 0.111% relative L2.
 - OCFormer: orbitable 3D geometry, linked clearance/time trace, closest-pair
   jump and camera reset. The scene reports sampled position constraints only.
-  Slide 44 defaults to **2D · 128 drones**, left of 3D, with all 200 saved
+  Slide 43 defaults to **2D · 128 drones**, left of 3D, with all 200 saved
   frames, the paper's seeded colors, hollow circles and cumulative gray trails.
-- Latent/physical paths (slide 39): straight endpoint reference beside the
+- Latent/physical paths (slide 38): straight endpoint reference beside the
   paper's saved L-BFGS optimized trajectories; no hand-designed detour.
-- Weather (slide 35): static station distribution and a smooth, US-masked
+- Weather (slide 34): static station distribution and a smooth, US-masked
   reference/reconstructed temperature comparison from 54 recorded 2024 dates;
   both use identical spatial interpolation and shared colors, not gridded truth.
-- Blood flow (slide 36): original static u/v snapshots, each 2×2, distinguishing
+- Blood flow (slide 35): original static u/v snapshots, each 2×2, distinguishing
   sparse observations, raw/full targets, reconstruction and averaged references.
-- RFormer (slides 32 and 34): physical-time playback of reference, observations,
+- RFormer (slides 31 and 33): physical-time playback of reference, observations,
   and RFormer; vortex uses a 3×3 u/v/p matrix, jet uses native velocity arrows.
   There are 20 vortex frames and 40 chronologically sorted
   jet frames. Jet times are nonuniform source indices, not seconds. The jet

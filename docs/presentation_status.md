@@ -1,6 +1,6 @@
 # Presentation implementation
 
-The deck contains 55 slides: 49 main slides following Chapters 1–8 and six
+The deck contains 54 slides: 48 main slides following Chapters 1–8 and six
 chapter-ordered backups. The academic layout uses a white 16:9 canvas,
 locally bundled serif headings and sans-serif body text, restrained Brown-red
 accents, chapter progress, source footers, and speaker notes.
@@ -19,14 +19,17 @@ pages at that revision: latent map was 33 and swarm inspection was 38.
 
 ## Deliverables and verification
 
+The introduction now has one Content slide listing the two parts and Chapters
+2–7. The separate contributions slide was removed to avoid repeating the overview.
+
 Chapter divider titles now match the manuscript chapter names verbatim.
 Slurm job `6926578` passed the rebuild, all seven title/layout checks,
 closing-page checks, and the 55-page PDF check. Longer chapter titles
 were visually reviewed.
 
 Seven chapter dividers introduce Chapters 2–8, with part openings at Chapters
-2 and 5. The current outlook is slide 48, thank-you is slide 49, and backups
-occupy slides 50–55. Current slide numbers and sources are in `slide_inventory.csv`.
+2 and 5. The current outlook is slide 47, thank-you is slide 48, and backups
+occupy slides 49–54. Current slide numbers and sources are in `slide_inventory.csv`.
 Slurm job `6922054` passed the 55-slide/55-page browser/PDF audit, including
 seven correctly placed chapter dividers and nine interactive views, without
 overflow, missing images, browser errors, or external requests.
