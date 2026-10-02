@@ -30,10 +30,12 @@ try{
   const measurements=await slide.evaluate(el=>{
    const body=el.querySelector('.slide-body'),footer=el.querySelector('.footer'),box=el.getBoundingClientRect(),b=body.getBoundingClientRect(),f=footer.getBoundingClientRect();const scale=box.width/1200
    const overflow=[]
-   for(const child of body.querySelectorAll('h1,h2,h3,p,table,figure,.takeaway,.plot-controls,.interaction-note,.author,.affiliation,.number')){
+   for(const child of body.querySelectorAll('h1,h2,h3,p,table,figure,.takeaway,.plot-controls,.interaction-note,.author,.affiliation,.number,.math-panel,.step-chain,.attention-mask,.connection-map,.geometry-sketch,.katex-display > .katex')){
     const r=child.getBoundingClientRect();if(!r.width||!r.height)continue
     if(r.bottom>f.top-8*scale||r.right>box.right-40*scale||r.left<box.left+38*scale)overflow.push({tag:child.tagName,text:child.textContent.slice(0,70),bottom:r.bottom,footer:f.top})
    }
+   for(const math of body.querySelectorAll('.katex-error'))overflow.push({tag:'math',text:math.textContent})
+   for(const paragraph of body.querySelectorAll('p,.takeaway,.protocol'))if(/\$[^$]+\$/.test(paragraph.textContent))overflow.push({tag:'raw-math',text:paragraph.textContent.slice(0,100)})
    const missing=[...body.querySelectorAll('img')].filter(i=>!i.complete||i.naturalWidth===0).map(i=>i.src)
    return {title:el.querySelector('h1')?.textContent,divider:el.classList.contains('chapter-divider'),partDivider:el.classList.contains('part-divider'),chapter:Number(el.querySelector('.footer .page')?.textContent.match(/CH (\d+)/)?.[1]),overflow,missing,bodyScroll:body.scrollHeight,bodyHeight:body.clientHeight}
   })
