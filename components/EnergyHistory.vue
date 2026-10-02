@@ -16,7 +16,7 @@ const maskLimit=computed(()=>p.value?.masked.values.reduce((m,v)=>Math.max(m,Mat
 const errorLimit=computed(()=>p.value?.frames.values.reduce((m,v,i)=>Math.max(m,Math.abs(v-p.value.reference.values[i%p.value.reference.values.length])),0)||1)
 </script>
 <template>
-<FigureFrame fallback="/fallback_figures/ch05/energy_history.png" :ready="!!p" :error="error" :static-mode="staticMode" caption="2D vortex street · native pixels, no smoothing · fixed reference-range colors; outside-range values saturate · scroll over fields to step.">
+<FigureFrame fallback="/fallback_figures/ch05/energy_history.png" :ready="!!p" :error="error" :static-mode="staticMode" caption="Vortex v · 90% nominal masking · α=0.1 · 12 updates · native unsmoothed pixels · fixed reference-range colors; saturation outside range · scroll to step.">
  <div class="energy-fields" @wheel.prevent="seek(index+($event.deltaY>0?1:-1))">
   <GridField :values="p.reference.values" :rows="p.reference.shape[0]" :cols="p.reference.shape[1]" :limit="limit" :center="center" title="Reference · normalized v"/>
   <GridField :values="p.masked.values" :rows="p.reference.shape[0]" :cols="p.reference.shape[1]" :limit="maskLimit" title="Saved masked input · own scale"/>

@@ -103,3 +103,42 @@ html,body,#app { font-family:Inter,Arial,sans-serif; color:var(--ink); }
 .swarm-canvas canvas { display:block; width:100%; height:100%; }
 .event-readout { font-size:12px; padding:8px 12px; background:var(--brown-wash); line-height:1.5; margin-top:5px; }
 @media print { .plot-controls { display:none!important; } .academic { print-color-adjust:exact; } }
+
+/* Dense scientific pages: equations, algorithm steps and experimental context. */
+.academic .density { display:flex; flex-direction:column; gap:12px; }
+.academic .density-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:26px; align-items:start; }
+.academic .detail-box { min-width:0; border-top:2px solid var(--brown); padding-top:10px; }
+.academic .detail-box h2 { margin-bottom:9px; }
+.academic .detail-box p.small { margin-bottom:9px; }
+.academic .density p.small { font-size:16px; line-height:1.45; }
+.academic .density p:last-child { margin-bottom:0; }
+.academic .density .figure figcaption { margin-top:5px; }
+.academic .density table { margin:0; }
+.academic .density td { padding:9px 10px; }
+.academic .density th { padding:7px 10px; }
+.academic .math-panel { min-width:0; padding:4px 8px; background:var(--brown-wash); }
+.academic .math-panel .katex-display { margin:7px 0; }
+.academic .math-panel .katex { font-size:1em; }
+.academic .protocol { border-left:3px solid var(--red); padding:8px 12px; margin:10px 0 0; background:var(--brown-wash); font-size:13px; line-height:1.45; }
+.academic .density .protocol { margin:0; }
+.academic .algorithm { margin:0 0 12px; padding-left:24px; font-size:16px; line-height:1.45; }
+.academic .algorithm li { margin:0 0 10px; padding-left:2px; }
+.academic .step-chain { display:flex; gap:10px; align-items:center; font-size:16px; line-height:1.4; }
+.academic .step-chain span { flex:1; padding:10px; border:1px solid var(--line); background:var(--brown-wash); }
+.academic .step-chain b { color:var(--brown); flex-shrink:0; }
+.academic .chapter-entry { border-bottom:1px solid var(--line); padding:8px 0; font-size:16px; }
+.academic .chapter-entry p { margin:5px 0 0!important; }
+.academic .chapter-entry:last-child { border-bottom:0; }
+.academic .attention-mask { display:grid; grid-template-columns:95px 1fr 1fr; gap:5px; margin:8px 0 12px; font-size:16px; text-align:center; align-items:center; }
+.academic .attention-mask span.allowed,.academic .attention-mask span.blocked { padding:15px 8px; }
+.academic .attention-mask .allowed { background:#ece8e5; color:var(--brown); }
+.academic .attention-mask .blocked { background:#f2f3f3; color:var(--muted); }
+.academic .connection-map { display:grid; grid-template-columns:1fr 1fr; gap:7px; margin:14px 0; text-align:center; font-size:16px; }
+.academic .connection-map span { border:1px solid var(--line); padding:8px; }
+.academic .connection-map b { grid-column:1 / -1; font-weight:500; }
+.academic .geometry-sketch { width:100%; height:165px; margin:3px 0; }
+.academic .geometry-sketch text { font:15px Inter,sans-serif; fill:var(--ink); }
+
+.academic .protocol p { font-size:inherit; line-height:inherit; margin:0; }
+
+.academic .density-grid.jet-results { grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); }

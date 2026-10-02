@@ -9,7 +9,7 @@ const field=computed(()=>p.value?[{name:'Reference',color:'#232727',y:row(p.valu
 const errors=computed(()=>p.value?[{name:'Reference-fed',color:'#287e83',y:p.value.one_step_error.values},{name:'Cascade',color:'#8b242d',y:p.value.cascade_error.values}]:[])
 </script>
 <template>
-<FigureFrame fallback="/fallback_figures/ch02/sms_longtime_rollout.png" :ready="!!p" :error="error" :static-mode="staticMode" caption="Heat equation · K=100 · first two frames initialized · reference-fed and recursive cascade predictions.">
+<FigureFrame fallback="/fallback_figures/ch02/sms_longtime_rollout.png" :ready="!!p" :error="error" :static-mode="staticMode" caption="Heat: ∂ₜu = α∂ₓₓu · K=100 · train through 0.032 s · 101 nodes · first two frames initialized · unsmoothed relative L₂.">
   <div class="cols" style="gap:35px;height:320px">
     <div><div class="chart-label">Temperature field</div><div class="legend"><span v-for="s in field" :key="s.name" :style="{'--series':s.color}">{{s.name}}</span></div><TracePlot :x="p.coordinates.values" :series="field" :width="500" :height="250" x-label="x · benchmark units" y-label="temperature" /></div>
     <div><div class="chart-label">Accumulated prediction error</div><div class="legend"><span v-for="s in errors" :key="s.name" :style="{'--series':s.color}">{{s.name}}</span></div><TracePlot :x="p.time.values" :series="errors" :width="500" :height="250" :cursor="index" :boundary="p.training_end_time" x-label="physical time · s" y-label="relative L₂" @seek="seek" /></div>

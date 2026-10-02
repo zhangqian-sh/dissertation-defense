@@ -12,6 +12,8 @@ data/tmp.md
 **/__pycache__/
 *.py[cod]
 .pytest_cache/
+# Reference slides
+data/references/
 
 # Dependencies and generated presentation outputs
 node_modules/

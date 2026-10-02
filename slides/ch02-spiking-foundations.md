@@ -18,17 +18,36 @@ Begin Part I with representation: how continuous quantities become spikes, then 
 ---
 chapter: '2'
 section: Spiking representations · Encoding
-source: 'Thesis Chapter 2 · fig:snn:encoding · Lower-triangular encoding, K=30'
+source: 'Thesis Chapter 2 · fig:snn:encoding · Lower-triangular encoding, K=30; eq:ch02:triangular-value; eq:ch02:triangular-grid; eq:ch02:decode-mean'
 ---
 
 # From a continuous field to a spike representation
 
-<p class="subtitle">The encoding determines which numerical structure survives discretization.</p>
-<div class="cols">
-<figure class="figure"><img src="/figures/ch02/encoding_function.png" alt="Continuous field used in the encoding example"><figcaption>Continuous input field on a spatial grid.</figcaption></figure>
-<figure class="figure"><img src="/figures/ch02/encoding_spike_raster.png" alt="Lower triangular encoding spike raster"><figcaption>Lower-triangular spike raster; internal horizon K = 30.</figcaption></figure>
+<div class="density">
+<div class="density-grid ">
+<figure class="figure"><img style="height:185px" src="/figures/ch02/encoding_function.png" alt="Continuous field · spatial coordinate"><figcaption>Continuous field · spatial coordinate</figcaption></figure>
+<figure class="figure"><img style="height:185px" src="/figures/ch02/encoding_spike_raster.png" alt="Prefix spikes · internal horizon K = 30"><figcaption>Prefix spikes · internal horizon K = 30</figcaption></figure>
+</div><div class="density-grid ">
+<div class="detail-box"><h2>Encode a normalized magnitude</h2>
+<div class="math-panel">
+
+$$
+\begin{aligned}a&=\frac{f-z_{\min}}{z_{\max}-z_{\min}},\quad N=\lfloor Ka\rfloor\\s[k]&=\mathbf1_{k\le N}\end{aligned}
+$$
+
 </div>
-<div class="takeaway">An ordered prefix code represents magnitude through spike count. Finite K introduces a resolution–cost trade-off.</div>
+<p class="small">Each value becomes a prefix of N spikes; k is internal simulation time.</p></div>
+<div class="detail-box"><h2>Decode and resolve</h2>
+<div class="math-panel">
+
+$$
+\hat a=\frac1K\sum_{k=1}^{K}s[k],\qquad \Delta f=\frac{z_{\max}-z_{\min}}K
+$$
+
+</div>
+<p class="small">Spatial coordinates use a grid-index prefix; state values use normalized magnitude.</p></div>
+</div>
+</div>
 
 <!-- Physical coordinates and internal spike time are different axes. This example demonstrates the encoding; its raster is not a physical-time trajectory. -->
 
@@ -40,16 +59,30 @@ source: 'Thesis Chapter 2 · tab:ch02:deeponet-encoding; fig:snn:deeponet-poisso
 
 # Encoding changes Poisson operator accuracy
 
-<p class="subtitle">Relative discrete L₂ error over 200 held-out samples, after smoothing.</p>
-<div class="cols wide-left">
-<table><thead><tr><th>Trunk encoding</th><th>K</th><th>Mean</th><th>Std.</th></tr></thead><tbody>
-<tr><td>Rate</td><td>50</td><td>0.229</td><td>0.174</td></tr>
-<tr><td>Floating point</td><td>50</td><td>0.692</td><td>0.451</td></tr>
-<tr><td>Direct</td><td>50</td><td>0.135</td><td>0.067</td></tr>
-<tr class="highlight"><td>Lower triangular</td><td>50</td><td>0.047</td><td>0.032</td></tr>
-<tr class="highlight"><td>Lower triangular</td><td>500</td><td>0.005</td><td>0.003</td></tr>
-</tbody></table>
-<div><figure class="figure short"><img src="/figures/ch02/deeponet_poisson_triangular_long.png" alt="Poisson forcing and solution with lower triangular encoding K500"><figcaption>Published Poisson solution example, K = 500.</figcaption></figure><p class="small" style="margin-top:15px">The reported errors concern the <strong>operator prediction</strong>, not scalar encoding alone.</p></div>
+<div class="density">
+<div class="density-grid ">
+<table><thead><tr><th>Trunk encoding</th><th>K</th><th>Mean</th><th>Std.</th></tr></thead><tbody><tr><td>Rate</td><td>50</td><td>0.229</td><td>0.174</td></tr><tr><td>Floating point</td><td>50</td><td>0.692</td><td>0.451</td></tr><tr><td>Direct</td><td>50</td><td>0.135</td><td>0.067</td></tr><tr><td>Lower triangular</td><td>50</td><td>0.047</td><td>0.032</td></tr><tr><td>Lower triangular</td><td>500</td><td>0.005</td><td>0.003</td></tr></tbody></table>
+<figure class="figure"><img style="height:230px" src="/figures/ch02/deeponet_poisson_triangular_long.png" alt="Published forcing/solution example · K = 500"><figcaption>Published forcing/solution example · K = 500</figcaption></figure>
+</div><div class="density-grid ">
+<div class="detail-box"><h2>Learn a solution operator</h2>
+<div class="math-panel">
+
+$$
+-u_{xx}=f,\qquad \mathcal G_\theta:f\mapsto u
+$$
+
+</div>
+</div>
+<div class="detail-box"><h2>Evaluate the decoded field</h2>
+<div class="math-panel">
+
+$$
+\varepsilon_{L_2}=\frac{\|\hat u-u\|_2}{\|u\|_2}
+$$
+
+</div>
+<p class="small">Tenfold K improves reported mean error from 0.047 to 0.005; it also increases internal steps.</p></div>
+</div><p class="protocol">800 train / 200 held-out · 100 spatial points · mean and SD · Savitzky–Golay window 51, order 3 · operator error after smoothing</p>
 </div>
 
 <!-- Read these statistics with the smoothing qualification. Standard deviation is across held-out samples. Increasing K by ten improves accuracy here but also multiplies internal simulation steps. Only one example field is shown; do not imply unmatched source panels use the same forcing. -->
@@ -57,14 +90,24 @@ source: 'Thesis Chapter 2 · tab:ch02:deeponet-encoding; fig:snn:deeponet-poisso
 ---
 chapter: '2'
 section: Spiking marching scheme · Method
-source: 'Thesis Chapter 2 · eq:ch02:sms-update; fig:snn:sms-workflow'
+source: 'Thesis Chapter 2 · eq:ch02:sms-update; fig:snn:sms-workflow; fig:snn:sms-architecture'
 ---
 
 # Learn a time-step map in spike space
 
-<div class="cols wide-right" style="margin-top:22px">
-<div><h2>Spiking Marching Scheme</h2><p class="small">Encode a state history, predict the next encoded state, and decode a numerical field.</p><div class="rule" style="margin-top:24px"><h3>Two evaluation protocols</h3><p class="small"><strong>Reference-fed:</strong> each prediction receives the reference history.</p><p class="small"><strong>Cascade:</strong> predictions become the next input history.</p></div></div>
-<figure class="figure tall"><img src="/figures/ch02/sms_workflow.png" alt="Spiking Marching Scheme training and recursive prediction workflow"><figcaption>Source workflow. Recursive evaluation tests accumulated error.</figcaption></figure>
+<div class="density">
+
+<div class="math-panel">
+
+$$
+\hat u^{n+1}=\mathcal D\!\left[\mathrm{SNN}_\theta\!\left(\mathcal E(u^{n-1},u^n)\right)\right]
+$$
+
+</div>
+<div class="density-grid ">
+<figure class="figure"><img style="height:220px" src="/figures/ch02/sms_workflow.png" alt="Encode history → predict spikes → decode → feed back"><figcaption>Encode history → predict spikes → decode → feed back</figcaption></figure>
+<div class="detail-box"><h2>Train and evaluate the same map</h2><p class="small"><strong>Architecture:</strong> LIF layer → two ReLU dense layers; hidden width 500.</p><p class="small"><strong>Training:</strong> classical-integrator pairs; sigmoid cross-entropy on spike targets.</p><p class="small"><strong>Reference-fed:</strong> use true histories at every step.</p><p class="small"><strong>Cascade:</strong> decoded predictions replace the next history.</p></div>
+</div><p class="protocol">Physical step n advances the PDE/ODE · spike step k = 1,…,K encodes each state · cascade tests accumulated error</p>
 </div>
 
 <!-- The same learned one-step map is evaluated with different input histories. The next slide uses the heat benchmark and retains the initial encoded histories. -->

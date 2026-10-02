@@ -5,7 +5,7 @@ const mode=ref('2d')
 <template>
  <div class="swarm-tabs" @click.stop @keydown.stop><button :aria-pressed="mode==='2d'" @click="mode='2d'">2D · 128 drones</button><button :aria-pressed="mode==='3d'" @click="mode='3d'">3D · 16 drones</button></div>
  <DroneSwarm3D v-if="mode==='3d'" />
- <RecordedSequence v-else name="swarm128" label="128-drone physical time" caption="Saved 2D per-instance trajectory · all 200 frames · sampled pairwise clearance; not continuous-time safety." />
+ <RecordedSequence v-else name="swarm128" label="128-drone physical time" caption="2D per-instance · M=128, radius 0.01 · 200 saved frames · clearance = min pair distance − 0.02; sampled, not continuous-time safety." />
 </template>
 <style scoped>
 .swarm-tabs{display:flex;gap:10px;margin-bottom:6px}

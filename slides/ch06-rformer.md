@@ -17,12 +17,33 @@ Move from iterative energy dynamics to observation/query sequence modeling. Comp
 ---
 chapter: '6'
 section: RFormer · Representation
-source: 'Thesis Chapter 6 · fig:rformer:architecture; sec:rformer:attention'
+source: 'Thesis Chapter 6 · fig:rformer:architecture; sec:rformer:attention; eq:rformer:loss'
 ---
 
 # Separate what is observed from what is queried
 
-<div class="cols wide-right" style="margin-top:16px"><div><div class="rule"><h2>Observation tokens</h2><p class="small">Position and measured value.</p></div><div class="rule" style="margin-top:25px"><h2>Query tokens</h2><p class="small">Position with zero-filled values; predictions are read at query locations.</p></div><p class="small" style="margin-top:24px">A structured attention mask encodes the token roles.</p></div><figure class="figure tall"><img src="/figures/ch06/rformer-architecture.png" alt="RFormer observation and query token architecture"><figcaption>Decoder-only transformer with a task-specific observation/query mask.</figcaption></figure></div>
+<div class="density">
+<div class="density-grid ">
+<figure class="figure"><img style="height:300px" src="/figures/ch06/rformer-architecture.png" alt="Interleaved observation/query tokens · query outputs decoded"><figcaption>Interleaved observation/query tokens · query outputs decoded</figcaption></figure>
+<div class="detail-box"><h2>Tokenize coordinates and values</h2>
+<div class="math-panel">
+
+$$
+O_i=[x_i,v_i],\qquad Q_j=[x_j,0]
+$$
+
+</div>
+<p class="small">One linear embedding; coordinates carry position information. Query outputs define the reconstruction.</p>
+<div class="math-panel">
+
+$$
+\mathcal L_Q=\frac{\sqrt{\sum_{j\in Q}\|\hat v_j-v_j\|_2^2}}{\sqrt{\sum_{j\in Q}\|v_j\|_2^2}}
+$$
+
+</div>
+<p class="small">Observation outputs are discarded. Sample context/query sets during training; weights remain fixed during inference.</p></div>
+</div><p class="protocol">4 layers · 8 heads · token width 128 · GELU · ≈350k parameters · Adam 10⁻³ · batch 16 · 100 epochs unless noted</p>
+</div>
 
 <!-- Output at observation positions is discarded. Keep the source token roles and mask; do not substitute a generic causal language-model explanation. -->
 
@@ -34,8 +55,20 @@ source: 'Thesis Chapter 6 · sec:rformer:attention · Structured mask; source pe
 
 # Bound memory while preserving the observation set
 
-<div class="cols" style="margin-top:24px"><div class="rule"><h2>Information flow</h2><p class="small">Queries attend to all observations.</p><p class="small">Queries do not attend to other queries.</p><p class="small">Observations attend to preceding observations and themselves.</p></div><div class="rule"><h2>Large-field evaluation</h2><p class="small">Hold one observation subset fixed for the snapshot.</p><p class="small">Evaluate query chunks and restore original point order.</p><p class="small">Exclude padded entries from reconstructed output.</p></div></div>
-<div class="takeaway">The source caps each sequence at 1024 tokens; memory follows the per-pass budget rather than the full point count.</div>
+<div class="density">
+<div class="density-grid ">
+<div class="detail-box"><h2>Allowed attention · grouped for display</h2><div class="attention-mask" role="img" aria-label="Grouped attention diagram: observations attend to preceding observations and themselves; queries attend to observations; all query-key connections are blocked"><span></span><b>Keys: O</b><b>Keys: Q</b><b>Rows: O</b><span class="allowed">Lower triangular<br>preceding O + self</span><span class="blocked">Blocked</span><b>Rows: Q</b><span class="allowed">All observations</span><span class="blocked">Blocked</span></div><p class="small">O = observations; Q = queries. Actual input remains interleaved; grouping only explains the mask.</p>
+<div class="math-panel">
+
+$$
+A=\operatorname{softmax}(QK^\top/\sqrt{d}+M)
+$$
+
+</div>
+<p class="small">d = head width; M = 0 on allowed connections, −∞ on blocked connections.</p></div>
+<div class="detail-box"><h2>Chunk evaluation · fixed context</h2><ol class="algorithm"><li>Draw one observation subset O for this snapshot.</li><li>Partition target coordinates into query chunks Q₁,…,Qᵣ.</li><li>Evaluate each [O,Qᵣ] sequence with the same context.</li><li>Remove padded outputs; restore original point order.</li></ol><p class="small">No query-to-query attention: adding other unknown targets does not supply new information.</p></div>
+</div><p class="protocol">≤1024 tokens per pass, including observations · attention memory follows the per-pass token budget · more queries require more passes</p>
+</div>
 
 <!-- Chunking is a computational operation, not a new observation protocol. Query outputs do not depend on other unobserved queries under the mask. -->
 
@@ -48,7 +81,7 @@ source: 'Thesis Chapter 6 · tab:rformer:vortex · Animation: saved RFormer case
 # Sparse observations recover coherent flow structure
 
 <RFormerTime case-name="vortex" />
-<p class="micro" style="margin-top:5px">Published total test relative RMSE: 0.0080 ± 0.0014 · mean ± source standard deviation.</p>
+<p class="micro" style="margin-top:5px">Snapshot reconstruction · 512 observations · total test relative RMSE 0.0080 ± 0.0014 (source SD); no autoregressive forecasting.</p>
 
 <!-- Play saved test snapshots in physical-time order. Rows are u, v, p; columns are reference, measured observations and RFormer. Observations are not interpolated. This is snapshot reconstruction, not autoregressive forecasting. -->
 
@@ -60,8 +93,15 @@ source: 'Thesis Chapter 6 · fig:rformer:vortex-ablation · Error bars: one stan
 
 # Observation density and noise are separate tests
 
-<div class="cols" style="margin-top:15px"><figure class="figure"><img src="/figures/ch06/vortex-ablation-density.png" alt="Vortex reconstruction error versus observation density"><figcaption>Observation-density ablation</figcaption></figure><figure class="figure"><img src="/figures/ch06/vortex-ablation-noise.png" alt="Vortex reconstruction error versus measurement noise"><figcaption>Measurement-noise ablation</figcaption></figure></div>
-<div class="takeaway">Robustness is conditional on the observation protocol. These curves do not establish a joint density–noise response surface.</div>
+<div class="density">
+<div class="density-grid ">
+<figure class="figure"><img style="height:275px" src="/figures/ch06/vortex-ablation-density.png" alt="Observation-density sweep · 1–25%"><figcaption>Observation-density sweep · 1–25%</figcaption></figure>
+<figure class="figure"><img style="height:275px" src="/figures/ch06/vortex-ablation-noise.png" alt="Separate measurement-noise sweep"><figcaption>Separate measurement-noise sweep</figcaption></figure>
+</div><div class="density-grid ">
+<div class="detail-box"><h2>Sparsity</h2><p class="small">Reported total relative RMSE stays below 0.016 over the tested density range.</p></div>
+<div class="detail-box"><h2>Noise</h2><p class="small">Reported total relative RMSE reaches 0.094 at the highest tested noise.</p></div>
+</div><p class="protocol">Error bars: one SD across test snapshots · retain original noise axis · separate sweeps do not establish joint density–noise robustness</p>
+</div>
 
 <!-- The source reports total relative RMSE below 0.016 for density 1–25%, and 0.094 at the highest tested noise. Preserve the original abscissa and uncertainty definitions. -->
 
@@ -74,7 +114,7 @@ source: 'Thesis Chapter 6 · fig:rformer:jet-spectrum; tab:rformer:jet · Animat
 # Compare both reconstructed fields and spectra
 
 <div style="display:grid;grid-template-columns:2.3fr 1fr;gap:18px;align-items:center"><RFormerTime case-name="jet" /><figure class="figure"><img src="/figures/ch06/jet-baseline-spectrum.png" alt="Turbulent jet energy spectra across reconstruction baselines"><figcaption>Published baseline spectrum · static comparison, not the current frame.</figcaption></figure></div>
-<div class="takeaway">Published total relative RMSE: 0.2540 ± 0.0131 · native 3D point cloud; displayed field is a projected slab.</div>
+<div class="takeaway">1000 observations (≈10%) · 160 training / 40 test snapshots · total relative RMSE 0.2540 ± 0.0131 (source SD) · projected 3D slab.</div>
 
 <!-- The uncertainty is the reported source standard deviation. This result does not establish a matched head-to-head comparison with ET. -->
 
@@ -87,7 +127,7 @@ source: 'Thesis Chapter 6 · Weather experiment · Saved case2/run-001 predictio
 # Reconstruct temperature across continental stations
 
 <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:22px;align-items:center"><figure class="figure"><img src="/figures/ch06/weather-stations.png" alt="Static weather station distribution"><figcaption>Static station distribution · 59 observations and 1961 query stations.</figcaption></figure><RecordedSequence name="weather" label="Weather date" caption="Reference / reconstructed · identically interpolated station fields · shared °C scale; not gridded ground truth." /></div>
-<p class="micro">Weekly snapshots plus year-end. US land and station-coverage mask; missing station days were filled in source preprocessing.</p>
+<p class="micro">54 recorded dates in 2024 · weekly plus year-end · 59 measured / 1961 query stations · TAVG (°C). US land/coverage mask; source-filled missing days.</p>
 
 <!-- Play through the recorded seasons. Smoothing is spatial only and does not turn station predictions into a numerical ground-truth field. -->
 

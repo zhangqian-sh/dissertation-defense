@@ -19,6 +19,21 @@ pages at that revision: latent map was 33 and swarm inspection was 38.
 
 ## Deliverables and verification
 
+The 2026-10-02 density revision preserves 54 slides and all nine interactive
+views. Main methods now expose encoding/SMS updates, calibration objectives and
+bounds, directional-gradient updates, ET energy dynamics, observation/query loss
+and attention masks, and OCFormer dynamics/residuals. Results gain protocol and
+metric context plus existing calibration-data, horizon, convergence, pressure,
+and module-ablation evidence. Backups retain detailed definitions and assumptions.
+Scientific fields/data and interactive rendering dimensions remain unchanged.
+
+Slurm job `6949687` passed the rebuilt 54-slide/54-page audit and all nine
+interactive-view checks, with no detected overflow, raw/invalid equations,
+missing figures, browser errors, or external requests. The complete PDF contact
+sheets and revised method/result layouts were visually reviewed. Final exports
+are in `dist/` and `artifacts/defense.pdf`.
+
+
 The introduction now has one Content slide listing the two parts and Chapters
 2–7. The separate contributions slide was removed to avoid repeating the overview.
 

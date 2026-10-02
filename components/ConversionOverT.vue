@@ -18,7 +18,7 @@ const errorLimit=computed(()=>p.value?.difference_limit||1)
   <GridField :values="difference" :rows="201" :cols="300" :limit="errorLimit" title="Difference · SNN − reference"/>
  </div>
  <div class="burgers-axis"><span>horizontal: x · vertical: physical t</span><span>horizontal: x · vertical: physical t</span><span>horizontal: x · vertical: physical t</span></div>
- <div class="burgers-readout"><span>Relative L₂: {{p.relative_error.values[index].toFixed(4)}}</span><span>Fixed weights and thresholds · cumulative emitted-output mean</span></div>
+ <div class="burgers-readout"><span>Relative L₂: {{p.relative_error.values[index].toFixed(4)}}</span><span>Output = mean of emitted spikes 1…T · fixed weights / thresholds</span></div>
  <div class="plot-controls"><button @click="toggle">{{playing?'Pause':'Play'}}</button><button @click="reset">Reset</button><label for="burgers-t">Prefix T</label><input id="burgers-t" aria-label="Burgers SNN T" type="range" min="0" :max="count-1" :value="index" @input="seek(Number(($event.target as HTMLInputElement).value))"><output>{{index+1}} / {{count}}</output><button v-for="t in [1,32,64,96,128]" :key="t" :aria-pressed="index===t-1" @click="seek(t-1)">T={{t}}</button></div>
 </FigureFrame>
 </template>

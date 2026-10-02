@@ -26,6 +26,28 @@ Distinguish ordinary slide reveals, scripted animation, and interactive inspecti
 
 A conditional interaction is not an unfinished requirement. A documented decision to use static panels fully satisfies that topic.
 
+### Information density
+
+The 54-slide deck uses the local Enrui and Zhen defense PDFs as composition
+references: combine architecture with objectives and algorithm steps, and pair
+results with experimental context. Scientific additions are sourced from the
+thesis; reference-deck results are not imported into this presentation.
+
+Content slides use scoped `density`, `density-grid`, `detail-box`, `math-panel`,
+`protocol`, and `step-chain` classes. Method slides expose the central objective
+or update rule and define its variables alongside the workflow. Results preserve
+published panels and add the observation protocol, metric and uncertainty scope.
+The two ET fidelity diagnostics remain separate; the jet field page keeps the
+velocity panels at their original height and places pressure/error statistics beside them.
+The calibration-data, horizon, RFG convergence and ET module-ablation evidence
+comes from existing local figure/table sources, with separate experiments labeled.
+
+The title, chapter dividers and thank-you page remain sparse. Interactive field
+sizes, controls and numerical payloads are preserved; their captions/readouts
+carry added context. Core equations belong on main slides; detailed surrogate
+formulas and bound assumptions remain in backups. Do not shrink established
+body typography or remove scientific axes/legends to fit more content.
+
 ## 2. Chapter-ordered presentation map
 
 | Chapter | Scientific content | Treatment |

@@ -33,7 +33,7 @@ onMounted(async()=>{
 onBeforeUnmount(()=>{disposed=true;urls.value.forEach(u=>URL.revokeObjectURL(u))})
 </script>
 <template>
- <FigureFrame :class="{'vortex-matrix':caseName==='vortex'}" :fallback="fallback" :ready="!!data" :error="error" :static-mode="staticMode" :caption="caseName==='vortex'?'u / v / p · 512 measured observations · shared row scales fixed across time.':'Native (u,v) arrows · |z| < 5 slab · same reference/RFormer locations · fixed arrow scale.'">
+ <FigureFrame :class="{'vortex-matrix':caseName==='vortex'}" :fallback="fallback" :ready="!!data" :error="error" :static-mode="staticMode" :caption="caseName==='vortex'?'u / v / p · 512 observations · reference / observed / reconstructed · row scales fixed across time.':'Native (u,v) arrows · |z| < 5 slab · same reference/RFormer locations · fixed arrow scale.'">
   <img class="rformer-time-frame" :src="urls[index]" :alt="`Reference, observations and RFormer ${caseName==='vortex'?'u, v, p fields':'velocity vectors'} at physical-time ${data.times[index]}`">
   <div class="plot-controls"><button @click="toggle">{{playing?'Pause':'Play'}}</button><button @click="reset">Reset</button><label :for="'rformer-'+caseName">Physical time{{caseName==='jet'?' index':''}}</label><input :id="'rformer-'+caseName" :aria-label="'RFormer '+caseName+' physical time'" type="range" min="0" :max="count-1" :value="index" @input="seek(Number(($event.target as HTMLInputElement).value))"><output>{{data.times[index]}} · {{index+1}} / {{count}}</output></div>
   <div class="rformer-time-note">{{caseName==='jet'?'Saved test times are nonuniform; playback advances one recorded snapshot per frame. Time index is not seconds.':'Source time units · fixed color scales across all recorded times.'}}</div>

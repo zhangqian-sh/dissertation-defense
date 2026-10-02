@@ -31,6 +31,10 @@ npm run build
 npm run export:pdf
 ```
 
+Content slides combine source equations, algorithms, experimental protocols,
+and quantitative evidence. Method and result layouts use scoped density classes;
+chapter transitions remain brief, and interactive figure dimensions are preserved.
+
 Edit the title/frontmatter in `slides.md`, scientific content in `slides/`,
 the `layouts/academic.vue` layout, and `style.css`. The canvas is 1200 × 675
 (16:9). Body typography and explicit image heights reserve room for a source
