@@ -10,9 +10,9 @@ divider: chapter
 
 # Reconstruction from Sparse Measurements: A Mesh-Free Approach with In-Context Learning
 
-<p class="lead">How can observation and query tokens support reconstruction across scientific domains?</p>
+<!-- Spoken transition: How to do reconstruction which can scale?
 
-<!-- Move from iterative energy dynamics to observation/query sequence modeling. Compare the reconstruction mechanisms without presenting one as a stage of the other. -->
+Move from iterative energy dynamics to observation/query sequence modeling. Compare the reconstruction mechanisms without presenting one as a stage of the other. -->
 
 ---
 chapter: '6'

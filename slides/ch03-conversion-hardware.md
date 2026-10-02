@@ -10,9 +10,9 @@ divider: chapter
 
 # Calibrated Conversion and Neuromorphic Deployment
 
-<p class="lead">How can scientific predictions survive conversion and hardware deployment?</p>
+<!-- Spoken transition: Inference: How to run a SciML model on efficient hardware?
 
-<!-- Move from spike representations to converting trained scientific networks. Separate floating-point calibration accuracy from hardware precision and measured deployment costs. -->
+Move from spike representations to converting trained scientific networks. Separate floating-point calibration accuracy from hardware precision and measured deployment costs. -->
 
 ---
 chapter: '3'

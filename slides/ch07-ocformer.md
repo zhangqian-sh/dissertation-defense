@@ -10,9 +10,9 @@ divider: chapter
 
 # OCFormer: Physics-Informed Transformers for High-Dimensional Optimal Control
 
-<p class="lead">How can learned trajectory maps balance cost, feasibility, and inference speed?</p>
+<!-- Spoken transition: How to solve high-dimenstional optimal control problems with transformer-based model?
 
-<!-- Move from field reconstruction to a separate optimal-control study. The trajectory model does not take reconstructed fields from the preceding experiments as inputs. -->
+Move from field reconstruction to a separate optimal-control study. The trajectory model does not take reconstructed fields from the preceding experiments as inputs. -->
 
 ---
 chapter: '7'

@@ -10,8 +10,6 @@ divider: chapter
 
 # Summary
 
-<p class="lead">What do these studies establish, and what remains to be demonstrated?</p>
-
 <!-- Bring the two independent themes together at the level of conclusions. Separate tested contributions from preliminary hybrid results and future directions. -->
 
 ---

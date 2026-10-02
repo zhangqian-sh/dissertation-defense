@@ -11,9 +11,9 @@ divider: part
 
 # Reconstruction from Sparse Measurements: An Energy Transformer Approach
 
-<p class="lead">How can learned energy dynamics reconstruct fields from sparse observations?</p>
+<!-- Spoken transition: How to reconstruct flow fields with vision-based model?
 
-<!-- Begin the independent second theme: field reconstruction and trajectory inference. This Energy Transformer study does not receive outputs from the preceding spiking methods. -->
+Begin the independent second theme: field reconstruction and trajectory inference. This Energy Transformer study does not receive outputs from the preceding spiking methods. -->
 
 ---
 chapter: '5'

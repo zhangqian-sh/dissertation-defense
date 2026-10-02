@@ -10,9 +10,9 @@ divider: chapter
 
 # Direct SNN Training with Randomized Forward-Mode Gradients
 
-<p class="lead">What accuracy trade-offs arise when training with forward-mode derivatives?</p>
+<!-- Spoken transition: Training: How to train SciML model with spiking mechanism?
 
-<!-- Move from conversion and deployment to training. Explain directional derivatives and their accuracy trade-offs without claiming measured training-energy savings. -->
+Move from conversion and deployment to training. Explain directional derivatives and their accuracy trade-offs without claiming measured training-energy savings. -->
 
 ---
 chapter: '4'

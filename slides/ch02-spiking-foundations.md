@@ -11,9 +11,9 @@ divider: part
 
 # Exploratory Studies on Spiking Representations
 
-<p class="lead">How do spike representations affect numerical accuracy and recursive prediction?</p>
+<!-- Spoken transition: Setup: How to represent continuous values with spikes?
 
-<!-- Begin Part I with representation: how continuous quantities become spikes, then how those representations support operator evaluation and physical-time marching. -->
+Begin Part I with representation: how continuous quantities become spikes, then how those representations support operator evaluation and physical-time marching. -->
 
 ---
 chapter: '2'

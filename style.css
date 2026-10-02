@@ -56,8 +56,7 @@ html,body,#app { font-family:Inter,Arial,sans-serif; color:var(--ink); }
 .academic.chapter-divider .eyebrow { margin-bottom:0; }
 .academic.chapter-divider .divider-chapter { font-size:15px; color:var(--muted); margin:8px 0 0; }
 .academic.chapter-divider .divider-rule { width:64px; height:3px; background:var(--brown); margin:24px 0; flex-shrink:0; }
-.academic.chapter-divider h1 { font-size:44px; max-width:950px; margin:0 0 22px; }
-.academic.chapter-divider .lead { font-size:21px; max-width:850px; margin:0; color:var(--muted); opacity:1; }
+.academic.chapter-divider h1 { font-size:44px; max-width:950px; margin:0; }
 .academic.part-divider h1 { font-size:52px; }
 .academic.part-divider .divider-rule { width:120px; height:4px; }
 .academic .chapter-pair { border-top:1px solid var(--line); padding:13px 0; display:flex; justify-content:space-between; gap:20px; font-size:18px; }
