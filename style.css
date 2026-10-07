@@ -148,9 +148,92 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 
 .academic .content-outline .chapter-entry p.small { font-size:14px; }
 
+/* ch2-04: one encoding/decoding cycle around an aligned figure pair. */
+.academic .encoding-cycle { display:flex; flex-direction:column; gap:0; }
+.academic .encoding-annotation { background:#f1f2f2; border:0; padding:7px 16px; margin:0 24px; }
+.academic .encoding-rule { display:flex; align-items:center; justify-content:center; gap:12px; min-height:35px; }
+.academic .encoding-rule h2 { flex:0 0 auto; font-size:16px; margin:0; color:#000; }
+.academic .encoding-rule > div { flex:0 1 auto; min-width:0; font-size:14px; text-align:left; }
+.academic .encoding-rule p { margin:0; }
+.academic .encoding-arrow { display:block; width:100%; height:48px; flex:none; fill:none; stroke:var(--muted); stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+.academic .encoding-figures { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+.academic .encoding-figures figure { margin:0; min-width:0; position:relative; }
+.academic .encoding-figures figcaption { text-align:center; font-size:16px; font-weight:600; line-height:24px; }
+.academic .encoding-figures figcaption p { margin:0; }
+.academic .encoding-figures figcaption > p > .katex { margin-left:6px; font-weight:400; }
+.academic .encoding-arrowhead { fill:var(--muted); stroke:none; }
+.academic .encoding-figures img { width:86%; height:190px; margin:0 auto; object-fit:contain; display:block; }
+.academic .encoding-key { position:absolute; right:60px; top:29px; font-size:16px; display:flex; align-items:center; gap:5px; margin:0; background:white; padding:0 3px; }
+.academic .encoding-key i { width:9px; height:9px; background:#315d79; display:inline-block; }
+.academic .encoding-key .silent { background:#f0efed; border:1px solid #d7d3cf; margin-left:6px; }
+.academic .encoding-note { font-size:14px; line-height:1.4; color:var(--muted); margin:8px 0 0; }
+
+.academic .encoding-note p { margin:0; }
+
 /* Share Content-page row heights so both columns have aligned separators. */
 .academic .content-outline .density-grid { grid-template-rows:auto repeat(3,auto); row-gap:0; align-items:stretch; }
 .academic .content-outline .detail-box { display:grid; grid-template-rows:subgrid; grid-row:span 4; }
+
+/* ch2-05: setup and coordinate codes alongside prediction and evaluation. */
+.academic .poisson-example { display:grid; grid-template-columns:1fr 1.05fr; gap:34px; }
+.academic .poisson-column { display:flex; flex-direction:column; gap:17px; min-width:0; }
+.academic .poisson-section h2 { font-size:16px; margin:0 0 8px; }
+.academic .poisson-section p { font-size:14px; line-height:1.4; margin:0 0 9px; }
+.academic .poisson-section .katex-display { font-size:16px; margin:9px 0 12px; }
+.academic .poisson-section .poisson-context { font-size:14px; line-height:1.4; color:var(--muted); margin:8px 0 0; }
+.academic .poisson-prediction { margin:0; }
+.academic .poisson-prediction-image { width:100%; }
+.academic .poisson-prediction-image img { display:block; width:100%; height:auto; }
+.academic .poisson-prediction figcaption { text-align:center; font-size:16px; color:var(--muted); margin-top:3px; }
+.academic .poisson-prediction figcaption p { margin:0; }
+.academic .poisson-evaluation table { font-size:14px; margin:0; }
+.academic .poisson-evaluation th { font-size:14px; padding:6px 10px; }
+.academic .poisson-evaluation td { padding:7px 10px; }
+.academic .poisson-evaluation .poisson-ours td { background:#e7edf1; color:var(--ink); font-weight:600; }
+
+.academic .poisson-metric { display:flex; align-items:center; justify-content:center; gap:16px; min-height:43px; margin-bottom:8px; }
+.academic .poisson-metric h2 { margin:0; }
+.academic .poisson-metric p { margin:0; font-size:14px; }
+
+/* ch2-06: recursive marching diagram and mathematical algorithm. */
+.academic .sms-method { display:grid; grid-template-columns:1.5fr 1fr; gap:28px; align-items:start; }
+.academic .sms-method-left,.academic .sms-method-right { min-width:0; }
+.academic .sms-update { font-size:16px; margin:0 0 20px; }
+.academic .sms-update .katex-display { margin:8px 0 0; }
+.academic .sms-evaluation { display:grid; grid-template-columns:1fr 1fr; gap:20px; border-top:1px solid var(--line); margin:12px 0 0; padding-top:12px; }
+.academic .sms-evaluation p { font-size:15px; line-height:1.55; margin:0; }
+.academic .sms-time-note { font-size:14px; line-height:1.45; color:var(--muted); margin-top:14px; }
+.academic .sms-time-note p { margin:0; }
+.academic .sms-algorithm { border-bottom:1px solid var(--ink); font-size:15px; }
+.academic .sms-algorithm-heading { display:flex; gap:12px; border-top:1.5px solid var(--ink); border-bottom:1px solid var(--ink); padding:7px 0; font-size:16px; }
+.academic .sms-algorithm-io { padding:9px 0; }
+.academic .sms-algorithm-io p { font-size:14px; line-height:1.5; margin:0; }
+.academic .sms-algorithm ol { list-style:none; counter-reset:sms-line; margin:0; padding:0 0 8px; }
+.academic .sms-algorithm li { counter-increment:sms-line; position:relative; margin:0; padding:4px 0 4px 28px; line-height:1.6; }
+.academic .sms-algorithm li::before { content:counter(sms-line); position:absolute; left:0; width:16px; text-align:right; color:var(--muted); font-size:12px; }
+.academic .sms-algorithm li.sms-indent { padding-left:45px; }
+.academic .sms-algorithm li p { margin:0; }
+.academic .sms-training { margin-top:18px; font-size:16px; }
+.academic .sms-training p { font-size:14px; line-height:1.5; margin:5px 0 0; }
+
+.academic .sms-lif { margin-top:10px; }
+.academic .sms-lif h2 { font-size:16px; margin:0 0 5px; }
+.academic .sms-lif p { font-size:14px; line-height:1.4; margin:0; }
+.academic .sms-lif .katex-display { font-size:16px; margin:7px 0; }
+
+/* Compact paired SMS algorithms on ch2-06. */
+.academic .sms-method-right .sms-algorithm { font-size:14px; }
+.academic .sms-method-right .sms-algorithm + .sms-algorithm { margin-top:16px; }
+.academic .sms-method-right .sms-algorithm-heading { font-size:16px; padding:5px 0; }
+.academic .sms-method-right .sms-algorithm-io { padding:6px 0; }
+.academic .sms-method-right .sms-algorithm-io p { font-size:14px; line-height:1.45; }
+.academic .sms-method-right .sms-algorithm li { padding-top:2px; padding-bottom:2px; line-height:1.5; }
+
+.academic .sms-method-left .sms-training { margin-top:8px; }
+.academic .sms-method-left .sms-time-note { margin-top:4px; }
+.academic .sms-method-left .sms-lif { margin-top:6px; }
+.academic .sms-method-left .sms-lif .katex-display { margin:5px 0; }
+.academic .sms-method-left .sms-training p { line-height:1.4; }
 
 /* Shared playback slider: Brown red fill up to the thumb. */
 .playback-slider{appearance:none;-webkit-appearance:none;height:16px;background:transparent;cursor:pointer}
