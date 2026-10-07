@@ -146,6 +146,12 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 
 .academic button, .academic input, .academic select, .academic code, .academic pre { font-family:'Noto Serif',serif; }
 
+.academic .content-outline .chapter-entry p.small { font-size:14px; }
+
+/* Share Content-page row heights so both columns have aligned separators. */
+.academic .content-outline .density-grid { grid-template-rows:auto repeat(3,auto); row-gap:0; align-items:stretch; }
+.academic .content-outline .detail-box { display:grid; grid-template-rows:subgrid; grid-row:span 4; }
+
 /* Shared playback slider: Brown red fill up to the thumb. */
 .playback-slider{appearance:none;-webkit-appearance:none;height:16px;background:transparent;cursor:pointer}
 .playback-slider::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:linear-gradient(to right,var(--red) 0,var(--red) var(--progress),#dce1df var(--progress),#dce1df 100%)}
