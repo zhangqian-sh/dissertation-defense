@@ -235,7 +235,7 @@ Static comparisons and ablations have no mandatory dynamic schema. Attention wei
 
 ## 6. Runtime and defense ergonomics
 
-Use Slidev/Vite/Vue 3, KaTeX, locally bundled Latin Modern/Inter fonts, and a high-contrast Brown APMA theme. Markdown and static figures handle most slides. Three.js with OrbitControls handles swarm geometry; Canvas/SVG handles rollout views and linked traces. Add a chart library only if those traces require it.
+Use Slidev/Vite/Vue 3, KaTeX with its default LaTeX-style math fonts and locally bundled Noto Serif text fonts, and a high-contrast Brown APMA theme. Markdown and static figures handle most slides. Three.js with OrbitControls handles swarm geometry; Canvas/SVG handles rollout views and linked traces. Add a chart library only if those traces require it.
 
 All model computation happens before the defense. Browser code loads local assets once, validates once, converts tensors to typed arrays, and renders deterministic playback. No model inference, cluster paths, external fonts/CDNs, or remote requests.
 

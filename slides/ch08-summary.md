@@ -1,11 +1,11 @@
 ---
 chapter: '8'
-section: Chapter 8 · Transition
+section: Summary
 source: 'Thesis Chapter 8 · Chapter overview'
 divider: chapter
 ---
 
-<div class="eyebrow">Chapter 8</div>
+<p class="divider-chapter">Chapter 8</p>
 <div class="divider-rule" aria-hidden="true"></div>
 
 # Summary

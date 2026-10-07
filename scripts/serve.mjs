@@ -5,7 +5,7 @@ const root=resolve(import.meta.dirname,'../dist')
 const port=Number(process.env.PORT||3030)
 const base=process.env.BASE_PATH||'/'
 if(!base.startsWith('/')||base.startsWith('//')||!base.endsWith('/'))throw Error('BASE_PATH must begin and end with /')
-const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.json':'application/json','.png':'image/png','.svg':'image/svg+xml','.woff2':'font/woff2','.otf':'font/otf','.pdf':'application/pdf'}
+const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.json':'application/json','.png':'image/png','.svg':'image/svg+xml','.woff2':'font/woff2','.otf':'font/otf','.ttf':'font/ttf','.pdf':'application/pdf'}
 const server=http.createServer(async(req,res)=>{try{
  const url=new URL(req.url,'http://127.0.0.1')
  if(url.pathname==='/'&&base!=='/'){res.writeHead(302,{'Location':base}).end();return}

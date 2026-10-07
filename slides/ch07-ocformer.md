@@ -1,11 +1,11 @@
 ---
 chapter: '7'
-section: Chapter 7 · Transition
+section: Part II · Sequence-to-sequence modeling
 source: 'Thesis Chapter 7 · Chapter overview'
 divider: chapter
 ---
 
-<div class="eyebrow">Chapter 7</div>
+<p class="divider-chapter">Chapter 7</p>
 <div class="divider-rule" aria-hidden="true"></div>
 
 # OCFormer: Physics-Informed Transformers for High-Dimensional Optimal Control

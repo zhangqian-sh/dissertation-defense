@@ -5,7 +5,6 @@ source: 'Thesis Chapter 2 · Chapter overview'
 divider: part
 ---
 
-<div class="eyebrow">Part I · Neuromorphic algorithms</div>
 <p class="divider-chapter">Chapter 2</p>
 <div class="divider-rule" aria-hidden="true"></div>
 

@@ -13,5 +13,5 @@ for(const file of ['slides.md',...readdirSync(resolve(root,'slides')).filter(n=>
  for(const [,path] of text.matchAll(/(?:src|fallback)="(\/[^"\s]+)"/g)){if(!existsSync(resolve(pub,path.slice(1))))throw new Error(`Missing ${path} in ${file}`);images++}
 }
 for(const ch of ['ch02/sms_longtime_rollout','ch03/conversion_over_t','ch05/energy_history','ch07/ocformer_swarm_3d'])if(!existsSync(resolve(pub,'fallback_figures',ch+'.png')))throw new Error('Missing print fallback')
-if(!existsSync(resolve(pub,'fonts/lmroman10-regular.otf')))throw new Error('Missing local serif font')
+for(const font of ['NotoSerif-Regular.ttf', 'NotoSerif-Medium.ttf', 'NotoSerif-SemiBold.ttf', 'NotoSerif-Bold.ttf', 'NotoSerif-Italic.ttf', 'NotoSerif-SemiBoldItalic.ttf', 'NotoSerif-BoldItalic.ttf'])if(!existsSync(resolve(pub,'fonts',font)))throw new Error('Missing local font: '+font)
 console.log(`Validated ${manifest.assets.length} data assets, their checksums, ${images} slide image references, and local fallbacks/fonts.`)

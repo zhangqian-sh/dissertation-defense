@@ -1,11 +1,11 @@
 ---
 chapter: '3'
-section: Chapter 3 · Transition
+section: Part I · Neuromorphic algorithms
 source: 'Thesis Chapter 3 · Chapter overview'
 divider: chapter
 ---
 
-<div class="eyebrow">Chapter 3</div>
+<p class="divider-chapter">Chapter 3</p>
 <div class="divider-rule" aria-hidden="true"></div>
 
 # Calibrated Conversion and Neuromorphic Deployment

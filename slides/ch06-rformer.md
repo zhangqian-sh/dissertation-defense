@@ -1,11 +1,11 @@
 ---
 chapter: '6'
-section: Chapter 6 · Transition
+section: Part II · Sequence-to-sequence modeling
 source: 'Thesis Chapter 6 · Chapter overview'
 divider: chapter
 ---
 
-<div class="eyebrow">Chapter 6</div>
+<p class="divider-chapter">Chapter 6</p>
 <div class="divider-rule" aria-hidden="true"></div>
 
 # Reconstruction from Sparse Measurements: A Mesh-Free Approach with In-Context Learning

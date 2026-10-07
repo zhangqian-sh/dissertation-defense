@@ -30,7 +30,7 @@ try{
   const measurements=await slide.evaluate(el=>{
    const body=el.querySelector('.slide-body'),footer=el.querySelector('.footer'),box=el.getBoundingClientRect(),b=body.getBoundingClientRect(),f=footer.getBoundingClientRect();const scale=box.width/1200
    const overflow=[]
-   for(const child of body.querySelectorAll('h1,h2,h3,p,table,figure,.takeaway,.plot-controls,.interaction-note,.author,.affiliation,.number,.math-panel,.step-chain,.attention-mask,.connection-map,.geometry-sketch,.katex-display > .katex')){
+   for(const child of body.querySelectorAll('h1,h2,h3,p,table,figure,.takeaway,.plot-controls,.interaction-note,.author,.affiliation,.number,.math-panel,.step-chain,.attention-mask,.connection-map,.geometry-sketch,.katex-display > .katex,math[display="block"]')){
     const r=child.getBoundingClientRect();if(!r.width||!r.height)continue
     if(r.bottom>f.top-8*scale||r.right>box.right-40*scale||r.left<box.left+38*scale)overflow.push({tag:child.tagName,text:child.textContent.slice(0,70),bottom:r.bottom,footer:f.top})
    }

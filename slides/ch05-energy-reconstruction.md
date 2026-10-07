@@ -5,7 +5,6 @@ source: 'Thesis Chapter 5 · Chapter overview'
 divider: part
 ---
 
-<div class="eyebrow">Part II · Sequence-to-sequence modeling</div>
 <p class="divider-chapter">Chapter 5</p>
 <div class="divider-rule" aria-hidden="true"></div>
 

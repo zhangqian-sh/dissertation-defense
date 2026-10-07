@@ -1,11 +1,11 @@
 ---
 chapter: '4'
-section: Chapter 4 · Transition
+section: Part I · Neuromorphic algorithms
 source: 'Thesis Chapter 4 · Chapter overview'
 divider: chapter
 ---
 
-<div class="eyebrow">Chapter 4</div>
+<p class="divider-chapter">Chapter 4</p>
 <div class="divider-rule" aria-hidden="true"></div>
 
 # Direct SNN Training with Randomized Forward-Mode Gradients

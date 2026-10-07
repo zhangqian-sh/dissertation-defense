@@ -11,8 +11,9 @@ download: true
 exportFilename: defense
 favicon: /favicon.svg
 fonts:
-  sans: Inter
-  serif: Latin Modern
+  sans: Noto Serif
+  serif: Noto Serif
+  mono: Noto Serif
   provider: none
 drawings:
   enabled: false
