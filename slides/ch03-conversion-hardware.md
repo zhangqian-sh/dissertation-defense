@@ -20,57 +20,15 @@ section: ANN-to-SNN conversion · Calibration
 source: 'Thesis Chapter 3 · sec:conversion:calibration; eq:conversion:general-bound · Floating-point conversion analysis; fig:conversion:calibration-data'
 ---
 
-# Calibrate the local mismatch before it propagates
+# ANN-to-SNN conversion and calibration
 
-<div class="density">
-<div class="density-grid ">
-<div class="detail-box"><h2>Layerwise calibration · l = 1,…,L</h2><ol class="algorithm"><li>Train the smooth ANN; select calibration inputs.</li><li>Freeze layers 1,…,l−1; feed their decoded spikes forward.</li><li>Compare ANN activation f with the IF output average.</li><li>Update current weights/biases with Adam; freeze and advance.</li></ol>
-<div class="math-panel">
+<script setup>
+import CalibrationFlow from "/components/CalibrationFlow.vue"
+</script>
 
-$$
-\begin{aligned}\min_{W_l,b_l}&\ \|e_{c,l}\|_2^2\\e_{c,l}&=f(z_l)-\overline{\mathrm{IF}}_T(z_l)\end{aligned}
-$$
+<CalibrationFlow />
 
-</div>
-</div>
-<div class="detail-box"><h2>Local mismatch → final output error</h2>
-<div class="math-panel">
-
-$$
-\begin{aligned}e_L^\top H_L e_L&\le\sum_{l=1}^{L}2^{L-l+1}e_{c,l}^\top B_l e_{c,l}\\B_l&=H_l+C_l\sqrt{\mathcal L_{ANN}}I\end{aligned}
-$$
-
-</div>
-<p class="small">H: loss Hessian; C: derivative/curvature bound. Early-layer mismatch is amplified; ANN training loss affects the bound.</p><figure class="figure"><img style="height:150px" src="/figures/ch03/calibration_data_size.png" alt="Separate sin(x) study · calibration-data size"><figcaption>Separate sin(x) study · calibration-data size</figcaption></figure></div>
-</div><p class="protocol">Bound assumes approximable activation values/first derivatives and bounded second derivatives · floating-point analysis</p>
-</div>
-
-<!-- The thesis extends the ReLU-specific argument to activations with approximable values/first derivatives and bounded second derivatives. Define the compact bound and its assumptions; it is an upper bound, not an exact prediction of measured error. -->
-
----
-chapter: '3'
-section: ANN-to-SNN conversion · Field fidelity
-source: 'Thesis Chapter 3 · fig:conversion:poisson · Published matched Poisson comparison; tab:conversion:accuracy'
----
-
-# Calibration restores the spatial solution
-
-<div class="density">
-<div class="four"><figure class="figure"><img style="height:235px" src="/figures/ch03/poisson_true.png" alt="Numerical reference"><figcaption>Numerical reference</figcaption></figure><figure class="figure"><img style="height:235px" src="/figures/ch03/poisson_ann.png" alt="ANN / PINN"><figcaption>ANN / PINN</figcaption></figure><figure class="figure"><img style="height:235px" src="/figures/ch03/poisson_snn_none.png" alt="SNN · weight copying"><figcaption>SNN · weight copying</figcaption></figure><figure class="figure"><img style="height:235px" src="/figures/ch03/poisson_snn_calibrated.png" alt="SNN · calibrated"><figcaption>SNN · calibrated</figcaption></figure></div><div class="density-grid ">
-<div class="detail-box"><h2>Matched Poisson experiment</h2><p class="small">Thesis domain [−1,1]²; source panels retain [0,1] plotting axes. Homogeneous Dirichlet boundaries · tanh PINN, 3 hidden layers × 100.</p>
-<div class="math-panel">
-
-$$
--\Delta u=f,\qquad u|_{\partial\Omega}=0
-$$
-
-</div>
-</div>
-<div class="detail-box"><h2>Reported conversion fidelity</h2><p class="small"><strong>SNN-to-ANN relative L₂:</strong> 0.0471<br><strong>Spike rate:</strong> 0.373</p><p class="small">Calibration recovers the spatial pattern. This conversion metric uses the trained ANN field as its target.</p></div>
-</div>
-</div>
-
-<!-- Retain the original panels and color scales. ANN-to-reference error and SNN-to-ANN conversion error are different quantities. -->
+<!-- The diagram adapts the layer correspondence in data/references/flowchart/calib.png. Conversion copies affine parameters and replaces hidden activations by IF neurons. Calibration uses fixed ANN activations as targets and averaged inputs from earlier SNN layers. The inspected SNN-CAACT implementation caches these targets, optimizes the current layer weights with Adam through a clipped-floor surrogate, and proceeds layer by layer; bias correction is a separate option. The general-activation output-error bound explains why local mismatch matters, but the bound and unrelated calibration-data-size plot are omitted from this overview to keep the mechanism legible. -->
 
 ---
 chapter: '3'
@@ -78,16 +36,107 @@ section: ANN-to-SNN conversion · Simulation horizon
 source: 'Thesis Chapter 3 · fig:conversion:sin-horizon · Separately configured simulation horizons; fig:conversion:error-horizon'
 ---
 
-# More spike steps refine the approximation
+# Calibration Convergence Theorem
 
-<div class="density">
-<div class="three"><figure class="figure"><img style="height:190px" src="/figures/ch03/sin_diff_T8.png" alt="Separately configured T = 8"><figcaption>Separately configured T = 8</figcaption></figure><figure class="figure"><img style="height:190px" src="/figures/ch03/sin_diff_T32.png" alt="Separately configured T = 32"><figcaption>Separately configured T = 32</figcaption></figure><figure class="figure"><img style="height:190px" src="/figures/ch03/sin_diff_T128.png" alt="Separately configured T = 128"><figcaption>Separately configured T = 128</figcaption></figure></div><div class="density-grid ">
-<figure class="figure"><img style="height:160px" src="/figures/ch03/error_vs_T_L2.png" alt="Separate depth-2 sweep · source widths and error axis"><figcaption>Separate depth-2 sweep · source widths and error axis</figcaption></figure>
-<div class="detail-box"><h2>Resolution and an accuracy floor</h2><p class="small">Finite-step spike averages become finer as T increases. The source sin(x) study shows roughly 1/T decay for moderate T, then saturation.</p><p class="small">Residual activation mismatch and ANN error remain. This horizon sweep differs from prefixes of one fixed calibrated SNN.</p></div>
+<div class="density horizon-study">
+<div class="density-grid" style="grid-template-columns:1fr 1fr;align-items:start">
+<div class="detail-box calibration-theorem">
+<h2>Theorem · General activations</h2>
+
+If $f$ and $f'$ admit uniform piecewise-linear approximations and $f''$ is bounded, then the final conversion error satisfies
+
+$$
+e_n^\top H_n e_n\leq\sum_{l=1}^{n}2^{n-l+1}\,e_{c,l}^\top\left(H_l+K_l\sqrt{\mathcal L_{\mathrm{ANN}}}\,I\right)e_{c,l}.
+$$
+
+$e_l=x_l-\bar s_l$; $e_{c,l}$: local conversion mismatch.<br>
+$H_l$: loss Hessian; $K_l$: derivative-dependent bound;<br>
+$\mathcal L_{\mathrm{ANN}}$: ANN training loss; $n$: network depth.
+
+</div>
+<div class="three horizon-examples"><figure class="figure"><img style="height:130px" src="/figures/ch03/sin_diff_T8.png" alt="Separately configured T = 8"><figcaption style="text-align:center">
+
+$T=8$
+
+</figcaption></figure><figure class="figure"><img style="height:130px" src="/figures/ch03/sin_diff_T32.png" alt="Separately configured T = 32"><figcaption style="text-align:center">
+
+$T=32$
+
+</figcaption></figure><figure class="figure"><img style="height:130px" src="/figures/ch03/sin_diff_T128.png" alt="Separately configured T = 128"><figcaption style="text-align:center">
+
+$T=128$
+
+</figcaption></figure></div>
+</div>
+<div class="density-grid horizon-proof-row">
+<div class="proof-sketch">
+<h2>Proof sketch</h2>
+<ol>
+<li>
+
+**Approximate the activation.** Choose piecewise-linear $\tilde f$ that uniformly approximates both $f$ and $f'$.
+
+</li>
+<li>
+
+**Control curvature.** Expand the loss Hessian layerwise; bound the extra $f''$ terms using $K_l\sqrt{\mathcal L_{\mathrm{ANN}}}$.
+
+</li>
+<li>
+
+**Pass to the limit.** Extend the piecewise-linear error bound to smooth activations using uniform approximation and curvature control.
+
+</li>
+</ol>
+</div>
+<figure class="figure"><img style="height:260px" src="/figures/ch03/error_vs_T_L2.png" alt="Separate depth-2 sweep · source widths and error axis"><figcaption style="text-align:center">Error vs. T for Different Widths</figcaption></figure>
 </div>
 </div>
 
-<!-- These are the published separately configured T examples. The next slide instead inspects cumulative prefixes of one fixed T=128 conversion. -->
+<!-- These are the published separately configured T examples. The output-evolution slide instead inspects cumulative prefixes of one fixed T=128 conversion. -->
+
+---
+chapter: '3'
+section: ANN-to-SNN conversion · Field fidelity
+source: 'Thesis Chapter 3 · fig:conversion:poisson · Published matched Poisson comparison; tab:conversion:accuracy'
+---
+
+# Example: 2D Poisson Equation
+
+<div class="poisson-conversion">
+<div class="poisson-conversion-text">
+<section class="poisson-conversion-setup">
+<h2>Setup</h2>
+
+$$
+\begin{aligned}
+-\Delta u&=f,\qquad x\in\Omega,\\
+u|_{\partial\Omega}&=0,\qquad\Omega=[-1,1]^2.
+\end{aligned}
+$$
+
+<p class="poisson-conversion-note">tanh activation · 3 hidden layers × 100 neurons.</p>
+</section>
+<section class="conversion-fidelity">
+<h2>Reported conversion fidelity</h2>
+
+$$
+\varepsilon_{\mathrm{conv}}=\frac{\|\bar u_{\mathrm{SNN}}-u_{\mathrm{ANN}}\|_2}{\|u_{\mathrm{ANN}}\|_2}
+$$
+
+<table><thead><tr><th>Metric</th><th>Calibrated SNN</th></tr></thead><tbody><tr><td>Relative L₂ error</td><td>0.0471</td></tr><tr><td>Spike rate</td><td>0.3727</td></tr></tbody></table>
+<p class="conversion-metric-note">Error is measured against the trained ANN field. Spike rate is the fraction of nonzero spiking-layer outputs.</p>
+<h3>Calibration settings</h3>
+
+$T=64$ spike steps · Adam, learning rate $10^{-3}$ · 5,000 updates per layer.
+
+<p class="small"><strong>Calibration restores the spatial pattern;</strong> copying weights alone gives only a coarse approximation.</p>
+</section>
+</div>
+<div class="poisson-conversion-figures"><figure class="figure"><img style="height:200px" src="/figures/ch03/poisson_true.png" alt="Numerical reference"><figcaption>Numerical reference</figcaption></figure><figure class="figure"><img style="height:200px" src="/figures/ch03/poisson_ann.png" alt="ANN / PINN"><figcaption>ANN / PINN</figcaption></figure><figure class="figure"><img style="height:200px" src="/figures/ch03/poisson_snn_none.png" alt="SNN · weight copying"><figcaption>SNN · weight copying</figcaption></figure><figure class="figure"><img style="height:200px" src="/figures/ch03/poisson_snn_calibrated.png" alt="SNN · calibrated"><figcaption>SNN · calibrated</figcaption></figure></div>
+</div>
+
+<!-- Retain the original panels and color scales. ANN-to-reference error and SNN-to-ANN conversion error are different quantities. -->
 
 ---
 chapter: '3'
@@ -95,9 +144,17 @@ section: ANN-to-SNN conversion · Output evolution
 source: 'Burgers PINN · matched original ANN checkpoint · fresh advanced CAA at horizon 128 · all emitted prefixes captured'
 ---
 
-# Burgers: reference, SNN and difference across T
+# Example: Burgers Equation
+
+<div class="burgers-example">
 
 <ConversionOverT />
+<section class="burgers-setup">
+
+**Setup:** $u_t-\partial_x(\tfrac12u^2)=\nu u_{xx},\quad\nu=0.01,\quad u(x,0)=\sin x,\quad(x,t)\in[0,2\pi]\times[0,4].$
+
+</section>
+</div>
 
 <!-- Demo: start at prefix 1 and play to show the full buildup; scrub to 65, 80, 96 and 128 to inspect later prefixes. Each field is a captured cumulative mean of actual emitted final-layer spikes from one SNN calibrated at fixed horizon 128. Weights, thresholds and initialization remain fixed. This is a fresh calibration of the ANN checkpoint whose grid predictions match the archive, not reproduction of the historical calibrated SNN. No interpolation or per-prefix recalibration. The reference [t,x] layout is restored and checked against initial/boundary conditions. -->
 
@@ -107,16 +164,52 @@ section: Loihi 2 · Precision
 source: 'Thesis Chapter 3 · fig:loihi:precision; tab:conversion:loihi-accuracy · Source-reported RMS field error'
 ---
 
-# Fixed-point precision adds a distinct error source
+# Run the converted SNN on the hardware
 
-<div class="density">
-<div class="density-grid ">
-<figure class="figure"><img style="height:320px" src="/figures/ch03/loihi_precision_results.png" alt="Source Poisson comparison · CPU / two hardware precisions"><figcaption>Source Poisson comparison · CPU / two hardware precisions</figcaption></figure>
-<div class="detail-box"><h2>Quantization and connection budget</h2><table><thead><tr><th>Platform / precision</th><th>RMS</th></tr></thead><tbody><tr><td>CPU</td><td>0.0131</td></tr><tr><td>Loihi · 8-bit</td><td>0.0215</td></tr><tr><td>Loihi · effective 16-bit</td><td>0.0160</td></tr></tbody></table><div class="connection-map"><span>8-bit connection A</span><span>8-bit connection B</span><b>↘ &nbsp; combined weight contribution &nbsp; ↙</b></div><p class="small">Two 8-bit connections represent each effective 16-bit weight; improved fidelity uses more connections.</p></div>
-</div><p class="protocol">Source-reported RMS · physical units/normalization not independently recovered · distinct from floating-point conversion error</p>
+<div class="fixed-point-study">
+<div class="fixed-point-explanation">
+<section>
+
+## Loihi 2
+
+An event-driven neuromorphic processor with 8-bit synaptic weights and 24-bit membrane potentials and graded spikes. Neuron updates use integer arithmetic.
+
+## Fixed-point precision
+
+Represent $q$ by an integer $\bar q=\lfloor 2^p q\rfloor$; decode $\hat q=2^{-p}\bar q$. A shared exponent $p$ sets the resolution and range. This maps the floating-point SNN to Loihi 2’s integer arithmetic.
+
+## Difficulty
+
+Finer resolution reduces the available range, risking overflow. Rounding and scale mismatches add errors beyond floating-point calibration.
+
+</section>
+<section>
+
+## Match scales layer by layer
+
+Choose layerwise power-of-two scales offline. For $y=Wx+b$, use bit shifts to align the integer products and bias:
+
+$$
+\bar y=\bar W\bar x\,2^{p_y-p_x-p_W}+\bar b\,2^{p_y-p_b}.
+$$
+
+Scale the spike outputs and thresholds consistently between layers.
+
+## Increase effective weight precision
+
+Two 8-bit connections carry the high and low bytes: **effective 16-bit weights** at **twice the synaptic cost**. Potentials and spikes remain 24-bit.
+
+</section>
+</div>
+<div class="fixed-point-fields">
+<figure class="figure"><img src="/figures/ch03/loihi_precision_reference.png" alt="Reference Poisson field"><figcaption>Reference</figcaption></figure>
+<figure class="figure"><img src="/figures/ch03/loihi_precision_cpu.png" alt="Floating-point spiking PINN field"><figcaption>Floating-point SNN<span class="fixed-point-rms">RMS: 0.0131</span></figcaption></figure>
+<figure class="figure"><img src="/figures/ch03/loihi_precision_8bit.png" alt="Loihi 2 Poisson field with 8-bit weights"><figcaption>Loihi 2 · 8-bit<span class="fixed-point-rms">RMS: 0.0215</span></figcaption></figure>
+<figure class="figure"><img src="/figures/ch03/loihi_precision_16bit.png" alt="Loihi 2 Poisson field with effective 16-bit weights"><figcaption>Loihi 2 · 16-bit<span class="fixed-point-rms">RMS: 0.0160</span></figcaption></figure>
+</div>
 </div>
 
-<!-- Keep the source metric terminology. Do not compare these numbers with the relative L2 values from other chapters. -->
+<!-- Fixed-point mapping and RMS values follow thesis Chapter 3. The four panels are crops of the original source figure; field values and colors are unchanged. RMS against the Poisson reference is not relative L2. -->
 
 ---
 chapter: '3'
@@ -124,18 +217,18 @@ section: Loihi 2 · Measured scaling
 source: 'Thesis Chapter 3 · fig:loihi:throughput; fig:loihi:epi; fig:loihi:edp · Measurement scope excludes I/O'
 ---
 
-# Replication changes throughput and energy cost
+# Batching through replication
 
 <div class="density">
+<p style="font-size:14px; margin:0 0 16px">Each hardware SNN copy processes one input at a time (effectively batch size 1). Parallel network copies process separate inputs concurrently, acting like batching and potentially reducing energy per inference.</p>
 <div class="three"><figure class="figure"><img style="height:265px" src="/figures/ch03/loihi_throughput.png" alt="Throughput · both precisions"><figcaption>Throughput · both precisions</figcaption></figure><figure class="figure"><img style="height:265px" src="/figures/ch03/loihi_epi.png" alt="Energy per inference"><figcaption>Energy per inference</figcaption></figure><figure class="figure"><img style="height:265px" src="/figures/ch03/loihi_edp.png" alt="Energy–delay product"><figcaption>Energy–delay product</figcaption></figure></div>
-<div class="math-panel">
+<div class="math-panel replication-metrics">
 
 $$
 \mathrm{throughput}=\frac{N_{\mathrm{inferences}}}{\Delta t},\quad \mathrm{EPI}=\frac{E_{\mathrm{measured}}}{N_{\mathrm{inferences}}},\quad \mathrm{EDP}=\mathrm{EPI}\times\mathrm{delay}
 $$
 
 </div>
-<p class="protocol">Parallel replicas share the workload · transition near 70 replicas involves multiple chips · energy excludes I/O · no CPU energy multiplier</p>
 </div>
 
 <!-- These are measured source curves, not extrapolated CPU-versus-Loihi energy claims. No CPU energy multiplier is available. -->

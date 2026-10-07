@@ -235,6 +235,47 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .sms-method-left .sms-lif .katex-display { margin:5px 0; }
 .academic .sms-method-left .sms-training p { line-height:1.4; }
 
+.academic .horizon-study .figure figcaption p { margin:0; }
+
+.academic .calibration-theorem { font-size:14px; line-height:1.45; }
+.academic .calibration-theorem h2 { font-size:16px; }
+.academic .calibration-theorem p { margin:0 0 8px; }
+.academic .calibration-theorem .katex-display { font-size:16px; margin:9px 0; }
+
+.academic .horizon-proof-row { gap:26px; }
+.academic .proof-sketch { font-size:14px; line-height:1.45; }
+.academic .proof-sketch h2 { font-size:16px; margin:0 0 8px; }
+.academic .proof-sketch ol { margin:0; padding-left:20px; }
+.academic .proof-sketch li { margin:0 0 8px; padding-left:3px; }
+.academic .proof-sketch li p { margin:0; }
+.academic .horizon-examples { gap:12px; }
+.academic .horizon-examples figcaption { font-size:16px; }
+
+.academic .horizon-study > .density-grid > .horizon-examples { transform:translateY(12px); }
+.academic .horizon-proof-row > .figure { transform:translateY(-12px); }
+
+.academic .poisson-conversion { display:grid; grid-template-columns:.9fr 1.25fr; gap:28px; align-items:start; }
+.academic .poisson-conversion-text { display:flex; flex-direction:column; gap:18px; min-width:0; font-size:14px; }
+.academic .poisson-conversion h2 { font-size:16px; }
+.academic .poisson-conversion p.small { font-size:14px; line-height:1.5; }
+.academic .poisson-conversion .katex-display { font-size:16px; }
+.academic .poisson-conversion-figures { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px 20px; }
+.academic .poisson-conversion-figures figcaption { font-size:16px; text-align:center; margin-top:5px; }
+
+.academic .poisson-conversion-note { font-size:12px; line-height:1.45; color:var(--muted); margin:7px 0 0; }
+
+.academic .conversion-fidelity { font-size:14px; line-height:1.5; }
+.academic .conversion-fidelity .katex-display { margin:8px 0 12px; }
+.academic .conversion-fidelity table { font-size:14px; margin:0 0 8px; }
+.academic .conversion-fidelity th { font-size:14px; text-transform:none; letter-spacing:0; padding:6px 0; }
+.academic .conversion-fidelity td { padding:6px 0; }
+.academic .conversion-fidelity th:last-child,.academic .conversion-fidelity td:last-child { text-align:right; }
+.academic .conversion-fidelity .conversion-metric-note { font-size:12px; line-height:1.45; color:var(--muted); margin:0 0 14px; }
+.academic .conversion-fidelity h3 { font-size:16px; margin:0 0 6px; }
+.academic .conversion-fidelity p { margin:0 0 10px; }
+
+.academic .conversion-fidelity p:last-child { margin-bottom:0; }
+
 /* Shared playback slider: Brown red fill up to the thumb. */
 .playback-slider{appearance:none;-webkit-appearance:none;height:16px;background:transparent;cursor:pointer}
 .playback-slider::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:linear-gradient(to right,var(--red) 0,var(--red) var(--progress),#dce1df var(--progress),#dce1df 100%)}
@@ -242,3 +283,28 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .playback-slider::-moz-range-track{height:4px;border-radius:2px;background:#dce1df}
 .playback-slider::-moz-range-progress{height:4px;border-radius:2px;background:var(--red)}
 .playback-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--red);border:none}
+
+.academic .burgers-example .interactive-figure { height:auto; }
+.academic .burgers-example .burgers-fields .grid-field canvas { height:230px; }
+.academic .burgers-setup { margin:10px 0 0; font-size:14px; }
+.academic .burgers-setup h2 { font-size:16px; margin:0 0 4px; }
+.academic .burgers-setup .katex-display { font-size:16px; margin:4px 0; }
+
+/* ch3-13: fixed-point explanation and four-field comparison. */
+.academic .fixed-point-study { font-size:14px; }
+.academic .fixed-point-explanation { display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start; }
+.academic .fixed-point-explanation section { min-width:0; }
+.academic .fixed-point-explanation h2 { font-size:16px; margin:0 0 5px; }
+.academic .fixed-point-explanation p { font-size:14px; line-height:1.45; margin:0 0 9px; }
+.academic .fixed-point-explanation .katex-display { font-size:16px; margin:10px 0; }
+.academic .fixed-point-fields { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-top:12px; }
+.academic .fixed-point-fields img { width:100%; height:180px; object-fit:contain; }
+.academic .fixed-point-fields figcaption { text-align:center; font-size:16px; margin-top:4px; }
+.academic .fixed-point-rms { display:block; font-size:14px; margin-top:3px; color:var(--muted); }
+
+/* Chapter 3: metric and Burgers annotation sizes in slide pixels. */
+.academic .replication-metrics { font-size:16px; }
+.academic .burgers-example .burgers-readout { font-size:12px; }
+.academic .burgers-example .interaction-note { font-size:12px; }
+.academic .burgers-example .burgers-axis { font-size:8px; }
+.academic .burgers-example .field-scale { font-size:8px; }
