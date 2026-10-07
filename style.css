@@ -382,3 +382,73 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .wsg-darcy-panels .figure:nth-child(5) { grid-column:4 / span 2; }
 .academic .wsg-darcy-panels img { height:150px; }
 .academic .wsg-darcy-panels figcaption { text-align:center; font-size:16px; margin-top:4px; }
+
+/* ch5-19: operator definition beside its structured-grid realization. */
+.academic .et-reconstruction-layout { display:grid; grid-template-columns:minmax(0,4fr) minmax(0,6fr); gap:28px; align-items:start; }
+.academic .et-reconstruction-description { min-width:0; font-size:14px; line-height:1.45; }
+.academic .et-reconstruction-layout h2 { font-size:16px; margin:0 0 8px; }
+.academic .et-reconstruction-description p { margin:0 0 10px; }
+.academic .et-reconstruction-description .katex-display { font-size:16px; margin:9px 0; }
+.academic .et-reconstruction-description .et-reconstruction-subheading { margin-top:18px; }
+.academic .et-reconstruction-description ul { margin:8px 0 0; padding-left:19px; }
+.academic .et-reconstruction-description li { margin:0 0 6px; padding-left:1px; }
+.academic .et-reconstruction-workflow img { width:100%; height:auto; margin-top:10px; }
+.academic .et-reconstruction-workflow figcaption { font-size:16px; text-align:center; margin-top:12px; }
+.academic .et-reconstruction-workflow .et-reconstruction-note { font-size:12px; line-height:1.45; color:var(--muted); text-align:center; margin:6px 0 0; }
+
+.academic .et-reconstruction-description li:last-child { margin-bottom:0; }
+
+/* ch5-20: learned energy, token inference and regression through the dynamics. */
+.academic .et-method-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:32px; font-size:14px; line-height:1.4; }
+.academic .et-method-layout section { min-width:0; }
+.academic .et-method-layout h2 { font-size:16px; margin:0 0 7px; }
+.academic .et-method-layout p { margin:0 0 7px; }
+.academic .et-method-layout .katex-display { font-size:16px; margin:8px 0; }
+.academic .et-method-explanation > section + section { margin-top:11px; }
+.academic .et-method-energy > section { margin-top:10px; }
+.academic .et-method-layout .et-method-note { font-size:12px; color:var(--muted); line-height:1.4; margin:5px 0 0; }
+.academic .et-attention-illustration figcaption { font-size:16px; text-align:center; margin:5px 0 0; }
+.academic .et-attention-illustration .et-method-note { text-align:center; }
+
+.academic .et-attention-illustration img { height:240px; width:100%; object-fit:contain; }
+
+.academic .slide-body:has(.et-method-layout) { height:auto; }
+
+.academic .et-method-energy.et-flow-explanation { display:flex; flex-direction:column; gap:8px; }
+.academic .et-flow-explanation > section { margin-top:0; }
+.academic .et-energy-annotation { background:var(--brown-wash); padding:10px 12px; }
+.academic .et-energy-annotation p { margin:0; }
+.academic .et-energy-annotation .katex-display { margin:5px 0; }
+.academic .et-energy-annotation .katex-display:last-child { margin-bottom:0; }
+
+/* ch5-22: experimental setup beside three 1×3 field-comparison rows. */
+.academic .et-jet-layout { display:grid; grid-template-columns:minmax(0,3fr) minmax(0,7fr); gap:28px; align-items:start; }
+.academic .et-jet-setup { min-width:0; font-size:14px; line-height:1.45; }
+.academic .et-jet-setup h2 { font-size:16px; margin:0 0 8px; }
+.academic .et-jet-setup p { margin:0 0 10px; }
+.academic .et-jet-setup .et-jet-legend { display:flex; align-items:center; gap:7px; font-size:12px; margin:4px 0 12px; color:var(--muted); }
+.academic .et-jet-observed { width:12px; height:12px; background:#7895a6; }
+.academic .et-jet-slice { width:18px; height:2px; background:#8b242d; margin-left:10px; }
+.academic .et-jet-fidelity { border-top:1px solid var(--line); padding-top:8px; }
+.academic .et-jet-panels { display:grid; gap:0; min-width:0; }
+.academic .et-jet-panels h2 { font-size:16px; margin:0 0 2px; }
+.academic .et-jet-panels .figure img { height:155px; }
+.academic .et-jet-metrics { font-size:14px; line-height:1.3; margin:2px 0 0; }
+
+.academic .et-jet-setup .et-jet-source { font-size:12px; color:var(--muted); margin:2px 0 12px; }
+.academic .et-jet-source a { color:inherit; text-decoration:none; }
+
+/* ch5-23: complementary metrics beside a 2×2 comparison. */
+.academic .et-fidelity-layout { display:grid; grid-template-columns:minmax(0,4fr) minmax(0,6fr); gap:28px; align-items:start; }
+.academic .et-fidelity-explanation { font-size:14px; line-height:1.45; }
+.academic .et-fidelity-explanation h2 { font-size:16px; margin:0 0 10px; }
+.academic .et-fidelity-explanation p { margin:0 0 14px; }
+.academic .et-fidelity-explanation p + h2 { margin-top:22px; }
+.academic .et-fidelity-conclusion { background:var(--brown-wash); padding:14px 16px; margin-top:22px; }
+.academic .et-fidelity-conclusion p { margin-bottom:0; }
+.academic .et-fidelity-plots { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px 14px; }
+.academic .et-fidelity-plots .figure img { height:205px; }
+/* Source axes: error x=192..1692 on 1800×1329; spectrum x=222..1743 on
+   1800×1343. At 205px image height, match axis width and horizontal position. */
+.academic .et-fidelity-plots .figure:nth-child(n+3) img { transform:translateX(-6.12px) scaleX(0.99655); }
+.academic .et-fidelity-plots .figure figcaption { font-size:16px; color:var(--ink); text-align:center; margin-top:4px; }

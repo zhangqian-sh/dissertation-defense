@@ -85,6 +85,32 @@ source: 'Thesis Appendix B · tab:app-et-temporal; tab:app-et-module · Source t
 <!-- Temporal coverage is not an inference-context or spatial-mask control. -->
 
 ---
+chapter: '5'
+section: Backup · Energy Transformer inference cost
+source: 'Thesis Chapter 5 · tab:et:timing · Single NVIDIA A6000; 12 inference iterations; tab:app-et-module'
+---
+
+# Separate offline training from iterative inference
+
+<div class="density">
+<div class="density-grid ">
+<div class="detail-box"><h2>Timing · source benchmarks</h2><table><thead><tr><th>Benchmark</th><th>Training</th><th>Per snapshot</th></tr></thead><tbody><tr><td>Vortex street</td><td>≈ 90 min</td><td>≈ 2.7 ms</td></tr><tr><td>Schlieren jet</td><td>≈ 150 min</td><td>≈ 2.5 ms</td></tr><tr><td>3D jet</td><td>≈ 70 min</td><td>≈ 100 ms</td></tr></tbody></table><p class="small">Train a reusable energy offline; each new snapshot requires 12 token updates.</p></div>
+<div class="detail-box"><h2>Module ablation · 3D jet</h2><table><thead><tr><th>Module</th><th>Velocity</th><th>Pressure</th></tr></thead><tbody><tr><td>Energy MHA</td><td>0.4671</td><td>0.1784</td></tr><tr><td>Hopfield</td><td>0.4213</td><td>0.1928</td></tr><tr><td>Full ET</td><td>0.4421</td><td>0.1785</td></tr></tbody></table><p class="small">Full model balances the two channels; it does not minimize every pointwise metric.</p></div>
+</div>
+<div class="math-panel">
+
+$$
+\mathrm{inference\ work}\ \propto\ N_{iter}\times\mathrm{energy\ gradient\ evaluation}
+$$
+
+</div>
+<p class="protocol">Timing: single NVIDIA A6000 · ablation: separate source relative-error table · distribution and masking coverage bound reuse</p>
+</div>
+
+<!-- Times are source measurements with the stated hardware and iteration count. These are not performance measurements of the presentation or a matched comparison with RFormer. -->
+>
+
+---
 chapter: '6'
 section: Backup · RFormer baselines
 source: 'Thesis Chapter 6 · tab:rformer:vortex · Total test relative RMSE, mean ± standard deviation'
