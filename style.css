@@ -308,3 +308,77 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .burgers-example .interaction-note { font-size:12px; }
 .academic .burgers-example .burgers-axis { font-size:8px; }
 .academic .burgers-example .field-scale { font-size:8px; }
+
+/* ch4-16: directional-slope intuition and the randomized update. */
+.academic .rfg-jvp-intro { display:grid; grid-template-columns:1fr 1fr; gap:28px; font-size:14px; line-height:1.45; }
+.academic .rfg-jvp-intro section { min-width:0; }
+.academic .rfg-jvp-intro h2 { font-size:16px; margin:0 0 8px; }
+.academic .rfg-jvp-intro p { margin:0 0 8px; }
+.academic .rfg-jvp-intro .katex-display { font-size:16px; margin:9px 0; }
+
+.academic .rfg-diagram-note { font-size:12px; color:var(--muted); margin:0; }
+.academic .rfg-surrogate { font-size:14px; border-top:1px solid var(--line); padding-top:8px; }
+.academic .rfg-surrogate p { margin:0; }
+.academic .rfg-surrogate .katex-display { font-size:16px; margin:5px 0 0; }
+
+/* ch4-17: problem setup above three prediction panels. */
+.academic .rfg-poisson-setup h2 { font-size:16px; margin:0 0 5px; }
+.academic .rfg-poisson-setup .katex-display { font-size:16px; margin:5px 0; text-align:left; }
+.academic .rfg-poisson-example .figure figcaption { font-size:16px; text-align:center; }
+.academic .rfg-poisson-error { display:block; font-size:14px; margin-top:3px; }
+
+/* Merged Chapter 4 performance examples: qualitative evidence above quantitative results. */
+.academic .rfg-performance { font-size:14px; }
+.academic .rfg-performance-top { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.academic .rfg-performance h2 { font-size:16px; margin:0 0 4px; }
+.academic .rfg-example-equation { font-size:16px; margin-bottom:6px; }
+.academic .rfg-example-equation p { margin:0; }
+.academic .rfg-example-panels { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+.academic .rfg-example-panels img { height:130px; }
+.academic .rfg-example-panels figcaption { font-size:16px; text-align:center; margin-top:4px; }
+.academic .rfg-performance-error { display:block; font-size:14px; margin-top:2px; }
+.academic .rfg-performance-bottom { display:grid; grid-template-columns:1.6fr 1fr; gap:28px; margin-top:12px; align-items:start; }
+.academic .rfg-error-distribution img { height:220px; }
+.academic .rfg-error-distribution figcaption { font-size:12px; text-align:center; margin-top:2px; }
+.academic .rfg-performance-metric { font-size:16px; margin:7px 0; }
+.academic .rfg-performance-metric p { margin:0; }
+.academic .rfg-performance-table table { font-size:14px; margin:6px 0; }
+.academic .rfg-performance-table th { font-size:14px; text-transform:none; letter-spacing:0; padding:6px 0; }
+.academic .rfg-performance-table td { padding:6px 0; }
+.academic .rfg-performance-table th:not(:first-child),.academic .rfg-performance-table td:not(:first-child) { text-align:right; }
+.academic .rfg-performance-table p { font-size:14px; line-height:1.45; margin:8px 0 0; }
+.academic .rfg-performance-table .rfg-performance-note { font-size:12px; color:var(--muted); }
+.academic .rfg-convergence figcaption { font-size:16px; text-align:center; }
+
+/* WSG-focused comparison: spike-response construction and paired Poisson evidence. */
+.academic .wsg-performance { display:grid; grid-template-columns:1fr 1fr; gap:28px; font-size:14px; line-height:1.45; }
+.academic .wsg-performance section { min-width:0; }
+.academic .wsg-performance h2 { font-size:16px; margin:0 0 6px; }
+.academic .wsg-performance p { margin:0 0 8px; }
+.academic .wsg-performance .katex-display { font-size:16px; margin:8px 0; }
+.academic .wsg-computation { margin:8px 0 0; padding-left:21px; }
+.academic .wsg-computation li { margin:0 0 5px; padding-left:2px; }
+.academic .wsg-computation li p { margin:0; }
+.academic .wsg-darcy { margin-top:12px; }
+.academic .wsg-darcy > p { font-size:16px; }
+.academic .wsg-performance p.wsg-note { font-size:12px; line-height:1.4; color:var(--muted); margin:5px 0 0; }
+.academic .wsg-poisson-setup { font-size:16px; margin-bottom:8px; }
+.academic .wsg-poisson-setup p { margin:0; }
+.academic .wsg-predictions { display:grid; grid-template-columns:1fr 2fr; gap:10px; align-items:center; }
+.academic .wsg-prediction-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.academic .wsg-predictions img { height:95px; }
+.academic .wsg-predictions figcaption { text-align:center; font-size:16px; margin-top:3px; }
+.academic .wsg-reference-label { display:block; font-size:14px; margin-top:2px; }
+.academic .wsg-results-table { margin-top:8px; }
+.academic .wsg-results-table > p { font-size:16px; margin:5px 0; }
+.academic .wsg-results-table table { font-size:14px; margin:8px 0; }
+.academic .wsg-results-table th { font-size:14px; text-transform:none; letter-spacing:0; padding:4px 0; }
+.academic .wsg-results-table td { padding:4px 0; }
+.academic .wsg-results-table th:not(:first-child),.academic .wsg-results-table td:not(:first-child) { text-align:right; }
+
+.academic .wsg-darcy-panels { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px 10px; margin:12px 0 8px; }
+.academic .wsg-darcy-panels .figure { grid-column:span 2; }
+.academic .wsg-darcy-panels .figure:nth-child(4) { grid-column:2 / span 2; }
+.academic .wsg-darcy-panels .figure:nth-child(5) { grid-column:4 / span 2; }
+.academic .wsg-darcy-panels img { height:150px; }
+.academic .wsg-darcy-panels figcaption { text-align:center; font-size:16px; margin-top:4px; }

@@ -20,105 +20,116 @@ section: Randomized forward gradients · Method
 source: 'Thesis Chapter 4 · sec:rfg:estimator; eq:rfg:directional; eq:rfg:global; eq:rfg:layerwise; eq:rfg:sg'
 ---
 
-# Train with directional derivatives in forward mode
+# Forward Mode Gradient
 
 <div class="density">
 
-<div class="math-panel">
+<div class="rfg-jvp-intro">
+<section>
+<h2>JVP: probe the loss along a direction</h2>
+
+For parameters $\theta\in\mathbb R^d$, choose a random direction $v$. Like a directional finite difference, the JVP measures how the loss changes along $v$:
 
 $$
-d_v=\mathrm{JVP}_\theta(\mathcal L;v),\quad \hat g=d_vv,\quad \theta\leftarrow\theta-\eta\hat g
+\frac{\mathcal L(\theta+\epsilon v)-\mathcal L(\theta)}{\epsilon}
+\approx d_v=\nabla_\theta\mathcal L^\top v.
 $$
 
+Forward-mode differentiation computes $d_v$ directly; it does not use a finite-difference step $\epsilon$. For hard spikes, evaluate the JVP with the surrogate derivative $f_{SG}'(a)=\frac{e^{-a^2/(2\sigma^2)}}{\sigma\sqrt{2\pi}}$, where $a=U-U_{th}$.
+
+</section>
+<section>
+<h2>Random probes → estimated gradient → GD</h2>
+
+In a high-dimensional parameter space, sample $v\sim\mathbf P$ and use its directional slope to form a stochastic gradient estimate:
+
+$$
+\hat g=d_vv,\qquad\theta\leftarrow\theta-\eta\hat g.
+$$
+
+Resample directions during training. Update with $\hat g$ instead of explicitly computing every component of the full gradient.
+
+</section>
 </div>
-<div class="step-chain"><span>1 · sample v</span><b>→</b><span>2 · forward spikes + JVP</span><b>→</b><span>3 · form ĝ and update</span></div><div class="density-grid ">
-<div class="detail-box"><h2>Global direction</h2>
-<div class="math-panel">
+<RFGDirections />
+<p class="rfg-diagram-note">Shared layers have identical weights but carry distinct activations. Directional slopes use JVP; source directions: Bernoulli($p=\tfrac12$).</p>
 
-$$
-v=(v^1,\ldots,v^L),\qquad \hat g^l=d_vv^l
-$$
-
-</div>
-<p class="small">One direction spans all parameters; the global directional derivative supplies each layer update.</p></div>
-<div class="detail-box"><h2>Layerwise directions</h2>
-<div class="math-panel">
-
-$$
-\hat g^l=\mathrm{JVP}_{\theta^l}(\mathcal L;v^l)\,v^l
-$$
-
-</div>
-<p class="small">Perturb one layer at a time; each layer has its own directional derivative.</p></div>
-</div><p class="protocol">Source parameter directions: Bernoulli(p=½) · hard spikes forward; surrogate derivative for JVP · no measured training-energy saving</p><div class="small">
-
-Standard surrogate near threshold: $f_{SG}^{\prime}(a)=e^{-a^2/(2\sigma^2)}/(\sigma\sqrt{2\pi})$, with $a=U-U_{th}$.
-
-</div>
 </div>
 
 <!-- Source experiments describe Bernoulli parameter perturbations. Gaussian threshold shifts belong to the weak surrogate, not the same sampling operation. No measured training-energy savings are claimed. -->
 
 ---
 chapter: '4'
-section: Randomized forward gradients · Matched predictions
-source: 'Thesis Chapter 4 · fig:rfg:poisson · Standard surrogate-gradient configurations; tab:rfg:poisson'
+section: Randomized forward gradients · Weak surrogate
+source: 'Thesis Chapter 4 · fig:rfg:box-large; fig:rfg:darcy · Darcy without
+  skip connections; WSG jobs 7076193 and 7076196'
 ---
 
-# Matched Poisson predictions across training methods
+# Weak Surrogate Gradients
 
-<div class="density">
-<div class="three"><figure class="figure"><img style="height:280px" src="/figures/ch04/poisson_bp.png" alt="SG · backpropagation · relative L₂ 0.0419"><figcaption>SG · backpropagation · relative L₂ 0.0419</figcaption></figure><figure class="figure"><img style="height:280px" src="/figures/ch04/poisson_global.png" alt="SG · global RFG · relative L₂ 0.0642"><figcaption>SG · global RFG · relative L₂ 0.0642</figcaption></figure><figure class="figure"><img style="height:280px" src="/figures/ch04/poisson_local.png" alt="SG · layerwise RFG · relative L₂ 0.0583"><figcaption>SG · layerwise RFG · relative L₂ 0.0583</figcaption></figure></div>
-<div class="math-panel">
+<div class="wsg-performance">
+<section class="wsg-method">
+<h2>WSG: estimate derivatives from spike responses</h2>
+
+Replace direct evaluation of a smooth surrogate with sampled responses of the hard spike map $H$. For the distance to threshold $a=U-U_{th}$:
+
+<ol class="wsg-computation">
+<li>
+
+Sample Gaussian shifts $\delta_j\sim\mathcal N(0,\sigma^2)$.
+
+</li>
+<li>
+
+Measure the spike change $H(a+\delta_j)-H(a)$.
+
+</li>
+<li>
+
+Average the weighted responses:
+
+</li>
+</ol>
 
 $$
--u_{xx}=f,\qquad \mathcal G_\theta:f\mapsto u,\qquad \varepsilon=\|\hat u-u\|_2/\|u\|_2
+f_{\mathrm{WSG}}'(a)=\frac1K\sum_{j=1}^K\frac{\delta_j}{\sigma^2}\left[H(a+\delta_j)-H(a)\right].
 $$
 
-</div>
-<p class="protocol">Matched source Poisson panels · standard surrogate throughout · aggregate errors describe selected configurations, not seed uncertainty</p>
-</div>
+Use the estimate in BP or JVP; the forward pass retains hard spikes.
 
-<!-- These are the matched source Poisson panels with the standard surrogate. The following table includes both SG and WSG configurations. -->
+<section class="wsg-darcy">
+<h2>Darcy · training methods</h2>
 
----
-chapter: '4'
-section: Randomized forward gradients · Accuracy
-source: 'Thesis Chapter 4 · tab:rfg:poisson · Test relative L₂; SG = standard surrogate, WSG = weak surrogate; fig:rfg:convergence'
----
+$-\nabla\!\cdot(a\nabla u)=f,\qquad a\mapsto u$
 
-# Forward-mode training has an accuracy cost
+<DarcyErrorBars />
+<p class="wsg-note">SG / WSG: mean ± SD over test samples.</p>
+</section>
+</section>
+<section class="wsg-darcy-results">
+<h2>Example: 2D Darcy equation</h2>
 
-<div class="density">
-<div class="density-grid ">
-<div class="detail-box"><h2>Poisson operator · test relative L₂</h2><table><thead><tr><th>Method</th><th>SG</th><th>WSG</th></tr></thead><tbody><tr><td>Backpropagation</td><td>0.0419</td><td>0.0394</td></tr><tr><td>Global RFG</td><td>0.0642</td><td>0.0637</td></tr><tr><td>Layerwise RFG</td><td>0.0583</td><td>0.0580</td></tr></tbody></table><p class="small">Layerwise estimates improve over global estimates here; backpropagation retains the lowest error.</p></div>
-<figure class="figure"><img style="height:280px" src="/figures/ch04/convergence_rate.png" alt="Separate estimator study · convergence versus parameter dimension"><figcaption>Separate estimator study · convergence versus parameter dimension</figcaption></figure>
-</div><p class="protocol">SG/WSG changes the spike derivative · global/layerwise changes parameter sampling · convergence figure is not the Poisson training curve</p>
-</div>
+<div class="wsg-poisson-setup">
 
-<!-- Statistics are the selected source configurations, not an across-seed uncertainty estimate. Do not attribute the modest SG/WSG differences to a universal ranking. -->
-
----
-chapter: '4'
-section: Randomized forward gradients · Scaling limits
-source: 'Thesis Chapter 4 · fig:rfg:box-large; fig:rfg:darcy · Published larger-scale comparisons; eq:rfg:darcy'
----
-
-# Larger problems expose estimator limitations
-
-<div class="density">
-<div class="density-grid ">
-<figure class="figure"><img style="height:290px" src="/figures/ch04/box_plot_deeponet_large.png" alt="Published operator-error distributions · BP / global / layerwise"><figcaption>Published operator-error distributions · BP / global / layerwise</figcaption></figure>
-<div><div class="three"><figure class="figure"><img style="height:185px" src="/figures/ch04/darcy_bp.png" alt="BP"><figcaption>BP</figcaption></figure><figure class="figure"><img style="height:185px" src="/figures/ch04/darcy_global.png" alt="Global RFG"><figcaption>Global RFG</figcaption></figure><figure class="figure"><img style="height:185px" src="/figures/ch04/darcy_local.png" alt="Layerwise RFG"><figcaption>Layerwise RFG</figcaption></figure></div><div class="detail-box"><h2>Darcy solution operator</h2>
-<div class="math-panel">
-
-$$
--\nabla\!\cdot(a\nabla u)=f,\quad a\mapsto u
-$$
+$-\nabla\!\cdot(a\nabla u)=f,\qquad\mathcal G_\theta:a\mapsto u$
 
 </div>
-<p class="small">Field structure and aggregate error can disagree; inspect both.</p></div></div>
-</div><p class="protocol">Boxplots retain the source experiment distributions · larger parameter spaces challenge directional estimation · no hardware-cost inference</p>
+<div class="wsg-darcy-panels">
+<figure class="figure"><img src="/figures/ch04/darcy_bp.png" alt="Historical Darcy prediction using backpropagation"><figcaption>BP</figcaption></figure>
+<figure class="figure"><img src="/figures/ch04/darcy_global.png" alt="Historical Darcy prediction using global SG"><figcaption>SG · Global</figcaption></figure>
+<figure class="figure"><img src="/figures/ch04/darcy_local.png" alt="Historical Darcy prediction using layerwise SG"><figcaption>SG · Layerwise</figcaption></figure>
+<figure class="figure"><img src="/figures/ch04/darcy_wsg_global_styled.png" alt="Global WSG prediction from the training-selected checkpoint"><figcaption>WSG · Global</figcaption></figure>
+<figure class="figure"><img src="/figures/ch04/darcy_wsg_layerwise_styled.png" alt="Layerwise WSG prediction from the training-selected checkpoint"><figcaption>WSG · Layerwise</figcaption></figure>
+</div>
+<p class="wsg-note">WSG: 400k updates; $\sigma=0.5$, $K=500$; training-selected checkpoints.<br>Global: 8 directions/update; layerwise: 1/layer. SG panels are historical.</p>
+</section>
 </div>
 
-<!-- Preserve the source distribution definitions and avoid translating this accuracy result into hardware energy savings. Transition: the second part changes the modeling question from spiking computation to inference from sparse data. -->
+<!--
+SG values and the BP panel are historical no-skip results from fig:rfg:box-large and fig:rfg:darcy; they are not matched reruns.
+WSG results: jobs 7076193 (global) and 7076196 (layerwise), 400000 full-batch updates, seed 42, sigma .5, 500 WSG threshold samples, Adam 1e-4, 1000 train / 200 test samples, 32 spike steps, no skip connections.
+Checkpoint selection uses lowest logged training error: global epoch 393000, test .0842583 ± .0357181; layerwise epoch 391000, test .0751678 ± .0344492.
+Final-update errors: global .0875326 ± .0352131; layerwise .0795784 ± .0329169. The bar chart uses training-selected checkpoints, matching the WSG prediction panels.
+Global averages 8 full-network directions; layerwise uses 1 direction for each of 11 layers. Probe budgets differ; these single-seed results do not isolate estimation method alone.
+Analysis: data/raw/ch04/darcy_wsg/analysis-7076193-7076196/analysis.md.
+-->
