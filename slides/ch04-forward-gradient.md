@@ -28,14 +28,14 @@ source: 'Thesis Chapter 4 · sec:rfg:estimator; eq:rfg:directional; eq:rfg:globa
 <section>
 <h2>JVP: probe the loss along a direction</h2>
 
-For parameters $\theta\in\mathbb R^d$, choose a random direction $v$. Like a directional finite difference, the JVP measures how the loss changes along $v$:
+For parameters $\theta\in\mathbb R^d$ and a direction $v$, the JVP computes the directional derivative of the loss:
 
 $$
-\frac{\mathcal L(\theta+\epsilon v)-\mathcal L(\theta)}{\epsilon}
-\approx d_v=\nabla_\theta\mathcal L^\top v.
+d_v=\operatorname{JVP}(\mathcal L,\theta;v)
+=\nabla_\theta\mathcal L^\top v.
 $$
 
-Forward-mode differentiation computes $d_v$ directly; it does not use a finite-difference step $\epsilon$. For hard spikes, evaluate the JVP with the surrogate derivative $f_{SG}'(a)=\frac{e^{-a^2/(2\sigma^2)}}{\sigma\sqrt{2\pi}}$, where $a=U-U_{th}$.
+Forward-mode automatic differentiation propagates directional derivatives through the network. For hard spikes, use the surrogate derivative $f_{SG}'(a)=\frac{e^{-a^2/(2\sigma^2)}}{\sigma\sqrt{2\pi}}$, where $a=U-U_{th}$.
 
 </section>
 <section>
@@ -61,17 +61,16 @@ Resample directions during training. Update with $\hat g$ instead of explicitly 
 ---
 chapter: '4'
 section: Randomized forward gradients · Weak surrogate
-source: 'Thesis Chapter 4 · fig:rfg:box-large; fig:rfg:darcy · Darcy without
-  skip connections; WSG jobs 7076193 and 7076196'
+source: 'Matched Darcy runs · SG: 7093209, 7092847, 7092859 · WSG: 7098047, 7076193, 7076196'
 ---
 
 # Weak Surrogate Gradients
 
 <div class="wsg-performance">
 <section class="wsg-method">
-<h2>WSG: estimate derivatives from spike responses</h2>
+<h2>WSG: stochastic finite-difference analogy</h2>
 
-Replace direct evaluation of a smooth surrogate with sampled responses of the hard spike map $H$. For the distance to threshold $a=U-U_{th}$:
+Randomly perturb the hard spike map $H$ and average weighted output differences to estimate its Gaussian-smoothed derivative. Let $a=U-U_{th}$ denote distance to threshold:
 
 <ol class="wsg-computation">
 <li>
@@ -100,10 +99,7 @@ Use the estimate in BP or JVP; the forward pass retains hard spikes.
 <section class="wsg-darcy">
 <h2>Darcy · training methods</h2>
 
-$-\nabla\!\cdot(a\nabla u)=f,\qquad a\mapsto u$
-
 <DarcyErrorBars />
-<p class="wsg-note">SG / WSG: mean ± SD over test samples.</p>
 </section>
 </section>
 <section class="wsg-darcy-results">
@@ -115,21 +111,23 @@ $-\nabla\!\cdot(a\nabla u)=f,\qquad\mathcal G_\theta:a\mapsto u$
 
 </div>
 <div class="wsg-darcy-panels">
-<figure class="figure"><img src="/figures/ch04/darcy_bp.png" alt="Historical Darcy prediction using backpropagation"><figcaption>BP</figcaption></figure>
-<figure class="figure"><img src="/figures/ch04/darcy_global.png" alt="Historical Darcy prediction using global SG"><figcaption>SG · Global</figcaption></figure>
-<figure class="figure"><img src="/figures/ch04/darcy_local.png" alt="Historical Darcy prediction using layerwise SG"><figcaption>SG · Layerwise</figcaption></figure>
-<figure class="figure"><img src="/figures/ch04/darcy_wsg_global_styled.png" alt="Global WSG prediction from the training-selected checkpoint"><figcaption>WSG · Global</figcaption></figure>
-<figure class="figure"><img src="/figures/ch04/darcy_wsg_layerwise_styled.png" alt="Layerwise WSG prediction from the training-selected checkpoint"><figcaption>WSG · Layerwise</figcaption></figure>
+<figure class="figure"><img src="/figures/ch04/darcy_sg_bp.png" alt="Matched SG-BP prediction for test sample 0"><figcaption>SG · BP</figcaption></figure>
+<figure class="figure"><img src="/figures/ch04/darcy_sg_global.png" alt="Matched global SG prediction for test sample 0"><figcaption>SG · Global</figcaption></figure>
+<figure class="figure"><img src="/figures/ch04/darcy_sg_layerwise.png" alt="Matched layerwise SG prediction for test sample 0"><figcaption>SG · Layerwise</figcaption></figure>
+<figure class="figure"><img src="/figures/ch04/darcy_wsg_bp.png" alt="Optimized WSG-BP prediction for test sample 0"><figcaption>WSG · BP</figcaption></figure>
+<figure class="figure"><img src="/figures/ch04/darcy_wsg_global.png" alt="Matched global WSG prediction for test sample 0"><figcaption>WSG · Global</figcaption></figure>
+<figure class="figure"><img src="/figures/ch04/darcy_wsg_layerwise.png" alt="Matched layerwise WSG prediction for test sample 0"><figcaption>WSG · Layerwise</figcaption></figure>
 </div>
-<p class="wsg-note">WSG: 400k updates; $\sigma=0.5$, $K=500$; training-selected checkpoints.<br>Global: 8 directions/update; layerwise: 1/layer. SG panels are historical.</p>
 </section>
 </div>
 
 <!--
-SG values and the BP panel are historical no-skip results from fig:rfg:box-large and fig:rfg:darcy; they are not matched reruns.
-WSG results: jobs 7076193 (global) and 7076196 (layerwise), 400000 full-batch updates, seed 42, sigma .5, 500 WSG threshold samples, Adam 1e-4, 1000 train / 200 test samples, 32 spike steps, no skip connections.
-Checkpoint selection uses lowest logged training error: global epoch 393000, test .0842583 ± .0357181; layerwise epoch 391000, test .0751678 ± .0344492.
-Final-update errors: global .0875326 ± .0352131; layerwise .0795784 ± .0329169. The bar chart uses training-selected checkpoints, matching the WSG prediction panels.
-Global averages 8 full-network directions; layerwise uses 1 direction for each of 11 layers. Probe budgets differ; these single-seed results do not isolate estimation method alone.
-Analysis: data/raw/ch04/darcy_wsg/analysis-7076193-7076196/analysis.md.
+All six panels and bars now use matched reruns: SG BP 7093209, global 7092847, layerwise 7092859; WSG optimized BP 7098047, global 7076193, layerwise 7076196.
+400000 full-batch updates, seed 42, sigma .5, 500 WSG threshold samples, Adam 1e-4, 1000 train / 200 test samples, 32 spike steps, no skip connections, 99904 parameters.
+Checkpoints selected by lowest logged training error. Test relative L2 mean ± population SD:
+SG-BP .0204897951 ± .0063863997 (epoch 386000); SG-global .0782655701 ± .0311860982 (387000); SG-layerwise .0744939074 ± .0315359570 (393000).
+WSG-BP .0211343057 ± .0064200633 (369000); WSG-global .0842582956 ± .0357180797 (393000); WSG-layerwise .0751678199 ± .0344492272 (391000).
+Panels are the saved collector prediction.png files, each displaying test sample 0 with the same reference-derived color limits. All 200 saved test references were verified identical across runs.
+Global averages 8 full-network directions; layerwise uses 1 direction for each of 11 layers. These single-seed runs have different probe budgets; they do not isolate estimation method alone.
+WSG-BP runtime is from the optimized scan_unrolled run; global/layerwise WSG runtimes use their original implementations.
 -->

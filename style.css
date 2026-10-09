@@ -350,7 +350,7 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .rfg-performance-table .rfg-performance-note { font-size:12px; color:var(--muted); }
 .academic .rfg-convergence figcaption { font-size:16px; text-align:center; }
 
-/* WSG-focused comparison: spike-response construction and paired Poisson evidence. */
+/* WSG-focused comparison: spike-response construction and matched Darcy evidence. */
 .academic .wsg-performance { display:grid; grid-template-columns:1fr 1fr; gap:28px; font-size:14px; line-height:1.45; }
 .academic .wsg-performance section { min-width:0; }
 .academic .wsg-performance h2 { font-size:16px; margin:0 0 6px; }
@@ -378,8 +378,6 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 
 .academic .wsg-darcy-panels { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px 10px; margin:12px 0 8px; }
 .academic .wsg-darcy-panels .figure { grid-column:span 2; }
-.academic .wsg-darcy-panels .figure:nth-child(4) { grid-column:2 / span 2; }
-.academic .wsg-darcy-panels .figure:nth-child(5) { grid-column:4 / span 2; }
 .academic .wsg-darcy-panels img { height:150px; }
 .academic .wsg-darcy-panels figcaption { text-align:center; font-size:16px; margin-top:4px; }
 
@@ -452,3 +450,11 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
    1800×1343. At 205px image height, match axis width and horizontal position. */
 .academic .et-fidelity-plots .figure:nth-child(n+3) img { transform:translateX(-6.12px) scaleX(0.99655); }
 .academic .et-fidelity-plots .figure figcaption { font-size:16px; color:var(--ink); text-align:center; margin-top:4px; }
+
+.academic .wsg-performance p.wsg-runtimes { margin-top:9px; }
+
+/* ch4-17: keep the method notes clear of the footer rule. */
+.academic .wsg-method .wsg-darcy { margin-top:8px; }
+.academic .wsg-method .darcy-error-bars { height:140px; }
+.academic .wsg-method .katex-display { margin:6px 0; }
+.academic .wsg-method p.wsg-runtimes { margin-top:4px; }
