@@ -1,0 +1,185 @@
+{
+  "case": "vortex",
+  "source": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/RFormer/reproducibility/results/case1/run-001/test.h5",
+  "source_sha256": "d1d5c8c183f074a76ff78c42b5cde9106220813f44c587a9d88308d1ee3cce38",
+  "reference_source": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/RFormer/reproducibility/results/case1/run-001/test.h5",
+  "reference_sha256": "d1d5c8c183f074a76ff78c42b5cde9106220813f44c587a9d88308d1ee3cce38",
+  "times": [
+    80.0,
+    81.0,
+    82.0,
+    83.0,
+    84.0,
+    85.0,
+    86.0,
+    87.0,
+    88.0,
+    89.0,
+    90.0,
+    91.0,
+    92.0,
+    93.0,
+    94.0,
+    95.0,
+    96.0,
+    97.0,
+    98.0,
+    99.0
+  ],
+  "source_rows": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "frames": [
+    {
+      "sha256": "b370e820fbe984e76aaefd2ba27a6cd885aae49ebb7d0a56d8db3f7568e3515e",
+      "offset": 0,
+      "length": 394364
+    },
+    {
+      "sha256": "9ad3d6df11676ad33a8f732962414965b1d53c986e3fa15791f181ada8e639c9",
+      "offset": 394364,
+      "length": 394563
+    },
+    {
+      "sha256": "4b94f860c500cf4c3fc61f83ce3b65d07ec52ed93a64ca189ebc7c6da9be1a71",
+      "offset": 788927,
+      "length": 394995
+    },
+    {
+      "sha256": "8c2ebbc52eb0b306df4836b2c1be30154581afbe6321597c5db6f7df0ae6a96b",
+      "offset": 1183922,
+      "length": 394942
+    },
+    {
+      "sha256": "60c1a007bb8cc40cf181f02aa5398226a488029787a3c3f698c3f48e7ee87fc2",
+      "offset": 1578864,
+      "length": 394263
+    },
+    {
+      "sha256": "127a5a41ef7f69459fef102ff3c0e11dfcc9ce1fa91d433d95c1470d80821851",
+      "offset": 1973127,
+      "length": 393849
+    },
+    {
+      "sha256": "f0fb394bfc9d6ab48d055a8febefd4478cb33ff312c290fbf65b3999d622e41c",
+      "offset": 2366976,
+      "length": 393265
+    },
+    {
+      "sha256": "27dee20ceeb79f3868ba4c9950ac178e42d3ae208e6e8ee58f3cca7a1a8e4256",
+      "offset": 2760241,
+      "length": 392951
+    },
+    {
+      "sha256": "c20e24ed97354c3f6a03cd6e0597fb82930b3d60ffa0919188f80ac4a975e309",
+      "offset": 3153192,
+      "length": 391893
+    },
+    {
+      "sha256": "d43b6ad10664b66eb0e3028181c528f213495c114254fff90579f51433859cd5",
+      "offset": 3545085,
+      "length": 390188
+    },
+    {
+      "sha256": "62a8e432957080240a7020bddb9743c4a3275bb9c50b7ecbd197110817098906",
+      "offset": 3935273,
+      "length": 389507
+    },
+    {
+      "sha256": "acc8c109a10e00cf5f23afd6aace29a004f3695ffd00a39637d998b9e87a4943",
+      "offset": 4324780,
+      "length": 389732
+    },
+    {
+      "sha256": "d82423d268e05d48afd2d68ba7a514be41f4b2bb9d1ed8a0be174f875bbb115a",
+      "offset": 4714512,
+      "length": 389648
+    },
+    {
+      "sha256": "4f9d8ec4baf99134fba21df5cdde8b8711bda13535486f5780551757dfb48696",
+      "offset": 5104160,
+      "length": 389660
+    },
+    {
+      "sha256": "decf1c710ea5b6099e65ed63f409cae326c11dfa7064edcb6381e2a609e1a82b",
+      "offset": 5493820,
+      "length": 388626
+    },
+    {
+      "sha256": "2c66caaa0c8ddf9b655b5c635e2dfe4b9c4c685c5a611a4a717ce949c67c0184",
+      "offset": 5882446,
+      "length": 388829
+    },
+    {
+      "sha256": "d1a99d2fbcc44b3b9b65e19a66f4a7661fefa6b29064ca48883da5e40ed98ef6",
+      "offset": 6271275,
+      "length": 389776
+    },
+    {
+      "sha256": "9a0cdd5c63d86b76e4c808d6a742969a04b31842f40b47f1e36fbc2c3a90ceef",
+      "offset": 6661051,
+      "length": 390170
+    },
+    {
+      "sha256": "e5ced0ea31cfd92925b62be62cd0b4d6723193032a2ff83ad9fadead03ebc81f",
+      "offset": 7051221,
+      "length": 391473
+    },
+    {
+      "sha256": "371cc2b6173e65fd464c56837facbcdb8ac17b20848f346aa4c226832ee12ef4",
+      "offset": 7442694,
+      "length": 391183
+    }
+  ],
+  "qualifier": "u, v, p rows; Reference, Observations, RFormer columns \u00b7 512 measured observations",
+  "columns": [
+    "Reference",
+    "Observations",
+    "RFormer"
+  ],
+  "rows": [
+    "u",
+    "v",
+    "p"
+  ],
+  "spatial_display": "Vortex: linear interpolation for full fields; observations are measured points only. Jet: native (u,v) arrows in |z|<5 slab; no spatial interpolation; same thinned locations for reference and RFormer. No temporal interpolation.",
+  "field_limits": [
+    1.3444863557815552,
+    0.6861556172370911,
+    0.6802700161933899
+  ],
+  "display_extent": [
+    -3.9915097685813903,
+    11.812209460353852,
+    -3.8713128784418105,
+    3.8713128784418105
+  ],
+  "arrow_scale": null,
+  "slurm_job": "7159682",
+  "bundle": {
+    "format": "png-concat-v1",
+    "path": "/data/animations/vortex/frames.bin",
+    "byte_length": 7833877,
+    "sha256": "4079ac508712546a97ee2f863c7a6f94fdd73841813d3cf0f0f18ecb1788f5ed"
+  },
+  "schema_version": 1
+}

@@ -11,4 +11,3 @@ set -euo pipefail
 export OPENBLAS_NUM_THREADS=1
 export OMP_NUM_THREADS=2
 srun /users/qzhang64/Projects/OptimalControl/OCFormer/.venv/bin/python scripts/export_rformer_time.py
-bash scripts/revise_figures_job.sh

@@ -1,11 +1,17 @@
 # Weather, blood flow and OCFormer additions
 
-Submit `scripts/added_sequences_job.sh` from the presentation directory.
-It reads original results without modifying sources or retraining. The RFormer
-environment supplies local geographic tools; no runtime map or data network
-requests are needed. `public/data/sequences/<case>/index.json` contains frame
-checksums, source hashes, time labels and qualifications. Fallbacks are exact
-copies of first frames, outside the data directory so data failures remain usable.
+All six PNG animations are served from `public/data/animations/<name>/` as
+`index.json` plus `frames.bin`. Names are weather, latent, swarm128, vortex, jet,
+and blood. The binary concatenates unchanged PNG bytes; each image has an
+`offset`, `length`, and SHA-256 in the index. Blood retains eight synchronized
+panels per snapshot. Timing, labels, provenance, and metrics remain in the index.
+The browser validates the bundle and frame hashes before decoding PNG blobs.
+
+Experiment inputs stay in `data/raw/` or their recorded external source paths;
+export intermediates stay in ignored `data/staging/`. Exporters publish bundles
+through `scripts/animation_bundle.py`. Static/print fallback images remain in
+`public/fallback_figures/` and blood's existing figure directory. No source
+experiments or image rendering were rerun for this storage migration.
 
 ## Latent/optimized physical paths — slide 38 (formerly 32)
 
@@ -38,8 +44,7 @@ Static station geometry accompanies two stacked temperature maps (reference
 and reconstructed) from saved RFormer
 `case2/run-001` predictions: 59 measured observations and 1961 query stations.
 The source uses daily mean temperature in Celsius, with 2020–2023 training and
-366 sequential 2024 test days. We display every seventh recorded day plus
-December 31 (54 frames), with actual calendar labels. Source preprocessing
+366 sequential 2024 test days. We display all 366 recorded days, with actual calendar labels. Source preprocessing
 fills missing station days; this is disclosed, not newly imputed by the viewer.
 Reference values are recovered from paired `case2_weather/processed/valid.h5`
 only after exact checks of all observation/query coordinates and observed values.

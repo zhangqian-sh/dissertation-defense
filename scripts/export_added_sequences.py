@@ -1,4 +1,5 @@
 """Recorded weather and optimized trajectories, with published blood snapshots."""
+from animation_bundle import publish
 import os,json,hashlib,subprocess
 from pathlib import Path
 from datetime import date,timedelta
@@ -22,14 +23,16 @@ plt.rcParams.update({'font.size':10,'axes.spines.top':True,'axes.spines.right':T
 def digest(p):
     with open(p,'rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def begin(name):
-    out=ROOT/'public/data/sequences'/name;out.mkdir(parents=True,exist_ok=True);return out,[]
+    out=ROOT/'data/staging'/f'added-sequences-{os.environ["SLURM_JOB_ID"]}'/name;out.mkdir(parents=True,exist_ok=True);return out,[]
 def frame(out,entries,fig):
     p=out/f'{len(entries):03d}.png';fig.savefig(p,dpi=130,facecolor='white');plt.close(fig)
-    entries.append({'path':'/'+str(p.relative_to(ROOT/'public')),'sha256':digest(p)})
+    entries.append({'path':str(p),'sha256':digest(p)})
 def finish(out,entries,times,labels,caption,sources=(),**extra):
     assert len(entries)==len(times)==len(labels) and np.all(np.diff(times)>0)
     meta=dict(frames=entries,times=list(map(float,times)),labels=labels,caption=caption,sources=[{'path':str(p),'sha256':digest(p)} for p in sources],slurm_job=os.environ['SLURM_JOB_ID'],**extra)
-    (out/'index.json').write_text(json.dumps(meta,indent=2)+'\n');print(out.name,len(entries),flush=True)
+    (out/'index.json').write_text(json.dumps(meta,indent=2)+'\n')
+    publish(out.name,meta,Path)
+    print(out.name,len(entries),flush=True)
 
 # Use exactly the optimized trajectory loaded by the original paper notebook.
 out,entries=begin('latent');latent_src=OC/'results/room_2d/OCFormer_-1_16/best_pred_lbfgs.h5'

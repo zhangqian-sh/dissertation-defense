@@ -15,3 +15,19 @@ for(const file of ['slides.md',...readdirSync(resolve(root,'slides')).filter(n=>
 for(const ch of ['ch02/sms_longtime_rollout','ch03/conversion_over_t','ch05/energy_history','ch07/ocformer_swarm_3d'])if(!existsSync(resolve(pub,'fallback_figures',ch+'.png')))throw new Error('Missing print fallback')
 for(const font of ['NotoSerif-Regular.ttf', 'NotoSerif-Medium.ttf', 'NotoSerif-SemiBold.ttf', 'NotoSerif-Bold.ttf', 'NotoSerif-Italic.ttf', 'NotoSerif-SemiBoldItalic.ttf', 'NotoSerif-BoldItalic.ttf'])if(!existsSync(resolve(pub,'fonts',font)))throw new Error('Missing local font: '+font)
 console.log(`Validated ${manifest.assets.length} data assets, their checksums, ${images} slide image references, and local fallbacks/fonts.`)
+
+for(const name of ['weather','latent','swarm128','vortex','jet','blood']){
+ const meta=JSON.parse(readFileSync(resolve(pub,`data/animations/${name}/index.json`)))
+ const bundle=meta.bundle
+ if(meta.schema_version!==1||bundle.format!=='png-concat-v1'||bundle.path!==`/data/animations/${name}/frames.bin`)throw Error('Invalid animation bundle')
+ const bytes=readFileSync(resolve(pub,bundle.path.slice(1)))
+ if(bytes.length!==bundle.byte_length||createHash('sha256').update(bytes).digest('hex')!==bundle.sha256)throw Error('Animation checksum mismatch')
+ let offset=0
+ for(const frame of meta.frames)for(const image of frame.panels??[frame]){
+  if(image.offset!==offset||!Number.isSafeInteger(image.length)||image.length<=0||offset+image.length>bytes.length)throw Error('Invalid frame offset')
+  if(createHash('sha256').update(bytes.subarray(offset,offset+image.length)).digest('hex')!==image.sha256)throw Error('Frame checksum mismatch')
+  offset+=image.length
+ }
+ if(offset!==bytes.length)throw Error('Unindexed animation bytes')
+}
+console.log('Validated six lossless animation bundles and every PNG slice.')

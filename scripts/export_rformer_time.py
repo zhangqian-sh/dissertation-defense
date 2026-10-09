@@ -1,5 +1,6 @@
 """Export saved RFormer snapshots in verified physical-time order (Slurm only)."""
-import os, json, hashlib
+from animation_bundle import publish
+import os, json, hashlib, shutil, fcntl
 from pathlib import Path
 import h5py
 import numpy as np
@@ -11,7 +12,7 @@ from scipy.interpolate import griddata
 assert os.environ.get('SLURM_JOB_ID'), 'Run through Slurm'
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = Path('/oscar/data/gk/qzhang64/Projects/OperatorLearning/RFormer/reproducibility')
-OUT = ROOT / 'public/data/ch06/time'
+OUT = Path(os.environ.get('RFORMER_OUTPUT', ROOT / 'data/staging' / f'rformer-time-{os.environ["SLURM_JOB_ID"]}'))
 OUT.mkdir(parents=True, exist_ok=True)
 sha = lambda p: hashlib.file_digest(open(p, 'rb'), 'sha256').hexdigest()
 for case, run, channel in [('vortex', 'case1', 1), ('jet', 'case4', 1)]:
@@ -96,7 +97,12 @@ for case, run, channel in [('vortex', 'case1', 1), ('jet', 'case4', 1)]:
                 ax.set_xlabel('x');ax.set_ylabel('y');ax.tick_params(labelsize=9)
         path=OUT/f'{case}-{i:03d}.png'
         fig.savefig(path,dpi=160,facecolor='white'); plt.close(fig)
-        entries.append({'path':f'/data/ch06/time/{path.name}','sha256':sha(path)})
+        entries.append({'path':str(path),'sha256':sha(path)})
     meta={'case':case,'source':str(src),'source_sha256':sha(src),'reference_source':str(truth_source),'reference_sha256':sha(truth_source),'times':times.tolist(),'source_rows':order.tolist(),'frames':entries,'qualifier':qualifier,'columns':['Reference','Observations','RFormer'],'rows':['u','v','p'] if case=='vortex' else ['velocity'],'spatial_display':'Vortex: linear interpolation for full fields; observations are measured points only. Jet: native (u,v) arrows in |z|<5 slab; no spatial interpolation; same thinned locations for reference and RFormer. No temporal interpolation.','field_limits':limits.tolist(),'arrow_scale':.08 if case=='jet' else None,'slurm_job':os.environ['SLURM_JOB_ID']}
     (OUT/f'{case}.json').write_text(json.dumps(meta,indent=2)+'\n')
+    publish(case,meta,lambda path:OUT/Path(path).name)
+    with open(f'/tmp/{os.environ["USER"]}.agent-lock','a') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX)
+        fallback=ROOT/f'public/fallback_figures/ch06/{case}.png';fallback.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(OUT/Path(entries[0]['path']).name,fallback)
     print(case, len(entries), times.tolist(), flush=True)

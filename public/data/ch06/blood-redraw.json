@@ -1,0 +1,81 @@
+{
+  "source": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/RFormer/prev/results/case3_blood/dpd-averaged/obs_10k_q_290k_epoch=10/val.h5",
+  "averaged_source": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/RFormer/prev/data/blood/raw/averaged/xq_all.h5",
+  "snapshot": 5,
+  "averaged_snapshot": 85,
+  "midplane_z_tolerance": 1.0,
+  "display_extent": [
+    -6.0,
+    306.0,
+    -54.0,
+    54.0
+  ],
+  "columns": [
+    "Sparse observations",
+    "Linear interpolation",
+    "RFormer reconstruction",
+    "Averaged-grid reference"
+  ],
+  "rows": [
+    {
+      "component": "u",
+      "color_limits": [
+        -1.3552420234680176,
+        1.3552420234680176
+      ],
+      "panels": [
+        {
+          "path": "/figures/ch06/blood-u-0.png",
+          "point_count": 1338,
+          "sha256": "bbf569a0eec4041b97628004b9193b83fa24ad73d531b12e14937d2d300ce2b5"
+        },
+        {
+          "path": "/figures/ch06/blood-u-1.png",
+          "point_count": 14867,
+          "sha256": "f7180262193bb13fcb394972ff2aecd987fedb1d7b2990211b52e344ba3e7e42"
+        },
+        {
+          "path": "/figures/ch06/blood-u-2.png",
+          "point_count": 14867,
+          "sha256": "4af0d2337d4ca9df98d4903724c0d2f6af2fc1e02886eedfae1b4d2bef44c240"
+        },
+        {
+          "path": "/figures/ch06/blood-u-3.png",
+          "point_count": 14867,
+          "sha256": "ec85ee2844187c2d4843835b12894d6495a1fa1f8d9fb3c8bfee31d8904a2efc"
+        }
+      ]
+    },
+    {
+      "component": "v",
+      "color_limits": [
+        -1.0019187831878662,
+        1.0019187831878662
+      ],
+      "panels": [
+        {
+          "path": "/figures/ch06/blood-v-0.png",
+          "point_count": 1338,
+          "sha256": "998c9aac60ef2f0ce662b5ab5ea4c0751a77c95ca348c23c6b4d06f6264e9c1e"
+        },
+        {
+          "path": "/figures/ch06/blood-v-1.png",
+          "point_count": 14867,
+          "sha256": "187a4774da90061104b47a7b087ef9f54449ee8063e5b4026d4b5f75c7c52c2e"
+        },
+        {
+          "path": "/figures/ch06/blood-v-2.png",
+          "point_count": 14867,
+          "sha256": "79ca3eb4889dd7d12565fed401c81f2b161dc4a040e7772d17dd3c0f6466b21d"
+        },
+        {
+          "path": "/figures/ch06/blood-v-3.png",
+          "point_count": 14867,
+          "sha256": "229a5492dde91e2102d105158db1ff8f8406be8b019b516855cf4c64ab5a33ba"
+        }
+      ]
+    }
+  ],
+  "slurm_job": "7170840",
+  "interpolation_method": "3D linear; nearest-neighbor fill outside convex hull; recomputed from val.h5 at each matched averaged grid"
+}

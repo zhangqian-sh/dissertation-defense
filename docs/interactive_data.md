@@ -119,22 +119,16 @@ after collecting ET, submit `scripts/revise_figures_job.sh`.
 
 ## Current requested examples: vortex street and Burgers
 
-The 2026-09-11 additions use `public/data/sequences/` and the generic
-`RecordedSequence` player: a straight-reference/saved-optimized trajectory map,
-a default 128-agent 2D trajectory with paper-style gray histories, and paired
-reference/reconstructed weekly weather maps. Blood playback was subsequently
-replaced by the original published static u/v snapshot figures (two 2×2 panels).
-These frame indexes carry source and frame hashes; fallbacks are copied from
-the identical first frames. See `added_sequences.md` for reproduction and
-scientific qualifications. There are now 46 slides; subsequent chapter-7 page
-numbers shift by one after the weather/blood split.
-
-Chapter 6 additionally uses local, checksummed PNG time sequences under
-`public/data/ch06/time/`, with one JSON index per case. They are rendered from
-saved native arrays by `scripts/export_rformer_time.py`; submit
-`scripts/rformer_time_job.sh` to regenerate and verify the complete deck.
-See `conditional_views.md` for reference recovery, temporal ordering and
-spatial interpolation qualifications. No model inference is performed.
+The PNG animations use `public/data/animations/<name>/index.json` and
+`frames.bin`, a lossless concatenation of PNGs indexed by byte offset and length.
+The six names are weather (366 daily frames), latent (200), swarm128 (200),
+vortex (20), jet (40), and blood (20 snapshots, eight panels each). A shared
+browser loader validates bundle and per-image hashes; existing playback controls
+and timing are preserved. Blood's index also contains averaged-grid metrics.
+Exporters render temporary PNGs only in `data/staging/`, then publish bundles
+under the project lock. Original inputs remain outside the served directory.
+Static fallbacks remain separate browser-ready figures. See `added_sequences.md`
+for the storage contract and scientific qualifications.
 
 The active ET asset is now `vortex_street_2d`, with v-field shape [128,256]
 and history shape [12,128,256]. Native pixels are displayed without smoothing.

@@ -4,15 +4,15 @@ import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
 class AddedSequences(unittest.TestCase):
     def test_all_frames_and_time_axes(self):
-        for name,count in [('latent',200),('swarm128',200),('weather',54)]:
-            d=json.loads((ROOT/f'public/data/sequences/{name}/index.json').read_text())
+        for name,count in [('latent',200),('swarm128',200),('weather',366)]:
+            d=json.loads((ROOT/f'public/data/animations/{name}/index.json').read_text())
             self.assertEqual(len(d['frames']),count)
             self.assertEqual(len(d['labels']),count)
             self.assertTrue(np.all(np.diff(d['times'])>0))
+            bundle=(ROOT/'public'/d['bundle']['path'].lstrip('/')).read_bytes()
+            self.assertEqual(hashlib.sha256(bundle).hexdigest(),d['bundle']['sha256'])
             for f in d['frames']:
-                p=ROOT/'public'/f['path'].lstrip('/')
-                self.assertTrue(p.resolve().is_relative_to(ROOT/f'public/data/sequences/{name}'))
-                self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),f['sha256'])
+                self.assertEqual(hashlib.sha256(bundle[f['offset']:f['offset']+f['length']]).hexdigest(),f['sha256'])
             fallback=ROOT/f'public/fallback_figures/sequences/{name}.png'
             self.assertEqual(hashlib.sha256(fallback.read_bytes()).hexdigest(),d['frames'][0]['sha256'])
             if name=='latent':

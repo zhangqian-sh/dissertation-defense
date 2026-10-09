@@ -1,0 +1,317 @@
+{
+  "case": "jet",
+  "source": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/RFormer/reproducibility/results/case4/run-001/test.h5",
+  "source_sha256": "064bf15e6d3c29934886251ae6728f09cef5f07beb2c8498f3b8b6e980c6d9d0",
+  "reference_source": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/RFormer/reproducibility/data/case3_turbulent_jet/processed/valid.h5",
+  "reference_sha256": "da31c45e4f2db87c718df39f20f2f478f69855d0e5a1f836d65c39c90abcf503",
+  "times": [
+    10.0,
+    16.0,
+    17.0,
+    19.0,
+    31.0,
+    46.0,
+    56.0,
+    57.0,
+    61.0,
+    66.0,
+    67.0,
+    68.0,
+    69.0,
+    70.0,
+    76.0,
+    77.0,
+    79.0,
+    83.0,
+    85.0,
+    94.0,
+    96.0,
+    105.0,
+    116.0,
+    125.0,
+    126.0,
+    129.0,
+    133.0,
+    136.0,
+    138.0,
+    149.0,
+    151.0,
+    153.0,
+    159.0,
+    165.0,
+    166.0,
+    171.0,
+    175.0,
+    178.0,
+    183.0,
+    187.0
+  ],
+  "source_rows": [
+    30,
+    1,
+    21,
+    31,
+    2,
+    9,
+    32,
+    16,
+    25,
+    24,
+    10,
+    27,
+    19,
+    6,
+    33,
+    39,
+    13,
+    18,
+    26,
+    23,
+    0,
+    35,
+    5,
+    20,
+    28,
+    4,
+    29,
+    36,
+    37,
+    22,
+    34,
+    17,
+    3,
+    38,
+    12,
+    7,
+    8,
+    15,
+    11,
+    14
+  ],
+  "frames": [
+    {
+      "sha256": "56c2a0cee74064c535db5694bb9740308c55292b8fa22efa40739dea193f3374",
+      "offset": 0,
+      "length": 211135
+    },
+    {
+      "sha256": "f2d8f63e4c664ce83f8b61f2a37425866b2a698b1a5c551acf195ba602e6ffb3",
+      "offset": 211135,
+      "length": 210040
+    },
+    {
+      "sha256": "657d9ec39505c6561c9f3653227c434434e0f6d633694c68f964c10a13f1eb5c",
+      "offset": 421175,
+      "length": 198020
+    },
+    {
+      "sha256": "8e55e839e5eb430c037d6d85c6c8fe396c0d602d17fff868d3c1c6260ceaef99",
+      "offset": 619195,
+      "length": 197478
+    },
+    {
+      "sha256": "a65e4a5df7ad8681e33fe4408bdfdc85b9c44de65ab0a7b3b05bb1523ec48825",
+      "offset": 816673,
+      "length": 189786
+    },
+    {
+      "sha256": "b676563e79208f54b19102942f31841640ac3e1af0f029037978e8970bdc5c4c",
+      "offset": 1006459,
+      "length": 197053
+    },
+    {
+      "sha256": "270be8eb5497a986f5ed6e14c0564a50f229d54079fd4351964ad0ec67522fc1",
+      "offset": 1203512,
+      "length": 202934
+    },
+    {
+      "sha256": "d69a72bb9f80403704dcad8d392cf09eb815751b3ceaf2616db4ae288bbf1688",
+      "offset": 1406446,
+      "length": 195804
+    },
+    {
+      "sha256": "68b1655958ac9d62e2d58c945b5f17ea3c9c3154d5a2685988d72c10bf198c45",
+      "offset": 1602250,
+      "length": 193889
+    },
+    {
+      "sha256": "a1fdc11f4e6b1af1355136ab0fa2e8af98fb074c5fc713ac08453dd116ed5e94",
+      "offset": 1796139,
+      "length": 195090
+    },
+    {
+      "sha256": "9bbfcea5c6171dd8ec37f04ce7b1f40a437e9ad8f10484a075f17950eb1dd1e5",
+      "offset": 1991229,
+      "length": 201002
+    },
+    {
+      "sha256": "9a70bb850c5145ca2e01242c8046163c0d6697d77a9cb8d2e850b42eb331addb",
+      "offset": 2192231,
+      "length": 201861
+    },
+    {
+      "sha256": "e63cf025c7c9625bf1276ad4f6bcf65843350fef5980022bcccbae5466094800",
+      "offset": 2394092,
+      "length": 193810
+    },
+    {
+      "sha256": "a3507c015d4495b3d0d2b8efbf7becff8cddef22a2ef6460ee600406d58a15f7",
+      "offset": 2587902,
+      "length": 191472
+    },
+    {
+      "sha256": "37547914b3d8c91e9fd9c2d499bd51f95c8c5584da4e68438a53e3024c63a763",
+      "offset": 2779374,
+      "length": 196337
+    },
+    {
+      "sha256": "02a5b8f8b815a0e39b3edbbfe5e8971a88229e647d22fb1909b22fef19efbe4e",
+      "offset": 2975711,
+      "length": 193805
+    },
+    {
+      "sha256": "956ce87687dd157d395132330937aea0315bf0e88ec8237c6e7777e9a016aae8",
+      "offset": 3169516,
+      "length": 196808
+    },
+    {
+      "sha256": "29e19dfb88e6b37f213e781dc03f6c3a98448328d4f6929c5292feee1d8d0b70",
+      "offset": 3366324,
+      "length": 197917
+    },
+    {
+      "sha256": "ec8dca723185448995e14826da0f914c40d0ba9b4a28ddae019f4b5208dad232",
+      "offset": 3564241,
+      "length": 203865
+    },
+    {
+      "sha256": "ec71c5cdfcf3d4be8821fe612f8233e10b11226297a19c3df8809a4a3afc889a",
+      "offset": 3768106,
+      "length": 194340
+    },
+    {
+      "sha256": "8f6b4a0681d6cf0b3644218f4bc801d36db20169768aece0fedfd36e0dcea9f6",
+      "offset": 3962446,
+      "length": 200118
+    },
+    {
+      "sha256": "24201b0e4f584afc9a04dc44863a7ea435407cb0ba57e8692577a823c92180ce",
+      "offset": 4162564,
+      "length": 201542
+    },
+    {
+      "sha256": "eb791e5aa624ff75e1aee646fec1b0962086a4bd42eafc3fde0dec349f780922",
+      "offset": 4364106,
+      "length": 200117
+    },
+    {
+      "sha256": "8ed30cabec467df148c0917ebe0daac98b8c7ce6bebbf99491b30cb7579b7497",
+      "offset": 4564223,
+      "length": 200574
+    },
+    {
+      "sha256": "9c3fe3e1485c848bfeaae459cf16b995e856415528f15ed132f495728c6bfd68",
+      "offset": 4764797,
+      "length": 196735
+    },
+    {
+      "sha256": "bfa4e3b20d6fb19762fb91c08d846b3077cb6af00f446ed7f0efc26a5e851a2c",
+      "offset": 4961532,
+      "length": 202051
+    },
+    {
+      "sha256": "359be9ea14d8a742b616b66385d3a9cbeda55fbbf3f9eac76dc59c25f88b4add",
+      "offset": 5163583,
+      "length": 197765
+    },
+    {
+      "sha256": "0af70cd38adee6637eec3731e9c9545420191991c348e2b3044c6606017624f1",
+      "offset": 5361348,
+      "length": 198330
+    },
+    {
+      "sha256": "93a6fa52b6267731d0b48ad826fd4bb79c3ea278b6f559af38befb5a8398fbe1",
+      "offset": 5559678,
+      "length": 202431
+    },
+    {
+      "sha256": "70aa40398aa48d309120d5338d05f280776f41329c4f2837e5130af80365bc62",
+      "offset": 5762109,
+      "length": 207003
+    },
+    {
+      "sha256": "000c5644e7c4ee805c9bd94901475f0f4b605a16d80236e263b374fda75492e3",
+      "offset": 5969112,
+      "length": 206488
+    },
+    {
+      "sha256": "f6c201f95b2af5f524b13ee22171ce2cc71f181084ae43c021641ec68ceebf36",
+      "offset": 6175600,
+      "length": 210869
+    },
+    {
+      "sha256": "0992c024c19680c667b8ebc9a3769ca0d0686b599d6455c526c9694d1899f208",
+      "offset": 6386469,
+      "length": 207792
+    },
+    {
+      "sha256": "2b11f32c7a1c649e01422557be48b32540b31fe9401b769a35a8349b389bb529",
+      "offset": 6594261,
+      "length": 206041
+    },
+    {
+      "sha256": "543fa27b597a19f4e5064601402e45524bd59e95f3faf650f2a11c2a627db325",
+      "offset": 6800302,
+      "length": 208913
+    },
+    {
+      "sha256": "d43d106781ae170aed7d3a48fe5c440e39981f1f95eac540148a0fc8058e9dba",
+      "offset": 7009215,
+      "length": 205259
+    },
+    {
+      "sha256": "3403d5338202e118b78403e6683f699d378c1956d0f6e923952a5da52099981f",
+      "offset": 7214474,
+      "length": 200624
+    },
+    {
+      "sha256": "6c007dcef9720d66f0fb37d57dfe57e2a85d0d247ffdac43e4f7a2fbcd383fac",
+      "offset": 7415098,
+      "length": 203136
+    },
+    {
+      "sha256": "58905140dc74f67e53db8e1e4fe50eec7a77307b855ad74e8c8e7e6a5f9b1b5a",
+      "offset": 7618234,
+      "length": 204001
+    },
+    {
+      "sha256": "4072a70a42206d3615d931ae074544b9471ad8dcc45f2d24840baf23b16e119d",
+      "offset": 7822235,
+      "length": 201256
+    }
+  ],
+  "qualifier": "(u,v) vectors at native points \u00b7 |z| < 5 slab \u00b7 measured observation vectors \u00b7 fixed arrow scale",
+  "columns": [
+    "Reference",
+    "Observations",
+    "RFormer"
+  ],
+  "rows": [
+    "velocity"
+  ],
+  "spatial_display": "Vortex: linear interpolation for full fields; observations are measured points only. Jet: native (u,v) arrows in |z|<5 slab; no spatial interpolation; same thinned locations for reference and RFormer. No temporal interpolation.",
+  "field_limits": [
+    0.3660539984703064,
+    0.5625519752502441,
+    0.3529309928417206
+  ],
+  "arrow_scale": 0.08,
+  "slurm_job": "6195875",
+  "bundle": {
+    "format": "png-concat-v1",
+    "path": "/data/animations/jet/frames.bin",
+    "byte_length": 8023491,
+    "sha256": "a6b7fae708adec49f2d69d619e0eb862756619db0fdb4627113af1c1dd7089df"
+  },
+  "schema_version": 1
+}

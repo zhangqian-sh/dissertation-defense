@@ -2,7 +2,7 @@
 import {computed,onMounted,onBeforeUnmount,ref} from 'vue'
 import {useNav} from '@slidev/client'
 import {usePlayback} from '../composables/usePlayback'
-import {publicAssetUrl} from '../composables/publicAssetUrl.mjs'
+import {loadAnimationIndex,loadAnimationFrames} from '../composables/animationBundle.mjs'
 const props=defineProps<{name:string;label:string;caption:string}>()
 const nav=useNav();const data=ref<any>();const urls=ref<string[]>([]);const error=ref('')
 const staticMode=computed(()=>nav.isPrintMode.value||['static','print'].some(k=>new URLSearchParams(location.search).has(k)))
@@ -12,17 +12,11 @@ let disposed=false
 onMounted(async()=>{
  if(staticMode.value)return
  try{
-  const r=await fetch(publicAssetUrl(`/data/sequences/${props.name}/index.json`));if(!r.ok)throw Error('Missing sequence')
-  const d=await r.json()
+  const d=await loadAnimationIndex(props.name)
   if(d.frames.length!==d.times.length||d.labels.length!==d.times.length||!d.times.every((v:number,i:number)=>Number.isFinite(v)&&(!i||v>d.times[i-1])))throw Error('Invalid time sequence')
-  const blobs=await Promise.all(d.frames.map(async(f:any)=>{
-   if(!f.path.startsWith(`/data/sequences/${props.name}/`))throw Error('Unexpected frame path')
-   const r=await fetch(publicAssetUrl(f.path));if(!r.ok)throw Error('Missing frame');const bytes=await r.arrayBuffer()
-   const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(v=>v.toString(16).padStart(2,'0')).join('')
-   if(hash!==f.sha256)throw Error('Frame checksum mismatch')
-   return new Blob([bytes],{type:'image/png'})
-  }))
-  if(disposed)return;urls.value=blobs.map(b=>URL.createObjectURL(b));data.value=d
+  const loaded=await loadAnimationFrames(d)
+  if(disposed){loaded.dispose();return}
+  urls.value=loaded.frames.map((frame:string[])=>frame[0]);data.value=d
  }catch(e){if(!disposed)error.value=String(e)}
 })
 onBeforeUnmount(()=>{disposed=true;urls.value.forEach(URL.revokeObjectURL)})

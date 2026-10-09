@@ -2,32 +2,23 @@
 import {computed,onMounted,onBeforeUnmount,ref} from 'vue'
 import {useNav} from '@slidev/client'
 import {usePlayback} from '../composables/usePlayback'
-import {publicAssetUrl} from '../composables/publicAssetUrl.mjs'
+import {loadAnimationIndex,loadAnimationFrames} from '../composables/animationBundle.mjs'
 const props=defineProps<{caseName:'vortex'|'jet'}>()
 const nav=useNav()
 const staticMode=computed(()=>nav.isPrintMode.value||['static','print'].some(k=>new URLSearchParams(location.search).has(k)))
 const data=ref<any>();const error=ref('');const urls=ref<string[]>([])
 const count=computed(()=>data.value?.times.length||1)
 const {index,playing,toggle,seek,reset}=usePlayback(count,0,250)
-const fallback=computed(()=>error.value?`/figures/ch06/${props.caseName==='vortex'?'vortex':'jet'}-reconstruction.png`:`/data/ch06/time/${props.caseName}-000.png`)
+const fallback=computed(()=>error.value?`/figures/ch06/${props.caseName==='vortex'?'vortex':'jet'}-reconstruction.png`:`/fallback_figures/ch06/${props.caseName}.png`)
 let disposed=false
 onMounted(async()=>{
  if(staticMode.value)return
  try{
-  const response=await fetch(publicAssetUrl(`/data/ch06/time/${props.caseName}.json`))
-  if(!response.ok)throw Error('Missing time sequence')
-  const d=await response.json()
+  const d=await loadAnimationIndex(props.caseName)
   if(d.frames.length!==d.times.length||!d.times.every((t:number,i:number)=>Number.isFinite(t)&&(!i||t>d.times[i-1])))throw Error('Invalid physical-time order')
-  const loaded=await Promise.all(d.frames.map(async(f:any)=>{
-   if(!f.path.startsWith('/data/ch06/time/'))throw Error('Nonlocal frame')
-   const r=await fetch(publicAssetUrl(f.path));if(!r.ok)throw Error('Missing frame')
-   const bytes=await r.arrayBuffer()
-   const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(v=>v.toString(16).padStart(2,'0')).join('')
-   if(hash!==f.sha256)throw Error('Frame checksum mismatch')
-   return new Blob([bytes],{type:'image/png'})
-  }))
-  if(disposed)return
-  urls.value=loaded.map(b=>URL.createObjectURL(b));data.value=d
+  const loaded=await loadAnimationFrames(d)
+  if(disposed){loaded.dispose();return}
+  urls.value=loaded.frames.map((frame:string[])=>frame[0]);data.value=d
  }catch(e){if(!disposed)error.value=String(e)}
 })
 onBeforeUnmount(()=>{disposed=true;urls.value.forEach(u=>URL.revokeObjectURL(u))})
