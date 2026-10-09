@@ -90,7 +90,8 @@ function draw(){
    const v=views[panel],m=new THREE.Matrix4();for(let a=0;a<c.agents;a++){m.makeTranslation(...point(c,t,a) as [number,number,number]);v.drones.setMatrixAt(a,m);v.trails[a].geometry.setDrawRange(0,t+1)}
    v.drones.instanceMatrix.needsUpdate=true;v.drones.computeBoundingSphere();render3D(v)
   }else{
-   const canvas=host.querySelector('canvas')!,size=host.clientWidth,ratio=devicePixelRatio||1;canvas.width=size*ratio;canvas.height=size*ratio
+   const size=host.clientWidth;if(size<=32)return
+   const canvas=host.querySelector('canvas')!,ratio=devicePixelRatio||1;canvas.width=size*ratio;canvas.height=size*ratio
    const ctx=canvas.getContext('2d')!;ctx.scale(ratio,ratio);ctx.clearRect(0,0,size,size)
    const pad=16,span=size-2*pad,x=(n:number)=>pad+(n+.6)/1.2*span,y=(n:number)=>pad+(.6-n)/1.2*span
    ctx.lineWidth=.7;ctx.strokeStyle='#aab1ae';ctx.strokeRect(pad,pad,span,span)

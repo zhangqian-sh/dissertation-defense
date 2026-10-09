@@ -230,7 +230,7 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .sms-method-right .sms-algorithm li { padding-top:2px; padding-bottom:2px; line-height:1.5; }
 
 .academic .sms-method-left .sms-training { margin-top:8px; }
-.academic .sms-method-left .sms-time-note { margin-top:4px; }
+.academic .sms-method-left .sms-time-note { margin-top:0; }
 .academic .sms-method-left .sms-lif { margin-top:6px; }
 .academic .sms-method-left .sms-lif .katex-display { margin:5px 0; }
 .academic .sms-method-left .sms-training p { line-height:1.4; }

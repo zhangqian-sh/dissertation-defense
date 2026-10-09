@@ -11,3 +11,14 @@ export function slideByFeature(results,feature){
  if(matches.length!==1)throw Error(`Expected one slide containing "${feature}", found ${matches.length}`)
  return matches[0].slide
 }
+
+// Runs inside the browser, where rectangles include rotation and CSS scaling.
+export function clippedPlotLabels(svgs){
+ return svgs.flatMap(svg=>{
+  const box=svg.getBoundingClientRect(),tolerance=.5*box.width/svg.viewBox.baseVal.width
+  return [...svg.querySelectorAll('text')].filter(text=>{
+   const rect=text.getBoundingClientRect()
+   return rect.left<box.left-tolerance||rect.top<box.top-tolerance||rect.right>box.right+tolerance||rect.bottom>box.bottom+tolerance
+  }).map(text=>text.textContent)
+ })
+}

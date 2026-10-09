@@ -1,5 +1,5 @@
 import { chromium } from 'playwright'
-import {auditTargets,slideByFeature} from './audit_targets.mjs'
+import {auditTargets,slideByFeature,clippedPlotLabels as findClippedPlotLabels} from './audit_targets.mjs'
 import { spawn } from 'node:child_process'
 import { mkdir,readFile,writeFile,readdir,copyFile } from 'node:fs/promises'
 import {resolve} from 'node:path'
@@ -97,7 +97,7 @@ try{
    await slide.getByRole('checkbox',{name:'Show error'}).check();await slide.getByRole('checkbox',{name:'Show error'}).uncheck()
   }
   await slide.screenshot({path:resolve(out,`interactive-${n}.png`)})
-  const clippedLabels=await slide.locator('.trace-svg').evaluateAll(svgs=>svgs.flatMap(svg=>[...svg.querySelectorAll('text')].filter(t=>{const b=t.getBBox(),v=svg.viewBox.baseVal;return b.x<-.5||b.y<-.5||b.x+b.width>v.width+.5||b.y+b.height>v.height+.5}).map(t=>t.textContent)))
+  const clippedLabels=await slide.locator('.trace-svg').evaluateAll(findClippedPlotLabels)
   if(clippedLabels.length)throw new Error('Clipped plot labels: '+clippedLabels.join(', '))
   const m=await slide.evaluate(el=>{const f=el.querySelector('.footer').getBoundingClientRect();return [...el.querySelectorAll('.plot-controls,.interaction-note')].some(c=>c.getBoundingClientRect().bottom>f.top-8)})
   if(m)throw new Error('Interactive slide overflow '+n)

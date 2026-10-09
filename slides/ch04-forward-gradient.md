@@ -52,7 +52,7 @@ Resample directions during training. Update with $\hat g$ instead of explicitly 
 </section>
 </div>
 <RFGDirections />
-<p class="rfg-diagram-note">Shared layers have identical weights but carry distinct activations. Directional slopes use JVP; source directions: Bernoulli($p=\tfrac12$).</p>
+<p class="rfg-diagram-note">Shared layers have identical weights but carry distinct activations. Directional slopes use JVP; source directions: Bernoulli(<InlineMath tex="p=\tfrac12" />).</p>
 
 </div>
 
