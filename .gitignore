@@ -6,6 +6,7 @@ data/raw/**/runs/**/*.pth
 data/raw/**/runs/**/*.ckpt
 data/raw/**/runs/**/error_dissection/
 data/raw/**/logs/
+data/raw/
 # Temporary data and Python caches
 data/staging/
 data/tmp.md
@@ -69,3 +70,8 @@ Thumbs.db
 /public/data/releases/20260911T193328-contrast-6244719/ch05/energy_history.png
 /public/data/releases/20260911T193707-contrast-6244908/ch05/energy_history.png
 /public/data/releases/20260911T205017-contrast-6248651/ch05/energy_history.png
+
+# Darcy WSG checkpoints and per-run source snapshots
+/data/raw/ch04/darcy_wsg/runs/**/*.eqx
+/data/raw/ch04/darcy_wsg/runs/**/source.py
+/data/raw/ch04/darcy_wsg/runs/**/prediction.png
