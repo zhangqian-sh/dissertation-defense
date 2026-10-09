@@ -509,3 +509,49 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .rformer-jet-explanation { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:18px; }
 .academic .rformer-jet-explanation h3 { font-size:16px; font-weight:600; margin:0 0 8px; }
 .academic .rformer-jet-explanation p { font-size:14px; line-height:1.45; margin:0; }
+
+.academic .ocformer-formulation-layout { display:grid; grid-template-columns:4fr 6fr; gap:32px; align-items:start; }
+.academic .ocformer-formulation-layout h3 { font-size:16px; font-weight:600; margin:0 0 8px; }
+.academic .ocformer-formulation-layout p { font-size:14px; line-height:1.45; margin:8px 0; }
+.academic .ocformer-formulation-layout .katex-display { font-size:16px; margin:12px 0; }
+.academic .ocformer-formulation-layout .katex { font-size:1em; }
+.academic .ocformer-control section + section { border-top:1px solid var(--line); margin-top:24px; padding-top:18px; }
+.academic .ocformer-representation .interactive-figure { height:182px; }
+.academic .ocformer-representation .recorded-frame, .academic .ocformer-representation .figure-fallback { height:140px; }
+.academic .ocformer-representation .interaction-note { display:none; }
+.academic .ocformer-representation .plot-controls { font-size:12px; gap:8px; }
+.academic .ocformer-network { margin-top:14px; }
+.academic .ocformer-network .figure img { height:164px; }
+
+.academic .ocformer-method-page { display:grid; gap:32px; align-items:start; }
+.academic .ocformer-pmp-layout { grid-template-columns:1fr 1fr; }
+.academic .ocformer-correction-layout { grid-template-columns:1fr 1.15fr; }
+.academic .ocformer-method-page h3 { font-size:16px; font-weight:600; margin:0 0 8px; }
+.academic .ocformer-method-page p { font-size:14px; line-height:1.45; margin:8px 0; }
+.academic .ocformer-method-page .katex-display { font-size:16px; margin:12px 0; }
+.academic .ocformer-method-page .katex { font-size:1em; }
+.academic .ocformer-method-section { margin-top:22px; }
+.academic .ocformer-latent-reference .interactive-figure { height:224px; }
+.academic .ocformer-latent-reference .recorded-frame, .academic .ocformer-latent-reference .figure-fallback { height:182px; }
+.academic .ocformer-latent-reference .interaction-note { display:none; }
+.academic .ocformer-latent-reference .plot-controls { font-size:12px; gap:8px; }
+.academic .ocformer-correction-layout .figure img { height:195px; }
+
+.academic .ocformer-scaling-layout { display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start; }
+.academic .ocformer-scaling-results h3 { font-size:16px; font-weight:600; margin:0 0 8px; }
+.academic .ocformer-scaling-results p { font-size:14px; line-height:1.45; margin:12px 0; }
+.academic .ocformer-scaling-results table { font-size:14px; margin:18px 0; table-layout:fixed; }
+.academic .ocformer-scaling-results th { font-size:12px; text-transform:none; letter-spacing:0; white-space:nowrap; }
+.academic .ocformer-scaling-results th, .academic .ocformer-scaling-results td { padding:8px 4px; }
+.academic .ocformer-scaling-results .katex { font-size:1em; }
+
+/* Boundary transfer and 3D examples, following the chapter's academic typography. */
+.academic .ocformer-transfer-layout { grid-template-columns:4fr 6fr; }
+.academic .ocformer-transfer-layout .ocformer-method-section { margin-top:24px; }
+.academic .ocformer-3d-summary { font-size:14px; line-height:1.45; margin:16px 0 0; }
+
+.academic .ocformer-transfer-metrics { margin-top:16px; }
+.academic .ocformer-transfer-metrics table { font-size:14px; table-layout:fixed; margin:8px 0; }
+.academic .ocformer-transfer-metrics th { font-size:12px; text-transform:none; letter-spacing:0; white-space:nowrap; }
+.academic .ocformer-transfer-metrics th, .academic .ocformer-transfer-metrics td { padding:8px 6px; }
+.academic .ocformer-transfer-metrics p { font-size:12px; line-height:1.45; }

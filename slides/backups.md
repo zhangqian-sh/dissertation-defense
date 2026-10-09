@@ -130,15 +130,47 @@ Metric: $\sqrt{\sum\|\hat v-v\|^2}/\sqrt{\sum\|v\|^2}$ · total test relative RM
 
 ---
 chapter: '7'
-section: Backup · PositionalOCFormer
-source: 'Thesis Chapter 7 · fig:oc:3d-room · M=100, per-instance optimization'
+section: Backup · OCFormer inference regimes
+source: 'Thesis Chapter 7 · tab:oc:regimes · Protocol-specific timing, not a single universal latency'
 ---
 
-# A confined 3D room requires agent-specific roles
+# Three regimes answer different deployment questions
 
-<div class="four" style="margin-top:30px"><figure class="figure"><img src="/figures/ch07/room3d_t0.png" alt="3D room initial positions"><figcaption>t=0</figcaption></figure><figure class="figure"><img src="/figures/ch07/room3d_t1.png" alt="3D room trajectories one third time"><figcaption>t=T/3</figcaption></figure><figure class="figure"><img src="/figures/ch07/room3d_t2.png" alt="3D room trajectories two thirds time"><figcaption>t=2T/3</figcaption></figure><figure class="figure"><img src="/figures/ch07/room3d_t3.png" alt="3D room terminal positions"><figcaption>t=T</figcaption></figure></div>
-<div class="takeaway">Positional embeddings support the asymmetric room benchmark. This is not amortized 3D inference.</div>
+<div class="density">
+<table><thead><tr><th>Regime</th><th>Online work</th><th>Boundary coverage</th></tr></thead><tbody><tr><td>Per-instance</td><td>≈20 min optimization</td><td>One fixed pair</td></tr><tr><td>Transfer</td><td>Seconds of adaptation</td><td>Structured / small perturbations</td></tr><tr><td>Amortized</td><td>≈220 ms forward pass</td><td>Held-out in-distribution pairs</td></tr></tbody></table><div class="three"><div class="detail-box"><h2>Per-instance</h2><p class="small">New pair → initialize model → Adam/L-BFGS → trajectory</p><p class="small">Physics losses fit one latent curve.</p></div><div class="detail-box"><h2>Transfer</h2><p class="small">Trained model → changed pair → fine-tune → trajectory</p><p class="small">Freeze the trained backbone; adapt wrapper maps with L-BFGS.</p></div><div class="detail-box"><h2>Amortized</h2><p class="small">Many pairs offline → fixed model → new pair → trajectory</p><p class="small">No online weight updates within the tested distribution.</p></div></div><p class="protocol">Protocol-specific source timings · per-instance 3D examples do not inherit amortized 2D latency · transfer depends on perturbation size</p>
+</div>
 
-<p class="protocol">Single-integrator motion · room/obstacle clearance and pairwise separation · positional embeddings break agent interchangeability for asymmetric roles · four saved times, not a continuous-time certificate.</p>
+<!-- Timing is reproduced from the source protocol. The collection/export job times are unrelated to inference performance. -->
 
-<!-- These static source panels retain the actual room geometry. The required interactive scene uses the separate sphere benchmark. -->
+---
+chapter: '7'
+section: Backup · OCFormer amortized generalization
+source: 'Thesis Chapter 7 · tab:oc:amortized · 100 rotated training pairs; JIT forward-pass timing over 100 runs'
+---
+
+# Fast inference does not guarantee feasibility
+
+<div class="density">
+<p class="protocol">Held-out rotations of 2D antipodal configurations · 100 rotated training pairs · JIT timing over 100 runs</p><table><thead><tr><th>M</th><th>Test cost</th><th>LB gap</th><th>Feasible</th><th>Inference</th></tr></thead><tbody><tr><td>8</td><td>0.4053</td><td>1.3%</td><td>100%</td><td>218.6 ± 1.3 ms</td></tr><tr><td>16</td><td>0.8399</td><td>5.0%</td><td>75%</td><td>220.9 ± 1.2 ms</td></tr></tbody></table><div class="density-grid ">
+<div class="detail-box"><h2>Cost relative to free motion</h2>
+<div class="math-panel">
+
+$$
+J_{LB}=\sum_i\frac{\|x_i^T-x_i^0\|^2}{2T},\quad \mathrm{gap}=\frac{J-J_{LB}}{J_{LB}}
+$$
+
+</div>
+<p class="small">Lower bound omits collisions; the gap is not against the unknown constrained optimum.</p></div>
+<div class="detail-box"><h2>Sampled feasibility</h2>
+<div class="math-panel">
+
+$$
+c_{min}=\min_{i<j,t_k}(\|x_i(t_k)-x_j(t_k)\|-2r)
+$$
+
+</div>
+<p class="small">Feasible fraction: held-out boundary pairs with positive minimum clearance. At M = 16, one quarter fails this test.</p></div>
+</div><p class="protocol">Demonstrated: zero-shot rotated pairs · open: arbitrary boundaries, variable M, amortized 3D · timing ± source SD</p>
+</div>
+
+<!-- Feasibility is the fraction of held-out pairs with positive minimum inter-agent clearance. Keep the lower-bound denominator explicit. Full cost uncertainty is retained in the thesis table and backup provenance. -->

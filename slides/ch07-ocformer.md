@@ -16,178 +16,243 @@ Move from field reconstruction to a separate optimal-control study. The trajecto
 
 ---
 chapter: '7'
-section: OCFormer · Optimal-control formulation
-source: 'Thesis Chapter 7 · Problem formulation and Hamiltonian system'
+section: OCFormer · Control problem, PMP and latent dynamics
+source: 'Thesis Chapter 7 · Abstract control problem, penalized PMP equations,
+  decoupled Hamiltonian and straight-line latent solution'
 ---
 
-# Coordinated motion under coupled constraints
+# Optimal Control with Constraints
 
-<div class="density">
-<div class="density-grid ">
-<div class="detail-box"><h2>Single-integrator benchmarks</h2>
-<div class="math-panel">
+<div class="ocformer-pmp-layout ocformer-method-page">
+<div>
+<section>
+<h3>Constrained optimal control</h3>
 
 $$
-\min_{x,u}\ J=\int_0^T\frac12\sum_{i=1}^{M}\|u_i(t)\|^2\,dt
+\min_{x,u}\;\int_0^T\ell(x(t),u(t))\,dt+\Phi(x(0),x(T))
 $$
 
+$$
+\begin{aligned}
+\dot x(t)&=f(x(t),u(t)),\\
+x(0)&\in X_0,\qquad x(T)\in X_T,\\
+h(x(t))&\ge0,\qquad t\in[0,T].
+\end{aligned}
+$$
+
+<p><InlineMath tex="x" /> is the joint state, <InlineMath tex="u" /> the control, <InlineMath tex="\ell" /> the running cost, and <InlineMath tex="\Phi" /> the endpoint cost. <InlineMath tex="h" /> collects inter-agent separation and obstacle-clearance constraints.</p>
+</section>
+<section class="ocformer-method-section">
+<h3>Pontryagin's maximum principle (PMP)</h3>
+<p>Add a smooth constraint penalty <InlineMath tex="U(h(x))" /> to the running cost. Maximize over the control to obtain the reduced Hamiltonian:</p>
+
+$$
+\begin{aligned}
+H_0(x,p)&=\max_u\{p\cdot f(x,u)-\ell(x,u)\},\\
+\bar H(x,p)&=H_0(x,p)-U(h(x)).
+\end{aligned}
+$$
+
+$$
+\dot x=\nabla_p\bar H,\qquad \dot p=-\nabla_x\bar H.
+$$
+
+<p>The costate <InlineMath tex="p" /> enters through PMP. For fixed endpoints, these equations define a coupled two-point boundary-value problem for the penalized objective.</p>
+</section>
+</div>
+<div class="ocformer-latent-reference">
+<section>
+<h3>Intuition: a tractable latent system by temoving interactions</h3>
+<p>For separable agent costs and dynamics, dropping <InlineMath tex="U" /> leaves a decoupled Hamiltonian <InlineMath tex="H_0" /> in latent coordinates <InlineMath tex="(y,q)" />.</p>
+
+$$
+\dot y=\nabla_q H_0(y,q),\qquad
+\dot q=-\nabla_y H_0(y,q).
+$$
+
+<p>For <InlineMath tex="\dot x_i=u_i" /> and quadratic control effort:</p>
+
+$$
+H_0(y,q)=\tfrac12\|q\|^2,\qquad \dot y=q,\quad\dot q=0,
+$$
+
+$$
+q=\frac{x^T-x^0}{T},\qquad y(t)=x^0+tq.
+$$
+
+<RecordedSequence name="latent" label="Latent and optimized trajectory time" caption="" />
+<p>Straight latent motion provides a reference for the interacting physical trajectory. The next step is to parameterize its correction.</p>
+</section>
+</div>
 </div>
 
-<div class="math-panel">
-
-$$
-\dot x_i=u_i,\qquad x_i(0)=x_i^0,\quad x_i(T)=x_i^T
-$$
-
-</div>
-<p class="small">Joint state dimension Md; interaction constraints couple otherwise independent agents.</p></div>
-<div class="detail-box"><h2>Geometry and feasibility</h2><svg class="geometry-sketch" viewBox="0 0 430 165" role="img" aria-label="Schematic of two agents crossing from initial to terminal positions with a central obstacle"><rect x="15" y="12" width="400" height="140" fill="#f6f5f4" stroke="#98A4AE"/><circle cx="215" cy="82" r="29" fill="#dce1df" stroke="#596361"/><path d="M55 50 Q215 -15 375 113" fill="none" stroke="#4E3629" stroke-width="3"/><path d="M55 113 Q215 185 375 50" fill="none" stroke="#ED1C24" stroke-width="3"/><g fill="white" stroke="#4E3629" stroke-width="3"><circle cx="55" cy="50" r="7"/><circle cx="55" cy="113" r="7"/></g><g fill="#4E3629"><rect x="369" y="107" width="12" height="12"/><rect x="369" y="44" width="12" height="12"/></g><text x="27" y="33">Initial</text><text x="345" y="33">Terminal</text><text x="179" y="87">Obstacle</text></svg>
-<div class="math-panel">
-
-$$
-\begin{aligned}h_{ij}(x)&=\|x_i-x_j\|-2r_{agent}\ge0\\h_{ball}(x)&=\|x_i-c\|-R_{excl}\ge0\end{aligned}
-$$
-
-</div>
-<p class="small">Ball obstacle: center c, agent-center exclusion radius R_excl. Other geometries use their signed clearance; sketch is conceptual.</p></div>
-</div><p class="protocol">2D antipodal benchmark: T = 10 · agent radii 0.01 or 0.02 by configuration · trajectory cost and feasibility are separate outcomes</p>
-</div>
-
-<!-- This is a separate optimal-control study. Do not imply its input fields came from the reconstruction models. -->
+<!--
+The smooth PMP equations describe the penalized problem, not exact hard-state-constrained PMP. Removing U decouples agents for the separable costs and dynamics in this study. The animation uses saved optimized trajectories.
+-->
 
 ---
 chapter: '7'
-section: OCFormer · Latent and physical coordinates
-source: 'Thesis Chapter 7 · fig:oc:latent-physical; fig:oc:architecture · State–costate transformation'
+section: OCFormer · Residual trajectory map and physics-informed training
+source: 'Thesis Chapter 7 · Residual state–costate map, fig:oc:architecture, Hamiltonian residuals and endpoint matching'
 ---
 
-# Learn a map from latent to physical trajectories
+# OCFormer: Learn the Trajectory Correction
 
-<div class="cols" style="margin-top:15px"><RecordedSequence name="latent" label="Latent and optimized trajectory time" caption="Left: straight endpoint reference. Right: saved L-BFGS optimized trajectories from the paper’s run; not a hand-designed detour." /><div><figure class="figure"><img src="/figures/ch07/ocformer-architecture.png" alt="OCFormer attention based transformation architecture"><figcaption>Attention-based architecture for interacting agents.</figcaption></figure>
-<div class="math-panel">
-
-$$
-\begin{aligned}(x_\theta,p_\theta)&=\varphi_\theta(y,q)\\y(t)&=x^0+tq,\quad q=(x^T-x^0)/T\end{aligned}
-$$
-
-</div></div></div>
-<div class="takeaway">Learned inverse-map ansatz; diffeomorphism remains an assumption. OCFormer does not enforce symplecticity.</div>
-
-<!-- OCFormer is permutation-equivariant, not asserted symplectic. The latent-map motivation includes a diffeomorphism assumption; preserve that distinction. -->
-
----
-chapter: '7'
-section: OCFormer · Physics-informed training
-source: 'Thesis Chapter 7 · fig:oc:training · Hamiltonian residuals and boundary matching; eq:oc:loss'
----
-
-# Train the trajectory map with physics and boundaries
-
-<div class="density">
-<div class="density-grid ">
-<figure class="figure"><img style="height:285px" src="/figures/ch07/training-flowchart.png" alt="Latent boundary data → state–costate map → automatic differentiation"><figcaption>Latent boundary data → state–costate map → automatic differentiation</figcaption></figure>
-<div class="detail-box"><h2>Residuals and endpoint matching</h2>
-<div class="math-panel">
+<div class="ocformer-correction-layout ocformer-method-page">
+<div>
+<section>
+<h3>Parameterize the state–costate trajectory</h3>
 
 $$
-r_x=\dot x_\theta-\nabla_p\bar H,\qquad r_p=\dot p_\theta+\nabla_x\bar H
+(x_\theta,p_\theta)=\varphi_\theta(y,q)
+=(y,q)+\Delta_\theta(y,q).
 $$
 
+<p>The known latent solution supplies <InlineMath tex="(y(t),q(t))" />. The network learns the displacement and costate correction required by interactions.</p>
+</section>
+<section class="ocformer-method-section">
+<h3>Network structure</h3>
+<figure class="figure"><img src="/figures/ch07/ocformer-architecture.png" alt="Agent-token embeddings, alternating attention updates and residual connections map latent states and costates to physical states and costates"></figure>
+<p>Each agent is a token. Self-attention couples agents; alternating updates act on the two streams, and identity skips implement the residual map.</p>
+<p>The inverse-map interpretation assumes a diffeomorphism; invertibility and symplecticity are not enforced by the network.</p>
+</section>
+</div>
+<div>
+<section>
+<h3>Enforce the full Hamiltonian equations</h3>
+<p>Evaluate the map at collocation times <InlineMath tex="t_j" /> and differentiate through it along the latent trajectory:</p>
+
+$$
+\begin{aligned}
+r_x(t)&=\dot x_\theta(t)-\nabla_p\bar H(x_\theta(t),p_\theta(t)),\\
+r_p(t)&=\dot p_\theta(t)+\nabla_x\bar H(x_\theta(t),p_\theta(t)).
+\end{aligned}
+$$
+
+$$
+\mathcal L_{\mathrm{PMP}}=\frac1N\sum_{j=1}^{N}
+\bigl(\|r_x(t_j)\|^2+\|r_p(t_j)\|^2\bigr).
+$$
+
+</section>
+<section class="ocformer-method-section">
+<h3>Match endpoints and train the correction</h3>
+
+$$
+\mathcal L_{\mathrm{bdry}}=
+\|x_\theta(0)-x^0\|^2+\|x_\theta(T)-x^T\|^2,
+$$
+
+$$
+\mathcal L=\mathcal L_{\mathrm{PMP}}
++\lambda_{\mathrm{bdry}}\mathcal L_{\mathrm{bdry}}
++\mathcal L_{\mathrm{aux}}.
+$$
+
+<p>The collision and obstacle penalty remains inside <InlineMath tex="\bar H" />; benchmark-specific auxiliary losses can add velocity and constraint terms.</p>
+<p>Optimize with Adam, then L-BFGS, using boundary data and collocation times rather than labeled optimal trajectories.</p>
+</section>
+</div>
 </div>
 
-<div class="math-panel">
-
-$$
-\mathcal L_{PINN}=\frac1N\sum_i(\|r_x(t_i)\|^2+\|r_p(t_i)\|^2)
-$$
-
-</div>
-
-<div class="math-panel">
-
-$$
-\mathcal L_{bdry}=\|x_\theta(0)-x^0\|^2+\|x_\theta(T)-x^T\|^2
-$$
-
-</div>
-<p class="small">Total loss adds λ-weighted boundary matching and benchmark-specific velocity/obstacle terms.</p></div>
-</div><div class="step-chain"><span>Boundary pair + collocation times</span><b>→</b><span>Penalized Hamiltonian H̄</span><b>→</b><span>Adam → L-BFGS</span></div><p class="protocol">No labeled trajectories · constraint barrier enters H̄ · finite residuals do not certify global optimality or continuous-time feasibility</p>
-</div>
-
-<!-- Explain the representation and training objective before showing speed claims. A fast forward map does not by itself establish generalization to arbitrary boundary conditions. -->
+<!-- L_aux denotes the aggregate of benchmark-specific auxiliary terms and their weights. Hamiltonian residuals are necessary-condition targets for the penalized problem; finite loss does not certify global optimality or continuous-time feasibility. -->
 
 ---
 chapter: '7'
 section: OCFormer · Baseline scaling
-source: 'Thesis Chapter 7 · tab:oc:sympocnet; tab:oc:2d-scaling · 2D antipodal configurations'
+source: 'Thesis Chapter 7 · tab:oc:sympocnet; tab:oc:2d-scaling · 2D antipodal
+  configurations'
 ---
 
-# Scaling changes the cost of coordinated motion
+# Example: Drones in 2d room
 
-<div class="density">
-<div class="density-grid ">
-<div class="detail-box"><h2>Matched baseline · 2D antipodal</h2><table><thead><tr><th>M</th><th>OCFormer J</th><th>SympOCNet J</th></tr></thead><tbody><tr><td>4</td><td>0.2003</td><td>0.2001</td></tr><tr><td>8</td><td>0.4036</td><td>0.4046</td></tr><tr><td>16</td><td>0.8307</td><td>0.8345</td></tr><tr><td>32</td><td>1.2531</td><td>1.4413</td></tr><tr><td>128</td><td>5.1424</td><td>infeasible</td></tr></tbody></table><p class="small">Same training budget in the baseline comparison; ≈13% lower cost at M = 32.</p></div>
-<div class="detail-box"><h2>Source scaling protocol</h2><table><thead><tr><th>M</th><th>Gap to JLB</th><th>Min. clearance</th></tr></thead><tbody><tr><td>4</td><td>0.2%</td><td>1.3×10⁻⁴</td></tr><tr><td>8</td><td>0.9%</td><td>1.5×10⁻⁴</td></tr><tr><td>16</td><td>3.8%</td><td>1.5×10⁻⁴</td></tr><tr><td>32</td><td>8.4%</td><td>1.5×10⁻⁴</td></tr><tr><td>128</td><td>9.3%</td><td>1.2×10⁻⁴</td></tr></tbody></table><p class="small">Positive sampled margins up to 128 agents; lower cost alone does not establish feasibility.</p></div>
-</div><p class="protocol">Per-instance optimization ≈20 min (regime-level timing, not per-row timings) · scaling margins evaluated on 5000 times · agent radius changes with M</p>
+<div class="ocformer-scaling-layout">
+<div><SwarmScaling /></div>
+<div class="ocformer-scaling-results">
+<h3>2D antipodal configurations</h3>
+<p>Drones move to antipodal targets over <InlineMath tex="T=10" /> without collision.</p>
+<table>
+<colgroup><col style="width:9%"><col style="width:21%"><col style="width:24%"><col style="width:22%"><col style="width:24%"></colgroup>
+<thead><tr><th><InlineMath tex="M" /></th><th>OCFormer cost</th><th>SympOCNet cost</th><th>Lower bound gap</th><th>Minimum clearance</th></tr></thead>
+<tbody>
+<tr><td>8</td><td>0.4036</td><td>0.4046</td><td>0.9%</td><td><InlineMath tex="1.5\times10^{-4}" /></td></tr>
+<tr><td>16</td><td>0.8307</td><td>0.8345</td><td>3.8%</td><td><InlineMath tex="1.5\times10^{-4}" /></td></tr>
+<tr><td>32</td><td>1.2531</td><td>1.4413</td><td>8.4%</td><td><InlineMath tex="1.5\times10^{-4}" /></td></tr>
+<tr><td>128</td><td>5.1424</td><td>Infeasible</td><td>9.3%</td><td><InlineMath tex="1.2\times10^{-4}" /></td></tr>
+</tbody>
+</table>
+<p>Lower bound gap is relative to unconstrained optimal control. At 32 agents, OCFormer lowers cost by approximately 13%.</p>
+<p>Drones radius: 0.02 for 8/16/32; 0.01 for 128.</p>
+</div>
 </div>
 
-<!-- Values must match the source table. Cost gaps elsewhere are relative to a stated lower bound, not the unknown constrained optimum. -->
+<!--
+Merged existing comparison and scaling tables by M, preserving all five rows including M=4. The four native canvas animations use saved best_pred_lbfgs trajectories for M=8/16/32/128; they do not recompute or certify the table's 5000-time clearance results.
+-->
 
 ---
 chapter: '7'
-section: OCFormer · Inference regimes
-source: 'Thesis Chapter 7 · tab:oc:regimes · Protocol-specific timing, not a single universal latency'
+section: OCFormer · Boundary-condition perturbations
+source: 'Thesis Chapter 7 · Frozen-backbone transfer; archived 8/16-agent perturbation trajectories and boundary_0000 training logs'
 ---
 
-# Three regimes answer different deployment questions
+# Perturb Initial and Terminal Conditions
 
-<div class="density">
-<table><thead><tr><th>Regime</th><th>Online work</th><th>Boundary coverage</th></tr></thead><tbody><tr><td>Per-instance</td><td>≈20 min optimization</td><td>One fixed pair</td></tr><tr><td>Transfer</td><td>Seconds of adaptation</td><td>Structured / small perturbations</td></tr><tr><td>Amortized</td><td>≈220 ms forward pass</td><td>Held-out in-distribution pairs</td></tr></tbody></table><div class="three"><div class="detail-box"><h2>Per-instance</h2><p class="small">New pair → initialize model → Adam/L-BFGS → trajectory</p><p class="small">Physics losses fit one latent curve.</p></div><div class="detail-box"><h2>Transfer</h2><p class="small">Trained model → changed pair → fine-tune → trajectory</p><p class="small">Freeze the trained backbone; adapt wrapper maps with L-BFGS.</p></div><div class="detail-box"><h2>Amortized</h2><p class="small">Many pairs offline → fixed model → new pair → trajectory</p><p class="small">No online weight updates within the tested distribution.</p></div></div><p class="protocol">Protocol-specific source timings · per-instance 3D examples do not inherit amortized 2D latency · transfer depends on perturbation size</p>
+<div class="ocformer-transfer-layout ocformer-method-page">
+<div>
+<section>
+<h3>New endpoints, the same control problem</h3>
+
+$$
+x(0)=x^0+\delta_0,\qquad x(T)=x^T+\delta_T.
+$$
+
+<p>A small change to the boundary data changes the whole interacting trajectory. Independently displaced agents cannot generally be matched by one rigid transformation.</p>
+</section>
+<section class="ocformer-method-section">
+<h3>Adapt the map, retain the backbone</h3>
+
+$$
+\varphi_{\mathrm{new}}
+=\mathcal W_{\mathrm{fwd}}\circ\varphi_{\theta^*}
+\circ\mathcal W_{\mathrm{inv}}.
+$$
+
+<p>Freeze the trained OCFormer. Fit lightweight affine wrappers and bounded per-agent corrections using the Hamiltonian residuals and the new endpoint loss.</p>
+</section>
+<section class="ocformer-method-section">
+<h3>Transfer across swarm sizes</h3>
+<p>The two recorded cases perturb initial positions while keeping terminal targets fixed: <InlineMath tex="\delta_T=0" />. Fit the wrappers separately for each boundary configuration. These are fine-tuned transfer results, not amortized inference.</p>
+</section>
 </div>
-
-<!-- Timing is reproduced from the source protocol. The collection/export job times are unrelated to inference performance. -->
+<div class="ocformer-transfer-results">
+<OCFormerExamples mode="perturbation" />
+<section class="ocformer-transfer-metrics">
+<h3>Fine-tuned transfer results</h3>
+<table>
+<colgroup><col style="width:8%"><col style="width:20%"><col style="width:17%"><col style="width:28%"><col style="width:27%"></colgroup>
+<thead><tr><th><InlineMath tex="M" /></th><th>Max. shift</th><th>Cost</th><th>Min. clearance</th><th>Fine-tuning time</th></tr></thead>
+<tbody>
+<tr><td>8</td><td>0.0381</td><td>0.4130</td><td><InlineMath tex="-4.15\times10^{-4}" /></td><td>44.6 s</td></tr>
+<tr><td>16</td><td>0.0388</td><td>0.8277</td><td><InlineMath tex="8.29\times10^{-5}" /></td><td>42.9 s</td></tr>
+</tbody>
+</table>
+<p>Max. shift is <InlineMath tex="\|\delta_0\|_\infty" />. Clearance is sampled at 200 times; negative values indicate overlap. Time includes both optimizers and startup.</p>
+</section>
+</div>
+</div>
 
 ---
 chapter: '7'
-section: OCFormer · Amortized generalization
-source: 'Thesis Chapter 7 · tab:oc:amortized · 100 rotated training pairs; JIT forward-pass timing over 100 runs'
+section: OCFormer · Three-dimensional obstacle navigation
+source: 'Archived room_3d positional mean and ball_3d M16 trajectories; boundary
+  data in data/ball_3d/n=16'
 ---
 
-# Fast inference does not guarantee feasibility
+# Example: Drones in 3d room
 
-<div class="density">
-<p class="protocol">Held-out rotations of 2D antipodal configurations · 100 rotated training pairs · JIT timing over 100 runs</p><table><thead><tr><th>M</th><th>Test cost</th><th>LB gap</th><th>Feasible</th><th>Inference</th></tr></thead><tbody><tr><td>8</td><td>0.4053</td><td>1.3%</td><td>100%</td><td>218.6 ± 1.3 ms</td></tr><tr><td>16</td><td>0.8399</td><td>5.0%</td><td>75%</td><td>220.9 ± 1.2 ms</td></tr></tbody></table><div class="density-grid ">
-<div class="detail-box"><h2>Cost relative to free motion</h2>
-<div class="math-panel">
+<OCFormerExamples mode="three-d" />
 
-$$
-J_{LB}=\sum_i\frac{\|x_i^T-x_i^0\|^2}{2T},\quad \mathrm{gap}=\frac{J-J_{LB}}{J_{LB}}
-$$
-
-</div>
-<p class="small">Lower bound omits collisions; the gap is not against the unknown constrained optimum.</p></div>
-<div class="detail-box"><h2>Sampled feasibility</h2>
-<div class="math-panel">
-
-$$
-c_{min}=\min_{i<j,t_k}(\|x_i(t_k)-x_j(t_k)\|-2r)
-$$
-
-</div>
-<p class="small">Feasible fraction: held-out boundary pairs with positive minimum clearance. At M = 16, one quarter fails this test.</p></div>
-</div><p class="protocol">Demonstrated: zero-shot rotated pairs · open: arbitrary boundaries, variable M, amortized 3D · timing ± source SD</p>
-</div>
-
-<!-- Feasibility is the fraction of held-out pairs with positive minimum inter-agent clearance. Keep the lower-bound denominator explicit. Full cost uncertainty is retained in the thesis table and backup provenance. -->
-
----
-chapter: '7'
-section: OCFormer · Two- and three-dimensional trajectories
-source: 'Thesis Chapter 7 · 3D ball (16 agents) / 2D room (128 agents) · Saved per-instance L-BFGS trajectories; 200 frames each'
----
-
-# Locate the encounter that determines clearance
-
-<SwarmExamples />
-
-<!-- Demo: play the motion, pause, rotate the view, then choose Closest pair. Read its time and margin together. The sphere is an agent-center exclusion zone of radius 0.1; agent radius is 0.02 for pairwise separation. Only sampled position constraints are checked, not continuous-time safety. -->
+<!--
+ch7-34 metrics: boundary_0000 best_pred_lbfgs; final training-log cost/constraint, Adam plus L-BFGS elapsed time. 8: 29.88+14.71 s; 16: 30.14+12.78 s. Max. shifts measured from boundary minus reference.
+-->
