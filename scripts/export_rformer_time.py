@@ -16,6 +16,7 @@ OUT = Path(os.environ.get('RFORMER_OUTPUT', ROOT / 'data/staging' / f'rformer-ti
 OUT.mkdir(parents=True, exist_ok=True)
 sha = lambda p: hashlib.file_digest(open(p, 'rb'), 'sha256').hexdigest()
 for case, run, channel in [('vortex', 'case1', 1), ('jet', 'case4', 1)]:
+    if os.environ.get('RFORMER_CASE') and case != os.environ['RFORMER_CASE']: continue
     src = SOURCE / f'results/{run}/run-001/test.h5'
     with h5py.File(src) as f:
         n_obs = f['x'].shape[1]
@@ -60,7 +61,21 @@ for case, run, channel in [('vortex', 'case1', 1), ('jet', 'case4', 1)]:
     ref, pred, coords = ref[order], pred[order], coords[order]
     limits = np.maximum(np.max(np.abs(ref),axis=(0,1)),np.max(np.abs(pred),axis=(0,1)))
     assert np.isfinite(ref).all() and np.isfinite(pred).all()
-    gx, gy = np.meshgrid(np.linspace(-4,12,384),np.linspace(-4,4,192))
+    if case == 'vortex':
+        from scipy.spatial import ConvexHull
+        # Crop to a common rectangle inside the data support, avoiding griddata's
+        # white NaN rim. Do not fill unmeasured boundary regions by extrapolation.
+        np.testing.assert_array_equal(coords[:,:,:2],np.broadcast_to(coords[0,:,:2],coords[:,:,:2].shape))
+        xy=coords[0,:,:2]; lower=xy.min(0).astype(float); upper=xy.max(0).astype(float)
+        hull=ConvexHull(xy); center=(lower+upper)/2; half=(upper-lower)/2
+        for shrink in np.linspace(1.,.9,1001):
+            lo=center-half*shrink; hi=center+half*shrink
+            corners=np.array([[lo[0],lo[1]],[lo[0],hi[1]],[hi[0],lo[1]],[hi[0],hi[1]]])
+            if np.all(corners @ hull.equations[:,:2].T+hull.equations[:,2] < -1e-6): break
+        else: raise ValueError('No supported display rectangle')
+        extent=[float(lo[0]),float(hi[0]),float(lo[1]),float(hi[1])]
+        print('Supported vortex display bounds:',extent,flush=True)
+    gx, gy = np.meshgrid(np.linspace(extent[0],extent[1],384),np.linspace(extent[2],extent[3],192))
     entries = []
     for i, (x,a,b) in enumerate(zip(coords,ref,pred)):
         if case == 'vortex':
@@ -72,6 +87,7 @@ for case, run, channel in [('vortex', 'case1', 1), ('jet', 'case4', 1)]:
                         im=ax.scatter(x[:n_obs,0],x[:n_obs,1],c=a[:n_obs,c],s=4,cmap='RdBu_r',vmin=-limits[c],vmax=limits[c],linewidths=0)
                     else:
                         values=griddata(x[:,:2],(a if j==0 else b)[:,c],(gx,gy),method='linear')
+                        assert np.isfinite(values).all(), 'Display rectangle extends outside measured support'
                         values[gx*gx+gy*gy<.25]=np.nan
                         im=ax.imshow(values,origin='lower',extent=extent,cmap='RdBu_r',vmin=-limits[c],vmax=limits[c],interpolation='none',aspect='equal')
                     ax.set_xlim(extent[:2]);ax.set_ylim(extent[2:]);ax.set_aspect('equal')
@@ -98,7 +114,7 @@ for case, run, channel in [('vortex', 'case1', 1), ('jet', 'case4', 1)]:
         path=OUT/f'{case}-{i:03d}.png'
         fig.savefig(path,dpi=160,facecolor='white'); plt.close(fig)
         entries.append({'path':str(path),'sha256':sha(path)})
-    meta={'case':case,'source':str(src),'source_sha256':sha(src),'reference_source':str(truth_source),'reference_sha256':sha(truth_source),'times':times.tolist(),'source_rows':order.tolist(),'frames':entries,'qualifier':qualifier,'columns':['Reference','Observations','RFormer'],'rows':['u','v','p'] if case=='vortex' else ['velocity'],'spatial_display':'Vortex: linear interpolation for full fields; observations are measured points only. Jet: native (u,v) arrows in |z|<5 slab; no spatial interpolation; same thinned locations for reference and RFormer. No temporal interpolation.','field_limits':limits.tolist(),'arrow_scale':.08 if case=='jet' else None,'slurm_job':os.environ['SLURM_JOB_ID']}
+    meta={'case':case,'source':str(src),'source_sha256':sha(src),'reference_source':str(truth_source),'reference_sha256':sha(truth_source),'times':times.tolist(),'source_rows':order.tolist(),'frames':entries,'qualifier':qualifier,'columns':['Reference','Observations','RFormer'],'rows':['u','v','p'] if case=='vortex' else ['velocity'],'spatial_display':'Vortex: linear interpolation for full fields; observations are measured points only. Jet: native (u,v) arrows in |z|<5 slab; no spatial interpolation; same thinned locations for reference and RFormer. No temporal interpolation.','field_limits':limits.tolist(),'display_extent':extent,'arrow_scale':.08 if case=='jet' else None,'slurm_job':os.environ['SLURM_JOB_ID']}
     (OUT/f'{case}.json').write_text(json.dumps(meta,indent=2)+'\n')
     publish(case,meta,lambda path:OUT/Path(path).name)
     with open(f'/tmp/{os.environ["USER"]}.agent-lock','a') as lock:

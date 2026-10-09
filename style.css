@@ -451,6 +451,30 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .et-fidelity-plots .figure:nth-child(n+3) img { transform:translateX(-6.12px) scaleX(0.99655); }
 .academic .et-fidelity-plots .figure figcaption { font-size:16px; color:var(--ink); text-align:center; margin-top:4px; }
 
+/* ch6-25: function-space definition beside the token realization and a Q&A example. */
+.academic .rformer-reconstruction-layout { gap:28px; }
+.academic .rformer-reconstruction-layout .katex-display { font-size:16px; }
+.academic .rformer-reconstruction-layout .rformer-learning-note { font-size:12px; color:var(--muted); line-height:1.45; margin:12px 0 0; }
+.academic .rformer-reconstruction-example { min-width:0; }
+.academic .rformer-architecture { margin:0; }
+.academic .rformer-architecture img { display:block; width:100%; height:282px; object-fit:contain; }
+.academic .rformer-architecture figcaption { font-size:16px; text-align:center; margin:8px 0 0; }
+.academic .rformer-weather-example { margin-top:16px; padding:14px 16px 16px; background:#f4f5f4; font-size:14px; line-height:1.4; }
+.academic .rformer-weather-heading { display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:14px; }
+.academic .rformer-weather-heading h2 { margin:0; }
+.academic .rformer-weather-key { display:flex; gap:14px; font-size:12px; color:var(--muted); }
+.academic .rformer-weather-key > span { display:flex; align-items:center; gap:4px; }
+.academic .rformer-weather-key i { display:inline-block; width:10px; height:10px; }
+.academic .rformer-position-key, .academic .rformer-weather-position { background:#e3ebf4; }
+.academic .rformer-value-key, .academic .rformer-weather-value { background:#f3e4cb; }
+.academic .rformer-weather-sequence { display:flex; justify-content:space-between; gap:10px; align-items:flex-end; }
+.academic .rformer-weather-group { text-align:center; }
+.academic .rformer-weather-group > strong { display:block; font-size:14px; margin-bottom:8px; }
+.academic .rformer-weather-context { display:flex; gap:10px; }
+.academic .rformer-weather-pair { display:inline-flex; gap:2px; }
+.academic .rformer-weather-position, .academic .rformer-weather-value { display:inline-block; padding:8px 9px; white-space:nowrap; font-size:16px; }
+.academic .rformer-weather-arrow { font-size:20px; line-height:38px; color:var(--muted); }
+
 .academic .wsg-performance p.wsg-runtimes { margin-top:9px; }
 
 /* ch4-17: keep the method notes clear of the footer rule. */
@@ -458,3 +482,30 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .wsg-method .darcy-error-bars { height:140px; }
 .academic .wsg-method .katex-display { margin:6px 0; }
 .academic .wsg-method p.wsg-runtimes { margin-top:4px; }
+
+/* ch6-26: setup and station locations beside synchronized daily reconstructions. */
+.academic .rformer-weather-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:28px; align-items:start; }
+.academic .rformer-weather-left { min-width:0; }
+.academic .rformer-weather-setup { font-size:14px; line-height:1.45; }
+.academic .rformer-weather-setup h2 { font-size:16px; margin:0 0 8px; }
+.academic .rformer-weather-setup p { margin:0 0 8px; }
+.academic .rformer-weather-setup .katex-display { font-size:16px; margin:9px 0; }
+.academic .rformer-station-distribution { margin-top:14px; }
+.academic .rformer-station-distribution img { height:270px; }
+.academic .rformer-station-distribution figcaption { font-size:12px; text-align:center; margin-top:6px; }
+
+/* ch6-27: vortex reconstruction and its two separate ablation sweeps. */
+.academic .rformer-vortex-layout { display:grid; grid-template-columns:minmax(0,7fr) minmax(0,3fr); gap:28px; align-items:start; }
+.academic .rformer-vortex-layout section { min-width:0; }
+.academic .rformer-vortex-metric { font-size:14px; line-height:1.45; margin:5px 0 0; }
+.academic .rformer-vortex-ablation { display:flex; flex-direction:column; gap:12px; }
+.academic .rformer-vortex-ablation .figure img { height:172px; }
+.academic .rformer-vortex-ablation .figure figcaption { font-size:16px; color:var(--ink); text-align:center; margin-top:4px; }
+.academic .rformer-vortex-ablation .figure p { font-size:14px; line-height:1.4; margin:5px 0 0; }
+.academic .rformer-vortex-ablation .rformer-vortex-ablation-note { font-size:12px; line-height:1.4; color:var(--muted); margin:0; }
+
+.academic .rformer-blood-caption { font-size:12px; line-height:1.45; color:var(--muted); margin:8px 0 0; }
+
+.academic .rformer-jet-explanation { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:18px; }
+.academic .rformer-jet-explanation h3 { font-size:16px; font-weight:600; margin:0 0 8px; }
+.academic .rformer-jet-explanation p { font-size:14px; line-height:1.45; margin:0; }

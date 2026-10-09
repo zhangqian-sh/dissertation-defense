@@ -24,13 +24,16 @@ onBeforeUnmount(()=>{disposed=true;urls.value.forEach(URL.revokeObjectURL)})
 <template>
  <FigureFrame :class="{'sequence-weather':name==='weather'}" :fallback="`/fallback_figures/sequences/${name}.png`" :ready="!!data" :error="error" :static-mode="staticMode" :caption="caption">
   <img class="recorded-frame" :src="urls[index]" :alt="label+' · '+data.labels[index]">
-  <div class="plot-controls"><button @click="toggle">{{playing?'Pause':'Play'}}</button><button @click="reset">Reset</button><input :aria-label="label" type="range" min="0" :max="count-1" :value="index" @input="seek(Number(($event.target as HTMLInputElement).value))"><output>{{data.labels[index]}}</output></div>
+  <div class="plot-controls"><button @click="toggle">{{playing?'Pause':'Play'}}</button><button @click="reset">Reset</button><input :class="{'playback-slider':name==='weather'||name==='latent'}" :style="name==='weather'||name==='latent'?{'--progress':`${100*index/Math.max(1,count-1)}%`}:undefined" :aria-label="label" type="range" min="0" :max="count-1" :value="index" @input="seek(Number(($event.target as HTMLInputElement).value))"><output>{{data.labels[index]}}</output></div>
  </FigureFrame>
 </template>
 <style scoped>
 .recorded-frame{width:100%;height:310px;object-fit:contain;display:block}
-.sequence-weather{height:445px}
-.sequence-weather .recorded-frame{height:365px}
-.sequence-weather :deep(.figure-fallback){height:400px}
+.sequence-weather{height:482px}
+.sequence-weather .recorded-frame{height:440px}
+.sequence-weather :deep(.figure-fallback){height:440px}
+.sequence-weather :deep(.interaction-note){display:none}
+.sequence-weather .plot-controls{font-size:14px}
+.sequence-weather .plot-controls output{font-size:14px}
 .plot-controls{gap:8px}.plot-controls output{min-width:95px;font-size:11px}
 </style>
