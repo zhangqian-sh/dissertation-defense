@@ -15,19 +15,26 @@ divider: chapter
 ---
 chapter: '8'
 section: Synthesis · Contributions
-source: 'Thesis Chapter 8 · Synthesis of Chapters 2–7 · No experimentally integrated reconstruction-to-control pipeline'
+source: 'Thesis Chapter 8 · Synthesis of Chapters 2–7 · No experimentally
+  integrated reconstruction-to-control pipeline'
 ---
 
-# Computation and scientific fidelity must be co-designed
+# Contributions
 
-<div class="density">
-<div class="density-grid ">
-<div class="detail-box"><h2>Part I · representation and computation</h2><div class="chapter-entry"><strong>Encoding → operator accuracy</strong><p class="small">Lower triangular K=50 → 500: mean relative L₂ 0.047 → 0.005, with smoothing and added spike steps.</p></div><div class="chapter-entry"><strong>Calibration → deployable regression</strong><p class="small">Layerwise mismatch reduction; Loihi RMS 0.0215 → 0.0160 from 8-bit to effective 16-bit precision.</p></div><div class="chapter-entry"><strong>Forward gradients → training alternative</strong><p class="small">Poisson SG: layerwise RFG 0.0583 versus BP 0.0419. Accuracy and estimator scaling remain trade-offs.</p></div></div>
-<div class="detail-box"><h2>Part II · reconstruction and control</h2><div class="chapter-entry"><strong>ET → iterative completion</strong><p class="small">12 learned-energy updates recover field structure; spectra complement pointwise error.</p></div><div class="chapter-entry"><strong>RFormer → mesh-free completion</strong><p class="small">Vortex total relative RMSE 0.0080 ± 0.0014; masked observation/query attention enables chunked evaluation.</p></div><div class="chapter-entry"><strong>OCFormer → learned trajectory maps</strong><p class="small">Amortized M=16: ≈221 ms inference, 75% sampled feasibility. Speed and constraint satisfaction are separate.</p></div></div>
-</div><p class="protocol">Metrics and protocols differ across chapters · reconstruction and control are separate experiments · strongest conclusions retain their tested scope</p>
+<script setup>
+import ContributionFigure from "/components/ContributionFigure.vue"
+</script>
+
+<div class="density summary-illustrated">
+<div class="density-grid">
+<div class="detail-box"><h2>Part I · Efficient neuromorphic algorithms</h2><div class="chapter-entry contribution-entry"><div><strong>Represent continuous functions with spikes</strong><p class="small">Use spike sequences to represent real-valued functions, learn solution operators, and predict evolving systems.</p></div><ContributionFigure kind="encoding" /></div><div class="chapter-entry contribution-entry"><div><strong>Convert trained networks for neuromorphic hardware</strong><p class="small">Reduce conversion error through calibration, then run scientific regression models on spiking hardware.</p></div><ContributionFigure kind="conversion" /></div><div class="chapter-entry contribution-entry"><div><strong>Train through forward computations</strong><p class="small">Estimate learning updates from forward computations, providing an alternative to backpropagation for spiking networks.</p></div><ContributionFigure kind="training" /></div></div>
+<div class="detail-box"><h2>Part II · Sequence-to-sequence modeling</h2><div class="chapter-entry contribution-entry"><div><strong>Energy Transformer: reconstruct by minimizing energy</strong><p class="small">Learn an energy landscape that guides sparse measurements toward a reconstructed flow field.</p></div><ContributionFigure kind="energy" /></div><div class="chapter-entry contribution-entry"><div><strong>RFormer: reconstruct at arbitrary locations</strong><p class="small">Infer field values directly from sparse observations, without requiring a fixed computational mesh.</p></div><ContributionFigure kind="reconstruction" /></div><div class="chapter-entry contribution-entry"><div><strong>OCFormer: learn corrections to simple trajectories</strong><p class="small">Start from a tractable reference motion and learn the corrections needed to handle interacting agents and obstacles.</p></div><ContributionFigure kind="control" /></div></div>
+</div>
 </div>
 
-<!-- Return to the two-theme organization from the opening. Highlight verified contributions without collapsing them into a single end-to-end system. -->
+<!--
+Summarize the scientific contribution of each chapter in plain language. The two research parts remain independent studies; this page does not assert an integrated reconstruction-to-control pipeline or new quantitative results.
+-->
 
 ---
 chapter: '8'

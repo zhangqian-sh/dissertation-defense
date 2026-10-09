@@ -555,3 +555,9 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .ocformer-transfer-metrics th { font-size:12px; text-transform:none; letter-spacing:0; white-space:nowrap; }
 .academic .ocformer-transfer-metrics th, .academic .ocformer-transfer-metrics td { padding:8px 6px; }
 .academic .ocformer-transfer-metrics p { font-size:12px; line-height:1.45; }
+
+/* ch8-37: retain the original two-part styling with one focused figure per point. */
+.academic .summary-illustrated .contribution-entry { display:grid; grid-template-columns:minmax(0,1fr) 190px; align-items:center; gap:14px; padding:5px 0; min-height:156px; }
+.academic .summary-illustrated .contribution-entry strong { font-size:16px; line-height:1.35; display:block; }
+.academic .summary-illustrated .contribution-entry p.small { font-size:14px; line-height:1.4; margin:6px 0 0!important; }
+.academic .summary-illustrated .detail-box h2 { margin-bottom:5px; }
