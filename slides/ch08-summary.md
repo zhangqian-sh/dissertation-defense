@@ -136,6 +136,7 @@ chapter: '8'
 section: Discussion
 source: 'Qian Zhang · Division of Applied Mathematics · Brown University'
 cover: true
+crunchhead: true
 ---
 
 # Thank you.

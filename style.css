@@ -587,3 +587,5 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .future-work-copy { min-width:0; }
 
 .academic .future-work-layout .future-work-figure.foundation { height:210px; }
+
+.academic .cover-crunchhead { position:absolute; right:56px; bottom:76px; width:180px; height:auto; object-fit:contain; }

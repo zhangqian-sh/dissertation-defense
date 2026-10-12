@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useSlideContext } from '@slidev/client'
-const props = defineProps<{ chapter?: string; section?: string; source?: string; cover?: boolean; divider?: 'chapter' | 'part' }>()
+import { publicAssetUrl } from '../composables/publicAssetUrl.mjs'
+const props = defineProps<{ chapter?: string; section?: string; source?: string; cover?: boolean; crunchhead?: boolean; divider?: 'chapter' | 'part' }>()
 const { $page } = useSlideContext()
 const chapterNames: Record<string, string> = {
   "1": "Introduction",
@@ -22,6 +23,7 @@ const headerTitle = computed(() => (props.divider ? props.section : chapterNames
       <div class="progress" aria-hidden="true"><i v-for="n in 8" :key="n" :class="{done:n<=Number(chapter)}" /></div>
     </header>
     <main class="slide-body"><slot /></main>
+    <img v-if="crunchhead" class="cover-crunchhead" :src="publicAssetUrl('/figures/shared/crunchhead.png')" alt="Crunchhead illustration" />
     <footer class="footer"><span class="page">{{ chapter ? `CH ${chapter} · ` : '' }}{{ String($page).padStart(2,'0') }}</span></footer>
   </div>
 </template>

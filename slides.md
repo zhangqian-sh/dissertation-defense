@@ -22,6 +22,7 @@ defaults:
   layout: academic
 layout: academic
 cover: true
+crunchhead: true
 chapter: '1'
 section: Doctoral dissertation defense
 source: 'Qian Zhang · Division of Applied Mathematics · Brown University'
