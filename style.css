@@ -576,3 +576,14 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .hybrid-rformer-figure { min-width:0; margin:0; }
 .academic .hybrid-rformer-figure img { display:block; width:100%; height:auto; }
 .academic .hybrid-rformer-figure figcaption { font-size:16px; text-align:center; line-height:1.4; margin-top:8px; }
+
+/* ch8-39: four illustrated future-work themes. */
+.academic .future-work-layout { display:grid; grid-template-columns:1fr 1fr; gap:32px 28px; align-items:start; font-size:14px; line-height:1.45; }
+.academic .future-work-layout h2 { font-size:16px; margin:0 0 8px; }
+.academic .future-work-layout p { margin:0; }
+.academic .future-work-layout .detail-box { min-height:216px; }
+.academic .future-work-content { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px; align-items:start; }
+.academic .future-work-layout .future-work-figure { margin-top:0; height:160px; }
+.academic .future-work-copy { min-width:0; }
+
+.academic .future-work-layout .future-work-figure.foundation { height:210px; }

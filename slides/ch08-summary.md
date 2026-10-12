@@ -82,13 +82,54 @@ section: Outlook · Future directions
 source: 'Thesis Chapter 8 · Limitations and future directions'
 ---
 
-# Toward reliable, efficient scientific inference
+# Future Work
 
-<div class="density">
-<div class="three"><div class="detail-box"><h2>Numerical reliability</h2><p class="small"><strong>Observed limit:</strong> finite spike resolution and recursive drift; RFG accuracy worsens at larger scale.</p><p class="small"><strong>Next experiments:</strong> sweep encoding horizon and rollout length; evaluate estimator averaging at matched compute.</p><p class="small"><strong>Report:</strong> error growth, stability interval, and accuracy versus work.</p></div><div class="detail-box"><h2>Deployment evidence</h2><p class="small"><strong>Observed limit:</strong> Loihi energy excludes I/O; hybrid RFormer has software results only.</p><p class="small"><strong>Next experiments:</strong> measure complete inference energy/latency across precision and spike horizons.</p><p class="small"><strong>Report:</strong> hardware, batch/replication, I/O scope, and matched fidelity.</p></div><div class="detail-box"><h2>Generalization and constraints</h2><p class="small"><strong>Observed limit:</strong> observation shifts and unseen boundaries; M=16 amortized feasibility is 75%.</p><p class="small"><strong>Next experiments:</strong> matched reconstruction masks and boundary-shift stress tests; refine temporal clearance checks.</p><p class="small"><strong>Report:</strong> distribution, cost gap, failure fraction, and clearance.</p></div></div><p class="protocol">Future experiments, not demonstrated capabilities · retain independent reconstruction/control studies</p>
+<script setup>
+import FutureWorkFigure from "/components/FutureWorkFigure.vue"
+</script>
+
+<div class="future-work-layout">
+<div class="detail-box">
+<h2>Spiking sequence-to-sequence modeling</h2>
+<div class="future-work-content">
+<div class="future-work-copy">
+<p>Develop Spiking attention mechanism and apply them to the existing sequence-to-sequence model in SciML.</p>
+</div>
+<FutureWorkFigure kind="sequence" />
+</div>
+</div>
+<div class="detail-box">
+<h2>Direct Learning and Hardware Validation</h2>
+<div class="future-work-content">
+<div class="future-work-copy">
+<p>Develop scalable direct training and on-chip learning rules. Validate accuracy, latency, and energy efficiency.</p>
+</div>
+<FutureWorkFigure kind="learning" />
+</div>
+</div>
+<div class="detail-box">
+<h2>Scientific Foundation Models</h2>
+<div class="future-work-content">
+<div class="future-work-copy">
+<p>Pretraining large models across different flow fields for various downstream tasks.</p>
+</div>
+<FutureWorkFigure kind="foundation" />
+</div>
+</div>
+<div class="detail-box">
+<h2>Optimal Control and Reinforcement Learning</h2>
+<div class="future-work-content">
+<div class="future-work-copy">
+<p>Extend the insights from optimal control to online planning and reinforcement learning.</p>
+</div>
+<FutureWorkFigure kind="control" />
+</div>
+</div>
 </div>
 
-<!-- These are future directions, not additional experimental claims. -->
+<!--
+Proposed future directions, not demonstrated capabilities. The dissertation motivates broader sequence mappings, direct learning, hardware validation, broader pretraining and uncertainty quantification, and feedback control. Reinforcement learning is a proposed extension.
+-->
 
 ---
 chapter: '8'
