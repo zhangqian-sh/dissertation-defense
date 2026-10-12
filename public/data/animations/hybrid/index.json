@@ -1,0 +1,250 @@
+{
+  "case": "hybrid",
+  "source": "/oscar/data/gk/qzhang64/Projects/SpikingNN/SpikeCalibTransformer/runs/rformer/rformer_full/predictions/snn_test_predictions.h5",
+  "source_sha256": "7c17b5ce06aee640a8986153e7211efee9eb1dc940618866e05e54a6451af887",
+  "reference_source": "/oscar/data/gk/qzhang64/Projects/OperatorLearning/RFormer/reproducibility/results/case1/run-001/test.h5",
+  "reference_sha256": "d1d5c8c183f074a76ff78c42b5cde9106220813f44c587a9d88308d1ee3cce38",
+  "frames": [
+    {
+      "sha256": "1ad2dc49c22f3517c7a151372b188b7f0cf5fc6894c8b3f3548972082ed3c1de",
+      "offset": 0,
+      "length": 295927
+    },
+    {
+      "sha256": "f6d7de43edabc4d9246db961a3ac47a4478f5228f4d1036676f19bd93ab8069f",
+      "offset": 295927,
+      "length": 296807
+    },
+    {
+      "sha256": "8f8f5f6a60941c4fe4bbcec023e3df2a627fcbf4963f386b9605763810812146",
+      "offset": 592734,
+      "length": 296526
+    },
+    {
+      "sha256": "2830f24d8c32ef9314c4f8adeb18053b5615466a9d11a32a6f4f40a1b27f6ee5",
+      "offset": 889260,
+      "length": 297073
+    },
+    {
+      "sha256": "933b25b69c1f4958e988f6633d10e5ff7c09247e7a484993972ddc74c2747f7f",
+      "offset": 1186333,
+      "length": 295922
+    },
+    {
+      "sha256": "9f47386013eceba2f5e7c5eef114d2e73710db370b277adc5f1d25fa932e351d",
+      "offset": 1482255,
+      "length": 295093
+    },
+    {
+      "sha256": "d8aca9bd0f2de3d9bc02a438f4a606af6361db945e8b38dbe4bb42694341a748",
+      "offset": 1777348,
+      "length": 295655
+    },
+    {
+      "sha256": "e298e3ffde92844a9842b561a3ae3a9501558cf8fe4c9c149227fc34596805dd",
+      "offset": 2073003,
+      "length": 295902
+    },
+    {
+      "sha256": "c03cea041edf8ae54169e831a9f29712a43dbd415286fff0769962680ddc8fee",
+      "offset": 2368905,
+      "length": 296063
+    },
+    {
+      "sha256": "c4d40292008d919f843f99889d5eb9ba6bde3f92164d5c89c30b4c8a4d6eee1d",
+      "offset": 2664968,
+      "length": 296897
+    },
+    {
+      "sha256": "51e3bba81102c459b9052e877b1bb1d72a0da9eb9cb94a2cfcfd03e98dcc3fc3",
+      "offset": 2961865,
+      "length": 296246
+    },
+    {
+      "sha256": "02769437e2bd56214ba231bdeab7d8d7c67f64f636ce8106a825b22509de5b37",
+      "offset": 3258111,
+      "length": 297186
+    },
+    {
+      "sha256": "e65d835fb08f2b4421067fb731aa1c320914124545f42a1e6f7cafd26b0bfc9d",
+      "offset": 3555297,
+      "length": 296463
+    },
+    {
+      "sha256": "ae902e853b09ec661f6ef96f3a6c3dbbe57694b55cc7ec4ee65f7cc27e676abf",
+      "offset": 3851760,
+      "length": 296469
+    },
+    {
+      "sha256": "605a9a843d121179bc20c52339c0147576fc241a932bc7b7a7ae1fd2e0758ede",
+      "offset": 4148229,
+      "length": 297028
+    },
+    {
+      "sha256": "dff296738bb7c406d8fa31e012ca8f1d9805832395baaa10ef0b8a93505c581a",
+      "offset": 4445257,
+      "length": 296636
+    },
+    {
+      "sha256": "7b1a092e2923b92cc69a39e9dcddc08c4dd21cdca7029f1a4ef907238643ec7a",
+      "offset": 4741893,
+      "length": 297263
+    },
+    {
+      "sha256": "6be79af8bebed0f8c97cdc9058f61c65c733e8624e0e60c8b4780b8993afa436",
+      "offset": 5039156,
+      "length": 297387
+    },
+    {
+      "sha256": "5c2a4375d12f02b54348cefdc8ce7db77b4a6ed4caea9535b9099d53e4fa8abf",
+      "offset": 5336543,
+      "length": 296371
+    },
+    {
+      "sha256": "ef4542af02134395c02670385178a84dc0e4fdb99b0fca9cb1061f4b5cc262f8",
+      "offset": 5632914,
+      "length": 296826
+    }
+  ],
+  "times": [
+    80.0,
+    81.0,
+    82.0,
+    83.0,
+    84.0,
+    85.0,
+    86.0,
+    87.0,
+    88.0,
+    89.0,
+    90.0,
+    91.0,
+    92.0,
+    93.0,
+    94.0,
+    95.0,
+    96.0,
+    97.0,
+    98.0,
+    99.0
+  ],
+  "source_rows": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "rows": [
+    "u",
+    "v",
+    "p"
+  ],
+  "columns": [
+    "Reference",
+    "Observations",
+    "Hybrid SNN"
+  ],
+  "spike_steps": 32,
+  "field_limits": [
+    [
+      -0.17381000518798828,
+      1.3082000017166138
+    ],
+    [
+      -0.5672900080680847,
+      0.5677599906921387
+    ],
+    [
+      -0.585319995880127,
+      0.5038599967956543
+    ]
+  ],
+  "color_policy": "Fixed reference-wide 1st/99th percentiles per component; fixed 20 contour levels across all snapshots; saturated extremes.",
+  "plot_source": "SpikeCalibTransformer/runs/rformer/converted_snn_analysis.ipynb, snapshot reconstruction cell",
+  "slurm_job": "7324375",
+  "bundle": {
+    "format": "png-concat-v1",
+    "path": "/data/animations/hybrid/frames.bin",
+    "byte_length": 5929740,
+    "sha256": "674abab371690f459a9f3e076d4e81ed1e7f573747bc6d4be73a20ab7aed36ec"
+  },
+  "schema_version": 1,
+  "panel_bounds": [
+    [
+      [
+        0.03098941,
+        0.06,
+        0.26700851,
+        0.26162791
+      ],
+      [
+        0.32149574,
+        0.06,
+        0.26700851,
+        0.26162791
+      ],
+      [
+        0.61200207,
+        0.06,
+        0.26700851,
+        0.26162791
+      ]
+    ],
+    [
+      [
+        0.03098941,
+        0.37918605,
+        0.26700851,
+        0.26162791
+      ],
+      [
+        0.32149574,
+        0.37918605,
+        0.26700851,
+        0.26162791
+      ],
+      [
+        0.61200207,
+        0.37918605,
+        0.26700851,
+        0.26162791
+      ]
+    ],
+    [
+      [
+        0.03098941,
+        0.69837209,
+        0.26700851,
+        0.26162791
+      ],
+      [
+        0.32149574,
+        0.69837209,
+        0.26700851,
+        0.26162791
+      ],
+      [
+        0.61200207,
+        0.69837209,
+        0.26700851,
+        0.26162791
+      ]
+    ]
+  ]
+}

@@ -1,7 +1,7 @@
 // Component identities survive edits to presentation titles and slide order.
 export const auditTargets={
  sms:'.sms-rollout',burgers:'.burgers-example',energy:'.energy-history',
- vortex:'.vortex-matrix',jet:'.rformer-jet',weather:'.sequence-weather',
+ vortex:'.vortex-matrix',hybrid:'.hybrid-rformer-time',jet:'.rformer-jet',weather:'.sequence-weather',
  latent:'.ocformer-latent-reference',scaling:'.swarm-scaling',
  perturbation:'.oc-examples.perturbation',threeD:'.oc-examples.three-d',
 }

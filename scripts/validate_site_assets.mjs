@@ -16,7 +16,7 @@ for(const ch of ['ch02/sms_longtime_rollout','ch03/conversion_over_t','ch05/ener
 for(const font of ['NotoSerif-Regular.ttf', 'NotoSerif-Medium.ttf', 'NotoSerif-SemiBold.ttf', 'NotoSerif-Bold.ttf', 'NotoSerif-Italic.ttf', 'NotoSerif-SemiBoldItalic.ttf', 'NotoSerif-BoldItalic.ttf'])if(!existsSync(resolve(pub,'fonts',font)))throw new Error('Missing local font: '+font)
 console.log(`Validated ${manifest.assets.length} data assets, their checksums, ${images} slide image references, and local fallbacks/fonts.`)
 
-for(const name of ['weather','latent','swarm128','vortex','jet','blood']){
+for(const name of ['weather','latent','swarm128','vortex','jet','blood','hybrid']){
  const meta=JSON.parse(readFileSync(resolve(pub,`data/animations/${name}/index.json`)))
  const bundle=meta.bundle
  if(meta.schema_version!==1||bundle.format!=='png-concat-v1'||bundle.path!==`/data/animations/${name}/frames.bin`)throw Error('Invalid animation bundle')
@@ -30,4 +30,4 @@ for(const name of ['weather','latent','swarm128','vortex','jet','blood']){
  }
  if(offset!==bytes.length)throw Error('Unindexed animation bytes')
 }
-console.log('Validated six lossless animation bundles and every PNG slice.')
+console.log('Validated seven lossless animation bundles and every PNG slice.')

@@ -561,3 +561,18 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .summary-illustrated .contribution-entry strong { font-size:16px; line-height:1.35; display:block; }
 .academic .summary-illustrated .contribution-entry p.small { font-size:14px; line-height:1.4; margin:6px 0 0!important; }
 .academic .summary-illustrated .detail-box h2 { margin-bottom:5px; }
+
+/* ch8-38: hybrid transformer setup and evidence. */
+.academic .hybrid-rformer-layout { display:grid; grid-template-columns:3fr 7fr; gap:28px; align-items:center; }
+.academic .hybrid-rformer-setup { min-width:0; font-size:14px; line-height:1.4; }
+.academic .hybrid-rformer-setup h2 { font-size:16px; margin:14px 0 6px; }
+.academic .hybrid-rformer-setup h2:first-child { margin-top:0; }
+.academic .hybrid-rformer-setup p { margin:0 0 6px; }
+.academic .hybrid-rformer-metrics { width:100%; margin:10px 0; font-size:14px; }
+.academic .hybrid-rformer-metrics th { font-size:14px; text-transform:none; letter-spacing:0; }
+.academic .hybrid-rformer-metrics th, .academic .hybrid-rformer-metrics td { padding:7px 5px; white-space:nowrap; }
+.academic .hybrid-rformer-metrics th:last-child, .academic .hybrid-rformer-metrics td:last-child { text-align:right; }
+.academic .hybrid-rformer-setup .hybrid-rformer-note { font-size:12px; color:var(--muted); margin-top:12px; }
+.academic .hybrid-rformer-figure { min-width:0; margin:0; }
+.academic .hybrid-rformer-figure img { display:block; width:100%; height:auto; }
+.academic .hybrid-rformer-figure figcaption { font-size:16px; text-align:center; line-height:1.4; margin-top:8px; }

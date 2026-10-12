@@ -39,14 +39,42 @@ Summarize the scientific contribution of each chapter in plain language. The two
 ---
 chapter: '8'
 section: Outlook · Hybrid Spiking RFormer
-source: 'Thesis Chapter 8 · fig:summary:spiking-rformer-reconstruction; tab:summary:spiking-rformer · Preliminary software results'
+source: 'Thesis Chapter 8 · fig:summary:spiking-rformer-reconstruction;
+  tab:summary:spiking-rformer · Preliminary software results'
 ---
 
-# Spiking RFormer recovers the main wake structures
+# Explorary Study: Hybrid RFormer
 
-<div style="display:grid;grid-template-columns:2.1fr 1fr;gap:26px;align-items:start;margin-top:18px"><figure class="figure"><img style="height:360px" src="/figures/ch08/spiking-rformer-reconstruction.png" alt="Hybrid Spiking RFormer at T=32: rows show u velocity, v velocity and pressure; columns show ground truth, 512 sparse observations and decoded SNN reconstruction"><figcaption>Snapshot 10 · rows: u, v, p · columns: truth, observations, SNN reconstruction.<br>Shared color limits within each row; white disk marks the cylinder.</figcaption></figure><div class="rule"><h2>Calibrated spiking responses</h2><p class="small">Signed integrate-and-fire encoders follow linear projections and GELU activations; decoded spike averages use T = 32.</p><p class="small"><strong>ANN → signed-IF calibration → end-to-end fine-tuning.</strong> Attention and normalization remain real-valued.</p><p class="small">The wake is recovered from 512 observations, with visible local artifacts.</p><p class="small"><strong>Total relative RMSE</strong><br>ANN: 0.00801 ± 0.00143<br>Hybrid SNN: 0.04564 ± 0.00146</p><p class="micro">Mean ± population SD over 20 matched snapshots. Energy and latency require hardware measurements.</p></div></div>
+<script setup>
+import RFormerTime from "/components/RFormerTime.vue"
+</script>
 
-<!-- Preliminary hybrid SpikeCalibTransformer connects the SNN conversion work to RFormer's observation/query sequence model. Read the figure left to right: physical reference, 512 sparse measurements, and decoded spiking predictions. Rows are horizontal velocity u, vertical velocity v, and pressure p, with common color limits within each row. The main alternating wake and cylinder pressure structure survive, but the SNN panels contain local artifacts. Both ANN and hybrid use identical observations, 28,668 query coordinates and reference fields across 20 test snapshots. RMSE is against physical truth, not teacher discrepancy. Signed IF responses are evaluated as decoded finite-step averages; attention matrix products, softmax, layer normalization and residual additions remain real-valued. Fine-tuning uses straight-through gradients and conventional reverse-mode optimization. This is preliminary software feasibility; hardware energy and latency benefits have not been measured for this model. -->
+<div class="hybrid-rformer-layout">
+<section class="hybrid-rformer-setup">
+<h2>Setup</h2>
+<p>Observe <InlineMath tex="(u,v,p)"/> at scattered locations. Given these measurements and new query locations, the model reconstructs the whole flow field.</p>
+
+<h2>Which parts are spiking?</h2>
+<p><strong>Spiking:</strong> signed-IF encoders after linear/GELU layers in embeddings, transformer blocks, and the output head; decoded over <InlineMath tex="T=32" /> steps.</p>
+<p><strong>Real-valued:</strong> attention, normalization, and residual additions.</p>
+
+<h2>Reconstruction accuracy</h2>
+<table class="hybrid-rformer-metrics">
+<thead><tr><th>Model</th><th>Relative RMSE</th></tr></thead>
+<tbody>
+<tr><td>ANN</td><td><InlineMath tex="0.00801\pm0.00143" /></td></tr>
+<tr><td>Hybrid SNN</td><td><InlineMath tex="0.04564\pm0.00146" /></td></tr>
+</tbody>
+</table>
+</section>
+<div class="hybrid-rformer-figure">
+<RFormerTime case-name="hybrid" compact />
+</div>
+</div>
+
+<!--
+Preliminary hybrid SpikeCalibTransformer connects the SNN conversion work to RFormer's observation/query sequence model. Read the figure left to right: physical reference, 512 sparse measurements, and decoded spiking predictions. Rows are horizontal velocity u, vertical velocity v, and pressure p, with common color limits within each row. The main alternating wake and cylinder pressure structure survive, but the SNN panels contain local artifacts. Both ANN and hybrid use identical observations, 28,668 query coordinates and reference fields across 20 test snapshots. RMSE is against physical truth, not teacher discrepancy. Signed IF responses are evaluated as decoded finite-step averages; attention matrix products, softmax, layer normalization and residual additions remain real-valued. Fine-tuning uses straight-through gradients and conventional reverse-mode optimization. This is preliminary software feasibility; hardware energy and latency benefits have not been measured for this model.
+-->
 
 ---
 chapter: '8'

@@ -106,7 +106,7 @@ try{
   if(!await slide.getByRole('button',{name:'Play',exact:true}).count())throw new Error('Playback did not pause on slide leave')
   interactions.push({slide:n,readyMs,slider:true,linkedTraceSeeking:label!=='Burgers SNN T',playback:true,navigationIsolation:true,pauseOnExit:true,...(label==='Burgers SNN T'?{populatedFieldCanvases:true,referenceInvariant:true,TChangesSNNAndDifference:true,intermediate65Verified:true}:{})})
  }
- for(const [feature,kind] of [['vortex','vortex'],['jet','jet']]){
+ for(const [feature,kind] of [['vortex','vortex'],['jet','jet'],['hybrid','hybrid']]){
   const n=findSlide(feature)
   await openSlide(n)
   const slide=page.locator(`.slidev-page[data-slidev-no="${n}"]:visible .academic`).first()
@@ -181,7 +181,7 @@ try{
  await failure.route('**/data/**',route=>route.abort())
  const fp=await failure.newPage();const sms=interactions[0].slide
  await fp.goto(slideUrl(sms),{waitUntil:'domcontentloaded'});await fp.getByText('Static view · interactive data unavailable').first().waitFor()
- for(const feature of ['vortex','jet','weather','latent']){
+ for(const feature of ['vortex','jet','weather','latent','hybrid']){
   const n=findSlide(feature)
   await fp.goto(slideUrl(n),{waitUntil:'domcontentloaded'})
   const failedSlide=fp.locator(`.slidev-page[data-slidev-no="${n}"]:visible .academic`).first()
