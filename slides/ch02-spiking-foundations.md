@@ -95,7 +95,7 @@ Normalize $x$ to $[0,1]$ and pass a binary spike sequence to the trunk.
 
 </div>
 <CoordinateEncodings />
-<p class="poisson-context">Blue cells denote spikes.</p>
+<p class="poisson-context">Brown cells denote spikes.</p>
 </section>
 </div>
 <div class="poisson-column">

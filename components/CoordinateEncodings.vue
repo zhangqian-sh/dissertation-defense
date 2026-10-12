@@ -25,13 +25,13 @@ const methods = [
         <text x="100" y="16" text-anchor="middle">Coordinate input</text>
         <rect x="8" y="26" width="184" height="36" fill="#eeedeb" /><text x="100" y="49" text-anchor="middle">Learned dense layer</text>
         <path d="M100 62 V79" stroke="#596361" marker-end="url(#direct-encoder-head)" />
-        <rect x="8" y="79" width="184" height="36" fill="#e7edf1" /><text x="100" y="102" text-anchor="middle">Spiking dynamics</text>
+        <rect x="8" y="79" width="184" height="36" fill="#eeeae7" /><text x="100" y="102" text-anchor="middle">Spiking dynamics</text>
         <path d="M100 115 V132" stroke="#596361" marker-end="url(#direct-encoder-head)" />
         <rect x="8" y="132" width="184" height="36" fill="#eeedeb" /><text x="100" y="155" text-anchor="middle">Averaged readout</text>
       </svg>
       <svg v-else class="encoding-raster" viewBox="0 0 120 132" role="img" :aria-label="method.name + ': ' + method.description">
         <g v-for="(row,k) in method.cells" :key="k">
-          <rect v-for="(active,j) in row" :key="j" :x="25+j*10" :y="88-k*10" width="9" height="9" :fill="active?'#315d79':'#eeedeb'" />
+          <rect v-for="(active,j) in row" :key="j" :x="25+j*10" :y="88-k*10" width="9" height="9" :fill="active?'#4e3629':'#eeedeb'" />
         </g>
         <path d="M23 18 V100 H106" fill="none" stroke="#596361" stroke-width=".7" />
         <text x="16" y="96" text-anchor="end">1</text><text x="16" y="26" text-anchor="end">8</text>

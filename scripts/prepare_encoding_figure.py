@@ -28,7 +28,8 @@ spikes = np.arange(1, K + 1)[:, None] <= n[None, :]
 decoded = ZMAX * spikes.mean(axis=0)
 assert np.all((f - decoded >= -1e-12) & (f - decoded < ZMAX / K))
 assert np.array_equal(spikes.sum(axis=0), n)
-BLUE, BROWN = "#315d79", "#8a4935"
+BLUE = "#315d79"
+SPIKE_BROWN, DECODED_RED = "#4e3629", "#ed1c24"
 
 def canvas(ylabel):
     fig = plt.figure(figsize=(6.1, 3.05), facecolor="white")
@@ -44,7 +45,7 @@ def canvas(ylabel):
 fig, ax = canvas(r"Field value $f(x)$")
 xx = np.linspace(0, 1, 1001)
 ax.plot(xx, field(xx), color=BLUE, lw=2.1, label=r"Continuous $f$")
-ax.plot(x, decoded, color=BROWN, marker=".", markersize=3.5, lw=1,
+ax.plot(x, decoded, color=DECODED_RED, marker=".", markersize=3.5, lw=1,
         linestyle="--", label=r"Decoded $\hat f$")
 ax.set_ylim(0, ZMAX)
 ax.set_yticks([0, .05, .1, .15, .2], ["0", "0.05", "0.10", "0.15", "0.20"])
@@ -56,7 +57,7 @@ fig, ax = canvas(r"Spike step $k$")
 # Rows are spike steps, columns are spatial samples: no spatial transpose.
 edges = np.linspace(-.01, 1.01, 52)
 ax.pcolormesh(edges, np.arange(K + 1) + .5, spikes,
-              cmap=ListedColormap(["#f0efed", BLUE]), vmin=0, vmax=1,
+              cmap=ListedColormap(["#f0efed", SPIKE_BROWN]), vmin=0, vmax=1,
               edgecolors="white", linewidth=.35, shading="flat", rasterized=False)
 ax.set_ylim(.5, K + .5)
 ax.set_yticks([1, 10, 20, 30, 40])

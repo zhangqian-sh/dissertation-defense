@@ -13,7 +13,7 @@ const fields = [
       <g v-for="(f,i) in fields" :key="i">
         <path :d="`M${f.x} ${f.y} V${f.y+f.h} H${f.x+f.w}`" fill="none" stroke="#98a4ae" stroke-width="1" />
         <g v-for="j in 16" :key="j">
-          <rect v-for="k in 8" :key="k" :x="f.x+(j-1)*f.w/16" :y="f.y+f.h-k*f.h/8" :width="f.w/16-.8" :height="f.h/8-.8" :fill="k<=Math.floor(8*f.a*Math.sin(Math.PI*(j-1)/15))?'#315d79':'#eeedeb'" />
+          <rect v-for="k in 8" :key="k" :x="f.x+(j-1)*f.w/16" :y="f.y+f.h-k*f.h/8" :width="f.w/16-.8" :height="f.h/8-.8" :fill="k<=Math.floor(8*f.a*Math.sin(Math.PI*(j-1)/15))?'#4e3629':'#eeedeb'" />
         </g>
       </g>
       <path d="M158 80 H174 V201 H158 M174 141 H219" fill="none" stroke="#596361" stroke-width="1.4" />
@@ -39,7 +39,7 @@ const fields = [
 <style scoped>
 .sms-method-diagram{position:relative;width:92%;margin:0 auto}
 svg{display:block;width:100%;height:auto}svg text{font-family:'Noto Serif',serif;fill:#596361;font-size:16px}
-svg .operation{fill:#232727;font-size:13px}svg .layer{fill:#232727;font-size:16px}svg .feedback-label{fill:#315d79;font-size:15px}
+svg .operation{fill:#232727;font-size:13px}svg .layer{fill:#232727;font-size:16px}svg .feedback-label{fill:#4e3629;font-size:15px}
 .sms-field-label{position:absolute;font-size:16px;text-align:center;transform:translateX(-50%)}
 .history-old{left:14.7%;top:39%}.history-current{left:14.7%;top:79.3%}.next-state{left:88.4%;top:68%}.network{left:55.3%;top:20%}
 </style>

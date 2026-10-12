@@ -164,7 +164,7 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .encoding-arrowhead { fill:var(--muted); stroke:none; }
 .academic .encoding-figures img { width:86%; height:190px; margin:0 auto; object-fit:contain; display:block; }
 .academic .encoding-key { position:absolute; right:60px; top:29px; font-size:16px; display:flex; align-items:center; gap:5px; margin:0; background:white; padding:0 3px; }
-.academic .encoding-key i { width:9px; height:9px; background:#315d79; display:inline-block; }
+.academic .encoding-key i { width:9px; height:9px; background:var(--brown); display:inline-block; }
 .academic .encoding-key .silent { background:#f0efed; border:1px solid #d7d3cf; margin-left:6px; }
 .academic .encoding-note { font-size:14px; line-height:1.4; color:var(--muted); margin:8px 0 0; }
 
@@ -189,7 +189,7 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .poisson-evaluation table { font-size:14px; margin:0; }
 .academic .poisson-evaluation th { font-size:14px; padding:6px 10px; }
 .academic .poisson-evaluation td { padding:7px 10px; }
-.academic .poisson-evaluation .poisson-ours td { background:#e7edf1; color:var(--ink); font-weight:600; }
+.academic .poisson-evaluation .poisson-ours td { background:#eeeae7; color:var(--ink); font-weight:600; }
 
 .academic .poisson-metric { display:flex; align-items:center; justify-content:center; gap:16px; min-height:43px; margin-bottom:8px; }
 .academic .poisson-metric h2 { margin:0; }
