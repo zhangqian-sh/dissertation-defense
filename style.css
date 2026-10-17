@@ -589,3 +589,43 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .future-work-layout .future-work-figure.foundation { height:210px; }
 
 .academic .cover-crunchhead { position:absolute; right:56px; bottom:76px; width:180px; height:auto; object-fit:contain; }
+
+/* Appendix: scoped typography, evidence layouts, and index navigation. */
+.academic .appendix-content { font-size:14px; line-height:1.45; }
+.academic .appendix-content h2 { font-size:16px; margin:0 0 10px; }
+.academic .appendix-content p { margin:0 0 14px; }
+.academic .appendix-content table { font-size:14px; line-height:1.45; margin:0 0 16px; }
+.academic .appendix-content th { font-size:14px; text-transform:none; letter-spacing:0; }
+.academic .appendix-content th, .academic .appendix-content td { padding:12px 10px; }
+.academic .appendix-content .katex-display { margin:12px 0 20px; font-size:16px; }
+.academic .appendix-two-col { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:36px; align-items:start; }
+.academic .appendix-wide-left { display:grid; grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:36px; align-items:start; margin-top:24px; }
+.academic .appendix-wide-left h2:not(:first-child) { margin-top:24px; }
+.academic .appendix-index-grid { display:grid; grid-template-columns:1fr 1fr; gap:36px; margin-top:20px; }
+.academic .appendix-entry { display:flex; gap:14px; margin-top:17px; color:var(--ink); border:0; text-decoration:none; }
+.academic .appendix-entry > span { font-size:14px; color:var(--brown); padding-top:2px; }
+.academic .appendix-entry strong { display:block; font-size:16px; }
+.academic .appendix-entry p { margin:4px 0 0; }
+.academic .appendix-entry:hover strong { color:var(--brown); text-decoration:underline; }
+.academic .appendix-entry:focus-visible { outline:2px solid var(--brown); outline-offset:5px; }
+.academic.appendix-slide .footer a.page { color:var(--muted); text-decoration:none; border:0; }
+.academic.appendix-slide .footer a.page:hover { text-decoration:underline; }
+.academic .appendix-equation { font-size:16px; margin:22px 0 14px; }
+.academic .appendix-plots { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin:22px 0; }
+.academic .appendix-plots figure { min-width:0; margin:0; }
+.academic .appendix-plots img { display:block; width:100%; height:250px; object-fit:contain; }
+.academic .appendix-plots figcaption { font-size:16px; color:var(--ink); line-height:1.4; text-align:center; margin-top:8px; }
+.academic .appendix-conversion-plots img { height:270px; }
+.academic .appendix-poisson { display:grid; grid-template-columns:minmax(0,2fr) minmax(0,3fr); gap:36px; align-items:start; margin-top:24px; }
+.academic .appendix-poisson h2:not(:first-child) { margin-top:26px; }
+.academic .appendix-grouped-table th, .academic .appendix-grouped-table td { padding:12px 5px; white-space:nowrap; }
+.academic .appendix-grouped-table th:not(:first-child), .academic .appendix-grouped-table td:not(:first-child) { text-align:center; }
+.academic .appendix-grouped-table td:nth-child(4), .academic .appendix-grouped-table thead tr:last-child th:nth-child(3) { border-left:1px solid var(--line); }
+.academic .appendix-regimes { margin-top:24px!important; table-layout:fixed; }
+.academic .appendix-regimes th:first-child { width:12%; }
+.academic .appendix-regimes th:nth-child(2), .academic .appendix-regimes th:nth-child(3) { width:25%; }
+.academic .appendix-regimes th:nth-child(4) { width:24%; }
+.academic .appendix-regimes th:last-child { width:14%; }
+.academic .appendix-regimes td { vertical-align:top; }
+.academic .appendix-regime-notes { margin-top:28px; }
+.academic .appendix-metric-definitions { margin-top:26px; }
