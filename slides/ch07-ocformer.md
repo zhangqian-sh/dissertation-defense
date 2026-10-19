@@ -62,7 +62,7 @@ $$
 </div>
 <div class="ocformer-latent-reference">
 <section>
-<h3>Intuition: a tractable latent system by temoving interactions</h3>
+<h3>Intuition: a tractable latent system by removing constraints</h3>
 <p>For separable agent costs and dynamics, dropping <InlineMath tex="U" /> leaves a decoupled Hamiltonian <InlineMath tex="H_0" /> in latent coordinates <InlineMath tex="(y,q)" />.</p>
 
 $$
@@ -113,8 +113,8 @@ $$
 <section class="ocformer-method-section">
 <h3>Network structure</h3>
 <figure class="figure"><img src="/figures/ch07/ocformer-architecture.png" alt="Agent-token embeddings, alternating attention updates and residual connections map latent states and costates to physical states and costates"></figure>
-<p>Each agent is a token. Self-attention couples agents; alternating updates act on the two streams, and identity skips implement the residual map.</p>
-<p>The inverse-map interpretation assumes a diffeomorphism; invertibility and symplecticity are not enforced by the network.</p>
+<p><strong>Invertibility in embedding space.</strong> Hold one stream fixed: <InlineMath tex="r'=r+\mathcal T(z)" /> is inverted by <InlineMath tex="r=r'-\mathcal T(z)" />. Alternating blocks are reversible without inverting <InlineMath tex="\mathcal T" /> itself.</p>
+<p><strong>Permutation equivariance.</strong> Shared tokenwise maps and attention give <InlineMath tex="\varphi_\theta(Py,Pq)=P\varphi_\theta(y,q)" />. Relabeling interchangeable agents only relabels their trajectories.</p>
 </section>
 </div>
 <div>

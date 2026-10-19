@@ -538,7 +538,7 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .ocformer-latent-reference .recorded-frame, .academic .ocformer-latent-reference .figure-fallback { height:182px; }
 .academic .ocformer-latent-reference .interaction-note { display:none; }
 .academic .ocformer-latent-reference .plot-controls { font-size:12px; gap:8px; }
-.academic .ocformer-correction-layout .figure img { height:195px; }
+.academic .ocformer-correction-layout .figure img { height:160px; }
 
 .academic .ocformer-scaling-layout { display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start; }
 .academic .ocformer-scaling-results h3 { font-size:16px; font-weight:600; margin:0 0 8px; }
