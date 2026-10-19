@@ -98,7 +98,8 @@ $T=128$
 ---
 chapter: '3'
 section: ANN-to-SNN conversion · Field fidelity
-source: 'Thesis Chapter 3 · fig:conversion:poisson · Published matched Poisson comparison; tab:conversion:accuracy'
+source: 'Thesis Chapter 3 · fig:conversion:poisson · Published matched Poisson
+  comparison; tab:conversion:accuracy'
 ---
 
 # Example: 2D Poisson Equation
@@ -118,25 +119,35 @@ $$
 <p class="poisson-conversion-note">tanh activation · 3 hidden layers × 100 neurons.</p>
 </section>
 <section class="conversion-fidelity">
-<h2>Reported conversion fidelity</h2>
-
-$$
-\varepsilon_{\mathrm{conv}}=\frac{\|\bar u_{\mathrm{SNN}}-u_{\mathrm{ANN}}\|_2}{\|u_{\mathrm{ANN}}\|_2}
-$$
-
-<table><thead><tr><th>Metric</th><th>Calibrated SNN</th></tr></thead><tbody><tr><td>Relative L₂ error</td><td>0.0471</td></tr><tr><td>Spike rate</td><td>0.3727</td></tr></tbody></table>
-<p class="conversion-metric-note">Error is measured against the trained ANN field. Spike rate is the fraction of nonzero spiking-layer outputs.</p>
-<h3>Calibration settings</h3>
+<h2>Calibration settings</h2>
 
 $T=64$ spike steps · Adam, learning rate $10^{-3}$ · 5,000 updates per layer.
 
+<h2>Results</h2>
+
+<table><thead><tr><th>Metric</th><th>Calibrated SNN</th></tr></thead><tbody><tr><td>Relative L₂ error</td><td>0.0471</td></tr><tr><td>Spike rate</td><td>0.3727</td></tr></tbody></table>
+<p class="conversion-metric-note">Error is measured against the trained ANN field. Spike rate is the fraction of nonzero spiking-layer outputs.</p>
 <p class="small"><strong>Calibration restores the spatial pattern;</strong> copying weights alone gives only a coarse approximation.</p>
 </section>
 </div>
 <div class="poisson-conversion-figures"><figure class="figure"><img style="height:200px" src="/figures/ch03/poisson_true.png" alt="Numerical reference"><figcaption>Numerical reference</figcaption></figure><figure class="figure"><img style="height:200px" src="/figures/ch03/poisson_ann.png" alt="ANN / PINN"><figcaption>ANN / PINN</figcaption></figure><figure class="figure"><img style="height:200px" src="/figures/ch03/poisson_snn_none.png" alt="SNN · weight copying"><figcaption>SNN · weight copying</figcaption></figure><figure class="figure"><img style="height:200px" src="/figures/ch03/poisson_snn_calibrated.png" alt="SNN · calibrated"><figcaption>SNN · calibrated</figcaption></figure></div>
 </div>
 
-<!-- Retain the original panels and color scales. ANN-to-reference error and SNN-to-ANN conversion error are different quantities. -->
+<!--
+Retain the original panels and color scales. ANN-to-reference error and SNN-to-ANN conversion error are different quantities.
+-->
+
+---
+chapter: '3'
+section: ANN-to-SNN conversion · Poisson spike dynamics
+source: 'Archived Poisson advanced-CAA checkpoint · fixed T=64 · measured cumulative output spikes'
+---
+
+# Poisson Equation: Spiking Dynamics
+
+<PoissonSpikeDynamics />
+
+<!-- Same Poisson architecture and T=64 advanced-CAA protocol as the preceding example. Replay of the saved checkpoint must match the archived ANN and SNN fields before publication. Show actual cumulative means of emitted spikes, with no retraining, recalibration, or interpolated frames. Both spatial axes and all color scales stay fixed. -->
 
 ---
 chapter: '3'

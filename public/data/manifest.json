@@ -52,6 +52,17 @@
       "sha256": "2b7629c32eebf6fee375b097b15047cdbca5746c508ea9095a6fc92a70b5a4e3",
       "fallback_sha256": "1731a9a9ca35e2bc3459f422cd5f0096ff4ae855b703fa8b6949d074352927d0",
       "status": "required"
+    },
+    {
+      "asset_id": "ch03/poisson_prefix",
+      "chapter": "ch03",
+      "component": "PoissonSpikeDynamics",
+      "path": "sequences/poisson-prefix.json",
+      "default_state": "poisson-archived-fixed64-prefix",
+      "fallback_path": "/fallback_figures/ch03/poisson_prefix.png",
+      "sha256": "e56bf2a1991ebc73a9123484a85ee7c03f1e08356809f55fd9f1fbb04f5fdd5e",
+      "fallback_sha256": "afb6a957aaeaf0ec63b312bda099cf85e06fe43014a46f74fedfe613ce1cbcae",
+      "status": "required"
     }
   ]
 }

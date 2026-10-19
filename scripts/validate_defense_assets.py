@@ -64,6 +64,16 @@ def validate_envelope(e):
             assert p['T_approximation_status']=='illustrative'
             for n,T in enumerate(levels):
                 np.testing.assert_allclose(approx[n],(np.minimum(ref//(1/int(T)),T)+.5)/T,atol=1e-12)
+        elif e['chapter']=='ch03' and p.get('benchmark')=='poisson_archived_prefix':
+            np.testing.assert_array_equal(array(p['T']),np.arange(1,65))
+            frames=array(p['frames']); reference=array(p['reference'])
+            assert frames.shape==(64,*reference.shape) and reference.ndim==2
+            expected=np.linalg.norm((frames-reference).reshape(64,-1),axis=1)/np.linalg.norm(reference)
+            np.testing.assert_allclose(array(p['relative_error']),expected,rtol=2e-6,atol=2e-7)
+            assert p['metadata']['calibration_T']==64
+            assert p['metadata']['archived_snn_relative_discrepancy']<5e-4
+            assert p['metadata']['ann_relative_discrepancy']<1e-5
+            assert np.linalg.norm(frames[0]-frames[-1])>0
         elif e['chapter']=='ch03' and p.get('benchmark')=='burgers_fresh_prefix':
             np.testing.assert_array_equal(array(p['T']),np.arange(1,129))
             frames=array(p['frames']);reference=array(p['reference'])
@@ -136,7 +146,7 @@ def validate_manifest(path,require_all=True):
     path=Path(path).resolve(); public=ROOT/'public'
     manifest=json.loads(path.read_text()); assert manifest['schema_version']==2
     assets=manifest['assets']; ids=[a['asset_id'] for a in assets]; assert len(ids)==len(set(ids))
-    if require_all: assert {'SMSRollout','ConversionOverT','DroneSwarm3D'}<={a['component'] for a in assets}<={'SMSRollout','ConversionOverT','DroneSwarm3D','EnergyHistory'}
+    if require_all: assert {'SMSRollout','ConversionOverT','DroneSwarm3D'}<={a['component'] for a in assets}<={'SMSRollout','ConversionOverT','DroneSwarm3D','EnergyHistory','PoissonSpikeDynamics'}
     for a in assets:
         target=(path.parent/a['path']).resolve(); target.relative_to(public)
         fallback=(public/a['fallback_path'].lstrip('/')).resolve(); fallback.relative_to(public)
@@ -159,8 +169,8 @@ def validate_manifest(path,require_all=True):
             for key in set(z.files).intersection(state['payload']):
                 if isinstance(state['payload'][key],dict) and 'dtype' in state['payload'][key]:
                     np.testing.assert_array_equal(z[key],array(state['payload'][key]))
-            if state['payload'].get('benchmark')=='burgers_fresh_prefix':
-                frames=np.cumsum(z['step_spikes'].astype(float),axis=0)/np.arange(1,129)[:,None,None]
+            if state['payload'].get('benchmark') in ['burgers_fresh_prefix','poisson_archived_prefix']:
+                frames=np.cumsum(z['step_spikes'].astype(float),axis=0)/np.arange(1,len(z['step_spikes'])+1)[:,None,None]
                 np.testing.assert_allclose(frames,z['frames'],rtol=2e-6,atol=2e-7)
         validate_envelope(e)
     print(f'PASS: {len(assets)} assets; tensors, prefixes, errors, events, paths, raw checksums and fallbacks',flush=True)
