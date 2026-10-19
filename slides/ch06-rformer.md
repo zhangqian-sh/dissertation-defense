@@ -8,11 +8,13 @@ divider: chapter
 <p class="divider-chapter">Chapter 6</p>
 <div class="divider-rule" aria-hidden="true"></div>
 
-# Reconstruction from Sparse Measurements: A Mesh-Free Approach with In-Context Learning
+# Reconstruction from Sparse Measurements: A Meshfree Approach with In-Context Learning
 
-<!-- Spoken transition: How to do reconstruction which can scale?
+<!--
+Spoken transition: How to do reconstruction which can scale?
 
-Move from iterative energy dynamics to observation/query sequence modeling. Compare the reconstruction mechanisms without presenting one as a stage of the other. -->
+Move from iterative energy dynamics to observation/query sequence modeling. Compare the reconstruction mechanisms without presenting one as a stage of the other.
+-->
 
 ---
 chapter: '6'
@@ -55,20 +57,25 @@ $$
 <figcaption>Observations + query positions → reconstructed values</figcaption>
 </figure>
 <div class="rformer-weather-example">
-<div class="rformer-weather-heading"><h2>Illustration</h2><div class="rformer-weather-key"><span><i class="rformer-position-key"></i><InlineMath tex="x" />: city</span><span><i class="rformer-value-key"></i><InlineMath tex="v" />: temperature</span></div></div>
+<div class="rformer-weather-heading"><h2>Illustration · Oct 20, 1 PM EDT</h2><div class="rformer-weather-key"><span><i class="rformer-position-key"></i><InlineMath tex="x" />: city</span><span><i class="rformer-value-key"></i><InlineMath tex="v" />: temperature</span></div></div>
 <div class="rformer-weather-sequence">
-<div class="rformer-weather-group"><strong>Context</strong><div class="rformer-weather-context"><span class="rformer-weather-pair"><span class="rformer-weather-position">New York</span><span class="rformer-weather-value">20</span></span><span class="rformer-weather-pair"><span class="rformer-weather-position">Boston</span><span class="rformer-weather-value">17</span></span></div></div>
+<div class="rformer-weather-group"><strong>Context</strong><div class="rformer-weather-context"><span class="rformer-weather-pair"><span class="rformer-weather-position">New York</span><span class="rformer-weather-value">19.4°C</span></span><span class="rformer-weather-pair"><span class="rformer-weather-position">Boston</span><span class="rformer-weather-value">15.6°C</span></span></div></div>
 <span class="rformer-weather-arrow" aria-hidden="true">→</span>
 <div class="rformer-weather-group"><strong>Query</strong><span class="rformer-weather-position">Providence</span></div>
 <span class="rformer-weather-arrow" aria-hidden="true">→</span>
-<div class="rformer-weather-group"><strong>Answer</strong><span class="rformer-weather-value">18</span></div>
+<div class="rformer-weather-group"><strong>Answer</strong><span class="rformer-weather-value">16.1°C</span></div>
 </div>
 </div>
 </section>
 </div>
 
 <!--
-Weather example uses illustrative temperatures (20, 17, 18), not measured predictions, to demonstrate the paper's context/query/answer formulation. Coordinates are physical positions; zero is the query's unknown-value placeholder. The learned operator conditions on measurements from the same snapshot, rather than forecasting the next time step. Outputs at observation positions are discarded.
+Weather example uses Weather Underground hourly forecasts for 2026-10-20 at 13:00 EDT, retrieved 2026-10-19: New York 67°F = 19.4°C; Boston 60°F = 15.6°C; Providence 61°F = 16.1°C, rounded to one decimal. These are external forecast values used to illustrate context/query/answer; Providence is not an RFormer-generated forecast.
+Sources:
+https://www.wunderground.com/hourly/us/ny/new-york/date/2026-10-20
+https://www.wunderground.com/hourly/us/ma/boston./date/2026-10-20
+https://www.wunderground.com/hourly/us/ri/providence/41.82%2C-71.41/date/2026-10-20
+ Coordinates are physical positions; zero is the query's unknown-value placeholder. The learned operator conditions on measurements from the same snapshot, rather than forecasting the next time step. Outputs at observation positions are discarded.
 -->
 
 ---
@@ -156,7 +163,7 @@ source: 'Thesis Chapter 6 · fig:rformer:jet-spectrum; tab:rformer:jet ·
 <p>Particle tracking velocimetry measures the velocity of the turbulent jet. RFormer reconstructs the unobserved velocities from 10% of the measured points, using 80% snapshots for training and 20% for testing. The animation shows in-plane velocity vectors in the <InlineMath tex="|z|<5" /> slab.</p>
 </section>
 <section>
-<h3>Energy spectryn</h3>
+<h3>Energy spectrum</h3>
 <p>The energy spectrum <InlineMath tex="E(k)" /> describes how kinetic energy is distributed across spatial scales: low wavenumbers represent large structures, high wavenumbers small structures. RFormer closely follows the reference peak and spectral decay, while most baselines lose energy at smaller scales. The dashed <InlineMath tex="k^{-5/3}" /> line is a reference for inertial-range scaling.</p>
 </section>
 </div>
