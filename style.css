@@ -404,6 +404,9 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .et-method-layout .katex-display { font-size:16px; margin:8px 0; }
 .academic .et-method-explanation > section + section { margin-top:11px; }
 .academic .et-method-energy > section { margin-top:10px; }
+.academic .et-learning-illustration { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr); gap:12px; align-items:center; margin-top:5px; }
+.academic .et-learning-illustration p { font-size:14px; line-height:1.4; }
+
 .academic .et-method-layout .et-method-note { font-size:12px; color:var(--muted); line-height:1.4; margin:5px 0 0; }
 .academic .et-attention-illustration figcaption { font-size:16px; text-align:center; margin:5px 0 0; }
 .academic .et-attention-illustration .et-method-note { text-align:center; }

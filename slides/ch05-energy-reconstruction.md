@@ -94,15 +94,21 @@ $$
 </section>
 <section>
 <h2>Learning · fit the energy surface</h2>
-<p>Regress the decoded, approximately energy-minimized state onto the complete training field:</p>
+<div class="et-learning-illustration">
+<div>
+<p>Fit the decoded endpoint to the complete field. Decoder D maps tokens back to the field.</p>
 
 $$
-\widehat w_\theta=D_\theta\!\left(x^{(T)}\right),
-\qquad
-\min_\theta\;\mathbb E_{w,m}\!\left[\ell(\widehat w_\theta,w)\right].
+\begin{aligned}
+\widehat w_\theta&=D_\theta\!\left(x^{(T)}\right),\\
+\min_\theta\;&\mathbb E_{w,m}\!\left[\ell(\widehat w_\theta,w)\right].
+\end{aligned}
 $$
 
-<p>The decoder D detokenizes and depatches the final state. Training differentiates through the token updates and decoder to fit the reconstructed field.</p>
+<p>Differentiate through the token updates to shape the energy surface.</p>
+</div>
+<EnergyLearningBowl />
+</div>
 </section>
 </div>
 <div class="et-method-energy et-flow-explanation">
