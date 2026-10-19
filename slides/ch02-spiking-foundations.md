@@ -16,6 +16,18 @@ Begin Part I with representation: how continuous quantities become spikes, then 
 
 ---
 chapter: '2'
+section: Spiking representations · Spiking neurons
+source: 'Illustrative leaky integrate-and-fire neuron · Concept adapted from data/references/flowchart/snn.png'
+---
+
+# How spiking neural networks work
+
+<SpikingNeuronIntro />
+
+<!-- Schematic, not experimental data. The trace uses beta=0.90, threshold=1, weight=0.60 and instantaneous reset to zero after a threshold crossing. u denotes voltage before reset; v denotes voltage after reset. This introductory model is distinct from the delayed-reset implementation discussed on the SMS method slide. -->
+
+---
+chapter: '2'
 section: Spiking representations · Encoding
 source: 'Thesis Chapter 2 · Magnitude-prefix encoding and mean decoding · Regenerated illustrative example, K=40'
 ---
