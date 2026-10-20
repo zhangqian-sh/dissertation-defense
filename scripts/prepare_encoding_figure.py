@@ -4,6 +4,7 @@ This analytic example is an illustration, not a saved experimental result.
 Both panels use the same horizontal spatial grid and upright magnitude profile.
 """
 from pathlib import Path
+import argparse
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -11,6 +12,9 @@ from matplotlib import font_manager
 from matplotlib.colors import ListedColormap
 import numpy as np
 
+parser=argparse.ArgumentParser()
+parser.add_argument("--compact", action="store_true", help="Readable narrow-column figure pair for the encoding overview")
+args=parser.parse_args()
 ROOT = Path(__file__).resolve().parents[1]
 font_manager.fontManager.addfont(ROOT / "public/fonts/NotoSerif-Regular.ttf")
 plt.rcParams.update({"font.family": "Noto Serif", "font.size": 12,
@@ -19,6 +23,9 @@ plt.rcParams.update({"font.family": "Noto Serif", "font.size": 12,
                      "ytick.labelsize": 11, "svg.fonttype": "path"})
 OUT = ROOT / "public/figures/ch02"
 K, ZMAX = 40, .2
+SUFFIX = "_compact" if args.compact else ""
+if args.compact:
+    plt.rcParams.update({"axes.labelsize":14,"xtick.labelsize":13,"ytick.labelsize":13})
 x = np.linspace(0, 1, 51)
 def field(x):
     return .15 * np.exp(-((x - .14) / .12)**2) + .18 * np.exp(-((x - .48) / .16)**2)
@@ -32,10 +39,10 @@ BLUE = "#315d79"
 SPIKE_BROWN, DECODED_RED = "#4e3629", "#ed1c24"
 
 def canvas(ylabel):
-    fig = plt.figure(figsize=(6.1, 3.05), facecolor="white")
-    ax = fig.add_axes([.15, .22, .81, .73])
+    fig = plt.figure(figsize=((4.2, 3.05) if args.compact else (6.1, 3.05)), facecolor="white")
+    ax = fig.add_axes([.20, .22, .76, .73] if args.compact else [.15, .22, .81, .73])
     ax.set_xlim(-.01, 1.01)
-    ax.set_xticks([0, .25, .5, .75, 1], ["0", "0.25", "0.5", "0.75", "1"])
+    ax.set_xticks([0,.5,1], ["0","0.5","1"]) if args.compact else ax.set_xticks([0, .25, .5, .75, 1], ["0", "0.25", "0.5", "0.75", "1"])
     ax.set_xlabel(r"Spatial position $x$", labelpad=5)
     ax.set_ylabel(ylabel, labelpad=6)
     ax.tick_params(direction="out", length=3, pad=4)
@@ -49,8 +56,8 @@ ax.plot(x, decoded, color=DECODED_RED, marker=".", markersize=3.5, lw=1,
         linestyle="--", label=r"Decoded $\hat f$")
 ax.set_ylim(0, ZMAX)
 ax.set_yticks([0, .05, .1, .15, .2], ["0", "0.05", "0.10", "0.15", "0.20"])
-ax.legend(loc="upper right", frameon=False, fontsize=10, handlelength=1.8)
-fig.savefig(OUT / "encoding_continuous.svg")
+ax.legend(loc="upper right", frameon=False, fontsize=(12 if args.compact else 10), handlelength=1.8)
+fig.savefig(OUT / f"encoding_continuous{SUFFIX}.svg")
 plt.close(fig)
 
 fig, ax = canvas(r"Spike step $k$")
@@ -61,6 +68,6 @@ ax.pcolormesh(edges, np.arange(K + 1) + .5, spikes,
               edgecolors="white", linewidth=.35, shading="flat", rasterized=False)
 ax.set_ylim(.5, K + .5)
 ax.set_yticks([1, 10, 20, 30, 40])
-fig.savefig(OUT / "encoding_discrete.svg")
+fig.savefig(OUT / f"encoding_discrete{SUFFIX}.svg")
 plt.close(fig)
 print("Generated matched continuous/discrete encoding figures (K=40, 51 spatial samples).")

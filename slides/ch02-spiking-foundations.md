@@ -34,7 +34,9 @@ source: 'Thesis Chapter 2 · Magnitude-prefix encoding and mean decoding · Rege
 
 # From continuous functions to spikes
 
+<div class="encoding-overview">
 <div class="encoding-cycle">
+<h2 class="encoding-example-heading">Encoding and decoding · Ours</h2>
 <div class="encoding-annotation">
 <div class="encoding-rule"><h2>Encoding</h2><div>
 
@@ -49,19 +51,19 @@ $a_j=\dfrac{f(x_j)-z_{\min}}{z_{\max}-z_{\min}},\qquad N_j=\lfloor Ka_j\rfloor,\
 
 Continuous values $f(x)$
 
-</figcaption><img src="/figures/ch02/encoding_continuous.svg" alt="Continuous field and decoded samples, with spatial position x increasing from left to right"></figure>
+</figcaption><img src="/figures/ch02/encoding_continuous_compact.svg" alt="Continuous field and decoded samples, with spatial position x increasing from left to right"></figure>
 <figure>
 <figcaption>
 
 Discrete spike image $s_j[k]\in\{0,1\}$
 
-</figcaption><img src="/figures/ch02/encoding_discrete.svg" alt="Binary prefix spikes: the same spatial position x runs left to right; spike step k increases upward"><p class="encoding-key"><i></i> Spike = 1 <i class="silent"></i> No spike = 0</p></figure>
+</figcaption><img src="/figures/ch02/encoding_discrete_compact.svg" alt="Binary prefix spikes: the same spatial position x runs left to right; spike step k increases upward"><p class="encoding-key"><i></i> Spike = 1 <i class="silent"></i> No spike = 0</p></figure>
 </div>
 <svg class="encoding-arrow" viewBox="0 0 1000 48" aria-label="Decoding: discrete spikes back to continuous values"><path d="M760 0 C650 48 357.332 51.200 247.332 3.200" /><polygon points="240.000,0.000 250.765,0.333 247.566,7.666" class="encoding-arrowhead" /></svg>
 <div class="encoding-annotation">
 <div class="encoding-rule"><h2>Decoding</h2><div>
 
-$\hat f(x_j)=z_{\min}+\dfrac{z_{\max}-z_{\min}}{K}\sum_{k=1}^{K}s_j[k],\qquad 0\le f(x_j)-\hat f(x_j)<\dfrac{z_{\max}-z_{\min}}{K}$
+$\begin{gathered}\hat f(x_j)=z_{\min}+\dfrac{z_{\max}-z_{\min}}{K}\sum_{k=1}^{K}s_j[k],\\[3pt]0\le f(x_j)-\hat f(x_j)<\dfrac{z_{\max}-z_{\min}}{K}\end{gathered}$
 
 </div></div>
 </div>
@@ -70,6 +72,14 @@ $\hat f(x_j)=z_{\min}+\dfrac{z_{\max}-z_{\min}}{K}\sum_{k=1}^{K}s_j[k],\qquad 0\
 Illustrative magnitude encoding · $K=40$ · $[z_{\min},z_{\max}]=[0,0.2]$. Resolution $\Delta f=0.005$. Spike step $k$ is internal simulation time, not physical time.
 
 </div>
+</div>
+
+<section class="encoding-methods">
+<h2>Encoding methods</h2>
+<p>Normalize the coordinate to <InlineMath tex="a\in[0,1]" />.</p>
+<CoordinateEncodings layout="column" />
+<p class="encoding-method-key">Brown cells denote spikes; rasters use 8 schematic steps.</p>
+</section>
 </div>
 
 <!-- Both figures are generated from the same analytic example by scripts/prepare_encoding_figure.py. This is magnitude-prefix encoding, not the separate grid-index encoding of coordinates. The dashed decoded field illustrates the finite-K quantization error. -->
@@ -82,7 +92,7 @@ source: 'Thesis Chapter 2 · tab:ch02:deeponet-encoding; fig:snn:deeponet-poisso
 
 # Example: DeepONet for 1d Poisson equation
 
-<div class="poisson-example">
+<div class="poisson-example poisson-example-results">
 <div class="poisson-column">
 <section class="poisson-section">
 <h2>Problem setup</h2>
@@ -99,26 +109,10 @@ Learn the solution operator $\mathcal G_\theta:f\mapsto u$.
 <!-- <p>Branch: sampled forcing. SNN trunk: encoded spatial coordinates. Their inner product predicts the solution.</p> -->
 <p class="poisson-context">GRF forcing · 800 training / 200 test pairs · 100 spatial points.</p>
 </section>
-<section class="poisson-section">
-<h2>Encode the spatial coordinates</h2>
-<div class="poisson-prose">
 
-Normalize $x$ to $[0,1]$ and pass a binary spike sequence to the trunk.
-
-</div>
-<CoordinateEncodings />
-<p class="poisson-context">Brown cells denote spikes.</p>
-</section>
 </div>
 <div class="poisson-column">
-<figure class="poisson-prediction">
-<div class="poisson-prediction-image"><img src="/figures/ch02/deeponet_poisson_triangular_long.png" alt="Four published Poisson solution examples in a horizontal row, using Ours at K=500"></div>
-<figcaption>
 
-Four examples · Ours, $K=500$.
-
-</figcaption>
-</figure>
 <section class="poisson-section poisson-evaluation">
 <div class="poisson-metric"><h2>Relative L₂ error</h2><div>
 
@@ -130,9 +124,17 @@ $\varepsilon_{L_2}=\dfrac{\|\hat u-u\|_2}{\|u\|_2}$
 <p class="poisson-context">Mean and standard deviation across test cases; predictions smoothed with Savitzky–Golay (window 51, order 3).</p>
 </section>
 </div>
+<figure class="poisson-prediction">
+<div class="poisson-prediction-image"><img src="/figures/ch02/deeponet_poisson_triangular_long.png" alt="Four published Poisson solution examples in a horizontal row, using Ours at K=500"></div>
+<figcaption>
+
+Four examples · Ours, $K=500$.
+
+</figcaption>
+</figure>
 </div>
 
-<!-- Coordinate encodings follow SNN_01_SNNs_DeepONet/SNN.tex: rate Bernoulli codes, direct identity/one-hot codes, and the proposed prefix code. The illustration shows all four panels of the published K=500 example; reported table values are unchanged. -->
+<!-- Encoding methods are introduced on the preceding slide. All four published K=500 prediction panels and every reported table value are preserved. Direct is the learned dense/spiking encoder selected by run_deeponet_1d.py, not a one-hot latency code. -->
 
 ---
 chapter: '2'

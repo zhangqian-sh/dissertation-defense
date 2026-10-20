@@ -169,6 +169,24 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .encoding-note { font-size:14px; line-height:1.4; color:var(--muted); margin:8px 0 0; }
 
 .academic .encoding-note p { margin:0; }
+/* ch2-05: representation example beside the coordinate-encoding comparison. */
+.academic .encoding-overview { display:grid;grid-template-columns:minmax(0,1.85fr) minmax(0,1fr);gap:32px;align-items:start; }
+.academic .encoding-overview .encoding-example-heading,.academic .encoding-methods h2 { font-size:16px;margin:0 0 12px; }
+.academic .encoding-overview .encoding-annotation { margin:0 4px;padding:7px 10px; }
+.academic .encoding-overview .encoding-arrow { height:30px; }
+.academic .encoding-overview .encoding-figures { gap:16px; }
+.academic .encoding-overview .encoding-figures img { width:100%;height:190px; }
+.academic .encoding-overview .encoding-key { font-size:12px;right:6px;top:29px; }
+.academic .encoding-methods { border-left:1px solid var(--line);padding-left:20px;min-width:0; }
+.academic .encoding-methods p { font-size:14px;line-height:1.4;margin:0 0 10px; }
+.academic .encoding-methods .encoding-method-key { font-size:12px;color:var(--muted);margin:8px 0 0; }
+/* ch2-06: problem and metric above four larger prediction examples. */
+.academic .poisson-example-results { row-gap:14px; }
+.academic .poisson-example-results .poisson-prediction { grid-column:1/-1; }
+.academic .poisson-example-results .poisson-prediction-image img { height:220px;object-fit:contain; }
+.academic .poisson-example-results .poisson-metric { min-height:32px;margin-bottom:4px; }
+.academic .poisson-example-results .poisson-evaluation td,.academic .poisson-example-results .poisson-evaluation th { padding-top:4px;padding-bottom:4px; }
+
 
 /* Share Content-page row heights so both columns have aligned separators. */
 .academic .content-outline .density-grid { grid-template-rows:auto repeat(3,auto); row-gap:0; align-items:stretch; }
