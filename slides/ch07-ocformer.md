@@ -60,63 +60,6 @@ $$
 <p>The costate <InlineMath tex="p" /> enters through PMP. For fixed endpoints, these equations define a coupled two-point boundary-value problem for the penalized objective.</p>
 </section>
 </div>
-<div class="ocformer-latent-reference">
-<section>
-<h3>Intuition: a tractable latent system by removing constraints</h3>
-<p>For separable agent costs and dynamics, dropping <InlineMath tex="U" /> leaves a decoupled Hamiltonian <InlineMath tex="H_0" /> in latent coordinates <InlineMath tex="(y,q)" />.</p>
-
-$$
-\dot y=\nabla_q H_0(y,q),\qquad
-\dot q=-\nabla_y H_0(y,q).
-$$
-
-<p>For <InlineMath tex="\dot x_i=u_i" /> and quadratic control effort:</p>
-
-$$
-H_0(y,q)=\tfrac12\|q\|^2,\qquad \dot y=q,\quad\dot q=0,
-$$
-
-$$
-q=\frac{x^T-x^0}{T},\qquad y(t)=x^0+tq.
-$$
-
-<RecordedSequence name="latent" label="Latent and optimized trajectory time" caption="" />
-<p>Straight latent motion provides a reference for the interacting physical trajectory. The next step is to parameterize its correction.</p>
-</section>
-</div>
-</div>
-
-<!--
-The smooth PMP equations describe the penalized problem, not exact hard-state-constrained PMP. Removing U decouples agents for the separable costs and dynamics in this study. The animation uses saved optimized trajectories.
--->
-
----
-chapter: '7'
-section: OCFormer · Residual trajectory map and physics-informed training
-source: 'Thesis Chapter 7 · Residual state–costate map, fig:oc:architecture, Hamiltonian residuals and endpoint matching'
----
-
-# OCFormer: Learn the Trajectory Correction
-
-<div class="ocformer-correction-layout ocformer-method-page">
-<div>
-<section>
-<h3>Parameterize the state–costate trajectory</h3>
-
-$$
-(x_\theta,p_\theta)=\varphi_\theta(y,q)
-=(y,q)+\Delta_\theta(y,q).
-$$
-
-<p>The known latent solution supplies <InlineMath tex="(y(t),q(t))" />. The network learns the displacement and costate correction required by interactions.</p>
-</section>
-<section class="ocformer-method-section">
-<h3>Network structure</h3>
-<figure class="figure"><img src="/figures/ch07/ocformer-architecture.png" alt="Agent-token embeddings, alternating attention updates and residual connections map latent states and costates to physical states and costates"></figure>
-<p><strong>Invertibility in embedding space.</strong> Hold one stream fixed: <InlineMath tex="r'=r+\mathcal T(z)" /> is inverted by <InlineMath tex="r=r'-\mathcal T(z)" />. Alternating blocks are reversible without inverting <InlineMath tex="\mathcal T" /> itself.</p>
-<p><strong>Permutation equivariance.</strong> Shared tokenwise maps and attention give <InlineMath tex="\varphi_\theta(Py,Pq)=P\varphi_\theta(y,q)" />. Relabeling interchangeable agents only relabels their trajectories.</p>
-</section>
-</div>
 <div>
 <section>
 <h3>Enforce the full Hamiltonian equations</h3>
@@ -151,6 +94,63 @@ $$
 
 <p>The collision and obstacle penalty remains inside <InlineMath tex="\bar H" />; benchmark-specific auxiliary losses can add velocity and constraint terms.</p>
 <p>Optimize with Adam, then L-BFGS, using boundary data and collocation times rather than labeled optimal trajectories.</p>
+</section>
+</div>
+</div>
+
+<!--
+The smooth PMP equations describe the penalized problem, not exact hard-state-constrained PMP. Removing U decouples agents for the separable costs and dynamics in this study. The animation uses saved optimized trajectories.
+-->
+
+---
+chapter: '7'
+section: OCFormer · Residual trajectory map and physics-informed training
+source: 'Thesis Chapter 7 · Residual state–costate map, fig:oc:architecture, Hamiltonian residuals and endpoint matching'
+---
+
+# OCFormer: Learn the Trajectory Correction
+
+<div class="ocformer-correction-layout ocformer-method-page">
+<div class="ocformer-latent-reference">
+<section>
+<h3>Intuition: a tractable latent system by removing constraints</h3>
+<p>For separable agent costs and dynamics, dropping <InlineMath tex="U" /> leaves a decoupled Hamiltonian <InlineMath tex="H_0" /> in latent coordinates <InlineMath tex="(y,q)" />.</p>
+
+$$
+\dot y=\nabla_q H_0(y,q),\qquad
+\dot q=-\nabla_y H_0(y,q).
+$$
+
+<p>For <InlineMath tex="\dot x_i=u_i" /> and quadratic control effort:</p>
+
+$$
+H_0(y,q)=\tfrac12\|q\|^2,\qquad \dot y=q,\quad\dot q=0,
+$$
+
+$$
+q=\frac{x^T-x^0}{T},\qquad y(t)=x^0+tq.
+$$
+
+<RecordedSequence name="latent" label="Latent and optimized trajectory time" caption="" />
+<p>Straight latent motion provides a reference for the interacting physical trajectory. The next step is to parameterize its correction.</p>
+</section>
+</div>
+<div>
+<section>
+<h3>Parameterize the state–costate trajectory</h3>
+
+$$
+(x_\theta,p_\theta)=\varphi_\theta(y,q)
+=(y,q)+\Delta_\theta(y,q).
+$$
+
+<p>The known latent solution supplies <InlineMath tex="(y(t),q(t))" />. The network learns the displacement and costate correction required by interactions.</p>
+</section>
+<section class="ocformer-method-section">
+<h3>Network structure</h3>
+<figure class="figure"><img src="/figures/ch07/ocformer-architecture.png" alt="Agent-token embeddings, alternating attention updates and residual connections map latent states and costates to physical states and costates"></figure>
+<p><strong>Invertibility in embedding space.</strong> Hold one stream fixed: <InlineMath tex="r'=r+\mathcal T(z)" /> is inverted by <InlineMath tex="r=r'-\mathcal T(z)" />. Alternating blocks are reversible without inverting <InlineMath tex="\mathcal T" /> itself.</p>
+<p><strong>Permutation equivariance.</strong> Shared tokenwise maps and attention give <InlineMath tex="\varphi_\theta(Py,Pq)=P\varphi_\theta(y,q)" />. Relabeling interchangeable agents only relabels their trajectories.</p>
 </section>
 </div>
 </div>
