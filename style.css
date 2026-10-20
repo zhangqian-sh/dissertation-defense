@@ -170,14 +170,14 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 
 .academic .encoding-note p { margin:0; }
 /* ch2-05: representation example beside the coordinate-encoding comparison. */
-.academic .encoding-overview { display:grid;grid-template-columns:minmax(0,1.85fr) minmax(0,1fr);gap:32px;align-items:start; }
+.academic .encoding-overview { display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.85fr);gap:32px;align-items:start; }
 .academic .encoding-overview .encoding-example-heading,.academic .encoding-methods h2 { font-size:16px;margin:0 0 12px; }
 .academic .encoding-overview .encoding-annotation { margin:0 4px;padding:7px 10px; }
 .academic .encoding-overview .encoding-arrow { height:30px; }
 .academic .encoding-overview .encoding-figures { gap:16px; }
 .academic .encoding-overview .encoding-figures img { width:100%;height:190px; }
 .academic .encoding-overview .encoding-key { font-size:12px;right:6px;top:29px; }
-.academic .encoding-methods { border-left:1px solid var(--line);padding-left:20px;min-width:0; }
+.academic .encoding-methods { border-right:1px solid var(--line);padding-right:20px;min-width:0; }
 .academic .encoding-methods p { font-size:14px;line-height:1.4;margin:0 0 10px; }
 .academic .encoding-methods .encoding-method-key { font-size:12px;color:var(--muted);margin:8px 0 0; }
 /* ch2-06: problem and metric above four larger prediction examples. */

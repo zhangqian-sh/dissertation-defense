@@ -7,16 +7,17 @@ const container=ref<HTMLElement>()
 useSvgAxisText(container,12,'svg.encoding-raster')
 useSvgAxisText(container,16,'svg.direct-compact')
 const size = 8
+const coordinateSamples = 9
 // Fixed Bernoulli realization for a schematic normalized coordinate grid.
 let seed = 17
-const rate = Array.from({length:size}, (_, k) => Array.from({length:size}, (_, j) => {
+const rate = Array.from({length:size}, (_, k) => Array.from({length:coordinateSamples}, (_, j) => {
   seed = (1664525 * seed + 1013904223) >>> 0
-  return seed / 4294967296 < j / (size - 1)
+  return seed / 4294967296 < j / (coordinateSamples - 1)
 }))
 const methods = [
   {name:'Rate', description:'Probabilistic spikes', cells:rate},
   {name:'Direct', description:'Learned spiking encoder', cells:[]},
-  {name:'Ours', description:'Prefix of spikes', cells:Array.from({length:size}, (_, k) => Array.from({length:size}, (_, j) => k < Math.floor(size*j/(size-1))))},
+  {name:'Ours', description:'Prefix of spikes', cells:Array.from({length:size}, (_, k) => Array.from({length:coordinateSamples}, (_, j) => k < Math.floor(size*j/(coordinateSamples-1))))},
 ]
 </script>
 <template>
@@ -41,14 +42,14 @@ const methods = [
         <path d="M100 115 V132" stroke="#596361" marker-end="url(#direct-encoder-head)" />
         <rect x="8" y="132" width="184" height="36" fill="#eeedeb" /><text x="100" y="155" text-anchor="middle">Averaged readout</text>
       </svg>
-      <svg v-else class="encoding-raster" viewBox="0 0 120 132" role="img" :aria-label="method.name + ': ' + method.description">
+      <svg v-else class="encoding-raster" viewBox="0 0 130 132" role="img" :aria-label="method.name + ': ' + method.description">
         <g v-for="(row,k) in method.cells" :key="k">
           <rect v-for="(active,j) in row" :key="j" :x="25+j*10" :y="88-k*10" width="9" height="9" :fill="active?'#4e3629':'#eeedeb'" />
         </g>
-        <path d="M23 18 V100 H106" fill="none" stroke="#596361" stroke-width=".7" />
+        <path d="M23 18 V100 H116" fill="none" stroke="#596361" stroke-width=".7" />
         <text x="16" y="96" text-anchor="end">1</text><text x="16" y="26" text-anchor="end">8</text>
-        <text x="25" y="112">0</text><text x="105" y="112" text-anchor="end">1</text>
-        <text class="axis-label" x="65" y="123" text-anchor="middle">Coordinate</text>
+        <text x="25" y="112">0</text><text x="115" y="112" text-anchor="end">1</text>
+        <text class="axis-label" x="70" y="123" text-anchor="middle">Coordinate</text>
         <text class="axis-label" x="8" y="58" text-anchor="middle" transform="rotate(-90 8 58)">Spike step</text>
       </svg>
     </figure>

@@ -35,6 +35,13 @@ source: 'Thesis Chapter 2 · Magnitude-prefix encoding and mean decoding · Rege
 # From continuous functions to spikes
 
 <div class="encoding-overview">
+<section class="encoding-methods">
+<h2>Encoding methods</h2>
+<p>Normalize the coordinate to <InlineMath tex="a\in[0,1]" />.</p>
+<CoordinateEncodings layout="column" />
+<p class="encoding-method-key">Brown cells denote spikes; rasters use 8 schematic steps.</p>
+</section>
+
 <div class="encoding-cycle">
 <h2 class="encoding-example-heading">Encoding and decoding · Ours</h2>
 <div class="encoding-annotation">
@@ -73,13 +80,6 @@ Illustrative magnitude encoding · $K=40$ · $[z_{\min},z_{\max}]=[0,0.2]$. Reso
 
 </div>
 </div>
-
-<section class="encoding-methods">
-<h2>Encoding methods</h2>
-<p>Normalize the coordinate to <InlineMath tex="a\in[0,1]" />.</p>
-<CoordinateEncodings layout="column" />
-<p class="encoding-method-key">Brown cells denote spikes; rasters use 8 schematic steps.</p>
-</section>
 </div>
 
 <!-- Both figures are generated from the same analytic example by scripts/prepare_encoding_figure.py. This is magnitude-prefix encoding, not the separate grid-index encoding of coordinates. The dashed decoded field illustrates the finite-K quantization error. -->
@@ -106,9 +106,9 @@ $$
 Learn the solution operator $\mathcal G_\theta:f\mapsto u$.
 
 </div>
-<!-- <p>Branch: sampled forcing. SNN trunk: encoded spatial coordinates. Their inner product predicts the solution.</p> -->
 <p class="poisson-context">GRF forcing · 800 training / 200 test pairs · 100 spatial points.</p>
 </section>
+<PoissonDeepONetDiagram />
 
 </div>
 <div class="poisson-column">
