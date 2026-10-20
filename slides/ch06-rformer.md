@@ -135,19 +135,6 @@ Saved test snapshots are played in physical-time order; rows u/v/p and columns r
 
 ---
 chapter: '6'
-section: RFormer · Blood-flow reconstruction
-source: 'RFormer val.h5 · linear interpolation and reconstruction on averaged-grid reference; 20 matched snapshots'
----
-
-# Example: Blood Flow
-<BloodSnapshotGrid />
-
-<!--
-Eight panels loop through raw snapshots 0–19 and matched averaged-grid snapshots 80–99 using the original analysis_publication.ipynb alignment, midplane |z|<1. Static/print fallback uses snapshots 5/85. Rows u/v; columns observations, linear interpolation, reconstruction, averaged-grid reference. Shared robust 99th-percentile symmetric color limits within each component; no color bars. Native labels use Noto Serif and default KaTeX, with 12px axes. Interpolation and RFormer are recomputed on the same averaged grid using 3D linear interpolation with nearest fill. Metrics use full 3D velocity vectors and a shared finite reference mask within [-10,10], without clipping, averaged over 20 snapshots. This validity range follows the original notebook; excluded reference counts are recorded in the blood animation index.
--->
-
----
-chapter: '6'
 section: RFormer · Turbulent-jet reconstruction
 source: 'Thesis Chapter 6 · fig:rformer:jet-spectrum; tab:rformer:jet ·
   Animation: saved jet outputs with paired validation truth'
