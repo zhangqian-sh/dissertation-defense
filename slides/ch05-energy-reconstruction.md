@@ -36,16 +36,16 @@ $$
 <p>Observed position–value pairs represent the input function. Evaluate the reconstructed function at an unobserved position:</p>
 
 $$
-\widehat v_a^{A'_j}=\mathcal R\!\left(x_a^{A'_j};\widetilde{\mathcal P}_a\right),
+\widehat v_a^{A'_j}=\mathcal R\!\left(\widetilde{\mathcal P}_a\right)\!\left(x_a^{A'_j}\right),
 \quad A'_j\notin\mathcal O_a
 $$
 
 <h2 class="et-reconstruction-subheading">Energy Transformer realizes this map</h2>
 <p>ET realizes the operator on a <strong>regular patch lattice</strong>, mapping observed patches to a completed field.</p>
 <ul>
-<li><strong>Representation:</strong> tokenize observations; initialize missing tokens with noise.</li>
-<li><strong>Learning:</strong> learn energy by denoising the masked snapshots.</li>
-<li><strong>Reconstruction:</strong> update tokens by minimizing the learned energy, then decode and depatch.</li>
+<li><strong>Representation:</strong> encode observed field patches as tokens on a regular grid.</li>
+<li><strong>Learning:</strong> train on partially observed snapshots, using complete fields as supervision.</li>
+<li><strong>Reconstruction:</strong> complete the patch representation and decode it into a reconstructed field.</li>
 </ul>
 </section>
 <figure class="figure et-reconstruction-workflow">
@@ -73,16 +73,16 @@ source: 'Thesis Chapter 5 · fig:et:architecture; eq:et:update · Niter=12, step
 <div class="et-method-explanation">
 <section>
 <h2>What is Energy Transformer?</h2>
-<p>An associative energy model for patch tokens. Its learned energy combines relationships across tokens with memory within each token.</p>
+<p>An energy model maps an array of <InlineMath tex="L" /> image-patch tokens, each with <InlineMath tex="d" /> features, to one scalar.</p>
 
 $$
-E_\theta(g)=E_\theta^{\mathrm{MHA}}(g)+E_\theta^{\mathrm{HN}}(g)
+E_\theta:\mathbb R^{L\times d}\to\mathbb R,\qquad E_\theta(g)=E_\theta^{\mathrm{MHA}}(g)+E_\theta^{\mathrm{HN}}(g)
 $$
 
 </section>
 <section>
 <h2>Inference · evolve the state tokens</h2>
-<p>Initialize tokens from observations and noise. Keep the learned energy fixed and update the token state:</p>
+<p>Hold the energy model fixed and evolve the token array toward a low-energy state. Decode the resulting array into an image.</p>
 
 $$
 \begin{aligned}

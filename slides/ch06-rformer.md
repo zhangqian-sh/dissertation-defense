@@ -39,7 +39,7 @@ $$
 
 $$
 \mathcal P_{\mathcal O}=\{(x_i,v_i)\}_{i\in\mathcal O},
-\qquad \widehat v(x)=\mathcal R_\theta(x;\mathcal P_{\mathcal O})
+\qquad \widehat v(x)=\mathcal R_\theta\!\left(\mathcal P_{\mathcal O}\right)(x)
 $$
 
 <h2 class="et-reconstruction-subheading">RFormer realizes this map</h2>
