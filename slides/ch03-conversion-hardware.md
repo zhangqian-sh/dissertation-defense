@@ -151,26 +151,6 @@ source: 'Archived Poisson advanced-CAA checkpoint · fixed T=64 · measured cumu
 
 ---
 chapter: '3'
-section: ANN-to-SNN conversion · Output evolution
-source: 'Burgers PINN · matched original ANN checkpoint · fresh advanced CAA at horizon 128 · all emitted prefixes captured'
----
-
-# Example: Burgers Equation
-
-<div class="burgers-example">
-
-<ConversionOverT />
-<section class="burgers-setup">
-
-**Setup:** $u_t-\partial_x(\tfrac12u^2)=\nu u_{xx},\quad\nu=0.01,\quad u(x,0)=\sin x,\quad(x,t)\in[0,2\pi]\times[0,4].$
-
-</section>
-</div>
-
-<!-- Demo: start at prefix 1 and play to show the full buildup; scrub to 65, 80, 96 and 128 to inspect later prefixes. Each field is a captured cumulative mean of actual emitted final-layer spikes from one SNN calibrated at fixed horizon 128. Weights, thresholds and initialization remain fixed. This is a fresh calibration of the ANN checkpoint whose grid predictions match the archive, not reproduction of the historical calibrated SNN. No interpolation or per-prefix recalibration. The reference [t,x] layout is restored and checked against initial/boundary conditions. -->
-
----
-chapter: '3'
 section: Loihi 2 · Precision
 source: 'Thesis Chapter 3 · fig:loihi:precision; tab:conversion:loihi-accuracy · Source-reported RMS field error'
 ---

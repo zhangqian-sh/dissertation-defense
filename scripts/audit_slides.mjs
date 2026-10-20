@@ -48,7 +48,7 @@ try{
  if(dividers.length!==7||dividers.some((r,i)=>r.chapter!==i+2||results[r.slide]?.chapter!==r.chapter||r.partDivider!==[2,5].includes(r.chapter)))throw Error('Chapter divider count, placement or part styling mismatch')
  const findSlide=feature=>slideByFeature(results,feature)
  const interactions=[]
- for(const [feature,label] of [['sms','SMS physical time'],['burgers','Burgers SNN T'],['energy','ET reconstruction iteration']]){
+ for(const [feature,label] of [['sms','SMS physical time'],['poisson','Poisson SNN T'],['energy','ET reconstruction iteration']]){
   const n=findSlide(feature)
   const loadStarted=Date.now()
   await openSlide(n)
@@ -58,7 +58,7 @@ try{
   const before=await slider.inputValue();await slider.focus();await page.keyboard.press('ArrowRight');const after=await slider.inputValue();if(before===after)throw new Error('Slider not operable: '+label)
   if(!page.url().includes('/'+n))throw new Error('Slider stole slide navigation')
   await slide.getByRole('button',{name:'Play',exact:true}).click();await delay(400);await slide.getByRole('button',{name:'Pause',exact:true}).click()
-  if(label!=='Burgers SNN T'){
+  if(label!=='Poisson SNN T'){
   const trace=slide.locator('svg').nth(label==='SMS physical time'?1:0);const traceBox=await trace.boundingBox();const traceBefore=await slider.inputValue()
   await trace.click({position:{x:traceBox.width*.8,y:traceBox.height*.5}})
   if(await slider.inputValue()===traceBefore)throw new Error('Linked trace did not seek: '+label)
@@ -68,22 +68,22 @@ try{
    const gap=await slide.evaluate(el=>Math.min(...[...el.querySelectorAll('.trace-svg')].map(svg=>el.querySelector('.plot-controls').getBoundingClientRect().top-svg.getBoundingClientRect().bottom)))
    if(gap<8)throw Error('SMS plot labels overlap playback controls')
   }
-  if(label==='Burgers SNN T'){
+  if(label==='Poisson SNN T'){
    await slide.getByRole('button',{name:'Reset',exact:true}).click()
    const canvases=slide.locator('.grid-field canvas')
-   if(await canvases.count()!==3)throw new Error('Burgers needs exactly ref/SNN/diff panels')
+   if(await canvases.count()!==3)throw new Error('Poisson needs exactly ANN/SNN/difference panels')
    const first=await canvases.evaluateAll(cs=>cs.map(c=>c.toDataURL()))
-   const complete=await canvases.evaluateAll(cs=>cs.every(c=>c.width===300&&c.height===201&&c.getContext('2d').getImageData(0,0,300,201).data.filter((_,i)=>i%4===3).every(a=>a===255)))
-   if(!complete)throw new Error('Burgers native field pixels missing')
-   await slide.getByRole('button',{name:'T=128',exact:true}).click()
-   const last=await canvases.evaluateAll(cs=>cs.map(c=>c.toDataURL()))
-   if(first[0]!==last[0]||first[1]===last[1]||first[2]===last[2])throw new Error('Burgers T did not preserve reference and change SNN/difference')
-   if(await slider.inputValue()!=='127')throw new Error('Burgers T button not linked to slider')
+   const complete=await canvases.evaluateAll(cs=>cs.every(c=>c.width===102&&c.height===102&&c.getContext('2d').getImageData(0,0,102,102).data.filter((_,i)=>i%4===3).every(a=>a===255)))
+   if(!complete)throw new Error('Poisson native field pixels missing')
    await slide.getByRole('button',{name:'T=64',exact:true}).click()
+   const last=await canvases.evaluateAll(cs=>cs.map(c=>c.toDataURL()))
+   if(first[0]!==last[0]||first[1]===last[1]||first[2]===last[2])throw new Error('Poisson T did not preserve reference and change SNN/difference')
+   if(await slider.inputValue()!=='63')throw new Error('Poisson T button not linked to slider')
+   await slide.getByRole('button',{name:'T=32',exact:true}).click()
    await slider.focus();await page.keyboard.press('ArrowRight')
-   if(await slider.inputValue()!=='64')throw new Error('Missing actual prefix T=65')
+   if(await slider.inputValue()!=='32')throw new Error('Missing actual prefix T=33')
    const intermediate=await canvases.evaluateAll(cs=>cs.map(c=>c.toDataURL()))
-   if(intermediate[0]!==first[0]||intermediate[1]===first[1]||intermediate[2]===first[2])throw new Error('Intermediate prefix 65 is not linked to changed fields')
+   if(intermediate[0]!==first[0]||intermediate[1]===first[1]||intermediate[2]===first[2])throw new Error('Intermediate prefix 33 is not linked to changed fields')
    await slide.getByRole('button',{name:'Reset',exact:true}).click()
   }
   if(label==='ET reconstruction iteration'){
@@ -104,7 +104,7 @@ try{
   // Leave through SPA navigation and check that the same cached slide pauses.
   await slide.getByRole('button',{name:'Play',exact:true}).click();await page.mouse.click(1500,80);await page.keyboard.press('ArrowRight');await delay(200);await page.keyboard.press('ArrowLeft');await delay(200)
   if(!await slide.getByRole('button',{name:'Play',exact:true}).count())throw new Error('Playback did not pause on slide leave')
-  interactions.push({slide:n,readyMs,slider:true,linkedTraceSeeking:label!=='Burgers SNN T',playback:true,navigationIsolation:true,pauseOnExit:true,...(label==='Burgers SNN T'?{populatedFieldCanvases:true,referenceInvariant:true,TChangesSNNAndDifference:true,intermediate65Verified:true}:{})})
+  interactions.push({slide:n,readyMs,slider:true,linkedTraceSeeking:label!=='Poisson SNN T',playback:true,navigationIsolation:true,pauseOnExit:true,...(label==='Poisson SNN T'?{populatedFieldCanvases:true,referenceInvariant:true,TChangesSNNAndDifference:true,intermediate33Verified:true}:{})})
  }
  for(const [feature,kind] of [['vortex','vortex'],['jet','jet'],['hybrid','hybrid']]){
   const n=findSlide(feature)
