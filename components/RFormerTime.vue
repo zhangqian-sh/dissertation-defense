@@ -8,7 +8,7 @@ const nav=useNav()
 const staticMode=computed(()=>nav.isPrintMode.value||['static','print'].some(k=>new URLSearchParams(location.search).has(k)))
 const data=ref<any>();const error=ref('');const urls=ref<string[]>([])
 const count=computed(()=>data.value?.times.length||1)
-const {index,playing,active,toggle,seek,reset}=usePlayback(count,0,250)
+const {index,playing,active,toggle,seek,reset}=usePlayback(count,0,250,props.caseName==='jet')
 watch([active,data],()=>{if(props.caseName==='jet'&&active.value&&data.value&&!staticMode.value&&!document.hidden&&!playing.value)toggle()})
 const fallback=computed(()=>props.caseName==='hybrid'?'/figures/ch08/spiking-rformer-reconstruction.png':error.value?`/figures/ch06/${props.caseName==='vortex'?'vortex':'jet'}-reconstruction.png`:`/fallback_figures/ch06/${props.caseName}.png`)
 let disposed=false
