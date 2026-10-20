@@ -219,6 +219,16 @@ try{
  }
  const report={basePath:base,routerMode,pdfDownload:true,generatedAt:new Date().toISOString(),slides:results,interactions,pdfPages:process.argv.includes('--pdf')?count:null,presenter:!!presenter,fallbackOnDataFailure:true,webGLFailureReported:true,externalRequests:requests,browserErrors:errors}
  await writeFile(resolve(out,'layout-audit.json'),JSON.stringify(report,null,2))
- if(results.some(r=>r.overflow.length||r.missing.length)||errors.length||requests.length)throw new Error('Slide audit failed; see artifacts/layout-audit.json')
+ const failedSlides=results.filter(r=>r.overflow.length||r.missing.length)
+ if(failedSlides.length||errors.length||requests.length){
+  for(const slide of failedSlides){
+   console.error(`Slide ${slide.slide}: ${slide.title}`)
+   for(const item of slide.overflow)console.error('  Overflow:',JSON.stringify(item))
+   for(const asset of slide.missing)console.error('  Missing image:',asset)
+  }
+  for(const error of errors)console.error('Browser error:',error)
+  for(const request of requests)console.error('Unexpected external request:',request)
+  throw new Error('Slide audit failed; see diagnostics above and artifacts/layout-audit.json')
+ }
  console.log(`PASS: ${count} slides, ${interactions.length} interactive figures, fallback, presenter, and offline requests.`)
 }finally{await browser?.close();server.kill('SIGTERM')}

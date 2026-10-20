@@ -181,7 +181,8 @@ html,body,#app { font-family:'Noto Serif',serif; color:var(--ink); }
 .academic .encoding-methods p { font-size:14px;line-height:1.4;margin:0 0 10px; }
 .academic .encoding-methods .encoding-method-key { font-size:12px;color:var(--muted);margin:8px 0 0; }
 /* ch2-06: problem and metric above four larger prediction examples. */
-.academic .poisson-example-results { row-gap:14px; }
+.academic .poisson-example-results { row-gap:8px; }
+.academic .poisson-example-results .poisson-column { gap:10px; }
 .academic .poisson-example-results .poisson-prediction { grid-column:1/-1; }
 .academic .poisson-example-results .poisson-prediction-image img { height:220px;object-fit:contain; }
 .academic .poisson-example-results .poisson-metric { min-height:32px;margin-bottom:4px; }
